@@ -174,6 +174,18 @@ export default function DiwaliPage() {
               </p>
             </div>
           </div>
+
+          <p className="text-center mt-10 text-[#f8f8f8]/60">
+            Want to order multiple boxes?{' '}
+            <a
+              href="https://wa.me/447933903000?text=Hi!%20I'd%20like%20to%20order%20multiple%20boxes%20of%20the%20Naturally%20Sweet%20Cupcakes%20for%20Diwali"
+              target="_blank"
+              className="text-[#c9973f] underline hover:text-[#f3e3c3] transition"
+            >
+              Get in touch via WhatsApp
+            </a>
+            .
+          </p>
         </div>
       </section>
 

@@ -41,8 +41,11 @@ export default function DiwaliOrderForm() {
   const [flavour1, setFlavour1] = useState<Flavour | ''>('Kulfi')
   const [flavour2, setFlavour2] = useState<Flavour | ''>('Chocolate')
   const [pickupDate, setPickupDate] = useState('')
+  const [personalise, setPersonalise] = useState(false)
+  const [personaliseName, setPersonaliseName] = useState('')
 
-  const total = box === '6' ? 20 : box === '12' ? 35 : 0
+  const total =
+    (box === '6' ? 20 : box === '12' ? 35 : 0) + (personalise ? 4 : 0)
 
   const summaryLines = useMemo(() => {
     if (!box) return []
@@ -59,9 +62,23 @@ export default function DiwaliOrderForm() {
       }
     }
 
+    if (personalise && personaliseName) {
+      lines.push(`Personalisation: "${personaliseName}" (+£4)`)
+    }
+
     if (pickupDate) lines.push(`Pickup: ${pickupDate}`)
     return lines
-  }, [box, flavour6, flavourMode, flavour12One, flavour1, flavour2, pickupDate])
+  }, [
+    box,
+    flavour6,
+    flavourMode,
+    flavour12One,
+    flavour1,
+    flavour2,
+    personalise,
+    personaliseName,
+    pickupDate,
+  ])
 
   const orderSummaryText = summaryLines.join(' | ') + (total ? ` | Total: £${total}` : '')
 
@@ -254,6 +271,45 @@ export default function DiwaliOrderForm() {
                     ))}
                   </select>
                 </Field>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* PERSONALISATION */}
+        {box && (
+          <div>
+            <label className="flex items-center gap-3 text-sm text-[#f8f8f8]/90">
+              <input
+                type="checkbox"
+                checked={personalise}
+                onChange={(e) => setPersonalise(e.target.checked)}
+                className="w-5 h-5 rounded accent-[#c9973f]"
+              />
+              Add a personalised name to the box (+£4)
+            </label>
+            <input
+              type="hidden"
+              name="personalisation"
+              value={personalise ? `Yes — "${personaliseName}" (+£4)` : 'No'}
+            />
+
+            {personalise && (
+              <div className="mt-4">
+                <Field label="Name To Add">
+                  <input
+                    type="text"
+                    name="personalisation_name"
+                    required={personalise}
+                    value={personaliseName}
+                    onChange={(e) => setPersonaliseName(e.target.value)}
+                    className={inputClass}
+                  />
+                </Field>
+                <p className="text-xs text-[#f8f8f8]/50 mt-2">
+                  Please also add this name in "Anything we should know?"
+                  below, just so we don't miss it.
+                </p>
               </div>
             )}
           </div>
