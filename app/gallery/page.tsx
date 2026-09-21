@@ -4,6 +4,7 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 import { client } from '../../sanity/lib/client'
 import GalleryGrid from './GalleryGrid'
 
+export const runtime = 'edge'
 export const revalidate = 0
 
 async function getProducts() {

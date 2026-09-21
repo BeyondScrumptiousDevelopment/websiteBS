@@ -19,14 +19,24 @@ http://localhost:3000
 
 ## Managing the Gallery
 
-Photos are managed through Sanity Studio, no developer needed:
+Photos are managed through Sanity Studio, run separately from this app
+(see below). Once running, use it to add, replace, delete, caption, tag,
+reorder and feature gallery images — changes show up on `/gallery` and the
+homepage right away.
+
+## Sanity Studio
+
+Studio isn't bundled into this Next.js app (that used to cause build/size
+issues on Cloudflare) — it runs and deploys independently via the Sanity
+CLI, using the `sanity.config.ts` at the repo root:
 
 ```bash
-npm run dev
+npx sanity dev      # local studio at http://localhost:3333
+npx sanity deploy   # publishes a hosted studio at <project>.sanity.studio
 ```
 
-Then open http://localhost:3000/studio (or the deployed `/studio` route) to
-add, replace, delete, caption, tag, reorder and feature gallery images.
+The gallery data itself lives in Sanity's cloud either way, so this
+doesn't change anything about how the website reads it.
 
 ## Enquiry Form
 
@@ -41,36 +51,45 @@ spam settings from the Formspree dashboard.
 it's marked `noindex` and isn't linked from the site navigation, so it's
 only reachable if you share the direct URL.
 
-## Deploying to Cloudflare
+## Deploying to Cloudflare Pages
 
-This site deploys to Cloudflare Workers using
-[OpenNext for Cloudflare](https://opennext.js.org/cloudflare).
+This site deploys to classic Cloudflare Pages using
+[`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages).
 
-1. Install the Cloudflare CLI auth (one-time): `npx wrangler login`
-2. Build and deploy:
+**Cloudflare dashboard → Pages → Create → Import a repository**, with:
+
+| Field | Value |
+|---|---|
+| Framework preset | None (leave as-is, or "Next.js" if offered) |
+| Build command | `npx @cloudflare/next-on-pages@1` |
+| Build output directory | `.vercel/output/static` |
+| Root directory | `/` |
+| Environment variables | None required |
+
+Also set the **`nodejs_compat`** compatibility flag for both Production and
+Preview under the Pages project's **Settings → Functions → Compatibility
+Flags** (Sanity's client and Next's runtime need it). A `wrangler.toml` in
+this repo declares the same flag for local/CLI use.
+
+To build and deploy from the command line instead:
 
 ```bash
+npx wrangler login   # one-time
 npm run cf:deploy
 ```
 
-This runs `opennextjs-cloudflare build` (adapts the Next.js build for
-Cloudflare Workers) followed by `opennextjs-cloudflare deploy` (publishes
-via Wrangler). To preview a production build locally first, run
-`npm run cf:preview` instead.
+`npm run cf:preview` builds and serves the Pages output locally first.
 
-Configuration lives in `wrangler.jsonc` and `open-next.config.ts`.
+### Note on `next` and `next-sanity` versions
 
-### A note on `/studio`
-
-Sanity Studio is bundled into this Next.js app at `/studio`, which is
-convenient but adds significant weight to the deployed Worker. If you hit
-Cloudflare's Worker size limits, the standard fix is to deploy Studio
-separately with `npx sanity deploy` (hosted free at
-`beyond-scrumptious.sanity.studio` or similar) and remove the `/studio`
-route from this app — the gallery data lives in Sanity either way, so
-nothing else needs to change.
+`@cloudflare/next-on-pages` is Cloudflare's original Pages adapter; it caps
+out at Next.js 15.5.x (Cloudflare now steers newer Next apps toward Workers
++ OpenNext instead, which this repo doesn't use). `next` is pinned to a
+patched 15.5.x release and `next-sanity` to a matching 11.x release for
+that reason — don't bump either past what their peer ranges allow without
+re-testing `npm run pages:build`.
 
 ## Deploy
 
-Push to GitHub. Either connect the repo to Cloudflare Pages/Workers for
-git-based deploys, or run `npm run cf:deploy` from CI/locally.
+Push to GitHub, then either connect the repo to Cloudflare Pages for
+git-based deploys (above), or run `npm run cf:deploy` from CI/locally.

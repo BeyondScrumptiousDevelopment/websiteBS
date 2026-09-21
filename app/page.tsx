@@ -4,6 +4,7 @@ import { client } from '../sanity/lib/client'
 import { urlFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
 
+export const runtime = 'edge'
 export const revalidate = 0
 
 async function getFeatured() {

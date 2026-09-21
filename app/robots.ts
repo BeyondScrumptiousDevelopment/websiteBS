@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/links', '/studio'],
+      disallow: ['/links'],
     },
     sitemap: 'https://www.beyondscrumptious.com/sitemap.xml',
   }
