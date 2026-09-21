@@ -10,6 +10,7 @@ export const metadata = {
 }
 
 const links = [
+  { href: '/diwali', label: 'Diwali 2026 — Order Now ✨', highlight: true },
   { href: '/contact', label: 'Enquire Now', highlight: true },
   { href: '/cakes', label: 'View Cakes' },
   { href: '/desserts', label: 'View Desserts & Dessert Tables' },
