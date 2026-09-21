@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import { client } from '../sanity/lib/client'
 import { urlFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
+import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -21,27 +22,6 @@ async function getFeatured() {
     return []
   }
 }
-
-const testimonials = [
-  {
-    quote:
-      'Naavyen was so helpful with design suggestions and the taste was out of this world — super moist sponge, perfect sweetness and packed with rich flavour. Everyone couldn’t stop raving about it.',
-    name: 'Joti Manji',
-    source: 'Google Review',
-  },
-  {
-    quote:
-      'The live pancake station was a huge hit! The pancakes are freshly made, delicious, and both kids and adults enjoyed them. Friendly team, professional and excellent service.',
-    name: 'Bhavini Pindoria',
-    source: 'Google Review',
-  },
-  {
-    quote:
-      'I have used them a few times now and they have exceeded with excellence every time — from my gender reveal cake to my son’s party pancake station. Always amazing, professional and delicious.',
-    name: 'Nikki Patel',
-    source: 'Google Review',
-  },
-]
 
 export default async function HomePage() {
   const featured = await getFeatured()
@@ -218,7 +198,7 @@ export default async function HomePage() {
       {/* LIVE DESSERT FEATURE */}
       <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl order-2 md:order-1">
+          <div className="rounded-[2rem] overflow-hidden shadow-2xl order-2 md:order-1 aspect-[4/3]">
             <img
               src="/images/otgpic.jpg"
               alt="Live Mini Pancake Station"
@@ -271,20 +251,7 @@ export default async function HomePage() {
             Sweet Words
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-10 shadow-lg flex flex-col"
-              >
-                <p className="leading-7 mb-6 text-left">&ldquo;{t.quote}&rdquo;</p>
-                <h3 className="heading-font text-xl mt-auto text-left">{t.name}</h3>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#202b45]/50 text-left">
-                  {t.source}
-                </p>
-              </div>
-            ))}
-          </div>
+          <TestimonialsSlideshow />
         </div>
       </section>
 
