@@ -172,7 +172,7 @@ export default async function HomePage() {
                   <img
                     src={urlFor(item.image).width(800).url()}
                     alt={item.caption || item.category || 'Beyond Scrumptious'}
-                    className="w-full aspect-[4/5] object-cover hover:scale-105 transition duration-500"
+                    className="w-full h-auto hover:scale-105 transition duration-500"
                   />
                 </div>
               ))}

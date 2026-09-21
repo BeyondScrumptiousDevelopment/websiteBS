@@ -69,7 +69,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
               key={img._id}
               src={urlFor(img.image).width(1400).url()}
               alt={img.caption || title || 'Beyond Scrumptious'}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
                 i === index ? 'opacity-100' : 'opacity-0'
               }`}
             />
