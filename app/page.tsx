@@ -1,23 +1,49 @@
 import Navbar from '../components/Navbar'
-import {client} from '../sanity/lib/client'
-import {urlFor} from '../sanity/lib/image'
+import Footer from '../components/Footer'
+import { client } from '../sanity/lib/client'
+import { urlFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
 
 export const revalidate = 0
 
-async function getProducts() {
-  return client.fetch(`
-    *[_type == "product" && featured == true][0...6]{
-      _id,
-      title,
-      category,
-      image
-    }
-  `)
+async function getFeatured() {
+  try {
+    return await client.fetch(`
+      *[_type == "product" && featured == true] | order(order asc, _createdAt desc)[0...6]{
+        _id,
+        caption,
+        category,
+        image
+      }
+    `)
+  } catch {
+    return []
+  }
 }
 
+const testimonials = [
+  {
+    quote:
+      'Naavyen was so helpful with design suggestions and the taste was out of this world — super moist sponge, perfect sweetness and packed with rich flavour. Everyone couldn’t stop raving about it.',
+    name: 'Joti Manji',
+    source: 'Google Review',
+  },
+  {
+    quote:
+      'The live pancake station was a huge hit! The pancakes are freshly made, delicious, and both kids and adults enjoyed them. Friendly team, professional and excellent service.',
+    name: 'Bhavini Pindoria',
+    source: 'Google Review',
+  },
+  {
+    quote:
+      'I have used them a few times now and they have exceeded with excellence every time — from my gender reveal cake to my son’s party pancake station. Always amazing, professional and delicious.',
+    name: 'Nikki Patel',
+    source: 'Google Review',
+  },
+]
+
 export default async function HomePage() {
-  const products = await getProducts()
+  const featured = await getFeatured()
 
   return (
     <main className="bg-[#202b45] text-[#f8f8f8] overflow-hidden">
@@ -40,7 +66,7 @@ export default async function HomePage() {
 
         <div className="relative z-10 max-w-5xl">
           <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#f8f8f8]/70">
-            Luxury Dessert Experiences
+            Cakes, Desserts & Live Dessert Experiences
           </p>
 
           <h1 className="logo-font text-7xl md:text-[10rem] leading-[0.9] mb-8">
@@ -49,200 +75,184 @@ export default async function HomePage() {
             Scrumptious
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#f8f8f8]/80 leading-8">
-            Luxury eggless cakes, dessert tables and unforgettable event
-            experiences crafted for weddings, birthdays and premium
-            celebrations.
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#f8f8f8]/80 leading-8 mb-12">
+            Handcrafted eggless cakes and desserts, styled dessert tables,
+            and live dessert experiences for celebrations, parties, weddings
+            and events across Harrow, London and beyond.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-5">
+            <a
+              href="/contact"
+              className="px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
+            >
+              Enquire Now
+            </a>
+            <a
+              href="/cakes"
+              className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+            >
+              Explore Cakes
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE OFFER */}
+      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6 text-center">
+            What We Offer
+          </p>
+
+          <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
+            Three Ways We Bring
+            <br />
+            The Scrumptious
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <a
+              href="/cakes"
+              className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+            >
+              <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
+              <p className="text-[#202b45]/70 leading-7">
+                Custom cakes for all occasions, plus cupcakes in a range of
+                flavours and box sizes.
+              </p>
+            </a>
+
+            <a
+              href="/desserts"
+              className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+            >
+              <h3 className="heading-font text-3xl mb-4">
+                Desserts & Dessert Tables
+              </h3>
+              <p className="text-[#202b45]/70 leading-7">
+                Individual desserts and beautifully styled dessert-table
+                experiences for any celebration.
+              </p>
+            </a>
+
+            <a
+              href="/live-desserts"
+              className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+            >
+              <h3 className="heading-font text-3xl mb-4">Live Desserts</h3>
+              <p className="text-[#202b45]/70 leading-7">
+                Our Live Mini Pancake Station, prepared fresh in front of
+                your guests.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CREATIVE / VISUAL SECTION */}
+      <section className="py-28 px-6 bg-[#202b45]">
+        <div className="max-w-7xl mx-auto">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
+            Our Work
+          </p>
+
+          <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
+            Made To Impress
+          </h2>
+
+          {featured.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {featured.map((item: any) => (
+                <div
+                  key={item._id}
+                  className="rounded-[2rem] overflow-hidden shadow-xl"
+                >
+                  <img
+                    src={urlFor(item.image).width(800).url()}
+                    alt={item.caption || item.category || 'Beyond Scrumptious'}
+                    className="w-full aspect-[4/5] object-cover hover:scale-105 transition duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-[#f8f8f8]/50">
+              New photos coming soon — see our full gallery below.
+            </p>
+          )}
+
+          <div className="text-center mt-14">
+            <a
+              href="/gallery"
+              className="inline-block px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
+            >
+              View Full Gallery
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* EVENTS */}
+      <section className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            Celebrations & Events
+          </p>
+
+          <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
+            For Every Kind
+            <br />
+            Of Celebration
+          </h2>
+
+          <p className="text-lg leading-8 text-[#202b45]/70">
+            Birthdays, weddings, mehndis, baby showers, corporate events and
+            everything in between — every order is built around what you
+            need for your occasion.
           </p>
         </div>
       </section>
 
-      {/* FEATURED PRODUCTS */}
-      <section
-        id="cakes"
-        className="bg-[#cfd7e2] text-[#202b45] py-28 px-6"
-      >
-        <div className="max-w-7xl mx-auto">
-          <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
-            Featured Creations
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {products.map((product: any) => (
-              <div
-                key={product._id}
-                className="rounded-[2rem] overflow-hidden bg-[#f8f8f8] shadow-xl hover:-translate-y-2 transition duration-300"
-              >
-                <img
-                  src={urlFor(product.image).url()}
-                  alt={product.title}
-                  className="w-full aspect-[4/5] object-cover"
-                />
-
-                <div className="p-8">
-
-
-                  <p className="text-[#202b45]/70 uppercase tracking-[0.2em] text-sm">
-                    {product.category}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BRAND STORY */}
+      {/* LIVE DESSERT FEATURE */}
       <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Egg-Free Delights Made To Impress
-            </p>
-
-            <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
-              Sweet Moments,
-              <br />
-              Beautifully Served
-            </h2>
-
-            <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-8">
-              Welcome to Beyond Scrumptious — home of handcrafted eggless
-              cakes, cupcakes, cheesecakes and luxury desserts.
-            </p>
-
-            <p className="uppercase tracking-[0.3em] text-sm text-[#cfd7e2]">
-              Eggless • Custom Made • Fresh Quality Ingredients
-            </p>
-          </div>
-
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl">
-            <img
-              src="/images/featurecake.jpg"
-              alt="Luxury Cakes"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY CTA */}
-      <section className="bg-[#cfd7e2] py-24 px-6 text-center text-[#202b45]">
-
-        <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-          Our Work
-        </p>
-
-        <h2 className="heading-font text-5xl md:text-7xl mb-8">
-          Desserts That Steal
-          <br />
-          The Spotlight
-        </h2>
-
-        <p className="max-w-3xl mx-auto text-lg leading-8 text-[#202b45]/70 mb-12">
-          Explore our full collection of handcrafted cakes, dessert tables,
-          luxury event setups and unforgettable creations.
-        </p>
-
-        <a
-          href="/gallery"
-          className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] hover:bg-[#8992a3] transition duration-300"
-        >
-          View Full Gallery
-        </a>
-
-      </section>
-
-      {/* DESSERT TABLE SETUPS */}
-      <section
-        id="desserts"
-        className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]"
-      >
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Weddings • Mehndis • Luxury Events
-            </p>
-
-            <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
-              Dessert Table
-              <br />
-              Setups
-            </h2>
-
-            <p className="text-[#f8f8f8]/70 leading-8 text-lg mb-8">
-              Elegant dessert table styling curated beautifully for weddings,
-              birthdays, mehndis and premium celebrations.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 mb-10 text-sm uppercase tracking-[0.2em] text-[#cfd7e2]">
-              <div>🍰 Luxury Desserts</div>
-              <div>✨ Elegant Styling</div>
-              <div>🍓 Fresh Handmade Treats</div>
-              <div>🎉 Event Ready Setup</div>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl">
-            <img
-              src="/images/Sagai Ceremony - 131.jpg"
-              alt="Dessert Table Setup"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* LIVE DESSERT STATIONS */}
-      <section className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-
           <div className="rounded-[2rem] overflow-hidden shadow-2xl order-2 md:order-1">
             <img
               src="/images/otgpic.jpg"
-              alt="Live Dessert Station"
+              alt="Live Mini Pancake Station"
               className="w-full h-full object-cover"
             />
           </div>
 
           <div className="order-1 md:order-2">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-              NEW! | Live Mini Pancake Stations
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+              Live Mini Pancake Station
             </p>
 
-            <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
-              Live Dessert
+            <h2 className="heading-font text-5xl md:text-6xl leading-tight mb-8">
+              Live Desserts,
               <br />
-              Stations
+              Live Reactions
             </h2>
 
-            <p className="text-[#202b45]/70 leading-8 text-lg mb-8">
-              Freshly made mini pancakes cooked live in front of your guests
-              with luxury toppings, sauces and interactive presentation
-              designed to create unforgettable moments.
+            <p className="text-[#f8f8f8]/70 leading-8 text-lg mb-8">
+              Freshly made mini pancakes, cooked live in front of your
+              guests and served with your choice of toppings and sauces.
+              Expanding the live dessert side of the business is a big part
+              of where we're headed next.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mb-10 text-sm uppercase tracking-[0.2em] text-[#202b45]">
-              <div>🥞 Fresh Mini Pancakes</div>
-              <div>🍫 Luxury Sauces</div>
-              <div>🍓 Fresh Fruit Toppings</div>
-              <div>🎉 Live Interactive Setup</div>
-            </div>
+            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 mb-10">
+              More coming soon
+            </p>
 
             <div className="flex gap-4 flex-wrap">
               <a
-                href="#contact"
-                className="px-8 py-4 bg-[#202b45] text-[#f8f8f8] rounded-full hover:bg-[#8992a3] transition"
-              >
-                Book Your Event
-              </a>
-
-              <a
                 href="/live-desserts"
-                target="_blank"
-                className="px-8 py-4 border border-[#202b45]/20 rounded-full hover:bg-[#8992a3] hover:text-white transition"
+                className="px-8 py-4 bg-[#f8f8f8] text-[#202b45] rounded-full hover:bg-[#cfd7e2] transition"
               >
-                Learn More
+                Explore Live Desserts
               </a>
             </div>
           </div>
@@ -250,9 +260,9 @@ export default async function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-[#202b45] text-[#f8f8f8] py-28 px-6">
+      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
             Client Love
           </p>
 
@@ -261,89 +271,79 @@ export default async function HomePage() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-10 shadow-lg">
-              <p className="leading-8 mb-6">
-                “The dessert station completely transformed our wedding.”
-              </p>
-
-              <h3 className="heading-font text-2xl">
-                Priya & Sam
-              </h3>
-            </div>
-
-            <div className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-10 shadow-lg">
-              <p className="leading-8 mb-6">
-                “The cakes looked unreal and tasted even better.”
-              </p>
-
-              <h3 className="heading-font text-2xl">
-                Aisha Patel
-              </h3>
-            </div>
-
-            <div className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-10 shadow-lg">
-              <p className="leading-8 mb-6">
-                “Professional, luxury and genuinely unforgettable.”
-              </p>
-
-              <h3 className="heading-font text-2xl">
-                Luxe Events UK
-              </h3>
-            </div>
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-10 shadow-lg flex flex-col"
+              >
+                <p className="leading-7 mb-6 text-left">&ldquo;{t.quote}&rdquo;</p>
+                <h3 className="heading-font text-xl mt-auto text-left">{t.name}</h3>
+                <p className="text-xs uppercase tracking-[0.2em] text-[#202b45]/50 text-left">
+                  {t.source}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section
-        id="contact"
-        className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]"
-      >
+      {/* OUR STORY TEASER */}
+      <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            Our Story
+          </p>
+
+          <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
+            From A Love Of Baking
+            <br />
+            To A Proper Business
+          </h2>
+
+          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-10">
+            Beyond Scrumptious began in April 2021 from a genuine enjoyment
+            of making cakes and exploring the creative side of desserts. It
+            became an official business in October 2021 — and in 2025, live
+            desserts joined the menu.
+          </p>
+
+          <a
+            href="/our-story"
+            className="inline-block px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
+          >
+            Read Our Story
+          </a>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section id="contact" className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
         <div className="max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-            Let’s Create Something Scrumptious
+            Let's Create Something Scrumptious
           </p>
 
           <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-10">
-            Enquire About Your Event
+            Enquire For A
+            <br />
+            Custom Quote
           </h2>
 
           <p className="text-[#202b45]/70 text-lg leading-8 max-w-2xl mx-auto mb-14">
-            From intimate celebrations to luxury weddings and branded
-            events, we create dessert experiences tailored to your vision.
+            Tell us about your event and we'll get back to you with a quote
+            tailored to what you need.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-5">
-            <a
-              href="mailto:hello@beyondscrumptious.com"
-              className="px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
-            >
-              Email Us
-            </a>
-
-            <a
-              href="https://instagram.com/beyond.scrumptious"
-              target="_blank"
-              className="px-10 py-5 rounded-full border border-[#202b45]/20 text-sm uppercase tracking-[0.2em]"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://wa.me/447933903000"
-              target="_blank"
-              className="px-10 py-5 rounded-full border border-[#202b45]/20 text-sm uppercase tracking-[0.2em]"
-            >
-              WhatsApp
-            </a>
-          </div>
-          <div className="flex justify-center gap-8 mt-16 text-sm uppercase tracking-[0.2em] text-[#202b45]/60">
-            <a href="/">Home</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/terms">Terms & Conditions</a>
-          </div>
+          <a
+            href="/contact"
+            className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
+          >
+            Enquire Now
+          </a>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }

@@ -1,4 +1,5 @@
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 
 export default function TermsPage() {
@@ -211,6 +212,8 @@ export default function TermsPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }

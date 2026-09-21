@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'product',
-  title: 'Product',
+  title: 'Gallery Image',
   type: 'document',
 
   fields: [
@@ -13,6 +13,14 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'caption',
+      title: 'Caption',
+      type: 'string',
+      description: 'Short caption shown under the image in the gallery (optional).',
     }),
 
     defineField({
@@ -22,18 +30,47 @@ export default defineType({
       options: {
         list: [
           {title: 'Cakes', value: 'cakes'},
+          {title: 'Cupcakes', value: 'cupcakes'},
+          {title: 'Desserts', value: 'desserts'},
           {title: 'Dessert Tables', value: 'dessert-tables'},
           {title: 'Live Desserts', value: 'live-desserts'},
-          {title: 'Weddings', value: 'weddings'},
+          {title: 'Events', value: 'events'},
         ],
       },
     }),
 
     defineField({
       name: 'featured',
-      title: 'Featured Product',
+      title: 'Featured Image',
+      description: 'Show this image in the "Featured Creations" section on the homepage.',
       type: 'boolean',
       initialValue: false,
     }),
+
+    defineField({
+      name: 'order',
+      title: 'Order',
+      description: 'Lower numbers appear first in the gallery. Leave blank to sort by newest.',
+      type: 'number',
+    }),
   ],
+
+  orderings: [
+    {
+      title: 'Display order',
+      name: 'orderAsc',
+      by: [
+        {field: 'order', direction: 'asc'},
+        {field: '_createdAt', direction: 'desc'},
+      ],
+    },
+  ],
+
+  preview: {
+    select: {
+      title: 'category',
+      subtitle: 'caption',
+      media: 'image',
+    },
+  },
 })

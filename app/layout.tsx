@@ -8,8 +8,13 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Beyond Scrumptious',
-  description: 'Luxury dessert experiences',
+  metadataBase: new URL('https://www.beyondscrumptious.com'),
+  title: {
+    default: 'Beyond Scrumptious',
+    template: '%s',
+  },
+  description:
+    'Handcrafted eggless cakes, desserts, dessert tables and live dessert experiences in Harrow, London.',
 }
 
 export default function RootLayout({

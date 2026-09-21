@@ -1,7 +1,36 @@
-'use client'
-
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
+
+const toppings = [
+  'Oreo Crumbs',
+  'Biscoff Crumbs',
+  'Mini Marshmallows',
+  'Sprinkles',
+  'Kunafa',
+  'Fresh Chopped Strawberries',
+  'Seasonal Fruits',
+  'Smarties',
+]
+
+const sauces = [
+  'Milk Chocolate Sauce',
+  'White Chocolate Sauce',
+  'Biscoff Sauce',
+  'Mango Sauce',
+]
+
+const packages = [
+  { name: 'Classic', detail: '2 toppings + 2 sauces' },
+  { name: 'Deluxe', detail: '4 toppings + 4 sauces' },
+  { name: 'Signature', detail: '6 toppings + 6 sauces' },
+]
+
+export const metadata = {
+  title: 'Live Desserts | Beyond Scrumptious',
+  description:
+    'Live Mini Pancake Station — freshly made mini pancakes cooked live at your event, with a choice of toppings and sauces.',
+}
 
 export default function LiveDessertsPage() {
   return (
@@ -12,7 +41,6 @@ export default function LiveDessertsPage() {
       {/* HERO */}
       <section className="pt-40 pb-24 px-6 text-center">
         <div className="max-w-5xl mx-auto">
-
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
             Beyond Scrumptious
           </p>
@@ -26,16 +54,16 @@ export default function LiveDessertsPage() {
           </h1>
 
           <p className="max-w-4xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70">
-            Bring the fun and the flavour to your next celebration with our Live Dutch Pancake Station — where fluffy, golden mini pancakes are cooked fresh on-site, filling the air with that irresistible aroma.
+            Our Live Mini Pancake Station brings fluffy, eggless mini
+            pancakes to your event — cooked fresh on-site and served with
+            your choice of toppings and sauces.
           </p>
-
         </div>
       </section>
 
       {/* VIDEOS */}
       <section className="pb-32 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-
           <div className="rounded-[2rem] overflow-hidden shadow-2xl bg-black">
             <video
               controls
@@ -43,10 +71,7 @@ export default function LiveDessertsPage() {
               preload="metadata"
               className="w-full h-full object-cover"
             >
-              <source
-                src="/videos/live1.mp4"
-                type="video/mp4"
-              />
+              <source src="/videos/live1.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -57,100 +82,58 @@ export default function LiveDessertsPage() {
               preload="metadata"
               className="w-full h-full object-cover"
             >
-              <source
-                src="/videos/live2.mp4"
-                type="video/mp4"
-              />
+              <source src="/videos/live2.mp4" type="video/mp4" />
             </video>
           </div>
-
         </div>
       </section>
 
-      {/* WHAT'S INCLUDED */}
+      {/* PACKAGES */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
         <div className="max-w-6xl mx-auto">
-
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-              What's Included
+              Packages
             </p>
-
-            <h2 className="heading-font text-5xl md:text-7xl mb-8">
-              Every Setup Includes
+            <h2 className="heading-font text-5xl md:text-7xl">
+              Classic, Deluxe & Signature
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                🥞 Mini Pancakes
-              </h3>
-
-              <p className="leading-8 text-[#202b45]/70">
-                Soft, golden and freshly made before your guests.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                🍳 100% Eggless Batter
-              </h3>
-
-              <p className="leading-8 text-[#202b45]/70">
-                Perfect for everyone to enjoy.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                🎡 Live Pancake Setup
-              </h3>
-
-              <p className="leading-8 text-[#202b45]/70">
-                Compact, stylish and fully event-ready.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                🍬 Toppings & Sauces Bar
-              </h3>
-
-              <p className="leading-8 text-[#202b45]/70">
-                Colourful, flavourful and impossible to resist.
-              </p>
-            </div>
-
+          <div className="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.name}
+                className="bg-white rounded-[2rem] p-10 shadow-xl text-center"
+              >
+                <h3 className="heading-font text-3xl mb-4">{pkg.name}</h3>
+                <p className="text-[#202b45]/70 leading-7">{pkg.detail}</p>
+              </div>
+            ))}
           </div>
+
+          <p className="text-center mt-10 text-[#202b45]/60 uppercase tracking-[0.2em] text-sm">
+            Get in touch for a custom quote
+          </p>
         </div>
       </section>
 
-      {/* TOPPINGS */}
+      {/* TOPPINGS & SAUCES */}
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
-
           <div>
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               The Toppings Bar
             </p>
 
             <h2 className="heading-font text-5xl md:text-6xl mb-10">
-              Toppings That Make
-              <br />
-              It Irresistible
+              Current Toppings
             </h2>
 
             <div className="grid grid-cols-2 gap-4 text-lg text-[#f8f8f8]/80">
-              <div>Oreo Crumbs</div>
-              <div>Biscoff Crumbs</div>
-              <div>Mini Marshmallows</div>
-              <div>Sprinkles</div>
-              <div>Kunafa</div>
-              <div>Chocolate Cake Pieces</div>
-              <div>Fresh Fruits 🍓🥭</div>
-              <div>Whipped Cream</div>
+              {toppings.map((t) => (
+                <div key={t}>{t}</div>
+              ))}
             </div>
           </div>
 
@@ -160,106 +143,88 @@ export default function LiveDessertsPage() {
             </p>
 
             <h2 className="heading-font text-5xl md:text-6xl mb-10">
-              Sauce It Up —
-              <br />
-              Your Way
+              Current Sauces
             </h2>
 
             <div className="grid grid-cols-2 gap-4 text-lg text-[#f8f8f8]/80">
-              <div>Milk Chocolate</div>
-              <div>White Chocolate</div>
-              <div>Biscoff</div>
-              <div>Cookies & Cream</div>
-              <div>Pistachio</div>
-              <div>Mango</div>
-              <div>Salted Caramel</div>
-              <div>Strawberry</div>
-              <div>Dark Chocolate</div>
+              {sauces.map((s) => (
+                <div key={s}>{s}</div>
+              ))}
             </div>
-
-            <p className="mt-8 text-[#cfd7e2]">
-              ✨ Custom toppings and sauces available on request.
-            </p>
           </div>
-
         </div>
       </section>
 
-      {/* OCCASIONS */}
+      {/* GUEST COUNT / LOGISTICS */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-            Made For Every Occasion
-          </p>
-
-          <h2 className="heading-font text-5xl md:text-7xl mb-10">
-            Luxury Dessert
-            <br />
-            Experiences
-          </h2>
-
-          <p className="text-lg leading-8 text-[#202b45]/70">
-            Whether it’s an elegant wedding, a vibrant mehndi or a luxury birthday celebration, our Live Mini Pancake Station brings guests together through the love of dessert.
-          </p>
-
-        </div>
-      </section>
-
-      {/* ADD ONS */}
-      <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-
-          <div className="text-center mb-20">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Make It Even More Special
+          <div className="text-center mb-16">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+              Good To Know
             </p>
-
-            <h2 className="heading-font text-5xl md:text-7xl">
-              Premium Add-Ons
+            <h2 className="heading-font text-4xl md:text-6xl">
+              Guest Numbers & Setup
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-
-            <div className="bg-[#cfd7e2] text-[#202b45] rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                ✨ Branded Setup
-              </h3>
-
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+              <h3 className="heading-font text-2xl mb-4">Guest Count</h3>
               <p className="leading-8 text-[#202b45]/70">
-                Add your logo, colours or custom styling.
+                There's no minimum number of guests. For smaller events, a
+                minimum booking charge applies. Get in touch and we'll
+                provide a quote based on your event.
               </p>
             </div>
 
-            <div className="bg-[#cfd7e2] text-[#202b45] rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                🍰 Dessert Bar Add-On
-              </h3>
-
+            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+              <h3 className="heading-font text-2xl mb-4">Space & Setup</h3>
               <p className="leading-8 text-[#202b45]/70">
-                Pair pancakes with cupcakes, cheesecakes and dessert pots.
+                We generally need approximately 6ft of table space and power
+                within approximately 4.5m. Setup takes approximately 45–60
+                minutes.
               </p>
             </div>
 
-            <div className="bg-[#cfd7e2] text-[#202b45] rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-3xl mb-4">
-                🪩 Themed Presentation
-              </h3>
-
+            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+              <h3 className="heading-font text-2xl mb-4">Travel</h3>
               <p className="leading-8 text-[#202b45]/70">
-                Custom signage, props and serving ware available.
+                Live dessert services can travel outside London — get in
+                touch with your location for a quote.
               </p>
             </div>
 
+            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+              <h3 className="heading-font text-2xl mb-4">
+                Dietary Requirements
+              </h3>
+              <p className="leading-8 text-[#202b45]/70">
+                Vegan pancakes are cooked on the same griddle as standard
+                pancakes unless a separate arrangement is agreed in writing,
+                and dairy cross-contact cannot be guaranteed.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* MORE COMING SOON */}
+      <section className="py-40 px-6 text-center bg-[#202b45]">
+        <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          What's Next
+        </p>
+        <h2 className="heading-font text-5xl md:text-7xl mb-8">
+          More Coming Soon
+        </h2>
+        <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+          We're growing the live dessert side of Beyond Scrumptious — keep
+          an eye out for what's next.
+        </p>
       </section>
 
       {/* CONTACT CTA */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 text-center">
         <div className="max-w-4xl mx-auto">
-
           <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-10">
             Book Your Live
             <br />
@@ -267,38 +232,19 @@ export default function LiveDessertsPage() {
           </h2>
 
           <p className="text-lg leading-8 text-[#202b45]/70 mb-12">
-            Let’s make your event extra sweet — live and in the moment.
+            Let's make your event extra sweet — live and in the moment.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-5">
-
-            <a
-              href="mailto:hello@beyondscrumptious.com"
-              className="px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] hover:bg-[#8992a3] transition"
-            >
-              Email Us
-            </a>
-
-            <a
-              href="https://wa.me/447933903000"
-              target="_blank"
-              className="px-10 py-5 rounded-full border border-[#202b45]/20"
-            >
-              WhatsApp
-            </a>
-
-            <a
-              href="https://instagram.com/beyond.scrumptious"
-              target="_blank"
-              className="px-10 py-5 rounded-full border border-[#202b45]/20"
-            >
-              Instagram
-            </a>
-
-          </div>
-
+          <a
+            href="/contact"
+            className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] hover:bg-[#8992a3] transition"
+          >
+            Enquire Now
+          </a>
         </div>
       </section>
+
+      <Footer />
     </main>
   )
 }

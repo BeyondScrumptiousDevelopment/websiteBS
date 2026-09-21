@@ -3,6 +3,15 @@
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
+const navLinks = [
+  { href: '/cakes', label: 'Cakes' },
+  { href: '/desserts', label: 'Desserts & Dessert Tables' },
+  { href: '/live-desserts', label: 'Live Desserts' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/our-story', label: 'Our Story' },
+  { href: '/faq', label: 'FAQ' },
+]
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
@@ -19,42 +28,26 @@ export default function Navbar() {
         </a>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex gap-10 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80">
+        <div className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] text-[#f8f8f8]/80">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-white transition">
+              {link.label}
+            </a>
+          ))}
 
-          <a href="/#cakes">
-            Cakes
+          <a
+            href="/contact"
+            className="px-6 py-3 rounded-full bg-[#f8f8f8] text-[#202b45] hover:bg-[#cfd7e2] transition"
+          >
+            Enquire Now
           </a>
-
-          <a href="/gallery">
-            Gallery
-          </a>
-
-          <a href="/live-desserts">
-            Live Desserts
-          </a>
-
-          <a href="/faq">
-            FAQ
-          </a>
-
-          <a href="/#desserts">
-            Desserts
-          </a>
-
-          <a href="/#contact">
-            Contact
-          </a>
-
-          <a href="/terms">
-            Terms
-          </a>
-
         </div>
 
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl"
+          className="lg:hidden text-2xl"
+          aria-label="Toggle menu"
         >
           {open ? <FaTimes /> : <FaBars />}
         </button>
@@ -63,36 +56,19 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80 bg-[#202b45] p-6 rounded-3xl">
+        <div className="lg:hidden flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80 bg-[#202b45] p-6 rounded-3xl">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
 
-          <a href="/#cakes">
-            Cakes
+          <a
+            href="/contact"
+            className="px-6 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] text-center normal-case tracking-normal"
+          >
+            Enquire Now
           </a>
-
-          <a href="/gallery">
-            Gallery
-          </a>
-
-          <a href="/live-desserts">
-            Live Desserts
-          </a>
-
-          <a href="/faq">
-            FAQ
-          </a>
-
-          <a href="/#desserts">
-            Desserts
-          </a>
-
-          <a href="/#contact">
-            Contact
-          </a>
-
-          <a href="/terms">
-            Terms
-          </a>
-
         </div>
       )}
     </nav>
