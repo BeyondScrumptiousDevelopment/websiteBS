@@ -117,7 +117,7 @@ const faqGroups = [
       {
         question: 'What toppings and sauces are available?',
         answer:
-          'Toppings: Oreo crumbs, Biscoff crumbs, mini marshmallows, sprinkles, kunafa, fresh chopped strawberries, seasonal fruits and Smarties. Sauces: milk chocolate, white chocolate, Biscoff and mango.',
+          'Toppings: Oreo crumbs, Biscoff crumbs, mini marshmallows, sprinkles, kunafa, fresh chopped strawberries, Smarties, homemade cake pieces and nuts (pistachios or hazelnuts). Sauces: milk chocolate, white chocolate, Biscoff, mango, pistachio and chocolate hazelnut. Don’t see what you’re after? Custom options can often be arranged on request.',
       },
       {
         question: 'Is there a minimum number of guests?',

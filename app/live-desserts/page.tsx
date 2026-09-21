@@ -10,15 +10,18 @@ const toppings = [
   'Sprinkles',
   'Kunafa',
   'Fresh Chopped Strawberries',
-  'Seasonal Fruits',
   'Smarties',
+  'Homemade Cake Pieces',
+  'Nuts (Pistachios or Hazelnuts)',
 ]
 
 const sauces = [
-  'Milk Chocolate Sauce',
-  'White Chocolate Sauce',
+  'Milk Chocolate',
+  'White Chocolate',
   'Biscoff Sauce',
   'Mango Sauce',
+  'Pistachio Sauce',
+  'Chocolate Hazelnut Sauce',
 ]
 
 const packages = [
@@ -179,23 +182,11 @@ export default function LiveDessertsPage() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* CUSTOM TOPPINGS */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-            Something Different?
-          </p>
-          <h2 className="heading-font text-4xl md:text-6xl mb-8">
-            Custom Toppings & Sauces Available
-          </h2>
-          <p className="text-lg leading-8 text-[#202b45]/70">
-            Looking for a topping or sauce outside our current selection?
-            Custom toppings and sauces can be arranged on request — just let
-            us know what you have in mind when you enquire.
-          </p>
-        </div>
+        <p className="max-w-3xl mx-auto text-center mt-16 text-[#cfd7e2]/70 leading-7">
+          Don't see what you're after? Custom toppings and sauces can often
+          be arranged on request — just let us know when you enquire.
+        </p>
       </section>
 
       {/* GUEST COUNT / LOGISTICS */}
