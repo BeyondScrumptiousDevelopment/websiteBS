@@ -95,6 +95,14 @@ export default function DiwaliOrderForm() {
           autoComplete="off"
         />
 
+        {state.errors && state.errors.getFormErrors().length > 0 && (
+          <div className="bg-red-500/10 border border-red-500/40 rounded-xl p-5 text-red-200 text-sm">
+            {state.errors.getFormErrors().map((err, i) => (
+              <p key={i}>{err.message}</p>
+            ))}
+          </div>
+        )}
+
         {/* DETAILS */}
         <div className="grid md:grid-cols-2 gap-6">
           <Field label="Name">
