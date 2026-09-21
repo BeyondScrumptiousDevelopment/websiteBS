@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { urlFor } from '../../sanity/lib/image'
+import { urlFor, altTextFor } from '../../sanity/lib/image'
 
 type Product = {
   _id: string
@@ -60,7 +60,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
             >
               <img
                 src={urlFor(product.image).width(900).url()}
-                alt={product.caption || product.category || 'Beyond Scrumptious'}
+                alt={altTextFor(product)}
                 loading="lazy"
                 className="w-full hover:scale-[1.02] transition duration-300"
               />
@@ -96,7 +96,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
 
           <img
             src={urlFor(lightbox.image).width(1600).url()}
-            alt={lightbox.caption || lightbox.category || 'Beyond Scrumptious'}
+            alt={altTextFor(lightbox)}
             className="max-h-[85vh] max-w-full rounded-2xl object-contain"
           />
         </div>

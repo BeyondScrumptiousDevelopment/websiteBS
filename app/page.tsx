@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { client } from '../sanity/lib/client'
-import { urlFor } from '../sanity/lib/image'
+import { urlFor, altTextFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
 import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
 import TrustBadges from '../components/TrustBadges'
@@ -154,7 +154,7 @@ export default async function HomePage() {
                 >
                   <img
                     src={urlFor(item.image).width(800).url()}
-                    alt={item.caption || item.category || 'Beyond Scrumptious'}
+                    alt={altTextFor(item)}
                     className="w-full h-auto hover:scale-105 transition duration-500"
                   />
                 </div>

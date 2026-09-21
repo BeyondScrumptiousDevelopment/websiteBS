@@ -178,11 +178,30 @@ const faqGroups = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqGroups.flatMap((group) =>
+    group.items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    }))
+  ),
+}
+
 export default function FAQContent() {
   const [open, setOpen] = useState<string | null>('0-0')
 
   return (
     <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       <WhatsAppButton />
 
