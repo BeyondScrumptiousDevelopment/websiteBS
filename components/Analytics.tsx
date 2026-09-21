@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Script from 'next/script'
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+const GA_ID = 'G-YP8PFRH5ZN'
 
 type Consent = 'granted' | 'denied' | null
 

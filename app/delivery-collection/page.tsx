@@ -29,10 +29,9 @@ export default function DeliveryCollectionPage() {
                 Cakes & Desserts
               </h2>
               <p>
-                Collection is available for cakes and desserts. Our
-                collection address is private and is shared directly with
-                you once your order is confirmed. Ordinary cakes and
-                desserts don't currently have standard delivery.
+                Collection only — we don't offer delivery for cakes or
+                individual desserts. Our collection address is private and
+                is shared directly with you once your order is confirmed.
               </p>
             </div>
 

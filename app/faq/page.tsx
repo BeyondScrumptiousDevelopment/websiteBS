@@ -158,7 +158,7 @@ const faqGroups = [
       {
         question: 'When is payment due?',
         answer:
-          'Final payment is normally due 1 week before your event, subject to the specific terms of your booking/quote.',
+          'It depends on your order — smaller orders are usually paid in full at booking, while larger orders may need a deposit to secure the date with the balance due by a date set out in your quote or Booking Agreement. See our Terms & Conditions for full details.',
       },
       {
         question: 'Can I make changes after booking?',
