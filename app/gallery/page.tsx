@@ -7,6 +7,12 @@ import GalleryGrid from './GalleryGrid'
 export const runtime = 'edge'
 export const revalidate = 0
 
+export const metadata = {
+  title: 'Gallery | Beyond Scrumptious',
+  description:
+    'Handcrafted cakes, desserts, dessert tables and live dessert experiences from Beyond Scrumptious — Harrow, London.',
+}
+
 async function getProducts() {
   try {
     return await client.fetch(`

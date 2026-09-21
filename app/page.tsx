@@ -4,6 +4,7 @@ import { client } from '../sanity/lib/client'
 import { urlFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
 import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
+import TrustBadges from '../components/TrustBadges'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -78,6 +79,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <TrustBadges />
 
       {/* WHAT WE OFFER */}
       <section id="offer" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
