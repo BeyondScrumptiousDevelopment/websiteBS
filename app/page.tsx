@@ -5,6 +5,7 @@ import { urlFor, altTextFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
 import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
 import TrustBadges from '../components/TrustBadges'
+import DiwaliPopup from '../components/DiwaliPopup'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -31,6 +32,7 @@ export default async function HomePage() {
     <main className="bg-[#202b45] text-[#f8f8f8] overflow-hidden">
       <Navbar />
       <WhatsAppButton />
+      <DiwaliPopup />
 
       {/* HERO */}
       <section className="relative h-screen flex items-center justify-center text-center px-6">
