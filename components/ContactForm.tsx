@@ -258,16 +258,6 @@ export default function ContactForm() {
                       </label>
                     </div>
 
-                    {topic === 'Cake' && (
-                      <Field label="Reference / Inspiration Image (optional)">
-                        <input
-                          type="file"
-                          name="reference_image"
-                          accept="image/*"
-                          className={`${inputClass} py-3`}
-                        />
-                      </Field>
-                    )}
                   </div>
                 )}
 
@@ -306,7 +296,7 @@ export default function ContactForm() {
                     name="message"
                     rows={5}
                     required
-                    placeholder="e.g. theme/colours, roughly how many guests, venue or area, any dietary needs..."
+                    placeholder="e.g. design/theme/colours, roughly how many guests, venue or area, any dietary needs..."
                     className={inputClass}
                   />
                   <ValidationError

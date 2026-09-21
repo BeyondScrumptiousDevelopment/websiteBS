@@ -1,11 +1,11 @@
 import { FaStar } from 'react-icons/fa'
 
 const badges = [
-  'Handmade To Order',
-  'Gelatine-Free',
+  'Handmade With Love',
+  'Fully Customisable',
   'Pure Vegetarian & Eggless',
-  'Custom Designs',
-  'Based In Harrow, London',
+  'From Cakes To Live Desserts',
+  'Proudly Harrow, London',
 ]
 
 export default function TrustBadges() {

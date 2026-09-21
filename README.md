@@ -24,6 +24,33 @@ Photos are managed through Sanity Studio, run separately from this app
 reorder and feature gallery images — changes show up on `/gallery` and the
 homepage right away.
 
+## Bulk Uploading Photos
+
+Adding photos one at a time in Studio is fine for a handful, but for a big
+batch use `scripts/bulk-upload.mjs`:
+
+```bash
+SANITY_API_TOKEN=sk_your_token node scripts/bulk-upload.mjs ./my-photos
+```
+
+Organise the folder with one subfolder per category first:
+
+```
+my-photos/
+  cakes/birthday-cake-1.jpg
+  cakes/wedding-cake.jpg
+  live-desserts/pancake-station.jpg
+```
+
+Subfolder names must be one of: `cakes`, `cupcakes`, `desserts`,
+`dessert-tables`, `live-desserts`, `events`. Each image becomes a gallery
+entry captioned from its filename — check them over in Studio afterwards
+and tweak captions/featured/order as needed.
+
+Get a token at sanity.io/manage → your project → API → Tokens → Add API
+token (permission: Editor). Treat it like a password — don't commit it,
+and revoke it from the same page once you're done with a one-off import.
+
 ## Sanity Studio
 
 Studio isn't bundled into this Next.js app (that used to cause build/size
