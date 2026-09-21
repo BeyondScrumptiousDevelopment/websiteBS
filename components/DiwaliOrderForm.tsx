@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 
 // TODO: replace with the real Diwali order Formspree form ID once provided.
-const FORMSPREE_DIWALI_ID = 'REPLACE_WITH_DIWALI_FORM_ID'
+const FORMSPREE_DIWALI_ID = 'xzezrdzj'
 
 type Box = '6' | '12'
 type FlavourMode = 'one' | 'two'
