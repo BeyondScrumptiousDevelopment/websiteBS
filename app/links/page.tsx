@@ -33,7 +33,13 @@ export default function LinksPage() {
   return (
     <main className="min-h-screen bg-[#202b45] text-[#f8f8f8] flex flex-col items-center px-6 py-16">
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
-        <p className="logo-font text-4xl mb-2 text-center">Beyond Scrumptious</p>
+        <p className="logo-font text-5xl md:text-6xl mb-3 text-center leading-none">
+          Beyond
+          <br />
+          Scrumptious
+        </p>
+
+        <div className="w-12 h-px bg-[#cfd7e2]/40 my-5" />
 
         <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-2 text-center">
           Cakes • Desserts • Live Dessert Experiences

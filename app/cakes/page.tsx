@@ -1,6 +1,7 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
+import GallerySlideshow from '../../components/GallerySlideshow'
 
 const flavours = [
   'Vanilla',
@@ -98,6 +99,12 @@ export default function CakesPage() {
           </div>
         </div>
       </section>
+
+      <GallerySlideshow
+        category={['cakes', 'cupcakes']}
+        eyebrow="From The Gallery"
+        title="Recent Cakes & Cupcakes"
+      />
 
       {/* CUPCAKES */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">

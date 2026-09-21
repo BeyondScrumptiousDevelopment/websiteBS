@@ -1,6 +1,7 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
+import GallerySlideshow from '../../components/GallerySlideshow'
 
 const range = [
   {
@@ -133,6 +134,12 @@ export default function DessertsPage() {
           </div>
         </div>
       </section>
+
+      <GallerySlideshow
+        category={['desserts', 'dessert-tables']}
+        eyebrow="From The Gallery"
+        title="Recent Desserts & Tables"
+      />
 
       {/* DESSERT TABLE EXPERIENCE */}
       <section className="py-28 px-6">

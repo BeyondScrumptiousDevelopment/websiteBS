@@ -98,12 +98,21 @@ export default function PrivacyPolicyPage() {
                   standard technical data (such as IP address) as part of
                   serving the site securely.
                 </li>
+                <li>
+                  <strong className="text-white">Google Analytics</strong> —
+                  used only if you accept cookies via the banner shown on
+                  your first visit, to help us understand how visitors use
+                  the site. See our{' '}
+                  <a href="/cookie-policy" className="underline hover:text-white">
+                    Cookie Policy
+                  </a>{' '}
+                  for details and how to opt out.
+                </li>
               </ul>
               <p className="mt-4">
-                We don't currently use analytics tools, advertising pixels
-                or other tracking services on this website. If that
-                changes, this policy — and our Cookie Policy — will be
-                updated first.
+                We don't use advertising pixels or other tracking services
+                on this website. If that changes, this policy — and our
+                Cookie Policy — will be updated first.
               </p>
             </div>
 

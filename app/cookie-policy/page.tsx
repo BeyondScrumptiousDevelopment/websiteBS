@@ -29,11 +29,10 @@ export default function CookiePolicyPage() {
                 Our Approach
               </h2>
               <p>
-                This website is hosted on Cloudflare and does not currently
-                run any analytics, advertising, or marketing tracking
-                tools. We only use the essential technical cookies needed
-                to keep the site secure and running properly — there is
-                currently nothing non-essential to ask your consent for.
+                This website is hosted on Cloudflare. We use a small number
+                of essential cookies to keep the site secure and running
+                properly, and — only with your consent — Google Analytics
+                to understand how visitors use the site.
               </p>
             </div>
 
@@ -46,19 +45,43 @@ export default function CookiePolicyPage() {
                 strictly necessary cookies to protect the site from abuse
                 and keep it running reliably. These don't track you across
                 other websites and can't be switched off, as the site
-                can't function securely without them.
+                can't function securely without them. We also store your
+                cookie consent choice itself (accept/decline) in your
+                browser so we don't ask again on every visit.
               </p>
             </div>
 
             <div>
               <h2 className="heading-font text-3xl mb-4 text-white">
-                Non-Essential Cookies
+                Analytics Cookies (Google Analytics)
               </h2>
               <p>
-                We don't currently use analytics cookies, advertising
-                cookies or embedded third-party trackers. If we introduce
-                any of these in future, we'll update this page and ask for
-                your consent before they're set, where required by law.
+                With your consent, we use Google Analytics to understand
+                how visitors find and use this website — for example, which
+                pages are viewed and roughly how visitors arrived here.
+                Google Analytics sets cookies that collect information
+                anonymised or pseudonymised at the level Google provides;
+                we don't use it to individually identify you.
+              </p>
+              <p className="mt-4">
+                Google Analytics only loads after you accept cookies via the
+                banner shown on your first visit. If you decline, Google
+                Analytics is not loaded and no analytics cookies are set.
+                You can change your mind at any time by clearing your
+                browser's site data for this website, which will show the
+                banner again.
+              </p>
+              <p className="mt-4">
+                See{' '}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  Google's Privacy Policy
+                </a>{' '}
+                for how Google processes this data.
               </p>
             </div>
 

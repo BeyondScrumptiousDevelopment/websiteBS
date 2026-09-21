@@ -90,17 +90,17 @@ export default async function HomePage() {
               Enquire Now
             </a>
             <a
-              href="/cakes"
+              href="#offer"
               className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
             >
-              Explore Cakes
+              Explore
             </a>
           </div>
         </div>
       </section>
 
       {/* WHAT WE OFFER */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section id="offer" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6 text-center">
             What We Offer

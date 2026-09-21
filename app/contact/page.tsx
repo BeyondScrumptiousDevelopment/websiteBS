@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
+import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
@@ -22,6 +23,23 @@ const topics: Topic[] = [
   'Live Mini Pancake Station',
   'Other',
 ]
+
+const flavours = [
+  'Vanilla',
+  'Chocolate',
+  'Marble',
+  'Lemon',
+  'Raspberry',
+  'Oreo',
+  'Biscoff',
+  'Chocolate Orange',
+  'Black Forest',
+  'Kulfi',
+  'Tiramisu',
+  'Mix / Not sure yet',
+]
+
+const flavourBranches: Topic[] = ['Cake', 'Cupcakes', 'Desserts']
 
 const inputClass =
   'w-full rounded-xl bg-white/95 text-[#202b45] px-5 py-4 placeholder:text-[#202b45]/40 focus:outline-none focus:ring-2 focus:ring-[#202b45]/30'
@@ -88,19 +106,52 @@ export default function ContactPage() {
       <Navbar />
       <WhatsAppButton />
 
-      <section className="pt-40 pb-32 px-6">
+      <section className="pt-40 pb-16 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            Contact / Enquire
+          </p>
+          <h1 className="heading-font text-5xl md:text-7xl mb-8">
+            Enquire Now
+          </h1>
+          <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+            Prefer to skip the form? Message us directly — we're happy to
+            chat there too.
+          </p>
+        </div>
+      </section>
+
+      {/* DIRECT CONTACT OPTIONS */}
+      <section className="px-6 pb-20">
+        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-5">
+          <a
+            href="https://wa.me/447933903000"
+            target="_blank"
+            className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#f8f8f8] px-6 py-5 hover:bg-[#25D366]/20 transition"
+          >
+            <FaWhatsapp className="text-2xl text-[#25D366]" />
+            <span className="uppercase tracking-[0.15em] text-sm">
+              WhatsApp Us
+            </span>
+          </a>
+          <a
+            href="mailto:hello@beyondscrumptious.com"
+            className="flex items-center justify-center gap-3 rounded-2xl bg-white/5 border border-white/20 text-[#f8f8f8] px-6 py-5 hover:bg-white/10 transition"
+          >
+            <FaEnvelope className="text-2xl text-[#cfd7e2]" />
+            <span className="uppercase tracking-[0.15em] text-sm">
+              Email Us
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section className="px-6 pb-32">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Contact / Enquire
-            </p>
-            <h1 className="heading-font text-5xl md:text-7xl mb-8">
-              Enquire Now
-            </h1>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-              Tell us about your event and we'll come back to you with a
-              custom quote. Pricing isn't published on the site — every
-              order is quoted individually.
+          <div className="text-center mb-12">
+            <div className="h-px bg-white/10 mb-12" />
+            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60">
+              Or send us a quick enquiry
             </p>
           </div>
 
@@ -180,232 +231,82 @@ export default function ContactPage() {
                       className={inputClass}
                     />
                   </Field>
-
-                  <Field label="Event Type">
-                    <input
-                      type="text"
-                      name="event_type"
-                      placeholder="Birthday, wedding, mehndi..."
-                      className={inputClass}
-                    />
-                  </Field>
-
-                  <Field label="Venue / Location">
-                    <input
-                      type="text"
-                      name="venue"
-                      className={inputClass}
-                    />
-                  </Field>
-
-                  <Field label="Approximate Guest Numbers">
-                    <input
-                      type="text"
-                      name="guest_numbers"
-                      className={inputClass}
-                    />
-                  </Field>
                 </div>
 
-                {/* CAKE BRANCH */}
-                {topic === 'Cake' && (
+                {/* FLAVOUR (Cake / Cupcakes / Desserts) */}
+                {flavourBranches.includes(topic) && (
                   <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
-                    <Field label="Cake Flavour">
-                      <input
-                        type="text"
-                        name="cake_flavour"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Design / Theme">
-                      <input
-                        type="text"
-                        name="design_theme"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Approximate Requirements (servings, size...)">
-                      <input
-                        type="text"
-                        name="requirements"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Vegan Requirement">
-                      <select name="vegan_requirement" className={inputClass}>
-                        <option value="">Not required</option>
-                        <option value="Yes">Yes, needed</option>
-                        <option value="Maybe">Possibly / need to discuss</option>
+                    <Field label="Flavour">
+                      <select name="flavour" className={inputClass}>
+                        {flavours.map((f) => (
+                          <option key={f} value={f}>
+                            {f}
+                          </option>
+                        ))}
                       </select>
                     </Field>
-                    <Field label="Reference / Inspiration Image">
-                      <input
-                        type="file"
-                        name="reference_image"
-                        accept="image/*"
-                        className={`${inputClass} py-3`}
-                      />
-                    </Field>
+
+                    <div className="flex items-end pb-4">
+                      <label className="flex items-center gap-3 text-sm text-[#f8f8f8]/80">
+                        <input
+                          type="checkbox"
+                          name="vegan_requirement"
+                          value="Yes"
+                          className="w-5 h-5 rounded accent-[#f8f8f8]"
+                        />
+                        This needs to be vegan
+                      </label>
+                    </div>
+
+                    {topic === 'Cake' && (
+                      <Field label="Reference / Inspiration Image (optional)">
+                        <input
+                          type="file"
+                          name="reference_image"
+                          accept="image/*"
+                          className={`${inputClass} py-3`}
+                        />
+                      </Field>
+                    )}
                   </div>
                 )}
 
-                {/* CUPCAKE BRANCH */}
-                {topic === 'Cupcakes' && (
-                  <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
-                    <Field label="Quantity">
-                      <input
-                        type="text"
-                        name="quantity"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Flavour(s)">
-                      <input
-                        type="text"
-                        name="flavours"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Design / Theme">
-                      <input
-                        type="text"
-                        name="design_theme"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Deluxe Flavour Requirement">
-                      <select
-                        name="deluxe_requirement"
-                        className={inputClass}
-                      >
-                        <option value="">Not required</option>
-                        <option value="Yes">Yes, interested</option>
-                      </select>
-                    </Field>
-                    <Field label="Vegan Requirement">
-                      <select name="vegan_requirement" className={inputClass}>
-                        <option value="">Not required</option>
-                        <option value="Yes">Yes, needed</option>
-                        <option value="Maybe">Possibly / need to discuss</option>
-                      </select>
-                    </Field>
-                  </div>
-                )}
-
-                {/* DESSERT BRANCH */}
-                {topic === 'Desserts' && (
-                  <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
-                    <Field label="Dessert(s)">
-                      <input
-                        type="text"
-                        name="desserts"
-                        placeholder="e.g. Cheesecake pots, loaves..."
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Quantity">
-                      <input
-                        type="text"
-                        name="quantity"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Flavours">
-                      <input
-                        type="text"
-                        name="flavours"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Vegan Requirement">
-                      <select name="vegan_requirement" className={inputClass}>
-                        <option value="">Not required</option>
-                        <option value="Yes">Yes, needed</option>
-                        <option value="Maybe">Possibly / need to discuss</option>
-                      </select>
-                    </Field>
-                  </div>
-                )}
-
-                {/* DESSERT TABLE BRANCH */}
+                {/* DESSERT TABLE */}
                 {topic === 'Dessert Table' && (
-                  <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
-                    <Field label="Preferred Desserts">
-                      <input
-                        type="text"
-                        name="preferred_desserts"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Styling Requirements">
-                      <input
-                        type="text"
-                        name="styling_requirements"
-                        className={inputClass}
-                      />
-                    </Field>
+                  <div className="pt-4 border-t border-white/10">
                     <Field label="Service Option">
                       <select name="service_option" className={inputClass}>
-                        <option value="">Select an option</option>
+                        <option value="Not sure">Not sure yet</option>
                         <option value="Setup Only">Setup Only</option>
                         <option value="Setup + Staying Throughout">
                           Setup + Staying Throughout
                         </option>
-                        <option value="Not sure">Not sure yet</option>
                       </select>
                     </Field>
                   </div>
                 )}
 
-                {/* PANCAKE BRANCH */}
+                {/* PANCAKE STATION */}
                 {topic === 'Live Mini Pancake Station' && (
-                  <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+                  <div className="pt-4 border-t border-white/10">
                     <Field label="Package Preference">
                       <select name="package" className={inputClass}>
-                        <option value="">Not sure yet</option>
+                        <option value="Not sure">Not sure yet</option>
                         <option value="Classic">Classic (2 toppings + 2 sauces)</option>
                         <option value="Deluxe">Deluxe (4 toppings + 4 sauces)</option>
                         <option value="Signature">Signature (6 toppings + 6 sauces)</option>
                       </select>
                     </Field>
-                    <Field label="Indoor / Outdoor">
-                      <select name="indoor_outdoor" className={inputClass}>
-                        <option value="">Select</option>
-                        <option value="Indoor">Indoor</option>
-                        <option value="Outdoor">Outdoor</option>
-                        <option value="Both">Both / Not sure</option>
-                      </select>
-                    </Field>
-                    <Field label="Topping Choices">
-                      <input
-                        type="text"
-                        name="topping_choices"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Sauce Choices">
-                      <input
-                        type="text"
-                        name="sauce_choices"
-                        className={inputClass}
-                      />
-                    </Field>
-                    <Field label="Dietary Requirements">
-                      <input
-                        type="text"
-                        name="dietary_requirements"
-                        className={inputClass}
-                      />
-                    </Field>
                   </div>
                 )}
 
-                {/* MESSAGE */}
-                <Field label="Message / Details">
+                {/* DETAILS */}
+                <Field label="Tell Us More — Design, Guest Numbers, Venue, Anything Else">
                   <textarea
                     name="message"
                     rows={5}
                     required
+                    placeholder="e.g. theme/colours, roughly how many guests, venue or area, any dietary needs..."
                     className={inputClass}
                   />
                   <ValidationError

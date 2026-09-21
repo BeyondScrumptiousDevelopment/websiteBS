@@ -1,6 +1,7 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
+import GallerySlideshow from '../../components/GallerySlideshow'
 
 const toppings = [
   'Oreo Crumbs',
@@ -29,7 +30,7 @@ const packages = [
 export const metadata = {
   title: 'Live Desserts | Beyond Scrumptious',
   description:
-    'Live Mini Pancake Station — freshly made mini pancakes cooked live at your event, with a choice of toppings and sauces.',
+    'Live Mini Pancake Station — freshly made mini pancakes cooked live at your event, with a choice of toppings and sauces, plus custom options on request.',
 }
 
 export default function LiveDessertsPage() {
@@ -41,8 +42,12 @@ export default function LiveDessertsPage() {
       {/* HERO */}
       <section className="pt-40 pb-24 px-6 text-center">
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="logo-font text-3xl md:text-4xl mb-4 text-[#cfd7e2]">
             Beyond Scrumptious
+          </p>
+
+          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            Live Mini Pancake Station
           </p>
 
           <h1 className="heading-font text-5xl md:text-8xl leading-tight mb-10">
@@ -53,18 +58,33 @@ export default function LiveDessertsPage() {
             Live Joy.
           </h1>
 
-          <p className="max-w-4xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70">
+          <p className="max-w-4xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70 mb-12">
             Our Live Mini Pancake Station brings fluffy, eggless mini
             pancakes to your event — cooked fresh on-site and served with
             your choice of toppings and sauces.
           </p>
+
+          <div className="flex flex-wrap justify-center gap-5">
+            <a
+              href="/contact"
+              className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+            >
+              Enquire Now
+            </a>
+            <a
+              href="#packages"
+              className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+            >
+              View Packages
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* VIDEOS */}
-      <section className="pb-32 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl bg-black">
+      {/* VIDEOS — full-bleed media showcase */}
+      <section className="pb-8">
+        <div className="grid md:grid-cols-2">
+          <div className="aspect-[9/16] md:aspect-auto md:h-[85vh] bg-black overflow-hidden">
             <video
               controls
               playsInline
@@ -75,7 +95,7 @@ export default function LiveDessertsPage() {
             </video>
           </div>
 
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl bg-black">
+          <div className="aspect-[9/16] md:aspect-auto md:h-[85vh] bg-black overflow-hidden">
             <video
               controls
               playsInline
@@ -88,8 +108,14 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
+      <GallerySlideshow
+        category="live-desserts"
+        eyebrow="From The Gallery"
+        title="Live Desserts In Action"
+      />
+
       {/* PACKAGES */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
+      <section id="packages" className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
@@ -155,11 +181,28 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
+      {/* CUSTOM TOPPINGS */}
+      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            Something Different?
+          </p>
+          <h2 className="heading-font text-4xl md:text-6xl mb-8">
+            Custom Toppings & Sauces Available
+          </h2>
+          <p className="text-lg leading-8 text-[#202b45]/70">
+            Looking for a topping or sauce outside our current selection?
+            Custom toppings and sauces can be arranged on request — just let
+            us know what you have in mind when you enquire.
+          </p>
+        </div>
+      </section>
+
       {/* GUEST COUNT / LOGISTICS */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
+      <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Good To Know
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -168,37 +211,37 @@ export default function LiveDessertsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">Guest Count</h3>
-              <p className="leading-8 text-[#202b45]/70">
+              <p className="leading-8 text-[#f8f8f8]/70">
                 There's no minimum number of guests. For smaller events, a
                 minimum booking charge applies. Get in touch and we'll
                 provide a quote based on your event.
               </p>
             </div>
 
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">Space & Setup</h3>
-              <p className="leading-8 text-[#202b45]/70">
+              <p className="leading-8 text-[#f8f8f8]/70">
                 We generally need approximately 6ft of table space and power
                 within approximately 4.5m. Setup takes approximately 45–60
                 minutes.
               </p>
             </div>
 
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">Travel</h3>
-              <p className="leading-8 text-[#202b45]/70">
+              <p className="leading-8 text-[#f8f8f8]/70">
                 Live dessert services can travel outside London — get in
                 touch with your location for a quote.
               </p>
             </div>
 
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 Dietary Requirements
               </h3>
-              <p className="leading-8 text-[#202b45]/70">
+              <p className="leading-8 text-[#f8f8f8]/70">
                 Vegan pancakes are cooked on the same griddle as standard
                 pancakes unless a separate arrangement is agreed in writing,
                 and dairy cross-contact cannot be guaranteed.
@@ -209,7 +252,7 @@ export default function LiveDessertsPage() {
       </section>
 
       {/* MORE COMING SOON */}
-      <section className="py-40 px-6 text-center bg-[#202b45]">
+      <section className="py-40 px-6 text-center bg-[#161f36]">
         <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
           What's Next
         </p>
@@ -225,6 +268,10 @@ export default function LiveDessertsPage() {
       {/* CONTACT CTA */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 text-center">
         <div className="max-w-4xl mx-auto">
+          <p className="logo-font text-3xl md:text-4xl mb-6">
+            Beyond Scrumptious
+          </p>
+
           <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-10">
             Book Your Live
             <br />
@@ -235,12 +282,27 @@ export default function LiveDessertsPage() {
             Let's make your event extra sweet — live and in the moment.
           </p>
 
-          <a
-            href="/contact"
-            className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] hover:bg-[#8992a3] transition"
-          >
-            Enquire Now
-          </a>
+          <div className="flex flex-wrap justify-center gap-5">
+            <a
+              href="/contact"
+              className="px-12 py-6 rounded-full bg-[#202b45] text-[#f8f8f8] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#8992a3] hover:-translate-y-0.5 transition shadow-xl"
+            >
+              Enquire Now
+            </a>
+            <a
+              href="https://wa.me/447933903000"
+              target="_blank"
+              className="px-12 py-6 rounded-full border border-[#202b45]/30 text-base uppercase tracking-[0.2em] hover:bg-[#202b45]/10 transition"
+            >
+              WhatsApp Us
+            </a>
+            <a
+              href="mailto:hello@beyondscrumptious.com"
+              className="px-12 py-6 rounded-full border border-[#202b45]/30 text-base uppercase tracking-[0.2em] hover:bg-[#202b45]/10 transition"
+            >
+              Email Us
+            </a>
+          </div>
         </div>
       </section>
 

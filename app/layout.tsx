@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Playfair_Display } from 'next/font/google'
+import Analytics from '../components/Analytics'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -24,7 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={playfair.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
