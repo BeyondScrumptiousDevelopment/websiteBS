@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     title: 'Beyond Scrumptious',
     description,
   },
+  icons: {
+    icon: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 const jsonLd = {
