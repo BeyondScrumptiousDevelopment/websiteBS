@@ -1,5 +1,3 @@
-import { FaStar } from 'react-icons/fa'
-
 const badges = [
   'Fully Eggless',
   'Cakes',
@@ -14,22 +12,18 @@ export default function TrustBadges() {
 
   return (
     <div className="bg-[#cfd7e2] text-[#202b45] overflow-hidden py-4">
-      <div className="flex w-max animate-marquee">
+      <div className="flex w-max items-center animate-marquee">
         {[0, 1].map((copy) => (
           <div key={copy} className="flex items-center shrink-0">
             {track.map((badge, i) => {
               const isFeatured = badge === 'Fully Eggless'
               return (
-                <div
-                  key={`${copy}-${i}`}
-                  className="flex items-center gap-3 px-8 whitespace-nowrap"
-                >
-                  <FaStar
-                    className={isFeatured ? 'text-[#202b45]' : 'text-[#202b45]/60'}
-                    size={isFeatured ? 16 : 12}
-                  />
+                <div key={`${copy}-${i}`} className="flex items-center">
+                  <span className="w-8 text-center text-[#202b45]/40 text-sm shrink-0">
+                    •
+                  </span>
                   <span
-                    className={`uppercase tracking-[0.15em] ${
+                    className={`uppercase tracking-[0.15em] whitespace-nowrap ${
                       isFeatured
                         ? 'text-base font-bold'
                         : 'text-sm font-semibold text-[#202b45]/80'
