@@ -1,11 +1,12 @@
 import { FaStar } from 'react-icons/fa'
 
 const badges = [
-  'Handmade With Love',
-  'Fully Customisable',
-  'Pure Vegetarian & Eggless',
-  'From Cakes To Live Desserts',
-  'Proudly Harrow, London',
+  'Fully Eggless',
+  'Cakes',
+  'Cupcakes',
+  'Desserts',
+  'Dessert Tables',
+  'Mini Pancake Station',
 ]
 
 export default function TrustBadges() {
@@ -17,7 +18,7 @@ export default function TrustBadges() {
         {[0, 1].map((copy) => (
           <div key={copy} className="flex items-center shrink-0">
             {track.map((badge, i) => {
-              const isFeatured = badge === 'Pure Vegetarian & Eggless'
+              const isFeatured = badge === 'Fully Eggless'
               return (
                 <div
                   key={`${copy}-${i}`}

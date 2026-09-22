@@ -242,20 +242,6 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
-      {/* MORE COMING SOON */}
-      <section className="py-40 px-6 text-center bg-[#161f36]">
-        <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-          What's Next
-        </p>
-        <h2 className="heading-font text-5xl md:text-7xl mb-8">
-          More Coming Soon
-        </h2>
-        <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-          We're growing the live dessert side of Beyond Scrumptious — keep
-          an eye out for what's next.
-        </p>
-      </section>
-
       {/* CONTACT CTA */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 text-center">
         <div className="max-w-4xl mx-auto">

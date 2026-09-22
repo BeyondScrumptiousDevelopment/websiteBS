@@ -203,12 +203,21 @@ export default async function HomePage() {
       {/* LIVE DESSERT FEATURE */}
       <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl order-2 md:order-1 aspect-[4/3]">
-            <img
-              src="/images/otgpic.jpg"
-              alt="Live Mini Pancake Station"
-              className="w-full h-full object-cover"
-            />
+          <div className="grid grid-cols-2 gap-4 order-2 md:order-1">
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
+              <img
+                src="/images/pancake-2.jpg"
+                alt="Fresh mini pancakes cooked live on the griddle"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/2]">
+              <img
+                src="/images/pancake-1.jpg"
+                alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="order-1 md:order-2">
@@ -222,15 +231,9 @@ export default async function HomePage() {
               Live Reactions
             </h2>
 
-            <p className="text-[#f8f8f8]/70 leading-8 text-lg mb-8">
+            <p className="text-[#f8f8f8]/70 leading-8 text-lg mb-10">
               Freshly made mini pancakes, cooked live in front of your
               guests and served with your choice of toppings and sauces.
-              Expanding the live dessert side of the business is a big part
-              of where we're headed next.
-            </p>
-
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 mb-10">
-              More coming soon
             </p>
 
             <div className="flex gap-4 flex-wrap">
