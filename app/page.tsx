@@ -6,6 +6,7 @@ import WhatsAppButton from '../components/WhatsAppButton'
 import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
 import TrustBadges from '../components/TrustBadges'
 import DiwaliPopup from '../components/DiwaliPopup'
+import HeroVideo from '../components/HeroVideo'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -36,15 +37,7 @@ export default async function HomePage() {
 
       {/* HERO */}
       <section className="relative h-screen flex items-center justify-center text-center px-6">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo />
 
         <div className="absolute inset-0 bg-[#202b45]/60" />
 
