@@ -50,7 +50,7 @@ export default function DiwaliPage() {
             alt="Beyond Scrumptious Naturally Sweet Cupcakes for Diwali"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1b1712]/85 via-[#1b1712]/75 to-[#1b1712]" />
         </div>
 
         <div className="relative max-w-4xl mx-auto text-center">
@@ -58,26 +58,26 @@ export default function DiwaliPage() {
             Diwali 2026 ✨
           </p>
 
-          <h1 className="heading-font text-5xl md:text-7xl leading-tight mb-6 text-[#1b1712]">
+          <h1 className="heading-font text-5xl md:text-7xl leading-tight mb-6 text-[#f3e3c3]">
             Naturally Sweet Cupcakes
           </h1>
 
-          <p className="text-lg md:text-xl text-[#1b1712]/90 mb-2">
+          <p className="text-lg md:text-xl text-[#f8f8f8]/90 mb-2">
             No added refined sugar. Naturally sweetened with dates.
           </p>
-          <p className="text-base md:text-lg text-[#1b1712]/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-[#f8f8f8]/70 mb-8 max-w-2xl mx-auto">
             A deliciously different way to enjoy something sweet this Diwali.
           </p>
 
-          <p className="uppercase tracking-[0.3em] text-sm text-[#1b1712] mb-3">
+          <p className="uppercase tracking-[0.3em] text-sm text-[#f3e3c3] mb-3">
             Kulfi • Vanilla • Chocolate
           </p>
 
-          <p className="heading-font text-2xl md:text-3xl text-[#1b1712] mb-8">
+          <p className="heading-font text-2xl md:text-3xl text-[#f8f8f8] mb-8">
             6 for £20 &nbsp;|&nbsp; 12 for £35
           </p>
 
-          <div className="flex flex-col items-center gap-1 text-sm text-[#1b1712]/70 mb-10">
+          <div className="flex flex-col items-center gap-1 text-sm text-[#f8f8f8]/70 mb-10">
             <p>📅 Pickup 7th or 8th November 2026 only</p>
             <p>📍 Harrow, London</p>
           </div>
