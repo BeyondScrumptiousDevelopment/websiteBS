@@ -5,7 +5,9 @@ import GallerySlideshow from '../../components/GallerySlideshow'
 
 const standardToppings = ['Oreo Crumbs', 'Biscoff Crumbs', 'Sprinkles', 'Mini Marshmallows', 'Smarties']
 
-const premiumToppings = ['Kunafa', 'Fresh Chopped Strawberries', 'Cake Pieces', 'Hazelnuts', 'Pistachio']
+const premiumToppings = ['Kunafa', 'Fresh Chopped Strawberries', 'Cake Pieces']
+
+const addOnToppings = ['Pistachio', 'Hazelnuts']
 
 const standardSauces = ['Milk Chocolate', 'White Chocolate', 'Biscoff', 'Mango']
 
@@ -419,7 +421,7 @@ export default function LiveDessertsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
                 Standard Selection
@@ -441,11 +443,23 @@ export default function LiveDessertsPage() {
                 ))}
               </ul>
             </div>
+
+            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#c9973f]/30">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#c9973f]/80 mb-6">
+                Add-On
+              </p>
+              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+                {addOnToppings.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <p className="max-w-2xl mx-auto text-center mt-10 text-[#f8f8f8]/60 leading-7">
             Premium selections are available depending on your chosen
-            package.
+            package. Add-on toppings can be included with any package for an
+            additional charge, confirmed as part of your quote.
           </p>
         </div>
       </section>
