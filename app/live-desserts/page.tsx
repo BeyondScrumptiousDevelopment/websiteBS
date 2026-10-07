@@ -2,6 +2,8 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import GallerySlideshow from '../../components/GallerySlideshow'
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
+import ServiceJsonLd from '../../components/ServiceJsonLd'
 
 const standardToppings = ['Oreo Crumbs', 'Biscoff Crumbs', 'Sprinkles', 'Mini Marshmallows', 'Smarties']
 
@@ -186,9 +188,18 @@ const faqJsonLd = {
 }
 
 export const metadata = {
-  title: 'Live Pancake Station | Beyond Scrumptious',
+  title: 'Live Mini Pancake Station in London | Beyond Scrumptious',
   description:
-    'Make your event extra special with our Live Mini Pancake Station. Freshly cooked mini pancakes, delicious toppings and sauces, and personalised options for weddings, parties, mehndis and events.',
+    'Live Mini Pancake Station for weddings, mehndis, birthdays and corporate events across London. Freshly cooked eggless mini pancakes, toppings and sauces, cooked on-site.',
+  alternates: {
+    canonical: '/live-desserts',
+  },
+  openGraph: {
+    title: 'Live Mini Pancake Station in London | Beyond Scrumptious',
+    description:
+      'Live Mini Pancake Station for weddings, mehndis, birthdays and corporate events across London. Freshly cooked eggless mini pancakes, toppings and sauces, cooked on-site.',
+    url: 'https://www.beyondscrumptious.com/live-desserts',
+  },
 }
 
 export default function LiveDessertsPage() {
@@ -197,6 +208,12 @@ export default function LiveDessertsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <BreadcrumbJsonLd items={[{ name: 'Live Mini Pancake Station', path: '/live-desserts' }]} />
+      <ServiceJsonLd
+        name="Live Mini Pancake Station"
+        description="Freshly cooked eggless mini pancakes, cooked on-site for weddings, mehndis, birthdays and corporate events across London."
+        path="/live-desserts"
       />
       <Navbar />
       <WhatsAppButton />
@@ -729,8 +746,20 @@ export default function LiveDessertsPage() {
             personalised quote for your Live Mini Pancake Station.
           </p>
 
-          <p className="heading-font text-2xl text-[#cfd7e2] mb-12">
+          <p className="heading-font text-2xl text-[#cfd7e2] mb-6">
             Packages begin at £250.
+          </p>
+
+          <p className="text-sm text-[#f8f8f8]/50 mb-12 max-w-xl mx-auto">
+            Also planning the cake? See our{' '}
+            <a href="/cakes" className="underline hover:text-white">
+              eggless custom cakes
+            </a>{' '}
+            or{' '}
+            <a href="/desserts" className="underline hover:text-white">
+              dessert tables
+            </a>
+            .
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">

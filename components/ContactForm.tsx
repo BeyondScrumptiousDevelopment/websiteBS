@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
+import { trackEvent } from '../lib/gtag'
 
 type Topic =
   | 'Cake'
@@ -64,6 +65,12 @@ function Field({
 export default function ContactForm() {
   const [state, handleSubmit] = useForm('mrpbpyzd')
   const [topic, setTopic] = useState<Topic | ''>('')
+
+  useEffect(() => {
+    if (state.succeeded) {
+      trackEvent('form_submit', { form: 'contact' })
+    }
+  }, [state.succeeded])
 
   if (state.succeeded) {
     return (

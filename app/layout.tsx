@@ -53,6 +53,13 @@ const jsonLd = {
   ],
 }
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Beyond Scrumptious',
+  url: 'https://www.beyondscrumptious.com',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -64,6 +71,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         {children}
         <Analytics />

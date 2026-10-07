@@ -5,6 +5,9 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 export const metadata = {
   title: 'Terms & Conditions | Beyond Scrumptious',
   description: 'Terms & Conditions for Beyond Scrumptious orders and bookings.',
+  alternates: {
+    canonical: '/terms',
+  },
 }
 
 export default function TermsPage() {

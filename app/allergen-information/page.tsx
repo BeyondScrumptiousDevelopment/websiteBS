@@ -5,6 +5,9 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 export const metadata = {
   title: 'Allergen Information | Beyond Scrumptious',
   description: 'Allergen information for Beyond Scrumptious products.',
+  alternates: {
+    canonical: '/allergen-information',
+  },
 }
 
 export default function AllergenInformationPage() {

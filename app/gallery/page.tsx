@@ -3,14 +3,24 @@ import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import { client } from '../../sanity/lib/client'
 import GalleryGrid from './GalleryGrid'
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 
 export const runtime = 'edge'
 export const revalidate = 0
 
 export const metadata = {
-  title: 'Gallery | Beyond Scrumptious',
+  title: 'Cake & Dessert Gallery | Beyond Scrumptious, Harrow',
   description:
-    'Handcrafted cakes, desserts, dessert tables and live dessert experiences from Beyond Scrumptious — Harrow, London.',
+    'Browse eggless cakes, cupcakes, desserts, dessert tables and Live Mini Pancake Station photos from recent celebrations in Harrow and London.',
+  alternates: {
+    canonical: '/gallery',
+  },
+  openGraph: {
+    title: 'Cake & Dessert Gallery | Beyond Scrumptious, Harrow',
+    description:
+      'Browse eggless cakes, cupcakes, desserts, dessert tables and Live Mini Pancake Station photos from recent celebrations in Harrow and London.',
+    url: 'https://www.beyondscrumptious.com/gallery',
+  },
 }
 
 async function getProducts() {
@@ -33,6 +43,7 @@ export default async function GalleryPage() {
 
   return (
     <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+      <BreadcrumbJsonLd items={[{ name: 'Gallery', path: '/gallery' }]} />
       <Navbar />
       <WhatsAppButton />
 

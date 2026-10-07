@@ -1,7 +1,8 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
+import { trackEvent } from '../lib/gtag'
 
 // TODO: replace with the real Diwali order Formspree form ID once provided.
 const FORMSPREE_DIWALI_ID = 'xzezrdzj'
@@ -81,6 +82,12 @@ export default function DiwaliOrderForm() {
   ])
 
   const orderSummaryText = summaryLines.join(' | ') + (total ? ` | Total: £${total}` : '')
+
+  useEffect(() => {
+    if (state.succeeded) {
+      trackEvent('form_submit', { form: 'diwali_order' })
+    }
+  }, [state.succeeded])
 
   if (state.succeeded) {
     return (

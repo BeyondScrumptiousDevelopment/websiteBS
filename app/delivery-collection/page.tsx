@@ -5,6 +5,9 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 export const metadata = {
   title: 'Delivery & Collection | Beyond Scrumptious',
   description: 'Delivery and collection information for Beyond Scrumptious orders.',
+  alternates: {
+    canonical: '/delivery-collection',
+  },
 }
 
 export default function DeliveryCollectionPage() {

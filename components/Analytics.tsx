@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Script from 'next/script'
+import { trackEvent } from '../lib/gtag'
 
 const GA_ID = 'G-YP8PFRH5ZN'
 
@@ -19,6 +20,27 @@ export default function Analytics() {
     } catch {
       // localStorage unavailable — leave consent as null (banner will not persist)
     }
+  }, [])
+
+  // Delegated click tracking for WhatsApp/email/phone links site-wide, so
+  // individual pages and components don't each need their own handler.
+  useEffect(() => {
+    function handleClick(event: MouseEvent) {
+      const link = (event.target as HTMLElement | null)?.closest('a')
+      const href = link?.getAttribute('href')
+      if (!href) return
+
+      if (href.startsWith('mailto:')) {
+        trackEvent('email_click', { link_url: href })
+      } else if (href.includes('wa.me')) {
+        trackEvent('whatsapp_click', { link_url: href })
+      } else if (href.startsWith('tel:')) {
+        trackEvent('phone_click', { link_url: href })
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
   }, [])
 
   function decide(value: 'granted' | 'denied') {

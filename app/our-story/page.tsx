@@ -1,15 +1,27 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 
 export const metadata = {
   title: 'Our Story | Beyond Scrumptious',
-  description: 'The story behind Beyond Scrumptious.',
+  description:
+    'Beyond Scrumptious is an eggless cake and dessert business based in Harrow, serving celebrations and events across London — from custom cakes to the Live Mini Pancake Station.',
+  alternates: {
+    canonical: '/our-story',
+  },
+  openGraph: {
+    title: 'Our Story | Beyond Scrumptious',
+    description:
+      'Beyond Scrumptious is an eggless cake and dessert business based in Harrow, serving celebrations and events across London — from custom cakes to the Live Mini Pancake Station.',
+    url: 'https://www.beyondscrumptious.com/our-story',
+  },
 }
 
 export default function OurStoryPage() {
   return (
     <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+      <BreadcrumbJsonLd items={[{ name: 'Our Story', path: '/our-story' }]} />
       <Navbar />
       <WhatsAppButton />
 

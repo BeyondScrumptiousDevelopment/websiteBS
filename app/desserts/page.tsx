@@ -2,6 +2,8 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import GallerySlideshow from '../../components/GallerySlideshow'
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
+import ServiceJsonLd from '../../components/ServiceJsonLd'
 
 const range = [
   {
@@ -57,14 +59,29 @@ const range = [
 ]
 
 export const metadata = {
-  title: 'Desserts & Dessert Tables | Beyond Scrumptious',
+  title: 'Desserts & Dessert Tables in Harrow & London | Beyond Scrumptious',
   description:
-    'Individual desserts and styled dessert-table experiences — eggless, gelatine-free, fully customisable.',
+    'Eggless, gelatine-free desserts and styled dessert tables for weddings, parties and events — handmade in Harrow, fully customisable, serving London.',
+  alternates: {
+    canonical: '/desserts',
+  },
+  openGraph: {
+    title: 'Desserts & Dessert Tables in Harrow & London | Beyond Scrumptious',
+    description:
+      'Eggless, gelatine-free desserts and styled dessert tables for weddings, parties and events — handmade in Harrow, fully customisable, serving London.',
+    url: 'https://www.beyondscrumptious.com/desserts',
+  },
 }
 
 export default function DessertsPage() {
   return (
     <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+      <BreadcrumbJsonLd items={[{ name: 'Desserts & Dessert Tables', path: '/desserts' }]} />
+      <ServiceJsonLd
+        name="Desserts & Dessert Tables"
+        description="Eggless desserts and styled dessert tables for weddings, parties and events, handmade in Harrow and serving London."
+        path="/desserts"
+      />
       <Navbar />
       <WhatsAppButton />
 
@@ -72,7 +89,7 @@ export default function DessertsPage() {
       <section className="pt-40 pb-24 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-            Desserts & Dessert Tables
+            Dessert Tables in Harrow & London
           </p>
 
           <h1 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
@@ -197,14 +214,25 @@ export default function DessertsPage() {
         <h2 className="heading-font text-4xl md:text-6xl mb-8">
           Let's Build Your Table
         </h2>
-        <p className="max-w-2xl mx-auto mb-10 leading-8 text-[#202b45]/70">
+        <p className="max-w-2xl mx-auto mb-6 leading-8 text-[#202b45]/70">
           Enquire for a custom dessert or dessert-table quote.
+        </p>
+        <p className="max-w-2xl mx-auto mb-10 leading-8 text-[#202b45]/60 text-sm">
+          Looking for a cake too? See our{' '}
+          <a href="/cakes" className="underline hover:text-[#202b45]">
+            eggless custom cakes
+          </a>
+          , or add our{' '}
+          <a href="/live-desserts" className="underline hover:text-[#202b45]">
+            Live Mini Pancake Station
+          </a>{' '}
+          for a live dessert experience.
         </p>
         <a
           href="/contact"
           className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
         >
-          Enquire Now
+          Enquire About Your Dessert Table
         </a>
       </section>
 

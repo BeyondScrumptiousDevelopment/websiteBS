@@ -11,6 +11,21 @@ import HeroVideo from '../components/HeroVideo'
 export const runtime = 'edge'
 export const revalidate = 0
 
+export const metadata = {
+  title: 'Beyond Scrumptious | Eggless Cakes & Desserts in Harrow, London',
+  description:
+    'Eggless custom cakes, cupcakes, desserts, dessert tables and the Live Mini Pancake Station — handmade in Harrow, serving celebrations and events across London.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Beyond Scrumptious | Eggless Cakes & Desserts in Harrow, London',
+    description:
+      'Eggless custom cakes, cupcakes, desserts, dessert tables and the Live Mini Pancake Station — handmade in Harrow, serving celebrations and events across London.',
+    url: 'https://www.beyondscrumptious.com/',
+  },
+}
+
 async function getFeatured() {
   try {
     return await client.fetch(`
@@ -43,7 +58,7 @@ export default async function HomePage() {
 
         <div className="relative z-10 max-w-5xl">
           <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#f8f8f8]/70">
-            Cakes, Desserts & Live Dessert Experiences
+            Eggless Cakes, Desserts & Live Dessert Experiences
           </p>
 
           <h1 className="logo-font text-7xl md:text-[10rem] leading-[0.9] mb-8">
@@ -97,8 +112,8 @@ export default async function HomePage() {
             >
               <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
               <p className="text-[#202b45]/70 leading-7">
-                Custom cakes for all occasions, plus cupcakes in a range of
-                flavours and box sizes.
+                Custom eggless cakes for all occasions, plus cupcakes in a
+                range of flavours and box sizes.
               </p>
             </a>
 

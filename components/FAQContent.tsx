@@ -25,6 +25,11 @@ const faqGroups = [
           'Absolutely. Every cake is made to order and customised around your requirements — we don’t work from a fixed catalogue.',
       },
       {
+        question: 'Are your cakes eggless?',
+        answer:
+          'Yes — every cake is made to order and eggless from top to bottom, whatever the occasion.',
+      },
+      {
         question: 'Do you offer vegan cakes?',
         answer:
           'Vegan cakes are available in certain flavours only. Vegan availability is confirmed at the time of booking.',
@@ -107,49 +112,53 @@ const faqGroups = [
     ],
   },
   {
-    category: 'Live Desserts',
+    category: 'Live Mini Pancake Station',
     items: [
       {
-        question: 'What is included in the mini pancake station?',
+        question: 'What is included in the Live Mini Pancake Station?',
         answer:
-          'Freshly made, eggless mini pancakes cooked live at your event, served with your choice of toppings and sauces.',
+          'Freshly cooked eggless mini pancakes, cooked live on-site throughout your booked service and served with your choice of toppings and sauces.',
       },
       {
         question: 'What toppings and sauces are available?',
         answer:
-          'Toppings: Oreo crumbs, Biscoff crumbs, mini marshmallows, sprinkles, kunafa, fresh chopped strawberries, Smarties, homemade cake pieces and nuts (pistachios or hazelnuts). Sauces: milk chocolate, white chocolate, Biscoff, mango, pistachio and chocolate hazelnut. Don’t see what you’re after? Custom options can often be arranged on request.',
+          'Standard toppings: Oreo crumbs, Biscoff crumbs, sprinkles, mini marshmallows and Smarties. Premium toppings: kunafa, fresh chopped strawberries and cake pieces. Pistachio and hazelnuts are available as an add-on. Sauces range from milk and white chocolate to Biscoff, mango, cookies & cream, pistachio and chocolate hazelnut — see the Live Mini Pancake Station page for the full list.',
+      },
+      {
+        question: 'How much do packages cost?',
+        answer:
+          'Packages begin at £250. Every event is individually quoted based on guest numbers, location, service requirements and selected options.',
       },
       {
         question: 'Is there a minimum number of guests?',
         answer:
-          'There’s no minimum number of guests. For smaller events, a minimum booking charge applies. Get in touch and we’ll provide a quote based on your event.',
+          'We cater for events of different sizes. Your quote is based on your event requirements, so get in touch with your guest numbers.',
       },
       {
-        question: 'How much space is required?',
-        answer: 'We generally need approximately 6ft of table space.',
-      },
-      {
-        question: 'Do you need electricity?',
-        answer: 'Yes — power is required within approximately 4.5m of the setup.',
-      },
-      {
-        question: 'Do you travel outside London?',
-        answer: 'Yes, live dessert services can travel outside London.',
-      },
-      {
-        question: 'How long does setup take?',
-        answer: 'Setup takes approximately 45–60 minutes.',
-      },
-      {
-        question: 'Can you accommodate vegan requirements?',
+        question: 'What does the venue need to provide?',
         answer:
-          'Vegan pancakes are cooked on the same griddle as standard pancakes unless a separate arrangement is agreed in writing, and dairy cross-contact cannot be guaranteed.',
+          'Generally around 6ft of table space, access to a suitable power supply, and a safe, level area for the station and serving queue. Setup and packdown are handled by our team.',
+      },
+      {
+        question: 'Do you travel outside Harrow?',
+        answer:
+          'Yes — we travel to events across London and beyond. Travel requirements are considered as part of your individual quote.',
       },
     ],
   },
   {
     category: 'Booking',
     items: [
+      {
+        question: 'Where are you based?',
+        answer:
+          'We’re based in Harrow, London. Cakes and desserts are collection only, dessert tables include delivery, and the Live Mini Pancake Station travels to events across London and beyond.',
+      },
+      {
+        question: 'Do you deliver?',
+        answer:
+          'Cakes and individual desserts are collection only. Delivery is included with every dessert-table quote. See our Delivery & Collection page for full details.',
+      },
       {
         question: 'How do I enquire?',
         answer:

@@ -2,6 +2,8 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import GallerySlideshow from '../../components/GallerySlideshow'
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
+import ServiceJsonLd from '../../components/ServiceJsonLd'
 
 const flavours = [
   'Vanilla',
@@ -18,14 +20,29 @@ const flavours = [
 ]
 
 export const metadata = {
-  title: 'Cakes | Beyond Scrumptious',
+  title: 'Eggless Cakes in Harrow & London | Beyond Scrumptious',
   description:
-    'Custom eggless, gelatine-free cakes for all occasions, plus cupcakes — Beyond Scrumptious, Harrow, London.',
+    'Custom eggless cakes for birthdays, weddings and celebrations — handmade in Harrow, gelatine-free and fully customisable, serving London and the surrounding areas.',
+  alternates: {
+    canonical: '/cakes',
+  },
+  openGraph: {
+    title: 'Eggless Cakes in Harrow & London | Beyond Scrumptious',
+    description:
+      'Custom eggless cakes for birthdays, weddings and celebrations — handmade in Harrow, gelatine-free and fully customisable, serving London and the surrounding areas.',
+    url: 'https://www.beyondscrumptious.com/cakes',
+  },
 }
 
 export default function CakesPage() {
   return (
     <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+      <BreadcrumbJsonLd items={[{ name: 'Cakes', path: '/cakes' }]} />
+      <ServiceJsonLd
+        name="Eggless Custom Cakes"
+        description="Custom eggless cakes for birthdays, weddings and celebrations, handmade in Harrow and serving London."
+        path="/cakes"
+      />
       <Navbar />
       <WhatsAppButton />
 
@@ -33,7 +50,7 @@ export default function CakesPage() {
       <section className="pt-40 pb-24 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-            Cakes for All Occasions
+            Eggless Cakes for All Occasions — Harrow & London
           </p>
 
           <h1 className="heading-font text-5xl md:text-8xl leading-tight mb-8">
@@ -134,15 +151,26 @@ export default function CakesPage() {
         <h2 className="heading-font text-4xl md:text-6xl mb-8">
           Ready To Order?
         </h2>
-        <p className="text-[#f8f8f8]/70 max-w-2xl mx-auto mb-10 leading-8">
+        <p className="text-[#f8f8f8]/70 max-w-2xl mx-auto mb-6 leading-8">
           Get in touch for a custom quote — tell us your flavour, design and
           event date.
+        </p>
+        <p className="text-[#f8f8f8]/50 max-w-2xl mx-auto mb-10 leading-8 text-sm">
+          Planning a bigger spread? Explore our{' '}
+          <a href="/desserts" className="underline hover:text-white">
+            dessert tables
+          </a>{' '}
+          or add our{' '}
+          <a href="/live-desserts" className="underline hover:text-white">
+            Live Mini Pancake Station
+          </a>{' '}
+          to the celebration.
         </p>
         <a
           href="/contact"
           className="inline-block px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
         >
-          Enquire Now
+          Enquire About Your Cake
         </a>
       </section>
 
