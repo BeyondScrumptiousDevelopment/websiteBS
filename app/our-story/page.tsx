@@ -2,6 +2,8 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
+import { Reveal } from '../../components/motion/Reveal'
+import { TapLink } from '../../components/motion/TapLink'
 
 export const metadata = {
   title: 'Our Story | Beyond Scrumptious',
@@ -27,15 +29,17 @@ export default function OurStoryPage() {
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
-            Beyond Scrumptious
-          </p>
+          <Reveal>
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
+              Beyond Scrumptious
+            </p>
 
-          <h1 className="heading-font text-5xl md:text-7xl mb-16 text-center">
-            Our Story
-          </h1>
+            <h1 className="heading-font text-5xl md:text-7xl mb-16 text-center">
+              Our Story
+            </h1>
+          </Reveal>
 
-          <div className="space-y-8 text-lg leading-8 text-[#f8f8f8]/80">
+          <Reveal className="space-y-8 text-lg leading-8 text-[#f8f8f8]/80" delay={0.1}>
             <p>
               Beyond Scrumptious began in April 2021, out of a genuine
               enjoyment of making cakes, creating dessert tables and
@@ -59,16 +63,16 @@ export default function OurStoryPage() {
               Looking ahead, the goal is to keep expanding the live dessert
               side of the business and take on bigger events.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="text-center mt-16">
-            <a
+          <Reveal className="text-center mt-16">
+            <TapLink
               href="/contact"
               className="inline-block px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
             >
               Enquire Now
-            </a>
-          </div>
+            </TapLink>
+          </Reveal>
         </div>
       </section>
 

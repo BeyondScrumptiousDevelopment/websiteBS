@@ -7,6 +7,8 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
 import { trackEvent } from '../lib/gtag'
+import { Reveal, RevealGroup, RevealItem } from './motion/Reveal'
+import { TapLink, TapButton } from './motion/TapLink'
 
 type Topic =
   | 'Cake'
@@ -78,7 +80,7 @@ export default function ContactForm() {
         <Navbar />
         <WhatsAppButton />
         <section className="pt-48 pb-40 px-6 text-center">
-          <div className="max-w-2xl mx-auto">
+          <Reveal className="max-w-2xl mx-auto">
             <h1 className="heading-font text-4xl md:text-6xl mb-8">
               Thank You!
             </h1>
@@ -95,13 +97,13 @@ export default function ContactForm() {
               </a>
               .
             </p>
-            <a
+            <TapLink
               href="/"
               className="inline-block mt-12 px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
             >
               Back to Home
-            </a>
-          </div>
+            </TapLink>
+          </Reveal>
         </section>
         <Footer />
       </main>
@@ -114,7 +116,7 @@ export default function ContactForm() {
       <WhatsAppButton />
 
       <section className="pt-40 pb-16 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <Reveal className="max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
             Contact / Enquire
           </p>
@@ -125,32 +127,36 @@ export default function ContactForm() {
             Prefer to skip the form? Message us directly — we're happy to
             chat there too.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* DIRECT CONTACT OPTIONS */}
       <section className="px-6 pb-20">
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-5">
-          <a
-            href="https://wa.me/447933903000"
-            target="_blank"
-            className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#f8f8f8] px-6 py-5 hover:bg-[#25D366]/20 transition"
-          >
-            <FaWhatsapp className="text-2xl text-[#25D366]" />
-            <span className="uppercase tracking-[0.15em] text-sm">
-              WhatsApp Us
-            </span>
-          </a>
-          <a
-            href="mailto:hello@beyondscrumptious.com"
-            className="flex items-center justify-center gap-3 rounded-2xl bg-white/5 border border-white/20 text-[#f8f8f8] px-6 py-5 hover:bg-white/10 transition"
-          >
-            <FaEnvelope className="text-2xl text-[#cfd7e2]" />
-            <span className="uppercase tracking-[0.15em] text-sm">
-              Email Us
-            </span>
-          </a>
-        </div>
+        <RevealGroup className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-5" stagger={0.08}>
+          <RevealItem>
+            <TapLink
+              href="https://wa.me/447933903000"
+              target="_blank"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#f8f8f8] px-6 py-5 hover:bg-[#25D366]/20 transition"
+            >
+              <FaWhatsapp className="text-2xl text-[#25D366]" />
+              <span className="uppercase tracking-[0.15em] text-sm">
+                WhatsApp Us
+              </span>
+            </TapLink>
+          </RevealItem>
+          <RevealItem>
+            <TapLink
+              href="mailto:hello@beyondscrumptious.com"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-white/5 border border-white/20 text-[#f8f8f8] px-6 py-5 hover:bg-white/10 transition"
+            >
+              <FaEnvelope className="text-2xl text-[#cfd7e2]" />
+              <span className="uppercase tracking-[0.15em] text-sm">
+                Email Us
+              </span>
+            </TapLink>
+          </RevealItem>
+        </RevealGroup>
       </section>
 
       <section className="px-6 pb-32">
@@ -179,7 +185,7 @@ export default function ContactForm() {
               </label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {topics.map((t) => (
-                  <button
+                  <TapButton
                     type="button"
                     key={t}
                     onClick={() => setTopic(t)}
@@ -190,7 +196,7 @@ export default function ContactForm() {
                     }`}
                   >
                     {t}
-                  </button>
+                  </TapButton>
                 ))}
               </div>
               <input type="hidden" name="enquiry_type" value={topic} />
@@ -313,13 +319,13 @@ export default function ContactForm() {
                   />
                 </Field>
 
-                <button
+                <TapButton
                   type="submit"
                   disabled={state.submitting}
                   className="w-full md:w-auto px-12 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition disabled:opacity-50"
                 >
                   {state.submitting ? 'Sending...' : 'Send Enquiry'}
-                </button>
+                </TapButton>
 
                 <p className="text-xs text-[#f8f8f8]/40 pt-2">
                   Submitting this form does not confirm a booking. Booking

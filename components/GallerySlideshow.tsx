@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { client } from '../sanity/lib/client'
 import { urlFor } from '../sanity/lib/image'
+import { Reveal } from './motion/Reveal'
+import { TapButton } from './motion/TapLink'
 
 type Props = {
   category: string | string[]
@@ -51,7 +53,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
     <section className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         {(eyebrow || title) && (
-          <div className="text-center mb-10">
+          <Reveal className="text-center mb-10">
             {eyebrow && (
               <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-4">
                 {eyebrow}
@@ -60,10 +62,10 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
             {title && (
               <h2 className="heading-font text-4xl md:text-5xl">{title}</h2>
             )}
-          </div>
+          </Reveal>
         )}
 
-        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] md:aspect-[16/9] bg-black">
+        <Reveal className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] md:aspect-[16/9] bg-black">
           {images.map((img, i) => (
             <img
               key={img._id}
@@ -78,7 +80,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
           {images.length > 1 && (
             <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2">
               {images.map((_, i) => (
-                <button
+                <TapButton
                   key={i}
                   onClick={() => setIndex(i)}
                   aria-label={`Show image ${i + 1}`}
@@ -89,7 +91,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
               ))}
             </div>
           )}
-        </div>
+        </Reveal>
       </div>
     </section>
   )

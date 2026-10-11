@@ -1,6 +1,8 @@
 import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import DiwaliOrderForm from '../../components/DiwaliOrderForm'
+import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
+import { TapLink } from '../../components/motion/TapLink'
 
 export const metadata = {
   title: 'Diwali 2026 | Naturally Sweet Cupcakes | Beyond Scrumptious',
@@ -56,7 +58,7 @@ export default function DiwaliPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#1b1712]/85 via-[#1b1712]/75 to-[#1b1712]" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto text-center">
+        <Reveal className="relative max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
             Diwali 2026 ✨
           </p>
@@ -85,19 +87,19 @@ export default function DiwaliPage() {
             <p>📍 Harrow, London</p>
           </div>
 
-          <a
+          <TapLink
             href="#order"
             className="inline-block px-12 py-5 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold uppercase tracking-[0.2em] hover:bg-[#f3e3c3] transition"
           >
             Order Your Box ↓
-          </a>
-        </div>
+          </TapLink>
+        </Reveal>
       </section>
 
       {/* INTRO */}
       <section className="px-6 py-24">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
+          <Reveal>
             <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
               Naturally Sweet, Made For Diwali
             </p>
@@ -115,28 +117,30 @@ export default function DiwaliPage() {
               three flavours inspired by favourites from the Beyond
               Scrumptious range.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="rounded-[2rem] overflow-hidden shadow-2xl">
+          <Reveal delay={0.1} className="rounded-[2rem] overflow-hidden shadow-2xl">
             <img
               src="/images/diwali/cupcakes-2.jpg"
               alt="Naturally Sweet Cupcake by Beyond Scrumptious"
               className="w-full h-full object-cover"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* FLAVOURS */}
       <section className="px-6 py-16 bg-[#241e17]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="heading-font text-3xl md:text-4xl text-center mb-14 text-[#f3e3c3]">
-            Choose From
-          </h2>
+          <Reveal>
+            <h2 className="heading-font text-3xl md:text-4xl text-center mb-14 text-[#f3e3c3]">
+              Choose From
+            </h2>
+          </Reveal>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <RevealGroup className="grid sm:grid-cols-3 gap-6" stagger={0.08}>
             {flavours.map((f) => (
-              <div
+              <RevealItem
                 key={f.name}
                 className="bg-[#1b1712] border border-[#c9973f]/30 rounded-[2rem] p-8 text-center"
               >
@@ -145,29 +149,31 @@ export default function DiwaliPage() {
                   {f.name}
                 </h3>
                 <p className="text-[#f8f8f8]/70 leading-7">{f.description}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       {/* CHOOSE YOUR BOX */}
       <section className="px-6 py-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="heading-font text-3xl md:text-4xl text-center mb-14 text-[#f3e3c3]">
-            Choose Your Box
-          </h2>
+          <Reveal>
+            <h2 className="heading-font text-3xl md:text-4xl text-center mb-14 text-[#f3e3c3]">
+              Choose Your Box
+            </h2>
+          </Reveal>
 
-          <div className="grid sm:grid-cols-2 gap-8">
-            <div className="bg-[#241e17] border border-[#c9973f]/30 rounded-[2rem] p-10 text-center">
+          <RevealGroup className="grid sm:grid-cols-2 gap-8" stagger={0.08}>
+            <RevealItem className="bg-[#241e17] border border-[#c9973f]/30 rounded-[2rem] p-10 text-center">
               <h3 className="heading-font text-2xl mb-2 text-[#f8f8f8]">
                 6 Cupcakes
               </h3>
               <p className="heading-font text-4xl mb-4 text-[#c9973f]">£20</p>
               <p className="text-[#f8f8f8]/70">One flavour only.</p>
-            </div>
+            </RevealItem>
 
-            <div className="bg-[#241e17] border border-[#c9973f]/30 rounded-[2rem] p-10 text-center">
+            <RevealItem className="bg-[#241e17] border border-[#c9973f]/30 rounded-[2rem] p-10 text-center">
               <h3 className="heading-font text-2xl mb-2 text-[#f8f8f8]">
                 12 Cupcakes
               </h3>
@@ -175,8 +181,8 @@ export default function DiwaliPage() {
               <p className="text-[#f8f8f8]/70">
                 Choose one flavour, or two flavours — 6 + 6.
               </p>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
 
           <p className="text-center mt-10 text-[#f8f8f8]/60">
             Want to order multiple boxes?{' '}
@@ -194,7 +200,7 @@ export default function DiwaliPage() {
 
       {/* PICKUP INFO */}
       <section className="px-6 py-24 bg-[#241e17]">
-        <div className="max-w-3xl mx-auto text-center">
+        <Reveal className="max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
             Your Diwali Order
           </p>
@@ -223,19 +229,19 @@ export default function DiwaliPage() {
           <p className="text-sm text-[#f8f8f8]/50">
             Pickup only — no delivery available for this collection.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* ORDER FORM */}
       <section id="order" className="px-6 py-24 scroll-mt-10">
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <Reveal className="max-w-3xl mx-auto text-center mb-14">
           <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
             Order Form
           </p>
           <h2 className="heading-font text-4xl md:text-5xl text-[#f3e3c3]">
             Your Diwali Order
           </h2>
-        </div>
+        </Reveal>
 
         <DiwaliOrderForm />
       </section>

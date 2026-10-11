@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { TapButton } from './motion/TapLink'
 
 const testimonials = [
   {
@@ -51,7 +53,16 @@ export default function TestimonialsSlideshow() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <div className="relative min-h-[280px] sm:min-h-[220px]">
+      <motion.div
+        className="relative min-h-[280px] sm:min-h-[220px]"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.5}
+        onDragEnd={(_, info) => {
+          if (info.offset.x < -60) go(index + 1)
+          else if (info.offset.x > 60) go(index - 1)
+        }}
+      >
         {testimonials.map((t, i) => (
           <div
             key={t.name}
@@ -68,20 +79,20 @@ export default function TestimonialsSlideshow() {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="flex justify-center gap-3 mt-8">
-        <button
+        <TapButton
           onClick={() => go(index - 1)}
           aria-label="Previous review"
           className="w-10 h-10 rounded-full border border-[#202b45]/20 flex items-center justify-center hover:bg-[#202b45]/10 transition"
         >
           ‹
-        </button>
+        </TapButton>
 
         <div className="flex items-center gap-2">
           {testimonials.map((_, i) => (
-            <button
+            <TapButton
               key={i}
               onClick={() => go(i)}
               aria-label={`Show review ${i + 1}`}
@@ -92,13 +103,13 @@ export default function TestimonialsSlideshow() {
           ))}
         </div>
 
-        <button
+        <TapButton
           onClick={() => go(index + 1)}
           aria-label="Next review"
           className="w-10 h-10 rounded-full border border-[#202b45]/20 flex items-center justify-center hover:bg-[#202b45]/10 transition"
         >
           ›
-        </button>
+        </TapButton>
       </div>
     </div>
   )

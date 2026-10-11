@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Playfair_Display } from 'next/font/google'
 import Analytics from '../components/Analytics'
+import MotionProvider from '../components/motion/MotionProvider'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -76,7 +77,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <Analytics />
       </body>
     </html>

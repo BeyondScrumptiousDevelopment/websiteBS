@@ -1,9 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
+import { Reveal, RevealGroup, RevealItem } from './motion/Reveal'
+import { TapLink } from './motion/TapLink'
 
 const faqGroups = [
   {
@@ -216,7 +219,7 @@ export default function FAQContent() {
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-20">
+          <Reveal className="text-center mb-20">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Beyond Scrumptious
             </p>
@@ -228,21 +231,24 @@ export default function FAQContent() {
             <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
               Everything you need to know before placing your order.
             </p>
-          </div>
+          </Reveal>
 
           {faqGroups.map((group, gi) => (
             <div key={group.category} className="mb-16">
-              <h2 className="heading-font text-3xl md:text-4xl mb-8 text-[#cfd7e2]">
-                {group.category}
-              </h2>
+              <Reveal>
+                <h2 className="heading-font text-3xl md:text-4xl mb-8 text-[#cfd7e2]">
+                  {group.category}
+                </h2>
+              </Reveal>
 
-              <div className="space-y-6">
+              <RevealGroup className="space-y-6" stagger={0.06}>
                 {group.items.map((faq, i) => {
                   const id = `${gi}-${i}`
                   return (
-                    <div
+                    <RevealItem
                       key={id}
                       className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-8 shadow-xl"
+                      y={16}
                     >
                       <button
                         onClick={() => setOpen(open === id ? null : id)}
@@ -257,29 +263,39 @@ export default function FAQContent() {
                         </span>
                       </button>
 
-                      {open === id && (
-                        <p className="mt-6 leading-8 text-[#202b45]/80 text-lg">
-                          {faq.answer}
-                        </p>
-                      )}
-                    </div>
+                      <AnimatePresence initial={false}>
+                        {open === id && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+                            className="overflow-hidden"
+                          >
+                            <p className="mt-6 leading-8 text-[#202b45]/80 text-lg">
+                              {faq.answer}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </RevealItem>
                   )
                 })}
-              </div>
+              </RevealGroup>
             </div>
           ))}
 
-          <div className="text-center mt-4">
+          <Reveal className="text-center mt-4">
             <p className="text-[#f8f8f8]/70 mb-8">
               Didn't find what you're looking for?
             </p>
-            <a
+            <TapLink
               href="/contact"
               className="inline-block px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
             >
               Enquire Now
-            </a>
-          </div>
+            </TapLink>
+          </Reveal>
         </div>
       </section>
 

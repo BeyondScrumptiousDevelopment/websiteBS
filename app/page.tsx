@@ -7,6 +7,10 @@ import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
 import TrustBadges from '../components/TrustBadges'
 import DiwaliPopup from '../components/DiwaliPopup'
 import HeroVideo from '../components/HeroVideo'
+import ScrollCue from '../components/motion/ScrollCue'
+import { Reveal, RevealGroup, RevealItem } from '../components/motion/Reveal'
+import { TapLink } from '../components/motion/TapLink'
+import SectionSeam from '../components/motion/SectionSeam'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -57,119 +61,143 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-[#202b45]/60" />
 
         <div className="relative z-10 max-w-5xl">
-          <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#f8f8f8]/70">
-            Eggless Cakes, Desserts & Live Dessert Experiences
-          </p>
+          <Reveal delay={0}>
+            <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#f8f8f8]/70">
+              Eggless Cakes, Desserts & Live Dessert Experiences
+            </p>
+          </Reveal>
 
-          <h1 className="logo-font text-7xl md:text-[10rem] leading-[0.9] mb-8">
-            Beyond
-            <br />
-            Scrumptious
-          </h1>
+          <Reveal delay={0.1}>
+            <h1 className="logo-font text-7xl md:text-[10rem] leading-[0.9] mb-8">
+              Beyond
+              <br />
+              Scrumptious
+            </h1>
+          </Reveal>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#f8f8f8]/80 leading-8 mb-12">
-            Handcrafted eggless cakes and desserts, styled dessert tables,
-            and live dessert experiences for celebrations, parties, weddings
-            and events across Harrow, London and beyond.
-          </p>
+          <Reveal delay={0.2}>
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#f8f8f8]/80 leading-8 mb-12">
+              Handcrafted eggless cakes and desserts, styled dessert tables,
+              and live dessert experiences for celebrations, parties, weddings
+              and events across Harrow, London and beyond.
+            </p>
+          </Reveal>
 
-          <div className="flex flex-wrap justify-center gap-5">
-            <a
-              href="/contact"
-              className="px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
-            >
-              Enquire Now
-            </a>
-            <a
-              href="#offer"
-              className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
-            >
-              Explore
-            </a>
-          </div>
+          <Reveal delay={0.3}>
+            <div className="flex flex-wrap justify-center gap-5">
+              <TapLink
+                href="/contact"
+                className="px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
+              >
+                Enquire Now
+              </TapLink>
+              <TapLink
+                href="#offer"
+                className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+              >
+                Explore
+              </TapLink>
+            </div>
+          </Reveal>
         </div>
+
+        <ScrollCue targetId="offer" />
       </section>
 
       <TrustBadges />
+      <SectionSeam color="#8992a3" />
 
       {/* WHAT WE OFFER */}
       <section id="offer" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6 text-center">
-            What We Offer
-          </p>
+          <Reveal>
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6 text-center">
+              What We Offer
+            </p>
 
-          <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
-            Three Ways We Bring
-            <br />
-            The Scrumptious
-          </h2>
+            <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
+              Three Ways We Bring
+              <br />
+              The Scrumptious
+            </h2>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <a
-              href="/cakes"
-              className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
-            >
-              <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
-              <p className="text-[#202b45]/70 leading-7">
-                Custom eggless cakes for all occasions, plus cupcakes in a
-                range of flavours and box sizes.
-              </p>
-            </a>
+          <RevealGroup className="grid md:grid-cols-3 gap-8">
+            <RevealItem>
+              <TapLink
+                href="/cakes"
+                className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+              >
+                <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
+                <p className="text-[#202b45]/70 leading-7">
+                  Custom eggless cakes for all occasions, plus cupcakes in a
+                  range of flavours and box sizes.
+                </p>
+              </TapLink>
+            </RevealItem>
 
-            <a
-              href="/desserts"
-              className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
-            >
-              <h3 className="heading-font text-3xl mb-4">
-                Desserts & Dessert Tables
-              </h3>
-              <p className="text-[#202b45]/70 leading-7">
-                Individual desserts and beautifully styled dessert-table
-                experiences for any celebration.
-              </p>
-            </a>
+            <RevealItem>
+              <TapLink
+                href="/desserts"
+                className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+              >
+                <h3 className="heading-font text-3xl mb-4">
+                  Desserts & Dessert Tables
+                </h3>
+                <p className="text-[#202b45]/70 leading-7">
+                  Individual desserts and beautifully styled dessert-table
+                  experiences for any celebration.
+                </p>
+              </TapLink>
+            </RevealItem>
 
-            <a
-              href="/live-desserts"
-              className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
-            >
-              <h3 className="heading-font text-3xl mb-4">Live Desserts</h3>
-              <p className="text-[#202b45]/70 leading-7">
-                Our Live Mini Pancake Station, prepared fresh in front of
-                your guests.
-              </p>
-            </a>
-          </div>
+            <RevealItem>
+              <TapLink
+                href="/live-desserts"
+                className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+              >
+                <h3 className="heading-font text-3xl mb-4">Live Desserts</h3>
+                <p className="text-[#202b45]/70 leading-7">
+                  Our Live Mini Pancake Station, prepared fresh in front of
+                  your guests.
+                </p>
+              </TapLink>
+            </RevealItem>
+          </RevealGroup>
         </div>
       </section>
+
+      <SectionSeam color="#8992a3" />
 
       {/* CREATIVE / VISUAL SECTION */}
       <section className="py-28 px-6 bg-[#202b45]">
         <div className="max-w-7xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
-            Our Work
-          </p>
+          <Reveal>
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
+              Our Work
+            </p>
 
-          <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
-            Made To Impress
-          </h2>
+            <h2 className="heading-font text-5xl md:text-6xl mb-16 text-center">
+              Made To Impress
+            </h2>
+          </Reveal>
 
           {featured.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-6">
+            <RevealGroup className="grid md:grid-cols-3 gap-6">
               {featured.map((item: any) => (
-                <div
+                <RevealItem
                   key={item._id}
                   className="rounded-[2rem] overflow-hidden shadow-xl"
                 >
                   <img
                     src={urlFor(item.image).width(800).url()}
                     alt={altTextFor(item)}
+                    loading="lazy"
                     className="w-full h-auto hover:scale-105 transition duration-500"
                   />
-                </div>
+                </RevealItem>
               ))}
-            </div>
+            </RevealGroup>
           ) : (
             <p className="text-center text-[#f8f8f8]/50">
               New photos coming soon — see our full gallery below.
@@ -177,19 +205,21 @@ export default async function HomePage() {
           )}
 
           <div className="text-center mt-14">
-            <a
+            <TapLink
               href="/gallery"
               className="inline-block px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
             >
               View Full Gallery
-            </a>
+            </TapLink>
           </div>
         </div>
       </section>
 
+      <SectionSeam color="#8992a3" />
+
       {/* EVENTS */}
       <section className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
             Celebrations & Events
           </p>
@@ -205,17 +235,20 @@ export default async function HomePage() {
             everything in between — every order is built around what you
             need for your occasion.
           </p>
-        </div>
+        </Reveal>
       </section>
+
+      <SectionSeam color="#8992a3" />
 
       {/* LIVE DESSERT FEATURE */}
       <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div className="grid grid-cols-2 gap-4 order-2 md:order-1">
+          <Reveal className="grid grid-cols-2 gap-4 order-2 md:order-1" y={32}>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
               <img
                 src="/images/pancake-2.jpg"
                 alt="Fresh mini pancakes cooked live on the griddle"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -223,12 +256,13 @@ export default async function HomePage() {
               <img
                 src="/images/pancake-1.jpg"
                 alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </Reveal>
 
-          <div className="order-1 md:order-2">
+          <Reveal className="order-1 md:order-2" y={32}>
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Live Mini Pancake Station
             </p>
@@ -245,35 +279,41 @@ export default async function HomePage() {
             </p>
 
             <div className="flex gap-4 flex-wrap">
-              <a
+              <TapLink
                 href="/live-desserts"
                 className="px-8 py-4 bg-[#f8f8f8] text-[#202b45] rounded-full hover:bg-[#cfd7e2] transition"
               >
                 Explore Live Desserts
-              </a>
+              </TapLink>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
+
+      <SectionSeam color="#8992a3" />
 
       {/* TESTIMONIALS */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-            Client Love
-          </p>
+          <Reveal>
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+              Client Love
+            </p>
 
-          <h2 className="heading-font text-5xl md:text-6xl mb-16">
-            Sweet Words
-          </h2>
+            <h2 className="heading-font text-5xl md:text-6xl mb-16">
+              Sweet Words
+            </h2>
+          </Reveal>
 
           <TestimonialsSlideshow />
         </div>
       </section>
 
+      <SectionSeam color="#8992a3" />
+
       {/* OUR STORY TEASER */}
       <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
             Our Story
           </p>
@@ -291,18 +331,20 @@ export default async function HomePage() {
             desserts joined the menu.
           </p>
 
-          <a
+          <TapLink
             href="/our-story"
             className="inline-block px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
           >
             Read Our Story
-          </a>
-        </div>
+          </TapLink>
+        </Reveal>
       </section>
+
+      <SectionSeam color="#8992a3" />
 
       {/* FINAL CTA */}
       <section id="contact" className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
             Let's Create Something Scrumptious
           </p>
@@ -318,13 +360,13 @@ export default async function HomePage() {
             tailored to what you need.
           </p>
 
-          <a
+          <TapLink
             href="/contact"
             className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
           >
             Enquire Now
-          </a>
-        </div>
+          </TapLink>
+        </Reveal>
       </section>
 
       <Footer />

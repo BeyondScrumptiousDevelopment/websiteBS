@@ -4,6 +4,9 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 import GallerySlideshow from '../../components/GallerySlideshow'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 import ServiceJsonLd from '../../components/ServiceJsonLd'
+import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
+import { TapLink } from '../../components/motion/TapLink'
+import SectionSeam from '../../components/motion/SectionSeam'
 
 const standardToppings = ['Oreo Crumbs', 'Biscoff Crumbs', 'Sprinkles', 'Mini Marshmallows', 'Smarties']
 
@@ -219,8 +222,8 @@ export default function LiveDessertsPage() {
       <WhatsAppButton />
 
       {/* HERO */}
-      <section className="pt-40 pb-24 px-6 text-center">
-        <div className="max-w-5xl mx-auto">
+      <section className="pt-40 pb-24 px-6 text-center relative">
+        <Reveal className="max-w-5xl mx-auto">
           <p className="logo-font text-3xl md:text-4xl mb-4 text-[#cfd7e2]">
             Beyond Scrumptious
           </p>
@@ -256,20 +259,20 @@ export default function LiveDessertsPage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">
-            <a
+            <TapLink
               href="/contact"
               className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
               Enquire For Your Event
-            </a>
-            <a
+            </TapLink>
+            <TapLink
               href="#packages"
               className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
             >
               View Packages
-            </a>
+            </TapLink>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* VIDEOS — full-bleed media showcase */}
@@ -305,9 +308,11 @@ export default function LiveDessertsPage() {
         title="The Live Pancake Station In Action"
       />
 
+      <SectionSeam color="#8992a3" />
+
       {/* INTRODUCTION */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
             The Experience
           </p>
@@ -329,39 +334,39 @@ export default function LiveDessertsPage() {
             event, we&apos;ll bring the setup, equipment and serving team
             needed to make the experience run smoothly.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* WHY CHOOSE */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Why Choose The Live Pancake Station?
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Freshly Made. Served Live.
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <RevealGroup className="grid md:grid-cols-2 gap-8">
             {whyChoose.map((item) => (
-              <div
+              <RevealItem
                 key={item.title}
                 className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl"
               >
                 <h3 className="heading-font text-2xl mb-4">{item.title}</h3>
                 <p className="leading-8 text-[#f8f8f8]/70">{item.description}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       {/* PACKAGES */}
       <section id="packages" className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               Packages
             </p>
@@ -373,11 +378,11 @@ export default function LiveDessertsPage() {
               choice, from a simple selection of favourites to our full
               premium experience.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <RevealGroup className="grid md:grid-cols-3 gap-8">
             {packages.map((pkg) => (
-              <div
+              <RevealItem
                 key={pkg.name}
                 className={`rounded-[2rem] p-10 shadow-xl text-center flex flex-col ${
                   pkg.highlight
@@ -400,9 +405,9 @@ export default function LiveDessertsPage() {
                 >
                   {pkg.description}
                 </p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
 
           <div className="text-center mt-16">
             <p className="heading-font text-2xl md:text-3xl mb-4">
@@ -412,12 +417,12 @@ export default function LiveDessertsPage() {
               Every event is individually quoted based on guest numbers,
               location, service requirements and selected options.
             </p>
-            <a
+            <TapLink
               href="/contact"
               className="inline-block px-12 py-6 rounded-full bg-[#202b45] text-[#f8f8f8] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#8992a3] hover:-translate-y-0.5 transition shadow-xl"
             >
               Request A Quote
-            </a>
+            </TapLink>
           </div>
         </div>
       </section>
@@ -425,7 +430,7 @@ export default function LiveDessertsPage() {
       {/* TOPPINGS */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Toppings
             </p>
@@ -436,10 +441,10 @@ export default function LiveDessertsPage() {
               We offer a mix of classic favourites and premium selections so
               you can create a combination that suits your event.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+          <RevealGroup className="grid md:grid-cols-3 gap-8">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
                 Standard Selection
               </p>
@@ -448,9 +453,9 @@ export default function LiveDessertsPage() {
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-            </div>
+            </RevealItem>
 
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
               <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
                 Premium Selection
               </p>
@@ -459,9 +464,9 @@ export default function LiveDessertsPage() {
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-            </div>
+            </RevealItem>
 
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#c9973f]/30">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#c9973f]/30">
               <p className="uppercase tracking-[0.3em] text-xs text-[#c9973f]/80 mb-6">
                 Add-On
               </p>
@@ -470,8 +475,8 @@ export default function LiveDessertsPage() {
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
 
           <p className="max-w-2xl mx-auto text-center mt-10 text-[#f8f8f8]/60 leading-7">
             Premium selections are available depending on your chosen
@@ -484,17 +489,17 @@ export default function LiveDessertsPage() {
       {/* SAUCES */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               Sauces
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Drizzle It Your Way
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl">
+          <RevealGroup className="grid md:grid-cols-2 gap-8">
+            <RevealItem className="bg-white rounded-[2rem] p-10 shadow-xl">
               <p className="uppercase tracking-[0.3em] text-xs text-[#202b45]/50 mb-6">
                 Standard Selection
               </p>
@@ -503,9 +508,9 @@ export default function LiveDessertsPage() {
                   <li key={s}>{s}</li>
                 ))}
               </ul>
-            </div>
+            </RevealItem>
 
-            <div className="bg-white rounded-[2rem] p-10 shadow-xl border border-[#202b45]/10">
+            <RevealItem className="bg-white rounded-[2rem] p-10 shadow-xl border border-[#202b45]/10">
               <p className="uppercase tracking-[0.3em] text-xs text-[#202b45]/50 mb-6">
                 Premium Selection
               </p>
@@ -514,8 +519,8 @@ export default function LiveDessertsPage() {
                   <li key={s}>{s}</li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
 
           <p className="max-w-2xl mx-auto text-center mt-10 text-[#202b45]/60 leading-7">
             Your chosen package determines the number of toppings and sauces
@@ -527,7 +532,7 @@ export default function LiveDessertsPage() {
       {/* CUSTOMISATION */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Customisation
             </p>
@@ -538,31 +543,31 @@ export default function LiveDessertsPage() {
               Want your pancake station to feel even more personal to your
               event? We offer a range of optional customisation features.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-14">
+          <RevealGroup className="grid md:grid-cols-3 gap-8 mb-14">
             {customisation.map((item) => (
-              <div
+              <RevealItem
                 key={item.title}
                 className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl text-center"
               >
                 <h3 className="heading-font text-xl mb-4">{item.title}</h3>
                 <p className="leading-7 text-[#f8f8f8]/70">{item.description}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
 
           <div className="text-center">
             <p className="max-w-2xl mx-auto text-[#f8f8f8]/60 leading-7 mb-10">
               Customisation options are available at an additional charge and
               will be included in your individual quote.
             </p>
-            <a
+            <TapLink
               href="/contact"
               className="inline-block px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
             >
               Ask About Customisation
-            </a>
+            </TapLink>
           </div>
         </div>
       </section>
@@ -570,18 +575,18 @@ export default function LiveDessertsPage() {
       {/* HOW IT WORKS */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               How It Works
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               How Our Live Pancake Station Works
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <RevealGroup className="grid md:grid-cols-2 gap-8">
             {howItWorks.map((item) => (
-              <div
+              <RevealItem
                 key={item.step}
                 className="bg-white rounded-[2rem] p-10 shadow-xl flex gap-6"
               >
@@ -592,26 +597,26 @@ export default function LiveDessertsPage() {
                   <h3 className="heading-font text-2xl mb-3">{item.title}</h3>
                   <p className="leading-7 text-[#202b45]/70">{item.description}</p>
                 </div>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       {/* SERVICE / TRAVEL / VENUE REQUIREMENTS */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               Good To Know
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Planning Your Event
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+          <RevealGroup className="grid md:grid-cols-3 gap-8">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">Service</h3>
               <p className="leading-7 text-[#f8f8f8]/70 mb-4">
                 Our service is planned around your guest numbers and event
@@ -624,9 +629,9 @@ export default function LiveDessertsPage() {
                 duration or event format in mind, let us know when enquiring
                 and we&apos;ll recommend the most suitable setup.
               </p>
-            </div>
+            </RevealItem>
 
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">Travel</h3>
               <p className="leading-7 text-[#f8f8f8]/70 mb-4">
                 Based in Harrow, we can travel to events across London and
@@ -637,9 +642,9 @@ export default function LiveDessertsPage() {
                 quote. Any applicable travel, parking or other venue-related
                 requirements will be confirmed before booking.
               </p>
-            </div>
+            </RevealItem>
 
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 Venue Requirements
               </h3>
@@ -653,38 +658,38 @@ export default function LiveDessertsPage() {
                 depending on the venue and weather conditions. Setup and
                 packdown are handled by our team.
               </p>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
         </div>
       </section>
 
       {/* PERFECT FOR */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               Occasions
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">Perfect For</h2>
-          </div>
+          </Reveal>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {perfectFor.map((item) => (
-              <div
+              <RevealItem
                 key={item.title}
                 className="bg-white rounded-[2rem] p-10 shadow-xl text-center"
               >
                 <h3 className="heading-font text-xl mb-4">{item.title}</h3>
                 <p className="leading-7 text-[#202b45]/70">{item.description}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       {/* FOOD INFORMATION */}
       <section className="py-28 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <Reveal className="max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
             Food Information
           </p>
@@ -699,38 +704,41 @@ export default function LiveDessertsPage() {
             If you have other dietary requirements, please mention them when
             enquiring so we can discuss what arrangements may be possible.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* FAQ */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               FAQ
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Common Questions
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="space-y-6">
+          <RevealGroup className="space-y-6" stagger={0.05}>
             {faqs.map((item) => (
-              <div
+              <RevealItem
                 key={item.question}
                 className="bg-white rounded-[2rem] p-8 shadow-xl"
+                y={14}
               >
                 <h3 className="heading-font text-xl mb-3">{item.question}</h3>
                 <p className="leading-7 text-[#202b45]/70">{item.answer}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
+      <SectionSeam color="#8992a3" />
+
       {/* FINAL CTA */}
       <section className="py-32 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
+        <Reveal className="max-w-4xl mx-auto">
           <p className="logo-font text-3xl md:text-4xl mb-6 text-[#cfd7e2]">
             Beyond Scrumptious
           </p>
@@ -763,27 +771,27 @@ export default function LiveDessertsPage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">
-            <a
+            <TapLink
               href="/contact"
               className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
               Request Your Quote
-            </a>
-            <a
+            </TapLink>
+            <TapLink
               href="https://wa.me/447933903000"
               target="_blank"
               className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
             >
               WhatsApp Us
-            </a>
-            <a
+            </TapLink>
+            <TapLink
               href="mailto:hello@beyondscrumptious.com"
               className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
             >
               Email Us
-            </a>
+            </TapLink>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <Footer />

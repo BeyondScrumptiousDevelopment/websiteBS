@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import { trackEvent } from '../lib/gtag'
+import { TapButton } from './motion/TapLink'
 
 // TODO: replace with the real Diwali order Formspree form ID once provided.
 const FORMSPREE_DIWALI_ID = 'xzezrdzj'
@@ -145,7 +146,7 @@ export default function DiwaliOrderForm() {
         <div>
           <label className={labelClass}>Choose Your Box</label>
           <div className="grid sm:grid-cols-2 gap-4">
-            <button
+            <TapButton
               type="button"
               onClick={() => setBox('6')}
               className={`rounded-2xl p-6 text-left border transition ${
@@ -156,8 +157,8 @@ export default function DiwaliOrderForm() {
             >
               <p className="heading-font text-2xl mb-1">6 Cupcakes</p>
               <p className="text-sm opacity-80">£20 · One flavour only</p>
-            </button>
-            <button
+            </TapButton>
+            <TapButton
               type="button"
               onClick={() => setBox('12')}
               className={`rounded-2xl p-6 text-left border transition ${
@@ -168,7 +169,7 @@ export default function DiwaliOrderForm() {
             >
               <p className="heading-font text-2xl mb-1">12 Cupcakes</p>
               <p className="text-sm opacity-80">£35 · One or two flavours (6 + 6)</p>
-            </button>
+            </TapButton>
           </div>
           <input type="hidden" name="box" value={box ? `${box} Cupcakes — £${total}` : ''} />
         </div>
@@ -201,7 +202,7 @@ export default function DiwaliOrderForm() {
             <div>
               <label className={labelClass}>Choose Your Flavour</label>
               <div className="grid sm:grid-cols-2 gap-4">
-                <button
+                <TapButton
                   type="button"
                   onClick={() => setFlavourMode('one')}
                   className={`rounded-2xl p-5 text-left border transition ${
@@ -211,8 +212,8 @@ export default function DiwaliOrderForm() {
                   }`}
                 >
                   One flavour — 12 cupcakes
-                </button>
-                <button
+                </TapButton>
+                <TapButton
                   type="button"
                   onClick={() => setFlavourMode('two')}
                   className={`rounded-2xl p-5 text-left border transition ${
@@ -222,7 +223,7 @@ export default function DiwaliOrderForm() {
                   }`}
                 >
                   Two flavours — 6 + 6
-                </button>
+                </TapButton>
               </div>
               <input type="hidden" name="flavour_mode" value={flavourMode} />
             </div>
@@ -328,7 +329,7 @@ export default function DiwaliOrderForm() {
             <label className={labelClass}>Preferred Pickup Date</label>
             <div className="grid sm:grid-cols-2 gap-4">
               {pickupDates.map((date) => (
-                <button
+                <TapButton
                   type="button"
                   key={date}
                   onClick={() => setPickupDate(date)}
@@ -339,7 +340,7 @@ export default function DiwaliOrderForm() {
                   }`}
                 >
                   {date}
-                </button>
+                </TapButton>
               ))}
             </div>
             <input type="hidden" name="pickup_date" value={pickupDate} />
@@ -373,13 +374,13 @@ export default function DiwaliOrderForm() {
         )}
 
         {box && (
-          <button
+          <TapButton
             type="submit"
             disabled={state.submitting}
             className="w-full px-12 py-5 rounded-full bg-[#c9973f] text-[#202b45] text-sm font-semibold uppercase tracking-[0.2em] hover:bg-[#f3e3c3] transition disabled:opacity-50"
           >
             {state.submitting ? 'Sending...' : 'Submit Order'}
-          </button>
+          </TapButton>
         )}
 
         {box && (

@@ -4,6 +4,9 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 import GallerySlideshow from '../../components/GallerySlideshow'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 import ServiceJsonLd from '../../components/ServiceJsonLd'
+import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
+import { TapLink } from '../../components/motion/TapLink'
+import SectionSeam from '../../components/motion/SectionSeam'
 
 const range = [
   {
@@ -87,7 +90,7 @@ export default function DessertsPage() {
 
       {/* HERO */}
       <section className="pt-40 pb-24 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
+        <Reveal className="max-w-4xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
             Dessert Tables in Harrow & London
           </p>
@@ -102,24 +105,26 @@ export default function DessertsPage() {
             All of our desserts are eggless and gelatine-free, and every
             order is customisable to your event.
           </p>
-        </div>
+        </Reveal>
       </section>
+
+      <SectionSeam color="#8992a3" />
 
       {/* RANGE */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               Our Dessert Range
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Something For Every Table
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <RevealGroup className="grid md:grid-cols-2 gap-6" stagger={0.05}>
             {range.map((item) => (
-              <div
+              <RevealItem
                 key={item.name}
                 className="bg-white rounded-[2rem] p-8 shadow-md"
               >
@@ -146,9 +151,9 @@ export default function DessertsPage() {
                     Customisable
                   </span>
                 </div>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -158,20 +163,22 @@ export default function DessertsPage() {
         title="Recent Desserts & Tables"
       />
 
+      <SectionSeam color="#8992a3" />
+
       {/* DESSERT TABLE EXPERIENCE */}
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               The Dessert Table Experience
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Styled To You
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-14">
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+          <RevealGroup className="grid md:grid-cols-2 gap-8 mb-14">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 You Choose, We Advise
               </h3>
@@ -181,9 +188,9 @@ export default function DessertsPage() {
                 entirely. Styling and decor is built around what you'd like
                 and what we're able to provide.
               </p>
-            </div>
+            </RevealItem>
 
-            <div className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 Two Service Options
               </h3>
@@ -198,8 +205,8 @@ export default function DessertsPage() {
                 — we stay to replenish and keep the table stocked
                 throughout your event.
               </p>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
 
           <div className="text-center">
             <p className="uppercase tracking-[0.3em] text-sm text-[#cfd7e2]/60">
@@ -209,8 +216,10 @@ export default function DessertsPage() {
         </div>
       </section>
 
+      <SectionSeam color="#8992a3" />
+
       {/* CTA */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 text-center">
+      <Reveal as="section" className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 text-center" y={0}>
         <h2 className="heading-font text-4xl md:text-6xl mb-8">
           Let's Build Your Table
         </h2>
@@ -228,13 +237,13 @@ export default function DessertsPage() {
           </a>{' '}
           for a live dessert experience.
         </p>
-        <a
+        <TapLink
           href="/contact"
           className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
         >
           Enquire About Your Dessert Table
-        </a>
-      </section>
+        </TapLink>
+      </Reveal>
 
       <Footer />
     </main>

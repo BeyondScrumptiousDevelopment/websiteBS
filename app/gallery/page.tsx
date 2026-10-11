@@ -4,6 +4,7 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 import { client } from '../../sanity/lib/client'
 import GalleryGrid from './GalleryGrid'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
+import { Reveal } from '../../components/motion/Reveal'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -48,19 +49,21 @@ export default async function GalleryPage() {
       <WhatsAppButton />
 
       <section className="pt-40 pb-16 px-6 text-center">
-        <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-          Our Work
-        </p>
+        <Reveal className="max-w-3xl mx-auto">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            Our Work
+          </p>
 
-        <h1 className="heading-font text-6xl md:text-8xl mb-8">
-          Gallery
-        </h1>
+          <h1 className="heading-font text-6xl md:text-8xl mb-8">
+            Gallery
+          </h1>
 
-        <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-          Handcrafted cakes, desserts, dessert tables and live dessert
-          experiences created for celebrations across Harrow, London and
-          beyond.
-        </p>
+          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+            Handcrafted cakes, desserts, dessert tables and live dessert
+            experiences created for celebrations across Harrow, London and
+            beyond.
+          </p>
+        </Reveal>
       </section>
 
       <GalleryGrid products={products} />

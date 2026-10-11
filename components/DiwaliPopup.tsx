@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { TapLink } from './motion/TapLink'
 
 const DISMISS_KEY = 'diwali_popup_dismissed'
 // After this date the popup stops showing, regardless of dismissal state.
@@ -34,11 +36,17 @@ export default function DiwaliPopup() {
   if (!visible) return null
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.25 }}
       className="fixed inset-0 z-[300] flex items-center justify-center bg-black/70 px-6"
       onClick={dismiss}
     >
-      <div
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={(e) => e.stopPropagation()}
         className="relative w-full max-w-sm bg-[#1b1712] border border-[#c9973f]/40 rounded-[2rem] overflow-hidden shadow-2xl"
       >
@@ -68,12 +76,12 @@ export default function DiwaliPopup() {
             Vanilla &amp; Chocolate — pickup 7th–8th November, Harrow.
           </p>
 
-          <a
+          <TapLink
             href="/diwali"
             className="block w-full px-8 py-4 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#f3e3c3] transition mb-3"
           >
             Order Your Box
-          </a>
+          </TapLink>
           <button
             onClick={dismiss}
             className="text-xs text-[#f8f8f8]/50 hover:text-[#f8f8f8]/80 transition"
@@ -81,7 +89,7 @@ export default function DiwaliPopup() {
             Maybe later
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }

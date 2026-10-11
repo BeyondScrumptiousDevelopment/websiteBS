@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { TapLink } from './motion/TapLink'
 
 const navLinks = [
   { href: '/cakes', label: 'Cakes' },
@@ -35,42 +37,64 @@ export default function Navbar() {
             </a>
           ))}
 
-          <a
+          <TapLink
             href="/contact"
             className="px-6 py-3 rounded-full bg-[#f8f8f8] text-[#202b45] hover:bg-[#cfd7e2] transition"
           >
             Enquire Now
-          </a>
+          </TapLink>
         </div>
 
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden text-2xl"
+          className="lg:hidden text-2xl relative w-7 h-7 flex items-center justify-center"
           aria-label="Toggle menu"
         >
-          {open ? <FaTimes /> : <FaBars />}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={open ? 'close' : 'open'}
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              {open ? <FaTimes /> : <FaBars />}
+            </motion.span>
+          </AnimatePresence>
         </button>
 
       </div>
 
       {/* MOBILE MENU */}
-      {open && (
-        <div className="lg:hidden flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80 bg-[#202b45] p-6 rounded-3xl">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-
-          <a
-            href="/contact"
-            className="px-6 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] text-center normal-case tracking-normal"
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="lg:hidden overflow-hidden"
           >
-            Enquire Now
-          </a>
-        </div>
-      )}
+            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80 bg-[#202b45] p-6 rounded-3xl">
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href}>
+                  {link.label}
+                </a>
+              ))}
+
+              <TapLink
+                href="/contact"
+                className="px-6 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] text-center normal-case tracking-normal"
+              >
+                Enquire Now
+              </TapLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }
