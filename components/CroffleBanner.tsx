@@ -4,16 +4,13 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { TapLink } from './motion/TapLink'
 
-const DISMISS_KEY = 'diwali_popup_dismissed'
-// After this date the popup stops showing, regardless of dismissal state.
-const PROMO_END = new Date('2026-11-09T00:00:00')
+const DISMISS_KEY = 'croffle_popup_dismissed'
 
-export default function DiwaliPopup() {
+/** Homepage popup announcing the Live Croffle Station launch. */
+export default function CroffleBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (new Date() >= PROMO_END) return
-
     try {
       if (localStorage.getItem(DISMISS_KEY)) return
     } catch {
@@ -48,7 +45,7 @@ export default function DiwaliPopup() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-sm bg-[#1b1712] border border-[#c9973f]/40 rounded-[2rem] overflow-hidden shadow-2xl"
+        className="relative w-full max-w-sm bg-[#161f36] border border-[#cfd7e2]/20 rounded-[2rem] overflow-hidden shadow-2xl"
       >
         <button
           onClick={dismiss}
@@ -58,29 +55,24 @@ export default function DiwaliPopup() {
           ×
         </button>
 
-        <img
-          src="/images/diwali/cupcakes-1.jpg"
-          alt="Naturally Sweet Cupcakes for Diwali"
-          className="w-full h-48 object-cover"
-        />
-
         <div className="p-8 text-center">
-          <p className="uppercase tracking-[0.3em] text-xs text-[#c9973f] mb-3">
-            Diwali 2026 ✨
+          <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-3">
+            New At Beyond Scrumptious
           </p>
-          <h2 className="heading-font text-3xl text-[#f3e3c3] mb-3">
-            Naturally Sweet Cupcakes
+          <h2 className="heading-font text-3xl text-[#f8f8f8] mb-3">
+            Live Croffle Station
           </h2>
           <p className="text-sm text-[#f8f8f8]/70 mb-6 leading-6">
-            No added refined sugar, sweetened naturally with dates. Kulfi,
-            Vanilla &amp; Chocolate — pickup 7th–8th November, Harrow.
+            Croissant meets waffle — freshly pressed at your event and
+            finished with your choice of toppings and sauces. Eggless, and
+            now bookable alongside our Live Mini Pancake Station.
           </p>
 
           <TapLink
-            href="/diwali"
-            className="block w-full px-8 py-4 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#f3e3c3] transition mb-3"
+            href="/croffle"
+            className="block w-full px-8 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#cfd7e2] transition mb-3"
           >
-            Order Your Box
+            Learn More
           </TapLink>
           <button
             onClick={dismiss}

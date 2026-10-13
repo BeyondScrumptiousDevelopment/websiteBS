@@ -40,11 +40,18 @@ const packages = [
   },
 ]
 
+const croffleFeatures = [
+  'Croffles freshly pressed at your event',
+  'Served warm, finished with your chosen toppings & sauces',
+  'Three fixed package options — Classic, Deluxe, Signature',
+  'Perfect for weddings, mehndis, birthdays & corporate events',
+]
+
 const whyChoose = [
   {
     title: 'Cooked Fresh On-Site',
     description:
-      'Our mini pancakes are cooked live throughout your booked service, giving your guests a freshly prepared dessert experience.',
+      'Our mini pancakes and croffles are cooked and pressed live throughout your booked service, giving your guests a freshly prepared dessert experience.',
   },
   {
     title: 'Something Different',
@@ -86,14 +93,14 @@ const howItWorks = [
   },
   {
     step: '2',
-    title: 'Pancakes Are Cooked Fresh',
-    description: 'Our mini pancakes are cooked live on-site throughout your booked service.',
+    title: 'Freshly Cooked Or Pressed',
+    description: 'Our mini pancakes or croffles are cooked and pressed live on-site throughout your booked service.',
   },
   {
     step: '3',
     title: 'Guests Choose Their Favourites',
     description:
-      'Guests can enjoy their pancakes with the toppings and sauces included in your chosen package.',
+      'Guests can enjoy their pancakes or croffles with the toppings and sauces included in your chosen package.',
   },
   {
     step: '4',
@@ -175,6 +182,21 @@ const faqs = [
     answer:
       'Yes. Larger events can be accommodated, with staffing, equipment and service requirements considered as part of the planning process.',
   },
+  {
+    question: 'What is the Live Croffle Station?',
+    answer:
+      'Our newest live dessert station — croffles (croissant-waffles) pressed fresh on-site until golden and crispy, then finished with your choice of toppings and sauces. Croffles are eggless.',
+  },
+  {
+    question: 'Can I book the Croffle Station instead of the Pancake Station?',
+    answer:
+      'Yes. Both stations use the same Classic, Deluxe and Signature packages — just let us know which station you’d like when you enquire.',
+  },
+  {
+    question: 'Can I have both the Pancake Station and the Croffle Station at my event?',
+    answer:
+      'Yes, this can be arranged — get in touch with your event details and we’ll put together a quote for both.',
+  },
 ]
 
 const faqJsonLd = {
@@ -191,16 +213,16 @@ const faqJsonLd = {
 }
 
 export const metadata = {
-  title: 'Live Mini Pancake Station in London | Beyond Scrumptious',
+  title: 'Live Mini Pancake & Croffle Stations in London | Beyond Scrumptious',
   description:
-    'Live Mini Pancake Station for weddings, mehndis, birthdays and corporate events across London. Freshly cooked eggless mini pancakes, toppings and sauces, cooked on-site.',
+    'Live Mini Pancake Station and Live Croffle Station for weddings, mehndis, birthdays and corporate events across London. Freshly made eggless desserts, toppings and sauces, cooked on-site.',
   alternates: {
     canonical: '/live-desserts',
   },
   openGraph: {
-    title: 'Live Mini Pancake Station in London | Beyond Scrumptious',
+    title: 'Live Mini Pancake & Croffle Stations in London | Beyond Scrumptious',
     description:
-      'Live Mini Pancake Station for weddings, mehndis, birthdays and corporate events across London. Freshly cooked eggless mini pancakes, toppings and sauces, cooked on-site.',
+      'Live Mini Pancake Station and Live Croffle Station for weddings, mehndis, birthdays and corporate events across London. Freshly made eggless desserts, toppings and sauces, cooked on-site.',
     url: 'https://www.beyondscrumptious.com/live-desserts',
   },
 }
@@ -212,10 +234,10 @@ export default function LiveDessertsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <BreadcrumbJsonLd items={[{ name: 'Live Mini Pancake Station', path: '/live-desserts' }]} />
+      <BreadcrumbJsonLd items={[{ name: 'Live Desserts', path: '/live-desserts' }]} />
       <ServiceJsonLd
-        name="Live Mini Pancake Station"
-        description="Freshly cooked eggless mini pancakes, cooked on-site for weddings, mehndis, birthdays and corporate events across London."
+        name="Live Dessert Stations — Mini Pancakes & Croffles"
+        description="Freshly cooked eggless mini pancakes and freshly pressed eggless croffles, prepared live on-site for weddings, mehndis, birthdays and corporate events across London."
         path="/live-desserts"
       />
       <Navbar />
@@ -272,6 +294,14 @@ export default function LiveDessertsPage() {
               View Packages
             </TapLink>
           </div>
+
+          <p className="mt-10 text-sm text-[#f8f8f8]/60">
+            New — also introducing our{' '}
+            <a href="#croffle" className="underline hover:text-[#f8f8f8]">
+              Live Croffle Station
+            </a>
+            .
+          </p>
         </Reveal>
       </section>
 
@@ -342,7 +372,7 @@ export default function LiveDessertsPage() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Why Choose The Live Pancake Station?
+              Why Choose A Beyond Scrumptious Live Dessert Station?
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
               Freshly Made. Served Live.
@@ -363,6 +393,76 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
+      {/* LIVE CROFFLE STATION */}
+      <section id="croffle" className="py-32 px-6 scroll-mt-24">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="max-w-3xl mx-auto text-center mb-14">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+              Live Dessert Stations
+            </p>
+            <h2 className="heading-font text-4xl md:text-6xl mb-6">
+              Introducing Our Live Croffle Station
+            </h2>
+            <p className="heading-font text-xl md:text-2xl text-[#cfd7e2] mb-8">
+              Croissant Meets Waffle.
+            </p>
+
+            <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-5">
+              The newest addition to the Beyond Scrumptious Live Dessert
+              range. Our Live Croffle Station brings together the buttery
+              layers of a croissant and the distinctive shape of a waffle,
+              pressed fresh until golden and crispy.
+            </p>
+            <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-5">
+              Freshly pressed at your event and finished with your choice of
+              toppings and sauces, it&apos;s a live dessert experience
+              designed to make your celebration even more special.
+            </p>
+            <p className="text-lg leading-8 text-[#f8f8f8]/70">
+              Perfect for weddings, engagements, mehndis, birthdays,
+              corporate events and other special occasions.
+            </p>
+          </Reveal>
+
+          <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+            {croffleFeatures.map((feature) => (
+              <RevealItem
+                key={feature}
+                className="bg-[#161f36] rounded-2xl p-6 text-center"
+              >
+                <p className="leading-6 text-[#f8f8f8]/80 text-sm">
+                  {feature}
+                </p>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+
+          <Reveal className="max-w-2xl mx-auto text-center">
+            <p className="text-[#f8f8f8]/60 leading-7 mb-10">
+              Our croffles are eggless. Choose your package — the same
+              Classic, Deluxe and Signature options as our Mini Pancake
+              Station, with the same{' '}
+              <a href="#toppings-sauces" className="underline hover:text-white">
+                toppings and sauces
+              </a>{' '}
+              to choose from.
+            </p>
+            <TapLink
+              href="/contact?enquiry=Live%20Croffle%20Station"
+              className="inline-block px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+            >
+              Enquire About The Live Croffle Station
+            </TapLink>
+          </Reveal>
+        </div>
+      </section>
+
+      <GallerySlideshow
+        category="croffle"
+        eyebrow="From The Gallery"
+        title="The Live Croffle Station In Action"
+      />
+
       {/* PACKAGES */}
       <section id="packages" className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
@@ -371,12 +471,12 @@ export default function LiveDessertsPage() {
               Packages
             </p>
             <h2 className="heading-font text-4xl md:text-6xl mb-6">
-              Choose Your Pancake Experience
+              Choose Your Live Dessert Package
             </h2>
             <p className="max-w-2xl mx-auto text-lg leading-8 text-[#202b45]/70">
-              Our packages are designed to give you different levels of
-              choice, from a simple selection of favourites to our full
-              premium experience.
+              The same three packages apply whether you choose the Mini
+              Pancake Station or the Croffle Station — from a simple
+              selection of favourites to our full premium experience.
             </p>
           </Reveal>
 
@@ -428,7 +528,7 @@ export default function LiveDessertsPage() {
       </section>
 
       {/* TOPPINGS */}
-      <section className="py-32 px-6">
+      <section id="toppings-sauces" className="py-32 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
@@ -438,8 +538,9 @@ export default function LiveDessertsPage() {
               Choose Your Toppings
             </h2>
             <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-              We offer a mix of classic favourites and premium selections so
-              you can create a combination that suits your event.
+              The same toppings are available across both our Mini Pancake
+              Station and Croffle Station — mix classic favourites with
+              premium selections to suit your event.
             </p>
           </Reveal>
 
@@ -540,8 +641,9 @@ export default function LiveDessertsPage() {
               Make It Yours
             </h2>
             <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-              Want your pancake station to feel even more personal to your
-              event? We offer a range of optional customisation features.
+              Want your pancake or croffle station to feel even more
+              personal to your event? We offer a range of optional
+              customisation features.
             </p>
           </Reveal>
 
@@ -580,7 +682,7 @@ export default function LiveDessertsPage() {
               How It Works
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
-              How Our Live Pancake Station Works
+              How Our Live Dessert Stations Work
             </h2>
           </Reveal>
 
@@ -694,11 +796,12 @@ export default function LiveDessertsPage() {
             Food Information
           </p>
           <h2 className="heading-font text-3xl md:text-5xl mb-8">
-            Eggless Mini Pancakes
+            Eggless Mini Pancakes &amp; Croffles
           </h2>
           <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-4">
-            Our mini pancakes are made using an eggless recipe, making the
-            station suitable for guests who avoid eggs.
+            Our mini pancakes and croffles are both made using eggless
+            recipes, making both stations suitable for guests who avoid
+            eggs.
           </p>
           <p className="text-lg leading-8 text-[#f8f8f8]/70">
             If you have other dietary requirements, please mention them when
@@ -751,7 +854,8 @@ export default function LiveDessertsPage() {
 
           <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-4 max-w-2xl mx-auto">
             Tell us a little about your event and we&apos;ll create a
-            personalised quote for your Live Mini Pancake Station.
+            personalised quote for your Live Mini Pancake Station or Live
+            Croffle Station.
           </p>
 
           <p className="heading-font text-2xl text-[#cfd7e2] mb-6">

@@ -34,6 +34,7 @@ export default defineType({
           {title: 'Desserts', value: 'desserts'},
           {title: 'Dessert Tables', value: 'dessert-tables'},
           {title: 'Live Desserts', value: 'live-desserts'},
+          {title: 'Croffle Station', value: 'croffle'},
           {title: 'Events', value: 'events'},
         ],
       },

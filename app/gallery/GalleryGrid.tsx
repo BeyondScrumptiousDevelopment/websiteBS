@@ -21,6 +21,7 @@ const tags = [
   { label: 'Desserts', value: 'desserts' },
   { label: 'Dessert Tables', value: 'dessert-tables' },
   { label: 'Live Desserts', value: 'live-desserts' },
+  { label: 'Croffle Station', value: 'croffle' },
   { label: 'Events', value: 'events' },
 ]
 

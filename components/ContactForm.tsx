@@ -16,6 +16,7 @@ type Topic =
   | 'Desserts'
   | 'Dessert Table'
   | 'Live Mini Pancake Station'
+  | 'Live Croffle Station'
   | 'Other'
 
 const topics: Topic[] = [
@@ -24,8 +25,11 @@ const topics: Topic[] = [
   'Desserts',
   'Dessert Table',
   'Live Mini Pancake Station',
+  'Live Croffle Station',
   'Other',
 ]
+
+const liveStationTopics: Topic[] = ['Live Mini Pancake Station', 'Live Croffle Station']
 
 const flavours = [
   'Vanilla',
@@ -67,6 +71,13 @@ function Field({
 export default function ContactForm() {
   const [state, handleSubmit] = useForm('mrpbpyzd')
   const [topic, setTopic] = useState<Topic | ''>('')
+
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get('enquiry')
+    if (requested && topics.includes(requested as Topic)) {
+      setTopic(requested as Topic)
+    }
+  }, [])
 
   useEffect(() => {
     if (state.succeeded) {
@@ -289,8 +300,8 @@ export default function ContactForm() {
                   </div>
                 )}
 
-                {/* PANCAKE STATION */}
-                {topic === 'Live Mini Pancake Station' && (
+                {/* LIVE DESSERT STATIONS (Pancake / Croffle) */}
+                {topic && liveStationTopics.includes(topic) && (
                   <div className="pt-4 border-t border-white/10">
                     <Field label="Package Preference">
                       <select name="package" className={inputClass}>

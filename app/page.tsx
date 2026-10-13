@@ -5,7 +5,7 @@ import { urlFor, altTextFor } from '../sanity/lib/image'
 import WhatsAppButton from '../components/WhatsAppButton'
 import TestimonialsSlideshow from '../components/TestimonialsSlideshow'
 import TrustBadges from '../components/TrustBadges'
-import DiwaliPopup from '../components/DiwaliPopup'
+import CroffleBanner from '../components/CroffleBanner'
 import HeroVideo from '../components/HeroVideo'
 import ScrollCue from '../components/motion/ScrollCue'
 import { Reveal, RevealGroup, RevealItem } from '../components/motion/Reveal'
@@ -52,7 +52,7 @@ export default async function HomePage() {
     <main className="bg-[#202b45] text-[#f8f8f8] overflow-hidden">
       <Navbar />
       <WhatsAppButton />
-      <DiwaliPopup />
+      <CroffleBanner />
 
       {/* HERO */}
       <section className="relative h-screen flex items-center justify-center text-center px-6">
