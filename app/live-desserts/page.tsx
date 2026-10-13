@@ -425,13 +425,26 @@ export default function LiveDessertsPage() {
           </Reveal>
 
           <Reveal className="mb-14">
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[16/9] mb-4">
-              <img
-                src="/images/croffle/croffle-station-wide.jpg"
-                alt="The Beyond Scrumptious Live Croffle Station set up at an event"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+            <div className="grid md:grid-cols-[1fr_auto] gap-4 items-stretch mb-4">
+              <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[16/9] md:aspect-auto">
+                <img
+                  src="/images/croffle/croffle-station-wide.jpg"
+                  alt="The Beyond Scrumptious Live Croffle Station set up at an event"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] w-full md:w-64 bg-black mx-auto">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/croffle/croffle-video-poster.jpg"
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/croffle-1.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
