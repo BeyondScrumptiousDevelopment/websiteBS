@@ -1,4 +1,8 @@
 import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
+import { client } from '../../sanity/lib/client'
+
+export const runtime = 'edge'
+export const revalidate = 0
 
 export const metadata = {
   title: 'Beyond Scrumptious | Links',
@@ -9,7 +13,11 @@ export const metadata = {
   },
 }
 
-const links = [
+type LinkItem = { label: string; href: string; highlight?: boolean }
+
+// Used until a "Links Page" document is published in Sanity Studio, and as
+// a safety net if the fetch ever fails — the page always has something to show.
+const defaultLinks: LinkItem[] = [
   { href: '/diwali', label: 'Diwali 2026 — Order Now ✨', highlight: true },
   { href: '/croffle', label: 'Live Croffle Station — New ✨', highlight: true },
   { href: '/contact', label: 'Enquire Now', highlight: true },
@@ -19,6 +27,16 @@ const links = [
   { href: '/gallery', label: 'Gallery' },
   { href: '/our-story', label: 'Our Story' },
 ]
+
+async function getLinks(): Promise<LinkItem[]> {
+  try {
+    const data = await client.fetch(`*[_type == "linksPage"][0]{ links }`)
+    if (data?.links?.length) return data.links
+  } catch {
+    // Sanity unreachable — fall through to defaults below
+  }
+  return defaultLinks
+}
 
 const socials = [
   { href: 'https://instagram.com/beyond.scrumptious', label: 'Instagram', icon: FaInstagram },
@@ -31,7 +49,9 @@ const socials = [
   },
 ]
 
-export default function LinksPage() {
+export default async function LinksPage() {
+  const links = await getLinks()
+
   return (
     <main className="min-h-screen bg-[#202b45] text-[#f8f8f8] flex flex-col items-center px-6 py-16">
       <div className="w-full max-w-md mx-auto flex flex-col items-center">

@@ -1,3 +1,4 @@
 import product from './product'
+import linksPage from './linksPage'
 
-export const schemaTypes = [product]
+export const schemaTypes = [product, linksPage]
