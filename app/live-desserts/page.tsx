@@ -424,6 +424,51 @@ export default function LiveDessertsPage() {
             </p>
           </Reveal>
 
+          <Reveal className="mb-14">
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[16/9] mb-4">
+              <img
+                src="/images/croffle/croffle-station-wide.jpg"
+                alt="The Beyond Scrumptious Live Croffle Station set up at an event"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
+                <img
+                  src="/images/croffle/croffle-variety.jpg"
+                  alt="A selection of freshly pressed croffles with different toppings"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
+                <img
+                  src="/images/croffle/croffle-selection.jpg"
+                  alt="Croffles finished with toppings and sauces, served in trays"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
+                <img
+                  src="/images/croffle/croffle-drizzle-1.jpg"
+                  alt="Chocolate sauce being drizzled over a freshly pressed croffle"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
+                <img
+                  src="/images/croffle/croffle-drizzle-2.jpg"
+                  alt="White chocolate sauce being drizzled over a freshly pressed croffle"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
+
           <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             {croffleFeatures.map((feature) => (
               <RevealItem

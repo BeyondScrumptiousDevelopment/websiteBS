@@ -292,6 +292,58 @@ export default async function HomePage() {
 
       <SectionSeam color="#8992a3" />
 
+      {/* LIVE CROFFLE STATION FEATURE */}
+      <section className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+          <Reveal className="grid grid-cols-2 gap-4" y={32}>
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
+              <img
+                src="/images/croffle/croffle-drizzle-1.jpg"
+                alt="Chocolate sauce being drizzled over a freshly pressed croffle"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/2]">
+              <img
+                src="/images/croffle/croffle-station-wide.jpg"
+                alt="The Beyond Scrumptious Live Croffle Station set up at an event"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal y={32}>
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+              New — Live Croffle Station
+            </p>
+
+            <h2 className="heading-font text-5xl md:text-6xl leading-tight mb-8">
+              Croissant
+              <br />
+              Meets Waffle
+            </h2>
+
+            <p className="text-[#202b45]/70 leading-8 text-lg mb-10">
+              Our newest live dessert station — croffles pressed fresh at
+              your event until golden and crispy, then finished with your
+              choice of toppings and sauces. Eggless, and bookable with the
+              same packages as our Mini Pancake Station.
+            </p>
+
+            <div className="flex gap-4 flex-wrap">
+              <TapLink
+                href="/croffle"
+                className="px-8 py-4 bg-[#202b45] text-[#f8f8f8] rounded-full hover:bg-[#161f36] transition"
+              >
+                Explore The Croffle Station
+              </TapLink>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
         <div className="max-w-6xl mx-auto text-center">
