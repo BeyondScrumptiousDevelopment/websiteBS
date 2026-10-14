@@ -460,17 +460,21 @@ export default function LiveDessertsPage() {
 
             <RevealItem className="bg-[#c9973f]/10 rounded-[2rem] p-10 shadow-xl border-2 border-[#c9973f]/50 flex flex-col">
               <span className="inline-block self-start px-4 py-1.5 rounded-full bg-[#c9973f] text-[#1b1712] uppercase tracking-[0.15em] text-xs font-semibold mb-6">
-                Add-On
+                Add-On &middot; Extra Charge
               </span>
               <ul className="space-y-4 mb-auto">
                 {addOnToppings.map((t) => (
-                  <li key={t} className="heading-font text-3xl text-[#f8f8f8]">
-                    {t}
+                  <li key={t} className="flex items-center justify-between gap-3">
+                    <span className="heading-font text-3xl text-[#f8f8f8]">{t}</span>
+                    <span className="shrink-0 px-3 py-1 rounded-full border border-[#c9973f]/60 text-[#c9973f] uppercase tracking-[0.1em] text-xs font-semibold">
+                      + Extra
+                    </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-[#f8f8f8]/60 mt-8">
-                Available with any package for an additional charge.
+              <p className="text-sm text-[#f8f8f8]/70 mt-8">
+                Not included in any package — available on top of your chosen
+                package for an additional charge.
               </p>
             </RevealItem>
           </RevealGroup>
