@@ -21,7 +21,7 @@ const stations = [
       'Served warm with your chosen toppings & sauces',
       'Classic, Deluxe & Signature packages',
     ],
-    image: '/images/pancake-2.jpg',
+    image: '/images/pancake-1.jpg',
     imageAlt: 'Fresh mini pancakes cooked live on the griddle at a Beyond Scrumptious event',
     cta: 'Explore Pancake Packages',
   },
@@ -262,8 +262,8 @@ export default function LiveDessertsPage() {
         <RevealGroup className="max-w-4xl mx-auto grid grid-cols-2 gap-4 mt-14" stagger={0.1}>
           <RevealItem className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5]">
             <img
-              src="/images/pancake-1.jpg"
-              alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
+              src="/images/pancake-2.jpg"
+              alt="Sauce being drizzled over a mini pancake at the Live Mini Pancake Station"
               className="w-full h-full object-cover"
             />
           </RevealItem>
@@ -347,6 +347,9 @@ export default function LiveDessertsPage() {
             <h2 className="heading-font text-4xl md:text-6xl mb-6">
               Classic, Deluxe &amp; Signature
             </h2>
+            <p className="heading-font text-2xl md:text-3xl mb-4">
+              Both Stations Begin From £250
+            </p>
             <p className="max-w-2xl mx-auto text-lg leading-8 text-[#202b45]/70">
               The same three fixed packages apply to both the Mini Pancake Station
               and the Croffle Station. Every quote is tailored to your event —
@@ -386,14 +389,6 @@ export default function LiveDessertsPage() {
                   {pkg.description}
                 </p>
                 <div className="mt-auto">
-                  <p className="heading-font text-2xl mb-1">From £250</p>
-                  <p
-                    className={`text-xs uppercase tracking-[0.15em] mb-6 ${
-                      pkg.highlight ? 'text-[#cfd7e2]/70' : 'text-[#202b45]/50'
-                    }`}
-                  >
-                    Confirmed In Your Personalised Quote
-                  </p>
                   <TapLink
                     href="/contact"
                     className={`block px-8 py-4 rounded-full text-sm uppercase tracking-[0.15em] transition ${
@@ -410,8 +405,8 @@ export default function LiveDessertsPage() {
           </RevealGroup>
 
           <p className="text-center mt-12 text-[#202b45]/70 max-w-2xl mx-auto">
-            Packages begin at £250. Every event is individually quoted based on
-            guest numbers, location, service requirements and selected options.
+            Every event is individually quoted based on guest numbers, location,
+            service requirements and selected options.
           </p>
         </div>
       </section>
@@ -463,16 +458,18 @@ export default function LiveDessertsPage() {
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#c9973f]/30">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#c9973f]/80 mb-6">
+            <RevealItem className="bg-[#c9973f]/10 rounded-[2rem] p-10 shadow-xl border-2 border-[#c9973f]/50 flex flex-col">
+              <span className="inline-block self-start px-4 py-1.5 rounded-full bg-[#c9973f] text-[#1b1712] uppercase tracking-[0.15em] text-xs font-semibold mb-6">
                 Add-On
-              </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+              </span>
+              <ul className="space-y-4 mb-auto">
                 {addOnToppings.map((t) => (
-                  <li key={t}>{t}</li>
+                  <li key={t} className="heading-font text-3xl text-[#f8f8f8]">
+                    {t}
+                  </li>
                 ))}
               </ul>
-              <p className="text-xs text-[#f8f8f8]/50 mt-6">
+              <p className="text-sm text-[#f8f8f8]/60 mt-8">
                 Available with any package for an additional charge.
               </p>
             </RevealItem>
