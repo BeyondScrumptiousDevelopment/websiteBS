@@ -65,13 +65,16 @@ export function RevealItem({
   children,
   className,
   y = 24,
+  id,
 }: {
   children: ReactNode
   className?: string
   y?: number
+  id?: string
 }) {
   return (
     <motion.div
+      id={id}
       className={className}
       variants={{
         hidden: { opacity: 0, y },

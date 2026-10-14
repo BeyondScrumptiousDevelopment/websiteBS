@@ -2,15 +2,71 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import GallerySlideshow from '../../components/GallerySlideshow'
+import TestimonialsSlideshow from '../../components/TestimonialsSlideshow'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 import ServiceJsonLd from '../../components/ServiceJsonLd'
 import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
 import { TapLink } from '../../components/motion/TapLink'
 import SectionSeam from '../../components/motion/SectionSeam'
 
+const stations = [
+  {
+    id: 'pancake',
+    name: 'Live Mini Pancake Station',
+    tagline: 'Freshly Cooked. Served Live.',
+    description:
+      "Freshly cooked mini pancakes, made right in front of your guests and finished with their choice of toppings and sauces — a fun, interactive dessert experience for any celebration.",
+    features: [
+      'Cooked fresh on-site throughout your event',
+      'Served warm with your chosen toppings & sauces',
+      'Classic, Deluxe & Signature packages',
+    ],
+    image: '/images/pancake-2.jpg',
+    imageAlt: 'Fresh mini pancakes cooked live on the griddle at a Beyond Scrumptious event',
+    cta: 'Explore Pancake Packages',
+  },
+  {
+    id: 'croffle',
+    name: 'Live Croffle Station',
+    tagline: 'Croissant Meets Waffle.',
+    description:
+      'Croissant meets waffle — pressed fresh at your event until golden and crispy, then finished with your choice of toppings and sauces for a dessert experience guests won’t forget.',
+    features: [
+      'Pressed fresh on-site throughout your event',
+      'Finished with your chosen toppings & sauces',
+      'Classic, Deluxe & Signature packages',
+    ],
+    image: '/images/croffle/croffle-station-wide.jpg',
+    imageAlt: 'The Beyond Scrumptious Live Croffle Station set up at an event',
+    cta: 'Explore Croffle Packages',
+  },
+]
+
+const packages = [
+  {
+    name: 'Classic',
+    detail: '2 toppings + 2 sauces',
+    description:
+      'A straightforward live dessert experience — our classic selection of favourite toppings and sauces, perfect if you want to keep things simple.',
+  },
+  {
+    name: 'Deluxe',
+    detail: '4 toppings + 4 sauces',
+    description:
+      'More variety for your guests to enjoy, with access to both our standard and premium toppings and sauces.',
+    highlight: true,
+  },
+  {
+    name: 'Signature',
+    detail: '6 toppings + 6 sauces',
+    description:
+      'Our most generous package — a broader selection of toppings and sauces, perfect for larger celebrations where you want the station to be a real feature.',
+  },
+]
+
 const standardToppings = ['Oreo Crumbs', 'Biscoff Crumbs', 'Sprinkles', 'Mini Marshmallows', 'Smarties']
 
-const premiumToppings = ['Kunafa', 'Fresh Chopped Strawberries', 'Cake Pieces']
+const premiumToppings = ['Kunafa', 'Fresh Chopped Strawberries', 'Cake Pieces', 'Seasonal Fruits']
 
 const addOnToppings = ['Pistachio', 'Hazelnuts']
 
@@ -18,141 +74,52 @@ const standardSauces = ['Milk Chocolate', 'White Chocolate', 'Biscoff', 'Mango']
 
 const premiumSauces = ['Cookies & Cream', 'Pistachio', 'Chocolate Hazelnut']
 
-const packages = [
-  {
-    name: 'Classic',
-    detail: '2 toppings + 2 sauces',
-    description:
-      'Our classic selection of favourite toppings and sauces — perfect if you want to keep things simple while still giving your guests plenty of choice.',
-  },
-  {
-    name: 'Deluxe',
-    detail: '4 toppings + 4 sauces',
-    description:
-      'A wider selection with access to both our standard and premium toppings and sauces. Ideal for events where you want to offer guests more variety.',
-    highlight: true,
-  },
-  {
-    name: 'Signature',
-    detail: '6 toppings + 6 sauces',
-    description:
-      'Our most generous package, giving you access to our full selection of toppings and sauces. Perfect for larger celebrations and events where you want the pancake station to be a real feature.',
-  },
-]
-
-const croffleFeatures = [
-  'Croffles freshly pressed at your event',
-  'Served warm, finished with your chosen toppings & sauces',
-  'Three fixed package options — Classic, Deluxe, Signature',
-  'Perfect for weddings, mehndis, birthdays & corporate events',
-]
-
-const whyChoose = [
-  {
-    title: 'Cooked Fresh On-Site',
-    description:
-      'Our mini pancakes and croffles are cooked and pressed live throughout your booked service, giving your guests a freshly prepared dessert experience.',
-  },
-  {
-    title: 'Something Different',
-    description:
-      'Add an interactive dessert experience that guests can watch, enjoy and customise.',
-  },
-  {
-    title: 'Made For Your Event',
-    description:
-      'From intimate family celebrations to large weddings and corporate events, the station can be planned around your event.',
-  },
-  {
-    title: 'Personalised Options',
-    description:
-      'Add personalised elements to make the station fit your event, theme or branding.',
-  },
-]
-
-const customisation = [
-  {
-    title: 'Custom Tabletop Hanging Ring Sign',
-    description: 'A personalised sign designed to complement your event styling.',
-  },
-  {
-    title: 'Wedding / Event Logo Tabletop Plaque',
-    description: 'Add your wedding, event or company logo to the station.',
-  },
-  {
-    title: 'Custom Machine Front Board',
-    description: 'Create a personalised front board designed around your event.',
-  },
-]
-
-const howItWorks = [
+const bookingSteps = [
   {
     step: '1',
-    title: 'We Set Up',
-    description: "We'll arrive ahead of your service and prepare the station ready for your guests.",
+    title: 'Choose Your Station',
+    description: 'Pick the Live Mini Pancake Station, the Live Croffle Station — or both.',
   },
   {
     step: '2',
-    title: 'Freshly Cooked Or Pressed',
-    description: 'Our mini pancakes or croffles are cooked and pressed live on-site throughout your booked service.',
+    title: 'Select Your Package',
+    description: 'Tell us about your event and choose Classic, Deluxe or Signature.',
   },
   {
     step: '3',
-    title: 'Guests Choose Their Favourites',
-    description:
-      'Guests can enjoy their pancakes or croffles with the toppings and sauces included in your chosen package.',
+    title: 'Receive Your Quote',
+    description: 'We’ll put together a tailored quotation based on your requirements.',
   },
   {
     step: '4',
-    title: 'We Keep Things Moving',
-    description:
-      'Our team manages the station throughout service, keeping everything organised while your guests enjoy freshly prepared pancakes.',
+    title: 'We Set Up & Serve',
+    description: 'Our team arrives, sets up, and serves freshly prepared desserts throughout your event.',
   },
 ]
 
-const perfectFor = [
-  {
-    title: 'Weddings',
-    description: 'A memorable dessert experience for your wedding celebrations.',
-  },
-  {
-    title: 'Mehndis & Family Celebrations',
-    description: 'A fun live dessert option for guests of all ages.',
-  },
-  {
-    title: 'Birthdays',
-    description: 'Add something interactive and different to your celebration.',
-  },
-  {
-    title: 'Corporate Events',
-    description: 'A unique dessert experience for staff, clients and guests.',
-  },
-  {
-    title: 'Private Parties',
-    description: "From intimate gatherings to larger celebrations, we'll bring the station to you.",
-  },
-  {
-    title: 'Community Events',
-    description: 'A freshly prepared dessert experience for your guests.',
-  },
-]
-
-const venueRequirements = [
+const requirements = [
   'Approximately 6ft of table space',
-  'Access to a suitable power supply',
-  'A suitable area for the station and serving queue',
-  'A safe, level setup area',
+  'Access to a power supply within approximately 5 metres',
+  'Approximately 30–45 minutes for setup',
+  'A safe, level area for the station and serving queue',
+  'Outdoor events: a suitable shaded area is recommended',
 ]
 
 const faqs = [
   {
-    question: 'Is there a minimum number of guests?',
+    question: 'Which live dessert stations are available?',
     answer:
-      'We cater for events of different sizes. Your quote is based on your event requirements, so please get in touch with your guest numbers.',
+      'We currently offer two live dessert stations: the Live Mini Pancake Station and the Live Croffle Station. Both are prepared fresh at your event.',
   },
   {
-    question: 'Are the pancakes cooked fresh?',
-    answer: 'Yes. Our mini pancakes are cooked live on-site throughout your booked service.',
+    question: 'Are the desserts eggless?',
+    answer:
+      'Yes. Our mini pancakes and croffles are both made using eggless recipes, making both stations suitable for guests who avoid eggs.',
+  },
+  {
+    question: 'What packages can I choose from?',
+    answer:
+      'Classic, Deluxe and Signature — offering 2, 4 and 6 toppings and sauces respectively. The same three packages apply to both the Mini Pancake Station and the Croffle Station.',
   },
   {
     question: 'Can I choose my toppings and sauces?',
@@ -164,18 +131,19 @@ const faqs = [
     answer: 'Yes. We have a selection of premium toppings and sauces available through our higher-tier packages.',
   },
   {
-    question: 'Can the station be personalised?',
+    question: 'How is the price calculated?',
     answer:
-      'Yes. We offer personalised signage, wedding/event logo plaques and custom machine front boards.',
+      'Every event is individually quoted based on guest numbers, location, service requirements and your selected package. Packages begin at £250.',
+  },
+  {
+    question: 'Is there a minimum number of guests?',
+    answer:
+      'We cater for events of different sizes. Your quote is based on your event requirements, so please get in touch with your guest numbers.',
   },
   {
     question: 'How long do you serve for?',
     answer:
       "Service duration depends on your guest numbers and event requirements. We'll recommend a suitable service period when preparing your quote.",
-  },
-  {
-    question: 'Do you travel?',
-    answer: 'Yes. We travel across London and beyond. Travel requirements are calculated as part of your individual quote.',
   },
   {
     question: 'Can you cater for larger events?',
@@ -197,6 +165,11 @@ const faqs = [
     answer:
       'Yes, this can be arranged — get in touch with your event details and we’ll put together a quote for both.',
   },
+  {
+    question: 'How do I enquire about a booking?',
+    answer:
+      "Use our enquiry form on the Contact page, or reach out via WhatsApp, email or Instagram and we'll follow up with a tailored quote.",
+  },
 ]
 
 const faqJsonLd = {
@@ -213,16 +186,16 @@ const faqJsonLd = {
 }
 
 export const metadata = {
-  title: 'Live Mini Pancake & Croffle Stations in London | Beyond Scrumptious',
+  title: 'Live Dessert Stations for Events in London | Beyond Scrumptious',
   description:
-    'Live Mini Pancake Station and Live Croffle Station for weddings, mehndis, birthdays and corporate events across London. Freshly made eggless desserts, toppings and sauces, cooked on-site.',
+    "Make your celebration special with Beyond Scrumptious's eggless Live Mini Pancake and Croffle Stations in London. Explore packages and enquire about your event.",
   alternates: {
     canonical: '/live-desserts',
   },
   openGraph: {
-    title: 'Live Mini Pancake & Croffle Stations in London | Beyond Scrumptious',
+    title: 'Live Dessert Stations for Events in London | Beyond Scrumptious',
     description:
-      'Live Mini Pancake Station and Live Croffle Station for weddings, mehndis, birthdays and corporate events across London. Freshly made eggless desserts, toppings and sauces, cooked on-site.',
+      "Make your celebration special with Beyond Scrumptious's eggless Live Mini Pancake and Croffle Stations in London. Explore packages and enquire about your event.",
     url: 'https://www.beyondscrumptious.com/live-desserts',
   },
 }
@@ -243,187 +216,338 @@ export default function LiveDessertsPage() {
       <Navbar />
       <WhatsAppButton />
 
-      {/* HERO */}
-      <section className="pt-40 pb-24 px-6 text-center relative">
-        <Reveal className="max-w-5xl mx-auto">
-          <p className="logo-font text-3xl md:text-4xl mb-4 text-[#cfd7e2]">
-            Beyond Scrumptious
-          </p>
-
+      {/* SECTION 1 — HERO */}
+      <section className="pt-40 pb-20 px-6 text-center">
+        <Reveal className="max-w-4xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-            Live Mini Pancake Station
+            Live Dessert Stations For Weddings, Mehndis &amp; Events
           </p>
 
-          <h1 className="heading-font text-5xl md:text-8xl leading-tight mb-6">
-            Live Pancake Station
+          <h1 className="heading-font text-4xl md:text-7xl leading-tight mb-8">
+            Freshly Made. Beautifully Served.
+            <br />
+            Unforgettable Moments.
           </h1>
 
-          <p className="text-xl md:text-2xl text-[#f8f8f8]/90 mb-10">
-            Freshly cooked. Served live. Made for your event.
+          <p className="max-w-2xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70 mb-8">
+            Bring the excitement of freshly prepared desserts to your celebration
+            with our Live Mini Pancake and Live Croffle Stations. Cooked fresh at
+            your event and finished with your guests&apos; favourite toppings and
+            sauces, every serving adds something special to the occasion.
           </p>
 
-          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70 mb-4">
-            Bring something a little different to your celebration with our
-            Live Mini Pancake Station.
+          <p className="text-sm uppercase tracking-[0.2em] text-[#cfd7e2]/60 mb-2">
+            Perfect For Weddings, Mehndis, Birthdays &amp; Corporate Events
           </p>
-          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70 mb-4">
-            Fresh mini pancakes are cooked on-site and served with a
-            selection of delicious toppings and sauces, creating a fun
-            dessert experience your guests can enjoy as it&apos;s made.
-          </p>
-          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70 mb-10">
-            Perfect for weddings, mehndis, birthdays, baby showers, corporate
-            events, private parties and celebrations.
+          <p className="text-sm text-[#f8f8f8]/50 mb-10">
+            Both stations are eggless · Packages begin at £250, individually quoted
           </p>
 
-          <p className="heading-font text-2xl md:text-3xl text-[#cfd7e2] mb-10">
-            Packages begin at £250.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-5">
+          <div className="flex flex-wrap justify-center gap-5 mb-4">
             <TapLink
               href="/contact"
-              className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
-              Enquire For Your Event
+              Request A Quote
             </TapLink>
             <TapLink
-              href="#packages"
-              className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+              href="#stations"
+              className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
             >
-              View Packages
+              Explore Our Stations
             </TapLink>
           </div>
-
-          <p className="mt-10 text-sm text-[#f8f8f8]/60">
-            New — also introducing our{' '}
-            <a href="#croffle" className="underline hover:text-[#f8f8f8]">
-              Live Croffle Station
-            </a>
-            .
-          </p>
         </Reveal>
-      </section>
 
-      {/* VIDEOS — full-bleed media showcase */}
-      <section className="pb-8">
-        <div className="grid md:grid-cols-2">
-          <div className="aspect-[9/16] md:aspect-auto md:h-[85vh] bg-black overflow-hidden">
-            <video
-              controls
-              playsInline
-              preload="metadata"
+        <RevealGroup className="max-w-4xl mx-auto grid grid-cols-2 gap-4 mt-14" stagger={0.1}>
+          <RevealItem className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5]">
+            <img
+              src="/images/pancake-1.jpg"
+              alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
               className="w-full h-full object-cover"
-            >
-              <source src="/videos/live1.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <div className="aspect-[9/16] md:aspect-auto md:h-[85vh] bg-black overflow-hidden">
-            <video
-              controls
-              playsInline
-              preload="metadata"
+            />
+          </RevealItem>
+          <RevealItem className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5]">
+            <img
+              src="/images/croffle/croffle-drizzle-1.jpg"
+              alt="Chocolate sauce being drizzled over a freshly pressed croffle"
               className="w-full h-full object-cover"
-            >
-              <source src="/videos/live2.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
+            />
+          </RevealItem>
+        </RevealGroup>
       </section>
-
-      <GallerySlideshow
-        category="live-desserts"
-        eyebrow="From The Gallery"
-        title="The Live Pancake Station In Action"
-      />
 
       <SectionSeam color="#8992a3" />
 
-      {/* INTRODUCTION */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
-        <Reveal className="max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-            The Experience
-          </p>
-          <h2 className="heading-font text-4xl md:text-6xl leading-tight mb-10">
-            More Than Dessert — It&apos;s An Experience
-          </h2>
-
-          <p className="text-lg leading-8 text-[#202b45]/70 mb-5">
-            Our Live Mini Pancake Station brings freshly cooked mini pancakes
-            straight to your guests.
-          </p>
-          <p className="text-lg leading-8 text-[#202b45]/70 mb-5">
-            With the pancakes prepared live on-site and finished with your
-            choice of toppings and sauces, it&apos;s a dessert experience
-            that&apos;s interactive, fun and made to be enjoyed.
-          </p>
-          <p className="text-lg leading-8 text-[#202b45]/70">
-            Whether you&apos;re planning an intimate celebration or a large
-            event, we&apos;ll bring the setup, equipment and serving team
-            needed to make the experience run smoothly.
-          </p>
-        </Reveal>
-      </section>
-
-      {/* WHY CHOOSE */}
-      <section className="py-32 px-6">
+      {/* SECTION 2 — CHOOSE YOUR STATION */}
+      <section id="stations" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Why Choose A Beyond Scrumptious Live Dessert Station?
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+              Our Live Dessert Stations
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
-              Freshly Made. Served Live.
+              Choose Your Live Dessert Station
             </h2>
           </Reveal>
 
-          <RevealGroup className="grid md:grid-cols-2 gap-8">
-            {whyChoose.map((item) => (
+          <RevealGroup className="grid md:grid-cols-2 gap-8" stagger={0.1}>
+            {stations.map((station) => (
               <RevealItem
-                key={item.title}
-                className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl"
+                key={station.id}
+                id={station.id === 'croffle' ? 'croffle' : undefined}
+                className="bg-white rounded-[2rem] overflow-hidden shadow-xl flex flex-col scroll-mt-24"
               >
-                <h3 className="heading-font text-2xl mb-4">{item.title}</h3>
-                <p className="leading-8 text-[#f8f8f8]/70">{item.description}</p>
+                <div className="aspect-[16/10]">
+                  <img
+                    src={station.image}
+                    alt={station.imageAlt}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <p className="uppercase tracking-[0.3em] text-xs text-[#202b45]/50 mb-2">
+                    {station.tagline}
+                  </p>
+                  <h3 className="heading-font text-2xl md:text-3xl mb-4">
+                    {station.name}
+                  </h3>
+                  <p className="text-[#202b45]/70 leading-7 mb-6">
+                    {station.description}
+                  </p>
+                  <ul className="space-y-2 mb-8 text-sm text-[#202b45]/70">
+                    {station.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="text-[#202b45]/40 mt-0.5">&bull;</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <TapLink
+                    href="#packages"
+                    className="mt-auto inline-block text-center px-8 py-4 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.15em] hover:bg-[#161f36] transition"
+                  >
+                    {station.cta}
+                  </TapLink>
+                </div>
               </RevealItem>
             ))}
           </RevealGroup>
         </div>
       </section>
 
-      {/* LIVE CROFFLE STATION */}
-      <section id="croffle" className="py-32 px-6 scroll-mt-24">
+      {/* SECTION 3 — PACKAGES & PRICING */}
+      <section id="packages" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <Reveal className="max-w-3xl mx-auto text-center mb-14">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Live Dessert Stations
+          <Reveal className="text-center mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+              Packages
             </p>
             <h2 className="heading-font text-4xl md:text-6xl mb-6">
-              Introducing Our Live Croffle Station
+              Classic, Deluxe &amp; Signature
             </h2>
-            <p className="heading-font text-xl md:text-2xl text-[#cfd7e2] mb-8">
-              Croissant Meets Waffle.
-            </p>
-
-            <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-5">
-              The newest addition to the Beyond Scrumptious Live Dessert
-              range. Our Live Croffle Station brings together the buttery
-              layers of a croissant and the distinctive shape of a waffle,
-              pressed fresh until golden and crispy.
-            </p>
-            <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-5">
-              Freshly pressed at your event and finished with your choice of
-              toppings and sauces, it&apos;s a live dessert experience
-              designed to make your celebration even more special.
-            </p>
-            <p className="text-lg leading-8 text-[#f8f8f8]/70">
-              Perfect for weddings, engagements, mehndis, birthdays,
-              corporate events and other special occasions.
+            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#202b45]/70">
+              The same three fixed packages apply to both the Mini Pancake Station
+              and the Croffle Station. Every quote is tailored to your event —
+              guest numbers, package and selected options all affect the final
+              price.
             </p>
           </Reveal>
 
+          <RevealGroup className="grid md:grid-cols-3 gap-8 mt-12" stagger={0.1}>
+            {packages.map((pkg) => (
+              <RevealItem
+                key={pkg.name}
+                className={`relative rounded-[2rem] p-10 shadow-xl text-center flex flex-col ${
+                  pkg.highlight
+                    ? 'bg-[#202b45] text-[#f8f8f8] md:-translate-y-4 shadow-2xl'
+                    : 'bg-white'
+                }`}
+              >
+                {pkg.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#c9973f] text-[#1b1712] text-xs uppercase tracking-[0.15em] font-semibold">
+                    Recommended
+                  </span>
+                )}
+                <h3 className="heading-font text-3xl mb-2">{pkg.name}</h3>
+                <p
+                  className={`uppercase tracking-[0.15em] text-sm mb-6 ${
+                    pkg.highlight ? 'text-[#cfd7e2]/80' : 'text-[#202b45]/60'
+                  }`}
+                >
+                  {pkg.detail}
+                </p>
+                <p
+                  className={`leading-7 mb-8 ${
+                    pkg.highlight ? 'text-[#f8f8f8]/80' : 'text-[#202b45]/70'
+                  }`}
+                >
+                  {pkg.description}
+                </p>
+                <div className="mt-auto">
+                  <p className="heading-font text-2xl mb-1">From £250</p>
+                  <p
+                    className={`text-xs uppercase tracking-[0.15em] mb-6 ${
+                      pkg.highlight ? 'text-[#cfd7e2]/70' : 'text-[#202b45]/50'
+                    }`}
+                  >
+                    Confirmed In Your Personalised Quote
+                  </p>
+                  <TapLink
+                    href="/contact"
+                    className={`block px-8 py-4 rounded-full text-sm uppercase tracking-[0.15em] transition ${
+                      pkg.highlight
+                        ? 'bg-[#f8f8f8] text-[#202b45] hover:bg-[#cfd7e2]'
+                        : 'bg-[#202b45] text-[#f8f8f8] hover:bg-[#161f36]'
+                    }`}
+                  >
+                    Request A Quote
+                  </TapLink>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+
+          <p className="text-center mt-12 text-[#202b45]/70 max-w-2xl mx-auto">
+            Packages begin at £250. Every event is individually quoted based on
+            guest numbers, location, service requirements and selected options.
+          </p>
+        </div>
+      </section>
+
+      <SectionSeam color="#8992a3" />
+
+      {/* SECTION 4 — TOPPINGS & SAUCES */}
+      <section className="py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="text-center mb-16">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+              Toppings &amp; Sauces
+            </p>
+            <h2 className="heading-font text-4xl md:text-6xl mb-6">
+              Choose Your Toppings &amp; Sauces
+            </h2>
+            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+              The same toppings and sauces are available across both stations.
+              Your chosen package determines how many you can pick from the
+              selections below.
+            </p>
+          </Reveal>
+
+          <Reveal className="mb-4">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 text-center mb-6">
+              Toppings
+            </p>
+          </Reveal>
+          <RevealGroup className="grid md:grid-cols-3 gap-8 mb-16" stagger={0.08}>
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+                Standard Selection
+              </p>
+              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+                {standardToppings.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </RevealItem>
+
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+                Premium Selection
+              </p>
+              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+                {premiumToppings.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </RevealItem>
+
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#c9973f]/30">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#c9973f]/80 mb-6">
+                Add-On
+              </p>
+              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+                {addOnToppings.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+              <p className="text-xs text-[#f8f8f8]/50 mt-6">
+                Available with any package for an additional charge.
+              </p>
+            </RevealItem>
+          </RevealGroup>
+
+          <Reveal className="mb-4">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 text-center mb-6">
+              Sauces
+            </p>
+          </Reveal>
+          <RevealGroup className="grid md:grid-cols-2 gap-8" stagger={0.08}>
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+                Standard Selection
+              </p>
+              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+                {standardSauces.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            </RevealItem>
+
+            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+                Premium Selection
+              </p>
+              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+                {premiumSauces.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            </RevealItem>
+          </RevealGroup>
+        </div>
+      </section>
+
+      <SectionSeam color="#8992a3" />
+
+      {/* SECTION 5 — REAL EVENTS & SOCIAL PROOF */}
+      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="text-center mb-14">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+              Real Events
+            </p>
+            <h2 className="heading-font text-4xl md:text-6xl">
+              See It Live
+            </h2>
+          </Reveal>
+        </div>
+      </section>
+
+      <GallerySlideshow
+        category="live-desserts"
+        eyebrow="Mini Pancake Station"
+        title="The Live Pancake Station In Action"
+      />
+
+      <section className="bg-[#202b45] pb-8">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 px-6 mb-16">
+          <Reveal className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] bg-black">
+            <video controls playsInline preload="metadata" className="w-full h-full object-cover">
+              <source src="/videos/live1.mp4" type="video/mp4" />
+            </video>
+          </Reveal>
+          <Reveal className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] bg-black" delay={0.1}>
+            <video controls playsInline preload="metadata" className="w-full h-full object-cover">
+              <source src="/videos/live2.mp4" type="video/mp4" />
+            </video>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-[#cfd7e2] text-[#202b45] py-16 px-6">
+        <div className="max-w-6xl mx-auto">
           <Reveal className="mb-14">
             <div className="grid md:grid-cols-[1fr_auto] gap-4 items-stretch mb-4">
               <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[16/9] md:aspect-auto">
@@ -482,280 +606,41 @@ export default function LiveDessertsPage() {
             </div>
           </Reveal>
 
-          <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-            {croffleFeatures.map((feature) => (
-              <RevealItem
-                key={feature}
-                className="bg-[#161f36] rounded-2xl p-6 text-center"
-              >
-                <p className="leading-6 text-[#f8f8f8]/80 text-sm">
-                  {feature}
-                </p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-
-          <Reveal className="max-w-2xl mx-auto text-center">
-            <p className="text-[#f8f8f8]/60 leading-7 mb-10">
-              Our croffles are eggless. Choose your package — the same
-              Classic, Deluxe and Signature options as our Mini Pancake
-              Station, with the same{' '}
-              <a href="#toppings-sauces" className="underline hover:text-white">
-                toppings and sauces
-              </a>{' '}
-              to choose from.
-            </p>
-            <TapLink
-              href="/contact?enquiry=Live%20Croffle%20Station"
-              className="inline-block px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
-            >
-              Enquire About The Live Croffle Station
-            </TapLink>
-          </Reveal>
-        </div>
-      </section>
-
-      <GallerySlideshow
-        category="croffle"
-        eyebrow="From The Gallery"
-        title="The Live Croffle Station In Action"
-      />
-
-      {/* PACKAGES */}
-      <section id="packages" className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 scroll-mt-24">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
+          <Reveal className="text-center mb-10">
             <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-              Packages
-            </p>
-            <h2 className="heading-font text-4xl md:text-6xl mb-6">
-              Choose Your Live Dessert Package
-            </h2>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#202b45]/70">
-              The same three packages apply whether you choose the Mini
-              Pancake Station or the Croffle Station — from a simple
-              selection of favourites to our full premium experience.
+              What Our Clients Say
             </p>
           </Reveal>
-
-          <RevealGroup className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg) => (
-              <RevealItem
-                key={pkg.name}
-                className={`rounded-[2rem] p-10 shadow-xl text-center flex flex-col ${
-                  pkg.highlight
-                    ? 'bg-[#202b45] text-[#f8f8f8] md:-translate-y-4 shadow-2xl'
-                    : 'bg-white'
-                }`}
-              >
-                <h3 className="heading-font text-3xl mb-2">{pkg.name}</h3>
-                <p
-                  className={`uppercase tracking-[0.15em] text-sm mb-6 ${
-                    pkg.highlight ? 'text-[#cfd7e2]/80' : 'text-[#202b45]/60'
-                  }`}
-                >
-                  {pkg.detail}
-                </p>
-                <p
-                  className={`leading-7 ${
-                    pkg.highlight ? 'text-[#f8f8f8]/80' : 'text-[#202b45]/70'
-                  }`}
-                >
-                  {pkg.description}
-                </p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-
-          <div className="text-center mt-16">
-            <p className="heading-font text-2xl md:text-3xl mb-4">
-              Packages begin at £250.
-            </p>
-            <p className="text-[#202b45]/70 mb-10">
-              Every event is individually quoted based on guest numbers,
-              location, service requirements and selected options.
-            </p>
-            <TapLink
-              href="/contact"
-              className="inline-block px-12 py-6 rounded-full bg-[#202b45] text-[#f8f8f8] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#8992a3] hover:-translate-y-0.5 transition shadow-xl"
-            >
-              Request A Quote
-            </TapLink>
-          </div>
+          <TestimonialsSlideshow />
         </div>
       </section>
 
-      {/* TOPPINGS */}
-      <section id="toppings-sauces" className="py-32 px-6 scroll-mt-24">
+      <SectionSeam color="#8992a3" />
+
+      {/* SECTION 6 — HOW IT WORKS (booking process) */}
+      <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
             <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Toppings
-            </p>
-            <h2 className="heading-font text-4xl md:text-6xl mb-6">
-              Choose Your Toppings
-            </h2>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-              The same toppings are available across both our Mini Pancake
-              Station and Croffle Station — mix classic favourites with
-              premium selections to suit your event.
-            </p>
-          </Reveal>
-
-          <RevealGroup className="grid md:grid-cols-3 gap-8">
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
-                Standard Selection
-              </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
-                {standardToppings.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </RevealItem>
-
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
-                Premium Selection
-              </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
-                {premiumToppings.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </RevealItem>
-
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#c9973f]/30">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#c9973f]/80 mb-6">
-                Add-On
-              </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
-                {addOnToppings.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </RevealItem>
-          </RevealGroup>
-
-          <p className="max-w-2xl mx-auto text-center mt-10 text-[#f8f8f8]/60 leading-7">
-            Premium selections are available depending on your chosen
-            package. Add-on toppings can be included with any package for an
-            additional charge, confirmed as part of your quote.
-          </p>
-        </div>
-      </section>
-
-      {/* SAUCES */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-              Sauces
-            </p>
-            <h2 className="heading-font text-4xl md:text-6xl">
-              Drizzle It Your Way
-            </h2>
-          </Reveal>
-
-          <RevealGroup className="grid md:grid-cols-2 gap-8">
-            <RevealItem className="bg-white rounded-[2rem] p-10 shadow-xl">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#202b45]/50 mb-6">
-                Standard Selection
-              </p>
-              <ul className="space-y-3 text-lg text-[#202b45]/80">
-                {standardSauces.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </RevealItem>
-
-            <RevealItem className="bg-white rounded-[2rem] p-10 shadow-xl border border-[#202b45]/10">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#202b45]/50 mb-6">
-                Premium Selection
-              </p>
-              <ul className="space-y-3 text-lg text-[#202b45]/80">
-                {premiumSauces.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </RevealItem>
-          </RevealGroup>
-
-          <p className="max-w-2xl mx-auto text-center mt-10 text-[#202b45]/60 leading-7">
-            Your chosen package determines the number of toppings and sauces
-            available and the selection you can choose from.
-          </p>
-        </div>
-      </section>
-
-      {/* CUSTOMISATION */}
-      <section className="py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-              Customisation
-            </p>
-            <h2 className="heading-font text-4xl md:text-6xl mb-6">
-              Make It Yours
-            </h2>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
-              Want your pancake or croffle station to feel even more
-              personal to your event? We offer a range of optional
-              customisation features.
-            </p>
-          </Reveal>
-
-          <RevealGroup className="grid md:grid-cols-3 gap-8 mb-14">
-            {customisation.map((item) => (
-              <RevealItem
-                key={item.title}
-                className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl text-center"
-              >
-                <h3 className="heading-font text-xl mb-4">{item.title}</h3>
-                <p className="leading-7 text-[#f8f8f8]/70">{item.description}</p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-
-          <div className="text-center">
-            <p className="max-w-2xl mx-auto text-[#f8f8f8]/60 leading-7 mb-10">
-              Customisation options are available at an additional charge and
-              will be included in your individual quote.
-            </p>
-            <TapLink
-              href="/contact"
-              className="inline-block px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
-            >
-              Ask About Customisation
-            </TapLink>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               How It Works
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
-              How Our Live Dessert Stations Work
+              From Enquiry To Event
             </h2>
           </Reveal>
 
-          <RevealGroup className="grid md:grid-cols-2 gap-8">
-            {howItWorks.map((item) => (
+          <RevealGroup className="grid md:grid-cols-2 gap-8" stagger={0.08}>
+            {bookingSteps.map((item) => (
               <RevealItem
                 key={item.step}
-                className="bg-white rounded-[2rem] p-10 shadow-xl flex gap-6"
+                className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl flex gap-6"
               >
-                <span className="heading-font text-4xl text-[#202b45]/20 shrink-0">
+                <span className="heading-font text-4xl text-[#f8f8f8]/20 shrink-0">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="heading-font text-2xl mb-3">{item.title}</h3>
-                  <p className="leading-7 text-[#202b45]/70">{item.description}</p>
+                  <p className="leading-7 text-[#f8f8f8]/70">{item.description}</p>
                 </div>
               </RevealItem>
             ))}
@@ -763,11 +648,11 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
-      {/* SERVICE / TRAVEL / VENUE REQUIREMENTS */}
-      <section className="py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+      {/* SECTION 7 — EVENT REQUIREMENTS */}
+      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+        <div className="max-w-4xl mx-auto">
+          <Reveal className="text-center mb-14">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
               Good To Know
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -775,120 +660,53 @@ export default function LiveDessertsPage() {
             </h2>
           </Reveal>
 
-          <RevealGroup className="grid md:grid-cols-3 gap-8">
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-2xl mb-4">Service</h3>
-              <p className="leading-7 text-[#f8f8f8]/70 mb-4">
-                Our service is planned around your guest numbers and event
-                requirements.
-              </p>
-              <p className="leading-7 text-[#f8f8f8]/70">
-                For larger events, staffing, equipment and service
-                arrangements can be adjusted where required to ensure
-                everything runs smoothly. If you have a specific service
-                duration or event format in mind, let us know when enquiring
-                and we&apos;ll recommend the most suitable setup.
-              </p>
-            </RevealItem>
-
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-2xl mb-4">Travel</h3>
-              <p className="leading-7 text-[#f8f8f8]/70 mb-4">
-                Based in Harrow, we can travel to events across London and
-                beyond.
-              </p>
-              <p className="leading-7 text-[#f8f8f8]/70">
-                Travel requirements are considered as part of your individual
-                quote. Any applicable travel, parking or other venue-related
-                requirements will be confirmed before booking.
-              </p>
-            </RevealItem>
-
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
-              <h3 className="heading-font text-2xl mb-4">
-                Venue Requirements
-              </h3>
-              <ul className="space-y-2 text-[#f8f8f8]/70 leading-7 mb-4">
-                {venueRequirements.map((req) => (
-                  <li key={req}>{req}</li>
-                ))}
-              </ul>
-              <p className="leading-7 text-[#f8f8f8]/70">
-                For outdoor events, suitable shelter or shade may be required
-                depending on the venue and weather conditions. Setup and
-                packdown are handled by our team.
-              </p>
-            </RevealItem>
-          </RevealGroup>
-        </div>
-      </section>
-
-      {/* PERFECT FOR */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
-              Occasions
-            </p>
-            <h2 className="heading-font text-4xl md:text-6xl">Perfect For</h2>
-          </Reveal>
-
-          <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {perfectFor.map((item) => (
+          <RevealGroup className="grid sm:grid-cols-2 gap-4 mb-10" stagger={0.06}>
+            {requirements.map((req) => (
               <RevealItem
-                key={item.title}
-                className="bg-white rounded-[2rem] p-10 shadow-xl text-center"
+                key={req}
+                className="bg-white rounded-2xl p-6 flex items-start gap-3"
               >
-                <h3 className="heading-font text-xl mb-4">{item.title}</h3>
-                <p className="leading-7 text-[#202b45]/70">{item.description}</p>
+                <span className="text-[#202b45]/40 mt-0.5">&bull;</span>
+                <span className="text-[#202b45]/80 leading-6">{req}</span>
               </RevealItem>
             ))}
           </RevealGroup>
+
+          <Reveal className="text-center text-[#202b45]/70 max-w-2xl mx-auto">
+            <p className="mb-2">
+              Based in Harrow, we travel to events across London and beyond —
+              travel requirements are considered as part of your individual quote.
+            </p>
+            <p>
+              Want to personalise your station further? Custom signage, event
+              logo plaques and branded front boards are available at an
+              additional charge — just ask when enquiring.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* FOOD INFORMATION */}
+      {/* SECTION 8 — FAQ */}
       <section className="py-28 px-6">
-        <Reveal className="max-w-3xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
-            Food Information
-          </p>
-          <h2 className="heading-font text-3xl md:text-5xl mb-8">
-            Eggless Mini Pancakes &amp; Croffles
-          </h2>
-          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-4">
-            Our mini pancakes and croffles are both made using eggless
-            recipes, making both stations suitable for guests who avoid
-            eggs.
-          </p>
-          <p className="text-lg leading-8 text-[#f8f8f8]/70">
-            If you have other dietary requirements, please mention them when
-            enquiring so we can discuss what arrangements may be possible.
-          </p>
-        </Reveal>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
               FAQ
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
-              Common Questions
+              Frequently Asked Questions
             </h2>
           </Reveal>
 
-          <RevealGroup className="space-y-6" stagger={0.05}>
+          <RevealGroup className="space-y-6" stagger={0.04}>
             {faqs.map((item) => (
               <RevealItem
                 key={item.question}
-                className="bg-white rounded-[2rem] p-8 shadow-xl"
+                className="bg-[#161f36] rounded-[2rem] p-8 shadow-xl"
                 y={14}
               >
                 <h3 className="heading-font text-xl mb-3">{item.question}</h3>
-                <p className="leading-7 text-[#202b45]/70">{item.answer}</p>
+                <p className="leading-7 text-[#f8f8f8]/70">{item.answer}</p>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -897,30 +715,42 @@ export default function LiveDessertsPage() {
 
       <SectionSeam color="#8992a3" />
 
-      {/* FINAL CTA */}
-      <section className="py-32 px-6 text-center">
-        <Reveal className="max-w-4xl mx-auto">
+      {/* SECTION 9 — FINAL CTA */}
+      <section className="py-28 px-6 text-center">
+        <Reveal className="max-w-3xl mx-auto">
           <p className="logo-font text-3xl md:text-4xl mb-6 text-[#cfd7e2]">
             Beyond Scrumptious
           </p>
 
-          <h2 className="heading-font text-4xl md:text-7xl leading-tight mb-8">
-            Ready To Add Something
+          <h2 className="heading-font text-4xl md:text-6xl leading-tight mb-8">
+            Let&apos;s Make Your Event
             <br />
-            Sweet To Your Event?
+            Extra Special.
           </h2>
 
-          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-4 max-w-2xl mx-auto">
-            Tell us a little about your event and we&apos;ll create a
-            personalised quote for your Live Mini Pancake Station or Live
-            Croffle Station.
+          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-10 max-w-2xl mx-auto">
+            Tell us about your event, your preferred dessert station and your
+            guest numbers. We&apos;ll help you find the right package for your
+            celebration.
           </p>
 
-          <p className="heading-font text-2xl text-[#cfd7e2] mb-6">
-            Packages begin at £250.
-          </p>
+          <div className="flex flex-wrap justify-center gap-5 mb-10">
+            <TapLink
+              href="/contact"
+              className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+            >
+              Request A Quote
+            </TapLink>
+            <TapLink
+              href="https://wa.me/447933903000"
+              target="_blank"
+              className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+            >
+              WhatsApp Us
+            </TapLink>
+          </div>
 
-          <p className="text-sm text-[#f8f8f8]/50 mb-12 max-w-xl mx-auto">
+          <p className="text-sm text-[#f8f8f8]/50 max-w-xl mx-auto">
             Also planning the cake? See our{' '}
             <a href="/cakes" className="underline hover:text-white">
               eggless custom cakes
@@ -931,28 +761,6 @@ export default function LiveDessertsPage() {
             </a>
             .
           </p>
-
-          <div className="flex flex-wrap justify-center gap-5">
-            <TapLink
-              href="/contact"
-              className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
-            >
-              Request Your Quote
-            </TapLink>
-            <TapLink
-              href="https://wa.me/447933903000"
-              target="_blank"
-              className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
-            >
-              WhatsApp Us
-            </TapLink>
-            <TapLink
-              href="mailto:hello@beyondscrumptious.com"
-              className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
-            >
-              Email Us
-            </TapLink>
-          </div>
         </Reveal>
       </section>
 
