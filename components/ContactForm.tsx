@@ -82,6 +82,15 @@ export default function ContactForm() {
   useEffect(() => {
     if (state.succeeded) {
       trackEvent('form_submit', { form: 'contact' })
+      // Update the URL for conversion tracking (Google Ads/Analytics) without
+      // triggering a Next.js navigation — the inline Thank You view below
+      // stays mounted exactly as-is. window.history is used directly here
+      // (not the Next router) specifically so no route change/remount happens.
+      try {
+        window.history.pushState(null, '', '/contact/thank-you')
+      } catch {
+        // ignore — URL tracking is best-effort, never block the thank-you view
+      }
     }
   }, [state.succeeded])
 
