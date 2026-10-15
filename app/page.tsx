@@ -11,7 +11,6 @@ import ScrollCue from '../components/motion/ScrollCue'
 import { Reveal, RevealGroup, RevealItem } from '../components/motion/Reveal'
 import { TapLink } from '../components/motion/TapLink'
 import SectionSeam from '../components/motion/SectionSeam'
-import PopDessert from '../components/motion/PopDessert'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -103,29 +102,6 @@ export default async function HomePage() {
         </div>
 
         <ScrollCue targetId="offer" />
-      </section>
-
-      {/* POP-UP DESSERTS */}
-      <section className="relative py-24 px-6 bg-[#202b45] overflow-hidden">
-        <Reveal className="text-center mb-4">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-4">
-            Fresh. Hot. Ready To Enjoy.
-          </p>
-        </Reveal>
-
-        <div className="max-w-4xl mx-auto grid grid-cols-2 gap-6 items-end">
-          <PopDessert
-            src="/images/popup/pancake-sauce-cutout.webp"
-            alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
-            className="w-full aspect-[2/3]"
-          />
-          <PopDessert
-            src="/images/popup/croffle-cutout.webp"
-            alt="A freshly pressed croffle drizzled with chocolate sauce"
-            className="w-full aspect-[2/3]"
-            floatDelay={0.6}
-          />
-        </div>
       </section>
 
       <TrustBadges />
