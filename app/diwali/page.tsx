@@ -7,7 +7,7 @@ import { TapLink } from '../../components/motion/TapLink'
 export const metadata = {
   title: 'Diwali 2026 | Naturally Sweet Cupcakes | Beyond Scrumptious',
   description:
-    'Naturally Sweet Cupcakes for Diwali 2026 — no added refined sugar, naturally sweetened with dates. Kulfi, Vanilla & Chocolate. Pickup 7th–8th November, Harrow, London.',
+    'Naturally Sweet Cupcakes for Diwali 2026 — no added refined sugar, sweetened with dates. Kulfi, Vanilla & Chocolate. Pickup 7th–8th Nov, Harrow.',
   robots: {
     index: true,
     follow: true,

@@ -16,14 +16,14 @@ export const runtime = 'edge'
 export const revalidate = 0
 
 export const metadata = {
-  title: 'Beyond Scrumptious | Eggless Cakes & Desserts in Harrow, London',
+  title: 'Beyond Scrumptious | Eggless Cakes & Desserts, Harrow',
   description:
     'Eggless custom cakes, cupcakes, desserts, dessert tables and the Live Mini Pancake Station — handmade in Harrow, serving celebrations and events across London.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Beyond Scrumptious | Eggless Cakes & Desserts in Harrow, London',
+    title: 'Beyond Scrumptious | Eggless Cakes & Desserts, Harrow',
     description:
       'Eggless custom cakes, cupcakes, desserts, dessert tables and the Live Mini Pancake Station — handmade in Harrow, serving celebrations and events across London.',
     url: 'https://www.beyondscrumptious.com/',

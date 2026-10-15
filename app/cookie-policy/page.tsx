@@ -4,7 +4,8 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 
 export const metadata = {
   title: 'Cookie Policy | Beyond Scrumptious',
-  description: 'How Beyond Scrumptious uses cookies on this website.',
+  description:
+    'How Beyond Scrumptious uses cookies on this website, including optional analytics cookies, and how to manage your cookie preferences.',
   alternates: {
     canonical: '/cookie-policy',
   },

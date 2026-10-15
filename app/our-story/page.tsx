@@ -8,14 +8,14 @@ import { TapLink } from '../../components/motion/TapLink'
 export const metadata = {
   title: 'Our Story | Beyond Scrumptious',
   description:
-    'Beyond Scrumptious is an eggless cake and dessert business based in Harrow, serving celebrations and events across London — from custom cakes to the Live Mini Pancake Station.',
+    'Beyond Scrumptious is an eggless cake and dessert business based in Harrow, serving celebrations and events across London.',
   alternates: {
     canonical: '/our-story',
   },
   openGraph: {
     title: 'Our Story | Beyond Scrumptious',
     description:
-      'Beyond Scrumptious is an eggless cake and dessert business based in Harrow, serving celebrations and events across London — from custom cakes to the Live Mini Pancake Station.',
+      'Beyond Scrumptious is an eggless cake and dessert business based in Harrow, serving celebrations and events across London.',
     url: 'https://www.beyondscrumptious.com/our-story',
   },
 }

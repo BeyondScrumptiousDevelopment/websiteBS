@@ -4,7 +4,8 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 
 export const metadata = {
   title: 'Privacy Policy | Beyond Scrumptious',
-  description: 'How Beyond Scrumptious collects and uses your information.',
+  description:
+    "Beyond Scrumptious's Privacy Policy — how we collect, use and protect your personal information when you enquire, order or browse this site.",
   alternates: {
     canonical: '/privacy-policy',
   },

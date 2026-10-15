@@ -25,14 +25,14 @@ const flavours = [
 export const metadata = {
   title: 'Eggless Cakes in Harrow & London | Beyond Scrumptious',
   description:
-    'Custom eggless cakes for birthdays, weddings and celebrations — handmade in Harrow, gelatine-free and fully customisable, serving London and the surrounding areas.',
+    'Custom eggless cakes for birthdays, weddings and celebrations — handmade in Harrow, gelatine-free and fully customisable, serving London.',
   alternates: {
     canonical: '/cakes',
   },
   openGraph: {
     title: 'Eggless Cakes in Harrow & London | Beyond Scrumptious',
     description:
-      'Custom eggless cakes for birthdays, weddings and celebrations — handmade in Harrow, gelatine-free and fully customisable, serving London and the surrounding areas.',
+      'Custom eggless cakes for birthdays, weddings and celebrations — handmade in Harrow, gelatine-free and fully customisable, serving London.',
     url: 'https://www.beyondscrumptious.com/cakes',
   },
 }

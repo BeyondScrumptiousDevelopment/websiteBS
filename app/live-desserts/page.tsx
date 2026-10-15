@@ -186,14 +186,14 @@ const faqJsonLd = {
 }
 
 export const metadata = {
-  title: 'Live Dessert Stations for Events in London | Beyond Scrumptious',
+  title: 'Live Dessert Stations for Events | Beyond Scrumptious',
   description:
     "Make your celebration special with Beyond Scrumptious's eggless Live Mini Pancake and Croffle Stations in London. Explore packages and enquire about your event.",
   alternates: {
     canonical: '/live-desserts',
   },
   openGraph: {
-    title: 'Live Dessert Stations for Events in London | Beyond Scrumptious',
+    title: 'Live Dessert Stations for Events | Beyond Scrumptious',
     description:
       "Make your celebration special with Beyond Scrumptious's eggless Live Mini Pancake and Croffle Stations in London. Explore packages and enquire about your event.",
     url: 'https://www.beyondscrumptious.com/live-desserts',

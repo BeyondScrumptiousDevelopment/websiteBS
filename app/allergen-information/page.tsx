@@ -4,7 +4,8 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 
 export const metadata = {
   title: 'Allergen Information | Beyond Scrumptious',
-  description: 'Allergen information for Beyond Scrumptious products.',
+  description:
+    "Allergen information for Beyond Scrumptious's eggless cakes and desserts, handmade in Harrow — please check before ordering if you have allergies.",
   alternates: {
     canonical: '/allergen-information',
   },

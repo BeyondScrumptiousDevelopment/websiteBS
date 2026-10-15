@@ -4,14 +4,14 @@ import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 export const metadata = {
   title: 'FAQ | Beyond Scrumptious, Harrow',
   description:
-    'Answers to common questions about eggless cakes, cupcakes, desserts, dessert tables, the Live Mini Pancake Station and booking with Beyond Scrumptious in Harrow, London.',
+    'Answers to common questions about eggless cakes, desserts, dessert tables, the Live Mini Pancake Station and booking with Beyond Scrumptious.',
   alternates: {
     canonical: '/faq',
   },
   openGraph: {
     title: 'FAQ | Beyond Scrumptious, Harrow',
     description:
-      'Answers to common questions about eggless cakes, cupcakes, desserts, dessert tables, the Live Mini Pancake Station and booking with Beyond Scrumptious in Harrow, London.',
+      'Answers to common questions about eggless cakes, desserts, dessert tables, the Live Mini Pancake Station and booking with Beyond Scrumptious.',
     url: 'https://www.beyondscrumptious.com/faq',
   },
 }

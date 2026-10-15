@@ -62,14 +62,14 @@ const range = [
 ]
 
 export const metadata = {
-  title: 'Desserts & Dessert Tables in Harrow & London | Beyond Scrumptious',
+  title: 'Desserts & Dessert Tables in Harrow | Beyond Scrumptious',
   description:
     'Eggless, gelatine-free desserts and styled dessert tables for weddings, parties and events — handmade in Harrow, fully customisable, serving London.',
   alternates: {
     canonical: '/desserts',
   },
   openGraph: {
-    title: 'Desserts & Dessert Tables in Harrow & London | Beyond Scrumptious',
+    title: 'Desserts & Dessert Tables in Harrow | Beyond Scrumptious',
     description:
       'Eggless, gelatine-free desserts and styled dessert tables for weddings, parties and events — handmade in Harrow, fully customisable, serving London.',
     url: 'https://www.beyondscrumptious.com/desserts',
