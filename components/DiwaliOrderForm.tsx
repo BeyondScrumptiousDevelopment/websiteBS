@@ -92,15 +92,33 @@ export default function DiwaliOrderForm({
   // The Diwali Cupcake Collection
   const [cBox, setCBox] = useState<CBox | ''>('')
   const [cFlavourSingle, setCFlavourSingle] = useState<CFlavour | ''>('')
-  const [cFlavours, setCFlavours] = useState<CFlavour[]>([])
+  const [cQuantities, setCQuantities] = useState<Record<CFlavour, number>>({
+    Vanilla: 0,
+    Chocolate: 0,
+    Kulfi: 0,
+    Oreo: 0,
+  })
 
   const [pickupDate, setPickupDate] = useState('')
 
-  function toggleCFlavour(f: CFlavour) {
-    setCFlavours((prev) => {
-      if (prev.includes(f)) return prev.filter((x) => x !== f)
-      if (prev.length >= 3) return prev
-      return [...prev, f]
+  const cBoxSize = cBox === 'box3' ? 3 : cBox === 'box6' ? 6 : 0
+  const cTotalSelected = Object.values(cQuantities).reduce((sum, n) => sum + n, 0)
+  const cDistinctFlavours = Object.values(cQuantities).filter((n) => n > 0).length
+
+  useEffect(() => {
+    setCQuantities({ Vanilla: 0, Chocolate: 0, Kulfi: 0, Oreo: 0 })
+  }, [cBox])
+
+  function adjustCQuantity(f: CFlavour, delta: number) {
+    setCQuantities((prev) => {
+      const current = prev[f]
+      const next = current + delta
+      if (next < 0) return prev
+      if (delta > 0) {
+        if (cBoxSize && cTotalSelected >= cBoxSize) return prev
+        if (current === 0 && cDistinctFlavours >= 3) return prev
+      }
+      return { ...prev, [f]: next }
     })
   }
 
@@ -153,8 +171,11 @@ export default function DiwaliOrderForm({
 
       if (cBox === 'single') {
         if (cFlavourSingle) lines.push(`Flavour: ${cFlavourSingle}`)
-      } else if (cFlavours.length) {
-        lines.push(`Flavours: ${cFlavours.join(', ')}`)
+      } else {
+        const parts = cFlavourOptions
+          .filter((f) => cQuantities[f] > 0)
+          .map((f) => `${cQuantities[f]} × ${f}`)
+        if (parts.length) lines.push(`Flavours: ${parts.join(', ')}`)
       }
 
       if (pickupDate) lines.push(`Pickup: ${pickupDate}`)
@@ -174,7 +195,7 @@ export default function DiwaliOrderForm({
     personaliseName,
     cBox,
     cFlavourSingle,
-    cFlavours,
+    cQuantities,
     pickupDate,
   ])
 
@@ -206,7 +227,15 @@ export default function DiwaliOrderForm({
     )
   }
 
-  const showSharedFields = product === 'naturally-sweet' ? !!box : product === 'collection' ? !!cBox : false
+  const collectionFlavoursComplete =
+    cBox === 'single' ? true : cBoxSize > 0 && cTotalSelected === cBoxSize
+
+  const showSharedFields =
+    product === 'naturally-sweet'
+      ? !!box
+      : product === 'collection'
+      ? !!cBox && collectionFlavoursComplete
+      : false
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -479,36 +508,61 @@ export default function DiwaliOrderForm({
         {product === 'collection' && (cBox === 'box3' || cBox === 'box6') && (
           <div>
             <label className={labelClass}>
-              Choose Up To 3 Flavours ({cFlavours.length}/3 selected)
+              Choose Your Flavours — Up To 3 Different ({cTotalSelected}/
+              {cBoxSize} cupcakes, {cDistinctFlavours}/3 flavours)
             </label>
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="space-y-3">
               {cFlavourOptions.map((f) => {
-                const selected = cFlavours.includes(f)
-                const disabled = !selected && cFlavours.length >= 3
+                const qty = cQuantities[f]
+                const plusDisabled =
+                  cTotalSelected >= cBoxSize || (qty === 0 && cDistinctFlavours >= 3)
                 return (
-                  <TapButton
-                    type="button"
+                  <div
                     key={f}
-                    onClick={() => toggleCFlavour(f)}
-                    disabled={disabled}
-                    className={`rounded-xl px-4 py-4 text-sm text-left transition border ${
-                      selected
+                    className={`flex items-center justify-between rounded-xl px-5 py-4 border transition ${
+                      qty > 0
                         ? 'bg-[#f3e3c3] border-[#c9973f] text-[#202b45]'
-                        : disabled
-                        ? 'bg-white/5 border-white/10 text-[#f8f8f8]/30 cursor-not-allowed'
-                        : 'bg-white/5 border-white/20 text-[#f8f8f8]/80 hover:bg-white/10'
+                        : 'bg-white/5 border-white/20 text-[#f8f8f8]/80'
                     }`}
                   >
-                    {f}
-                  </TapButton>
+                    <span className="text-sm">{f}</span>
+                    <div className="flex items-center gap-4">
+                      <TapButton
+                        type="button"
+                        onClick={() => adjustCQuantity(f, -1)}
+                        disabled={qty === 0}
+                        className="w-8 h-8 rounded-full border border-current flex items-center justify-center disabled:opacity-30"
+                      >
+                        −
+                      </TapButton>
+                      <span className="w-5 text-center font-semibold">{qty}</span>
+                      <TapButton
+                        type="button"
+                        onClick={() => adjustCQuantity(f, 1)}
+                        disabled={plusDisabled}
+                        className="w-8 h-8 rounded-full border border-current flex items-center justify-center disabled:opacity-30"
+                      >
+                        +
+                      </TapButton>
+                    </div>
+                  </div>
                 )
               })}
             </div>
-            <input type="hidden" name="collection_flavours" value={cFlavours.join(', ')} />
-            <p className="text-xs text-[#f8f8f8]/50 mt-3">
-              If you'd like a specific quantity split between your chosen
-              flavours, let us know in "Anything we should know?" below.
-            </p>
+            <input
+              type="hidden"
+              name="collection_flavours"
+              value={cFlavourOptions
+                .filter((f) => cQuantities[f] > 0)
+                .map((f) => `${cQuantities[f]} x ${f}`)
+                .join(', ')}
+            />
+            {cTotalSelected < cBoxSize && (
+              <p className="text-xs text-[#f8f8f8]/50 mt-3">
+                Choose {cBoxSize - cTotalSelected} more cupcake
+                {cBoxSize - cTotalSelected === 1 ? '' : 's'} to continue.
+              </p>
+            )}
           </div>
         )}
 

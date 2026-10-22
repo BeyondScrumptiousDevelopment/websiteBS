@@ -5,7 +5,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { TapLink } from './motion/TapLink'
 
+// TEMPORARY — remove the Diwali link after 8 Nov 2026
 const navLinks = [
+  { href: '/diwali', label: 'Diwali 2026 ✨', highlight: true },
   { href: '/cakes', label: 'Cakes' },
   { href: '/desserts', label: 'Desserts & Dessert Tables' },
   { href: '/live-desserts', label: 'Live Desserts' },
@@ -32,7 +34,15 @@ export default function Navbar() {
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] text-[#f8f8f8]/80">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-white transition">
+            <a
+              key={link.href}
+              href={link.href}
+              className={
+                link.highlight
+                  ? 'text-[#c9973f] hover:text-[#f3e3c3] transition font-medium'
+                  : 'hover:text-white transition'
+              }
+            >
               {link.label}
             </a>
           ))}
@@ -80,7 +90,11 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80 bg-[#202b45] p-6 rounded-3xl">
               {navLinks.map((link) => (
-                <a key={link.href} href={link.href}>
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={link.highlight ? 'text-[#c9973f]' : undefined}
+                >
                   {link.label}
                 </a>
               ))}
