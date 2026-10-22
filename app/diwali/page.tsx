@@ -1,13 +1,12 @@
 import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
 import WhatsAppButton from '../../components/WhatsAppButton'
-import DiwaliOrderForm from '../../components/DiwaliOrderForm'
 import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
 import { TapLink } from '../../components/motion/TapLink'
 
 export const metadata = {
-  title: 'Diwali 2026 | Naturally Sweet Cupcakes | Beyond Scrumptious',
+  title: 'Diwali 2026 | Beyond Scrumptious',
   description:
-    'Naturally Sweet Cupcakes for Diwali 2026 — no added refined sugar, sweetened with dates. Kulfi, Vanilla & Chocolate. Pickup 7th–8th Nov, Harrow.',
+    'Diwali 2026 at Beyond Scrumptious — choose from Naturally Sweet Cupcakes or The Diwali Cupcake Collection. Pickup 7th–8th Nov, Harrow.',
   robots: {
     index: true,
     follow: true,
@@ -17,25 +16,7 @@ export const metadata = {
   },
 }
 
-const flavours = [
-  {
-    emoji: '🌿',
-    name: 'Kulfi',
-    description: 'An aromatic flavour inspired by the classic Indian dessert.',
-  },
-  {
-    emoji: '🤍',
-    name: 'Vanilla',
-    description: 'Simple, soft and naturally sweet.',
-  },
-  {
-    emoji: '🍫',
-    name: 'Chocolate',
-    description: 'Rich, chocolatey and naturally sweetened with dates.',
-  },
-]
-
-export default function DiwaliPage() {
+export default function DiwaliLandingPage() {
   return (
     <main className="bg-[#1b1712] text-[#f8f8f8]">
       <WhatsAppButton />
@@ -48,202 +29,88 @@ export default function DiwaliPage() {
       </div>
 
       {/* HERO */}
-      <section className="relative mt-8 px-6 pb-24 pt-16 md:pt-24">
-        <div className="absolute inset-0">
-          <img
-            src="/images/diwali/cupcakes-1.jpg"
-            alt="Beyond Scrumptious Naturally Sweet Cupcakes for Diwali"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1b1712]/85 via-[#1b1712]/75 to-[#1b1712]" />
-        </div>
+      <section className="relative mt-8 px-6 pb-16 pt-16 md:pt-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,151,63,0.18),transparent_55%),radial-gradient(circle_at_75%_70%,rgba(201,151,63,0.12),transparent_50%)]" />
 
-        <Reveal className="relative max-w-4xl mx-auto text-center">
+        <Reveal className="relative max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
             Diwali 2026 ✨
           </p>
 
           <h1 className="heading-font text-5xl md:text-7xl leading-tight mb-6 text-[#f3e3c3]">
-            Naturally Sweet Cupcakes
+            A Little Sweetness For Diwali
           </h1>
 
-          <p className="text-lg md:text-xl text-[#f8f8f8]/90 mb-2">
-            No added refined sugar. Naturally sweetened with dates.
-          </p>
-          <p className="text-base md:text-lg text-[#f8f8f8]/70 mb-8 max-w-2xl mx-auto">
-            A deliciously different way to enjoy something sweet this Diwali.
+          <p className="text-lg md:text-xl text-[#f8f8f8]/80 max-w-2xl mx-auto mb-4">
+            Two ways to celebrate this year — choose the range that's right
+            for you.
           </p>
 
-          <p className="uppercase tracking-[0.3em] text-sm text-[#f3e3c3] mb-3">
-            Kulfi • Vanilla • Chocolate
-          </p>
-
-          <p className="heading-font text-2xl md:text-3xl text-[#f8f8f8] mb-8">
-            6 for £20 &nbsp;|&nbsp; 12 for £35
-          </p>
-
-          <div className="flex flex-col items-center gap-1 text-sm text-[#f8f8f8]/70 mb-10">
+          <div className="flex flex-col items-center gap-1 text-sm text-[#f8f8f8]/60">
             <p>📅 Pickup 7th or 8th November 2026 only</p>
             <p>📍 Harrow, London</p>
           </div>
-
-          <TapLink
-            href="#order"
-            className="inline-block px-12 py-5 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold uppercase tracking-[0.2em] hover:bg-[#f3e3c3] transition"
-          >
-            Order Your Box ↓
-          </TapLink>
         </Reveal>
       </section>
 
-      {/* INTRO */}
-      <section className="px-6 py-24">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <Reveal>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
-              Naturally Sweet, Made For Diwali
-            </p>
-
-            <h2 className="heading-font text-3xl md:text-4xl mb-6 text-[#f3e3c3] leading-tight">
-              Looking for something a little different this Diwali?
-            </h2>
-
-            <p className="text-[#f8f8f8]/80 leading-8 mb-4">
-              Our Naturally Sweet Cupcakes are made without added refined
-              sugar, with sweetness coming naturally from dates.
-            </p>
-            <p className="text-[#f8f8f8]/80 leading-8">
-              Soft, flavourful and perfect for sharing, they're available in
-              three flavours inspired by favourites from the Beyond
-              Scrumptious range.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.1} className="rounded-[2rem] overflow-hidden shadow-2xl">
-            <img
-              src="/images/diwali/cupcakes-2.jpg"
-              alt="Naturally Sweet Cupcake by Beyond Scrumptious"
-              className="w-full h-full object-cover"
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* FLAVOURS */}
-      <section className="px-6 py-16 bg-[#241e17]">
-        <div className="max-w-5xl mx-auto">
-          <Reveal>
-            <h2 className="heading-font text-3xl md:text-4xl text-center mb-14 text-[#f3e3c3]">
-              Choose From
-            </h2>
-          </Reveal>
-
-          <RevealGroup className="grid sm:grid-cols-3 gap-6" stagger={0.08}>
-            {flavours.map((f) => (
-              <RevealItem
-                key={f.name}
-                className="bg-[#1b1712] border border-[#c9973f]/30 rounded-[2rem] p-8 text-center"
+      {/* COLLECTIONS */}
+      <section className="px-6 pb-24">
+        <RevealGroup className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8" stagger={0.1}>
+          <RevealItem className="rounded-[2rem] overflow-hidden border border-[#c9973f]/30 bg-[#241e17] flex flex-col">
+            <div className="relative h-56">
+              <img
+                src="/images/diwali/cupcakes-1.jpg"
+                alt="Beyond Scrumptious Naturally Sweet Cupcakes for Diwali"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#241e17] via-[#241e17]/10 to-transparent" />
+            </div>
+            <div className="p-8 flex flex-col flex-1">
+              <h2 className="heading-font text-2xl md:text-3xl mb-3 text-[#f3e3c3]">
+                Naturally Sweet Cupcakes
+              </h2>
+              <p className="text-[#f8f8f8]/70 leading-7 mb-6 flex-1">
+                No added refined sugar — naturally sweetened with dates.
+                Kulfi, Vanilla &amp; Chocolate.
+              </p>
+              <p className="uppercase tracking-[0.2em] text-xs text-[#c9973f] mb-6">
+                From £20
+              </p>
+              <TapLink
+                href="/diwali/naturally-sweet"
+                className="inline-block text-center px-8 py-4 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold uppercase tracking-[0.2em] text-sm hover:bg-[#f3e3c3] transition"
               >
-                <p className="text-4xl mb-4">{f.emoji}</p>
-                <h3 className="heading-font text-2xl mb-3 text-[#f3e3c3]">
-                  {f.name}
-                </h3>
-                <p className="text-[#f8f8f8]/70 leading-7">{f.description}</p>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
-
-      {/* CHOOSE YOUR BOX */}
-      <section className="px-6 py-24">
-        <div className="max-w-4xl mx-auto">
-          <Reveal>
-            <h2 className="heading-font text-3xl md:text-4xl text-center mb-14 text-[#f3e3c3]">
-              Choose Your Box
-            </h2>
-          </Reveal>
-
-          <RevealGroup className="grid sm:grid-cols-2 gap-8" stagger={0.08}>
-            <RevealItem className="bg-[#241e17] border border-[#c9973f]/30 rounded-[2rem] p-10 text-center">
-              <h3 className="heading-font text-2xl mb-2 text-[#f8f8f8]">
-                6 Cupcakes
-              </h3>
-              <p className="heading-font text-4xl mb-4 text-[#c9973f]">£20</p>
-              <p className="text-[#f8f8f8]/70">One flavour only.</p>
-            </RevealItem>
-
-            <RevealItem className="bg-[#241e17] border border-[#c9973f]/30 rounded-[2rem] p-10 text-center">
-              <h3 className="heading-font text-2xl mb-2 text-[#f8f8f8]">
-                12 Cupcakes
-              </h3>
-              <p className="heading-font text-4xl mb-4 text-[#c9973f]">£35</p>
-              <p className="text-[#f8f8f8]/70">
-                Choose one flavour, or two flavours — 6 + 6.
-              </p>
-            </RevealItem>
-          </RevealGroup>
-
-          <p className="text-center mt-10 text-[#f8f8f8]/60">
-            Want to order multiple boxes?{' '}
-            <a
-              href="https://wa.me/447933903000?text=Hi!%20I'd%20like%20to%20order%20multiple%20boxes%20of%20the%20Naturally%20Sweet%20Cupcakes%20for%20Diwali"
-              target="_blank"
-              className="text-[#c9973f] underline hover:text-[#f3e3c3] transition"
-            >
-              Get in touch via WhatsApp
-            </a>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* PICKUP INFO */}
-      <section className="px-6 py-24 bg-[#241e17]">
-        <Reveal className="max-w-3xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
-            Your Diwali Order
-          </p>
-          <h2 className="heading-font text-3xl md:text-4xl mb-10 text-[#f3e3c3]">
-            Pickup Dates
-          </h2>
-
-          <p className="text-[#f8f8f8]/80 leading-8 mb-6">
-            Orders will be available for collection on:
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <div className="bg-[#1b1712] border border-[#c9973f]/30 rounded-2xl px-8 py-5">
-              <p className="heading-font text-xl text-[#f8f8f8]">
-                Saturday 7th November 2026
-              </p>
+                Explore &amp; Order
+              </TapLink>
             </div>
-            <div className="bg-[#1b1712] border border-[#c9973f]/30 rounded-2xl px-8 py-5">
-              <p className="heading-font text-xl text-[#f8f8f8]">
-                Sunday 8th November 2026
-              </p>
+          </RevealItem>
+
+          <RevealItem className="rounded-[2rem] overflow-hidden border border-[#c9973f]/30 bg-[#241e17] flex flex-col">
+            <div className="relative h-56 bg-[radial-gradient(circle_at_30%_20%,rgba(201,151,63,0.22),transparent_55%),radial-gradient(circle_at_75%_70%,rgba(201,151,63,0.15),transparent_50%)]">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="heading-font text-4xl text-[#c9973f]/40">✨</p>
+              </div>
             </div>
-          </div>
-
-          <p className="text-[#f8f8f8]/70 mb-2">📍 Harrow, London</p>
-          <p className="text-sm text-[#f8f8f8]/50">
-            Pickup only — no delivery available for this collection.
-          </p>
-        </Reveal>
-      </section>
-
-      {/* ORDER FORM */}
-      <section id="order" className="px-6 py-24 scroll-mt-10">
-        <Reveal className="max-w-3xl mx-auto text-center mb-14">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
-            Order Form
-          </p>
-          <h2 className="heading-font text-4xl md:text-5xl text-[#f3e3c3]">
-            Your Diwali Order
-          </h2>
-        </Reveal>
-
-        <DiwaliOrderForm />
+            <div className="p-8 flex flex-col flex-1">
+              <h2 className="heading-font text-2xl md:text-3xl mb-3 text-[#f3e3c3]">
+                The Diwali Cupcake Collection
+              </h2>
+              <p className="text-[#f8f8f8]/70 leading-7 mb-6 flex-1">
+                Thoughtfully decorated, beautifully packaged. Vanilla,
+                Chocolate, Kulfi &amp; Oreo.
+              </p>
+              <p className="uppercase tracking-[0.2em] text-xs text-[#c9973f] mb-6">
+                From £4.50
+              </p>
+              <TapLink
+                href="/diwali/cupcakes"
+                className="inline-block text-center px-8 py-4 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold uppercase tracking-[0.2em] text-sm hover:bg-[#f3e3c3] transition"
+              >
+                Explore &amp; Order
+              </TapLink>
+            </div>
+          </RevealItem>
+        </RevealGroup>
       </section>
 
       {/* FOOTER */}
