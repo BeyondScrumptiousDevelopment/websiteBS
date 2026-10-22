@@ -59,9 +59,15 @@ export default function DiwaliCupcakeCollectionPage() {
       </div>
 
       {/* HERO */}
-      {/* Photo-backed hero to follow once collection photos are uploaded — placeholder gradient for now. */}
-      <section className="relative mt-8 px-6 pb-24 pt-16 md:pt-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,151,63,0.18),transparent_55%),radial-gradient(circle_at_75%_70%,rgba(201,151,63,0.12),transparent_50%)]" />
+      <section className="relative mt-8 px-6 pb-24 pt-16 md:pt-24">
+        <div className="absolute inset-0">
+          <img
+            src="/images/diwali/cupcake-collection-hero.jpg"
+            alt="A gift box of three Beyond Scrumptious Diwali cupcakes with elegant rose-swirl buttercream piping"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1b1712]/85 via-[#1b1712]/75 to-[#1b1712]" />
+        </div>
 
         <Reveal className="relative max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
@@ -100,24 +106,34 @@ export default function DiwaliCupcakeCollectionPage() {
       </section>
 
       {/* INTRO */}
-      <section className="px-6 py-20">
-        <Reveal className="max-w-3xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
-            Thoughtfully Decorated, Beautifully Packaged
-          </p>
+      <section className="px-6 py-24">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <Reveal>
+            <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
+              Thoughtfully Decorated, Beautifully Packaged
+            </p>
 
-          <p className="text-[#f8f8f8]/80 leading-8 mb-4">
-            Our Diwali cupcakes are here — thoughtfully decorated,
-            beautifully packaged and made to bring a little something
-            special to your celebrations.
-          </p>
-          <p className="text-[#f8f8f8]/80 leading-8">
-            Each cupcake is finished with elegant buttercream piping and
-            delicate festive details, presented in our crystal-lid gift
-            boxes. Perfect for gifting, sharing or adding a little sweetness
-            to your Diwali celebrations.
-          </p>
-        </Reveal>
+            <p className="text-[#f8f8f8]/80 leading-8 mb-4">
+              Our Diwali cupcakes are here — thoughtfully decorated,
+              beautifully packaged and made to bring a little something
+              special to your celebrations.
+            </p>
+            <p className="text-[#f8f8f8]/80 leading-8">
+              Each cupcake is finished with elegant buttercream piping and
+              delicate festive details, presented in our crystal-lid gift
+              boxes. Perfect for gifting, sharing or adding a little
+              sweetness to your Diwali celebrations.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1} className="rounded-[2rem] overflow-hidden shadow-2xl">
+            <img
+              src="/images/diwali/cupcake-collection-box.jpg"
+              alt="Three Beyond Scrumptious Diwali cupcakes in a crystal-lid gift box, finished with buttercream rose piping"
+              className="w-full h-full object-cover"
+            />
+          </Reveal>
+        </div>
       </section>
 
       {/* CHOOSE YOUR BOX */}

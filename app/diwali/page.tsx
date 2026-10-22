@@ -86,10 +86,13 @@ export default function DiwaliLandingPage() {
           </RevealItem>
 
           <RevealItem className="rounded-[2rem] overflow-hidden border border-[#c9973f]/30 bg-[#241e17] flex flex-col">
-            <div className="relative h-56 bg-[radial-gradient(circle_at_30%_20%,rgba(201,151,63,0.22),transparent_55%),radial-gradient(circle_at_75%_70%,rgba(201,151,63,0.15),transparent_50%)]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="heading-font text-4xl text-[#c9973f]/40">✨</p>
-              </div>
+            <div className="relative h-56">
+              <img
+                src="/images/diwali/cupcake-collection-detail.jpg"
+                alt="A Beyond Scrumptious Diwali cupcake finished with buttercream rose piping in a crystal-lid gift box"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#241e17] via-[#241e17]/10 to-transparent" />
             </div>
             <div className="p-8 flex flex-col flex-1">
               <h2 className="heading-font text-2xl md:text-3xl mb-3 text-[#f3e3c3]">
