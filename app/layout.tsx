@@ -47,6 +47,12 @@ const jsonLd = {
   telephone: '+447933903000',
   email: 'hello@beyondscrumptious.com',
   areaServed: 'Harrow, London',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Harrow',
+    addressRegion: 'London',
+    addressCountry: 'GB',
+  },
   sameAs: [
     'https://instagram.com/beyond.scrumptious',
     'https://www.tiktok.com/@beyondscrumptious',
