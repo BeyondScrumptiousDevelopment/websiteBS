@@ -1,6 +1,7 @@
 import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
 import { client } from '../../sanity/lib/client'
 import BrandCurve from '../../components/BrandCurve'
+import BrandRipple from '../../components/BrandRipple'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -55,6 +56,7 @@ export default async function LinksPage() {
 
   return (
     <main className="bs-brand relative overflow-hidden min-h-screen bg-[#D8E8F4] text-[#19253F] flex flex-col items-center px-6 py-16">
+      <BrandRipple id="bs-ripple-links" tone="onLight" />
       <BrandCurve side="left" />
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
         <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#F3F8FB]/20 mb-6">
