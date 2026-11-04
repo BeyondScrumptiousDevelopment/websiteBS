@@ -11,7 +11,7 @@ export default function TrustBadges() {
   const track = [...badges, ...badges]
 
   return (
-    <div className="bg-[#cfd7e2] text-[#202b45] overflow-hidden py-4">
+    <div className="bg-[#D8E8F4] text-[#19253F] overflow-hidden py-4">
       <div className="flex w-max items-center animate-marquee">
         {[0, 1].map((copy) => (
           <div key={copy} className="flex items-center shrink-0">
@@ -19,14 +19,14 @@ export default function TrustBadges() {
               const isFeatured = badge === 'Fully Eggless'
               return (
                 <div key={`${copy}-${i}`} className="flex items-center">
-                  <span className="w-8 text-center text-[#202b45]/40 text-sm shrink-0">
+                  <span className="w-8 text-center text-[#19253F]/40 text-sm shrink-0">
                     •
                   </span>
                   <span
                     className={`uppercase tracking-[0.15em] whitespace-nowrap ${
                       isFeatured
                         ? 'text-base font-bold'
-                        : 'text-sm font-semibold text-[#202b45]/80'
+                        : 'text-sm font-semibold text-[#19253F]/80'
                     }`}
                   >
                     {badge}

@@ -53,9 +53,9 @@ export default async function LinksPage() {
   const links = await getLinks()
 
   return (
-    <main className="min-h-screen bg-[#202b45] text-[#f8f8f8] flex flex-col items-center px-6 py-16">
+    <main className="bs-brand min-h-screen bg-[#19253F] text-[#F3F8FB] flex flex-col items-center px-6 py-16">
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
-        <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#f8f8f8]/20 mb-6">
+        <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#F3F8FB]/20 mb-6">
           <img
             src="/images/logo.jpg"
             alt="Beyond Scrumptious"
@@ -67,11 +67,11 @@ export default async function LinksPage() {
           Beyond Scrumptious
         </p>
 
-        <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-2 text-center">
+        <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-2 text-center">
           Cakes • Desserts • Live Dessert Experiences
         </p>
 
-        <p className="text-sm text-[#f8f8f8]/60 mb-10 text-center">
+        <p className="text-sm text-[#F3F8FB]/60 mb-10 text-center">
           Harrow, London
         </p>
 
@@ -82,8 +82,8 @@ export default async function LinksPage() {
               href={link.href}
               className={`w-full text-center rounded-full px-6 py-5 text-sm uppercase tracking-[0.15em] transition ${
                 link.highlight
-                  ? 'bg-[#f8f8f8] text-[#202b45] hover:bg-[#cfd7e2]'
-                  : 'border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10'
+                  ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4]'
+                  : 'border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10'
               }`}
             >
               {link.label}
@@ -99,20 +99,20 @@ export default async function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="hover:text-[#cfd7e2] transition"
+              className="hover:text-[#D8E8F4] transition"
             >
               <social.icon />
             </a>
           ))}
         </div>
 
-        <p className="text-xs text-[#f8f8f8]/40 text-center">
+        <p className="text-xs text-[#F3F8FB]/40 text-center">
           Developed by{' '}
           <a
             href="https://naavcaptured.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#cfd7e2] hover:text-white transition"
+            className="text-[#D8E8F4] hover:text-white transition"
           >
             naavcaptured
           </a>

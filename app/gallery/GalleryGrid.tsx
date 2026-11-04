@@ -44,8 +44,8 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
               onClick={() => setActiveTag(tag.value)}
               className={`px-6 py-3 rounded-full text-sm uppercase tracking-[0.15em] transition border ${
                 activeTag === tag.value
-                  ? 'bg-[#f8f8f8] text-[#202b45] border-[#f8f8f8]'
-                  : 'border-[#f8f8f8]/30 text-[#f8f8f8]/70 hover:bg-[#f8f8f8]/10'
+                  ? 'bg-[#F3F8FB] text-[#19253F] border-[#F3F8FB]'
+                  : 'border-[#F3F8FB]/30 text-[#F3F8FB]/70 hover:bg-[#F3F8FB]/10'
               }`}
             >
               {tag.label}
@@ -65,7 +65,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
                 onClick={() => setLightbox(product)}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="w-full overflow-hidden rounded-[2rem] shadow-2xl bg-[#f8f8f8] text-left"
+                className="w-full overflow-hidden rounded-[2rem] shadow-2xl bg-[#F3F8FB] text-left"
               >
                 <img
                   src={urlFor(product.image).width(900).url()}
@@ -75,7 +75,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
                 />
 
                 {product.caption && (
-                  <div className="p-6 text-[#202b45]">
+                  <div className="p-6 text-[#19253F]">
                     <p className="text-sm">{product.caption}</p>
                   </div>
                 )}
@@ -85,7 +85,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
         </RevealGroup>
 
         {filtered.length === 0 && (
-          <p className="text-center text-[#f8f8f8]/50 mt-16">
+          <p className="text-center text-[#F3F8FB]/50 mt-16">
             No images in this category yet.
           </p>
         )}

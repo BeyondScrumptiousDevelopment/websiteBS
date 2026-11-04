@@ -13,14 +13,14 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <Navbar />
       <WhatsAppButton />
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-5xl mx-auto">
 
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Beyond Scrumptious
           </p>
 
@@ -28,11 +28,11 @@ export default function TermsPage() {
             Terms & Conditions
           </h1>
 
-          <p className="text-sm uppercase tracking-[0.3em] text-[#cfd7e2]/60 mb-16">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#D8E8F4]/60 mb-16">
             Last Updated: August 2026
           </p>
 
-          <div className="space-y-6 text-[#f8f8f8]/80 leading-8 text-lg mb-16">
+          <div className="space-y-6 text-[#F3F8FB]/80 leading-8 text-lg mb-16">
             <p>
               These Terms &amp; Conditions apply to all orders and bookings
               placed with Beyond Scrumptious, including cakes, cupcakes,
@@ -53,7 +53,7 @@ export default function TermsPage() {
             </p>
           </div>
 
-          <div className="space-y-16 text-[#f8f8f8]/80 leading-8 text-lg">
+          <div className="space-y-16 text-[#F3F8FB]/80 leading-8 text-lg">
 
             <div>
               <h2 className="heading-font text-3xl mb-4 text-white">
@@ -453,7 +453,7 @@ export default function TermsPage() {
             </div>
 
             <div className="pt-10 border-t border-white/10">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#cfd7e2]/60">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#D8E8F4]/60">
                 Last Updated: August 2026
               </p>
             </div>

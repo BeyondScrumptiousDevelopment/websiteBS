@@ -70,10 +70,10 @@ export default function TestimonialsSlideshow() {
               i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
           >
-            <div className="bg-[#f8f8f8] text-[#202b45] rounded-[2rem] p-10 shadow-lg h-full flex flex-col justify-center">
+            <div className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-lg h-full flex flex-col justify-center">
               <p className="leading-7 mb-6 text-lg">&ldquo;{t.quote}&rdquo;</p>
               <h3 className="heading-font text-xl">{t.name}</h3>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#202b45]/50">
+              <p className="text-xs uppercase tracking-[0.2em] text-[#19253F]/50">
                 Google Review
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function TestimonialsSlideshow() {
         <TapButton
           onClick={() => go(index - 1)}
           aria-label="Previous review"
-          className="w-10 h-10 rounded-full border border-[#202b45]/20 flex items-center justify-center hover:bg-[#202b45]/10 transition"
+          className="w-10 h-10 rounded-full border border-[#19253F]/20 flex items-center justify-center hover:bg-[#19253F]/10 transition"
         >
           ‹
         </TapButton>
@@ -97,7 +97,7 @@ export default function TestimonialsSlideshow() {
               onClick={() => go(i)}
               aria-label={`Show review ${i + 1}`}
               className={`h-2.5 rounded-full transition-all ${
-                i === index ? 'w-6 bg-[#202b45]' : 'w-2.5 bg-[#202b45]/25'
+                i === index ? 'w-6 bg-[#19253F]' : 'w-2.5 bg-[#19253F]/25'
               }`}
             />
           ))}
@@ -106,7 +106,7 @@ export default function TestimonialsSlideshow() {
         <TapButton
           onClick={() => go(index + 1)}
           aria-label="Next review"
-          className="w-10 h-10 rounded-full border border-[#202b45]/20 flex items-center justify-center hover:bg-[#202b45]/10 transition"
+          className="w-10 h-10 rounded-full border border-[#19253F]/20 flex items-center justify-center hover:bg-[#19253F]/10 transition"
         >
           ›
         </TapButton>

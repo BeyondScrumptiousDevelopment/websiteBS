@@ -49,9 +49,9 @@ const flavours = [
 const flavourBranches: Topic[] = ['Cake', 'Cupcakes', 'Desserts']
 
 const inputClass =
-  'w-full rounded-xl bg-white/95 text-[#202b45] px-5 py-4 placeholder:text-[#202b45]/40 focus:outline-none focus:ring-2 focus:ring-[#202b45]/30'
+  'w-full rounded-xl bg-white/95 text-[#19253F] px-5 py-4 placeholder:text-[#19253F]/40 focus:outline-none focus:ring-2 focus:ring-[#19253F]/30'
 
-const labelClass = 'block text-sm uppercase tracking-[0.15em] text-[#cfd7e2] mb-2'
+const labelClass = 'block text-sm uppercase tracking-[0.15em] text-[#D8E8F4] mb-2'
 
 function Field({
   label,
@@ -96,7 +96,7 @@ export default function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+      <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
         <Navbar />
         <WhatsAppButton />
         <section className="pt-48 pb-40 px-6 text-center">
@@ -104,11 +104,11 @@ export default function ContactForm() {
             <h1 className="heading-font text-4xl md:text-6xl mb-8">
               Thank You!
             </h1>
-            <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-4">
+            <p className="text-lg leading-8 text-[#F3F8FB]/70 mb-4">
               Your enquiry has been sent — we'll get back to you as soon as
               we can.
             </p>
-            <p className="text-sm text-[#f8f8f8]/50">
+            <p className="text-sm text-[#F3F8FB]/50">
               Please note: submitting an enquiry does not itself confirm a
               booking. Booking is only confirmed once availability has been
               confirmed and the required payment received — see our{' '}
@@ -119,7 +119,7 @@ export default function ContactForm() {
             </p>
             <TapLink
               href="/"
-              className="inline-block mt-12 px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
+              className="inline-block mt-12 px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
             >
               Back to Home
             </TapLink>
@@ -131,19 +131,19 @@ export default function ContactForm() {
   }
 
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <Navbar />
       <WhatsAppButton />
 
       <section className="pt-40 pb-16 px-6">
         <Reveal className="max-w-3xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Contact / Enquire
           </p>
           <h1 className="heading-font text-5xl md:text-7xl mb-8">
             Enquire Now
           </h1>
-          <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+          <p className="max-w-2xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
             Prefer to skip the form? Message us directly — we're happy to
             chat there too.
           </p>
@@ -157,7 +157,7 @@ export default function ContactForm() {
             <TapLink
               href="https://wa.me/447933903000"
               target="_blank"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#f8f8f8] px-6 py-5 hover:bg-[#25D366]/20 transition"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#F3F8FB] px-6 py-5 hover:bg-[#25D366]/20 transition"
             >
               <FaWhatsapp className="text-2xl text-[#25D366]" />
               <span className="uppercase tracking-[0.15em] text-sm">
@@ -168,9 +168,9 @@ export default function ContactForm() {
           <RevealItem>
             <TapLink
               href="mailto:hello@beyondscrumptious.com"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-white/5 border border-white/20 text-[#f8f8f8] px-6 py-5 hover:bg-white/10 transition"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-white/5 border border-white/20 text-[#F3F8FB] px-6 py-5 hover:bg-white/10 transition"
             >
-              <FaEnvelope className="text-2xl text-[#cfd7e2]" />
+              <FaEnvelope className="text-2xl text-[#D8E8F4]" />
               <span className="uppercase tracking-[0.15em] text-sm">
                 Email Us
               </span>
@@ -183,7 +183,7 @@ export default function ContactForm() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <div className="h-px bg-white/10 mb-12" />
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60">
               Or send us a quick enquiry
             </p>
           </div>
@@ -211,8 +211,8 @@ export default function ContactForm() {
                     onClick={() => setTopic(t)}
                     className={`rounded-xl px-4 py-4 text-sm text-center transition border ${
                       topic === t
-                        ? 'bg-[#f8f8f8] text-[#202b45] border-[#f8f8f8]'
-                        : 'bg-white/5 border-white/20 text-[#f8f8f8]/80 hover:bg-white/10'
+                        ? 'bg-[#F3F8FB] text-[#19253F] border-[#F3F8FB]'
+                        : 'bg-white/5 border-white/20 text-[#F3F8FB]/80 hover:bg-white/10'
                     }`}
                   >
                     {t}
@@ -280,12 +280,12 @@ export default function ContactForm() {
                     </Field>
 
                     <div className="flex items-end pb-4">
-                      <label className="flex items-center gap-3 text-sm text-[#f8f8f8]/80">
+                      <label className="flex items-center gap-3 text-sm text-[#F3F8FB]/80">
                         <input
                           type="checkbox"
                           name="vegan_requirement"
                           value="Yes"
-                          className="w-5 h-5 rounded accent-[#f8f8f8]"
+                          className="w-5 h-5 rounded accent-[#F3F8FB]"
                         />
                         This needs to be vegan
                       </label>
@@ -342,12 +342,12 @@ export default function ContactForm() {
                 <TapButton
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full md:w-auto px-12 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition disabled:opacity-50"
+                  className="w-full md:w-auto px-12 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition disabled:opacity-50"
                 >
                   {state.submitting ? 'Sending...' : 'Send Enquiry'}
                 </TapButton>
 
-                <p className="text-xs text-[#f8f8f8]/40 pt-2">
+                <p className="text-xs text-[#F3F8FB]/40 pt-2">
                   Submitting this form does not confirm a booking. Booking
                   is confirmed once availability is confirmed and required
                   payment received — see our{' '}

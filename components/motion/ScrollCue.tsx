@@ -9,7 +9,7 @@ export default function ScrollCue({ targetId }: { targetId: string }) {
     <a
       href={`#${targetId}`}
       aria-label="Scroll down"
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[#f8f8f8]/60 hover:text-[#f8f8f8] transition-colors"
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[#F3F8FB]/60 hover:text-[#F3F8FB] transition-colors"
     >
       <motion.div
         animate={{ y: [0, 8, 0] }}

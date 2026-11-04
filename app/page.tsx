@@ -49,7 +49,7 @@ export default async function HomePage() {
   const featured = await getFeatured()
 
   return (
-    <main className="bg-[#202b45] text-[#f8f8f8] overflow-hidden">
+    <main className="bs-brand bg-[#19253F] text-[#F3F8FB] overflow-hidden">
       <Navbar />
       <WhatsAppButton />
       <CroffleBanner />
@@ -58,11 +58,11 @@ export default async function HomePage() {
       <section className="relative h-screen flex items-center justify-center text-center px-6">
         <HeroVideo />
 
-        <div className="absolute inset-0 bg-[#202b45]/60" />
+        <div className="absolute inset-0 bg-[#19253F]/60" />
 
         <div className="relative z-10 max-w-5xl">
           <Reveal delay={0}>
-            <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#f8f8f8]/70">
+            <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#F3F8FB]/70">
               Eggless Cakes, Desserts & Live Dessert Experiences
             </p>
           </Reveal>
@@ -76,7 +76,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#f8f8f8]/80 leading-8 mb-12">
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#F3F8FB]/80 leading-8 mb-12">
               Handcrafted eggless cakes and desserts, styled dessert tables,
               and live dessert experiences for celebrations, parties, weddings
               and events across Harrow, London and beyond.
@@ -87,13 +87,13 @@ export default async function HomePage() {
             <div className="flex flex-wrap justify-center gap-5">
               <TapLink
                 href="/contact"
-                className="px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
+                className="px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
               >
                 Enquire Now
               </TapLink>
               <TapLink
                 href="#offer"
-                className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+                className="px-10 py-5 rounded-full border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
               >
                 Explore
               </TapLink>
@@ -105,10 +105,10 @@ export default async function HomePage() {
       </section>
 
       <TrustBadges />
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* TEMPORARY — DIWALI 2026 PROMO — remove after 8 Nov 2026 */}
-      <section className="py-24 px-6 bg-[#1b1712] text-[#f8f8f8]">
+      <section className="py-24 px-6 bg-[#1b1712] text-[#F3F8FB]">
         <Reveal className="max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
             Diwali 2026 ✨
@@ -118,7 +118,7 @@ export default async function HomePage() {
             A Little Sweetness For Diwali
           </h2>
 
-          <p className="text-[#f8f8f8]/70 text-lg leading-8 mb-10 max-w-2xl mx-auto">
+          <p className="text-[#F3F8FB]/70 text-lg leading-8 mb-10 max-w-2xl mx-auto">
             Naturally Sweet Cupcakes and The Diwali Cupcake Collection — two
             ways to celebrate this year. Pickup 7th or 8th November, Harrow.
           </p>
@@ -132,13 +132,13 @@ export default async function HomePage() {
         </Reveal>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* WHAT WE OFFER */}
-      <section id="offer" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
+      <section id="offer" className="bg-[#D8E8F4] text-[#19253F] py-28 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6 text-center">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6 text-center">
               What We Offer
             </p>
 
@@ -153,10 +153,10 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/cakes"
-                className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
-                <p className="text-[#202b45]/70 leading-7">
+                <p className="text-[#19253F]/70 leading-7">
                   Custom eggless cakes for all occasions, plus cupcakes in a
                   range of flavours and box sizes.
                 </p>
@@ -166,12 +166,12 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/desserts"
-                className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <h3 className="heading-font text-3xl mb-4">
                   Desserts & Dessert Tables
                 </h3>
-                <p className="text-[#202b45]/70 leading-7">
+                <p className="text-[#19253F]/70 leading-7">
                   Individual desserts and beautifully styled dessert-table
                   experiences for any celebration.
                 </p>
@@ -181,10 +181,10 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/live-desserts"
-                className="block rounded-[2rem] bg-[#f8f8f8] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <h3 className="heading-font text-3xl mb-4">Live Desserts</h3>
-                <p className="text-[#202b45]/70 leading-7">
+                <p className="text-[#19253F]/70 leading-7">
                   Our Live Mini Pancake Station, prepared fresh in front of
                   your guests.
                 </p>
@@ -194,13 +194,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* CREATIVE / VISUAL SECTION */}
-      <section className="py-28 px-6 bg-[#202b45]">
+      <section className="py-28 px-6 bg-[#19253F]">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6 text-center">
               Our Work
             </p>
 
@@ -226,7 +226,7 @@ export default async function HomePage() {
               ))}
             </RevealGroup>
           ) : (
-            <p className="text-center text-[#f8f8f8]/50">
+            <p className="text-center text-[#F3F8FB]/50">
               New photos coming soon — see our full gallery below.
             </p>
           )}
@@ -234,7 +234,7 @@ export default async function HomePage() {
           <div className="text-center mt-14">
             <TapLink
               href="/gallery"
-              className="inline-block px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
+              className="inline-block px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
             >
               View Full Gallery
             </TapLink>
@@ -242,12 +242,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* EVENTS */}
-      <section className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
+      <section className="py-32 px-6 bg-[#D8E8F4] text-[#19253F]">
         <Reveal className="max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
             Celebrations & Events
           </p>
 
@@ -257,7 +257,7 @@ export default async function HomePage() {
             Of Celebration
           </h2>
 
-          <p className="text-lg leading-8 text-[#202b45]/70">
+          <p className="text-lg leading-8 text-[#19253F]/70">
             Birthdays, weddings, mehndis, baby showers, corporate events and
             everything in between — every order is built around what you
             need for your occasion.
@@ -265,10 +265,10 @@ export default async function HomePage() {
         </Reveal>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* LIVE DESSERT FEATURE */}
-      <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
+      <section className="py-32 px-6 bg-[#19253F] text-[#F3F8FB]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal className="grid grid-cols-2 gap-4 order-2 md:order-1" y={32}>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
@@ -290,7 +290,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal className="order-1 md:order-2" y={32}>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
               Live Mini Pancake Station
             </p>
 
@@ -300,7 +300,7 @@ export default async function HomePage() {
               Live Reactions
             </h2>
 
-            <p className="text-[#f8f8f8]/70 leading-8 text-lg mb-10">
+            <p className="text-[#F3F8FB]/70 leading-8 text-lg mb-10">
               Freshly made mini pancakes, cooked live in front of your
               guests and served with your choice of toppings and sauces.
             </p>
@@ -308,7 +308,7 @@ export default async function HomePage() {
             <div className="flex gap-4 flex-wrap">
               <TapLink
                 href="/live-desserts"
-                className="px-8 py-4 bg-[#f8f8f8] text-[#202b45] rounded-full hover:bg-[#cfd7e2] transition"
+                className="px-8 py-4 bg-[#F3F8FB] text-[#19253F] rounded-full hover:bg-[#D8E8F4] transition"
               >
                 Explore Live Desserts
               </TapLink>
@@ -317,10 +317,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* LIVE CROFFLE STATION FEATURE */}
-      <section className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
+      <section className="py-32 px-6 bg-[#D8E8F4] text-[#19253F]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal className="grid grid-cols-2 gap-4" y={32}>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
@@ -342,7 +342,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal y={32}>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               New — Live Croffle Station
             </p>
 
@@ -352,7 +352,7 @@ export default async function HomePage() {
               Meets Waffle
             </h2>
 
-            <p className="text-[#202b45]/70 leading-8 text-lg mb-10">
+            <p className="text-[#19253F]/70 leading-8 text-lg mb-10">
               Our newest live dessert station — croffles pressed fresh at
               your event until golden and crispy, then finished with your
               choice of toppings and sauces. Eggless, and bookable with the
@@ -362,7 +362,7 @@ export default async function HomePage() {
             <div className="flex gap-4 flex-wrap">
               <TapLink
                 href="/croffle"
-                className="px-8 py-4 bg-[#202b45] text-[#f8f8f8] rounded-full hover:bg-[#161f36] transition"
+                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-full hover:bg-[#131C2F] transition"
               >
                 Explore The Croffle Station
               </TapLink>
@@ -372,10 +372,10 @@ export default async function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-28 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <Reveal>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Client Love
             </p>
 
@@ -388,12 +388,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* OUR STORY TEASER */}
-      <section className="py-32 px-6 bg-[#202b45] text-[#f8f8f8]">
+      <section className="py-32 px-6 bg-[#19253F] text-[#F3F8FB]">
         <Reveal className="max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Our Story
           </p>
 
@@ -403,7 +403,7 @@ export default async function HomePage() {
             To A Proper Business
           </h2>
 
-          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-10">
+          <p className="text-lg leading-8 text-[#F3F8FB]/70 mb-10">
             Beyond Scrumptious began in April 2021 from a genuine enjoyment
             of making cakes and exploring the creative side of desserts. It
             became an official business in October 2021 — and in 2025, live
@@ -412,19 +412,19 @@ export default async function HomePage() {
 
           <TapLink
             href="/our-story"
-            className="inline-block px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
+            className="inline-block px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
           >
             Read Our Story
           </TapLink>
         </Reveal>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* FINAL CTA */}
-      <section id="contact" className="py-32 px-6 bg-[#cfd7e2] text-[#202b45]">
+      <section id="contact" className="py-32 px-6 bg-[#D8E8F4] text-[#19253F]">
         <Reveal className="max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
             Let's Create Something Scrumptious
           </p>
 
@@ -434,14 +434,14 @@ export default async function HomePage() {
             Custom Quote
           </h2>
 
-          <p className="text-[#202b45]/70 text-lg leading-8 max-w-2xl mx-auto mb-14">
+          <p className="text-[#19253F]/70 text-lg leading-8 max-w-2xl mx-auto mb-14">
             Tell us about your event and we'll get back to you with a quote
             tailored to what you need.
           </p>
 
           <TapLink
             href="/contact"
-            className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
+            className="inline-block px-10 py-5 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
           >
             Enquire Now
           </TapLink>

@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
  * Animates only `scaleX`/`opacity`, so it's cheap on mobile.
  */
 export default function SectionSeam({
-  color = '#c9973f',
+  color = '#3F5478',
 }: {
   color?: string
 }) {

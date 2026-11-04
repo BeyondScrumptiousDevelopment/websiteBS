@@ -1,12 +1,17 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import Analytics from '../components/Analytics'
 import MotionProvider from '../components/motion/MotionProvider'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-heading',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans',
 })
 
 const description =
@@ -73,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={playfair.variable}>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>
         <script
           type="application/ld+json"

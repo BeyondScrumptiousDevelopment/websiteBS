@@ -39,7 +39,7 @@ export const metadata = {
 
 export default function CakesPage() {
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <BreadcrumbJsonLd items={[{ name: 'Cakes', path: '/cakes' }]} />
       <ServiceJsonLd
         name="Eggless Custom Cakes"
@@ -52,7 +52,7 @@ export default function CakesPage() {
       {/* HERO */}
       <section className="pt-40 pb-24 px-6 text-center">
         <Reveal className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Eggless Cakes for All Occasions — Harrow & London
           </p>
 
@@ -60,20 +60,20 @@ export default function CakesPage() {
             Cakes
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70">
             Every cake is made to order and eggless from top to bottom —
             whether it's a birthday, wedding, or any celebration in between.
           </p>
         </Reveal>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* FLAVOURS */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Current Flavours
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -93,30 +93,30 @@ export default function CakesPage() {
             ))}
           </RevealGroup>
 
-          <p className="text-center mt-10 text-[#202b45]/70 max-w-2xl mx-auto">
+          <p className="text-center mt-10 text-[#19253F]/70 max-w-2xl mx-auto">
             Vegan cakes are available in certain flavours only — vegan
             availability is confirmed at the time of booking.
           </p>
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* CUSTOMISATION */}
       <section className="py-28 px-6">
         <RevealGroup className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-          <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+          <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
             <h3 className="heading-font text-3xl mb-4">Fully Customisable</h3>
-            <p className="leading-8 text-[#f8f8f8]/70">
+            <p className="leading-8 text-[#F3F8FB]/70">
               Send us your inspiration or reference images and we'll build
               your cake around your requirements — every design is made to
               order, not picked from a fixed catalogue.
             </p>
           </RevealItem>
 
-          <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+          <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
             <h3 className="heading-font text-3xl mb-4">Lead Time</h3>
-            <p className="leading-8 text-[#f8f8f8]/70">
+            <p className="leading-8 text-[#F3F8FB]/70">
               Please allow approximately 1 week for cake orders. Last-minute
               orders may be possible depending on availability — get in
               touch and we'll let you know.
@@ -131,12 +131,12 @@ export default function CakesPage() {
         title="Recent Cakes & Cupcakes"
       />
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* CUPCAKES */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-28 px-6">
         <Reveal className="max-w-5xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
             Also Available
           </p>
 
@@ -144,30 +144,30 @@ export default function CakesPage() {
             Cupcakes
           </h2>
 
-          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#202b45]/70 mb-6">
+          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#19253F]/70 mb-6">
             Available in a range of box quantities and flavour combinations,
             with deluxe flavours available at an additional charge. Lead
             time is approximately 1 week.
           </p>
 
-          <p className="text-sm uppercase tracking-[0.2em] text-[#202b45]/50">
+          <p className="text-sm uppercase tracking-[0.2em] text-[#19253F]/50">
             Eggless • Gelatine-Free • Customisable
           </p>
         </Reveal>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* CTA */}
       <Reveal as="section" className="py-32 px-6 text-center" y={0}>
         <h2 className="heading-font text-4xl md:text-6xl mb-8">
           Ready To Order?
         </h2>
-        <p className="text-[#f8f8f8]/70 max-w-2xl mx-auto mb-6 leading-8">
+        <p className="text-[#F3F8FB]/70 max-w-2xl mx-auto mb-6 leading-8">
           Get in touch for a custom quote — tell us your flavour, design and
           event date.
         </p>
-        <p className="text-[#f8f8f8]/50 max-w-2xl mx-auto mb-10 leading-8 text-sm">
+        <p className="text-[#F3F8FB]/50 max-w-2xl mx-auto mb-10 leading-8 text-sm">
           Planning a bigger spread? Explore our{' '}
           <a href="/desserts" className="underline hover:text-white">
             dessert tables
@@ -180,7 +180,7 @@ export default function CakesPage() {
         </p>
         <TapLink
           href="/contact"
-          className="inline-block px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
+          className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
         >
           Enquire About Your Cake
         </TapLink>

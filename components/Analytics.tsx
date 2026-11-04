@@ -72,9 +72,9 @@ export default function Analytics() {
       )}
 
       {GA_ID && consent === null && (
-        <div className="fixed bottom-0 inset-x-0 z-[200] bg-[#161f36] border-t border-white/10 px-6 py-5">
+        <div className="fixed bottom-0 inset-x-0 z-[200] bg-[#131C2F] border-t border-white/10 px-6 py-5">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-            <p className="text-sm text-[#f8f8f8]/70 flex-1 text-center sm:text-left">
+            <p className="text-sm text-[#F3F8FB]/70 flex-1 text-center sm:text-left">
               We use a small number of cookies, including optional analytics
               cookies to understand how the site is used. See our{' '}
               <a href="/cookie-policy" className="underline hover:text-white">
@@ -85,13 +85,13 @@ export default function Analytics() {
             <div className="flex gap-3 shrink-0">
               <button
                 onClick={() => decide('denied')}
-                className="px-6 py-3 rounded-full border border-white/20 text-sm uppercase tracking-[0.1em] hover:bg-white/10 transition text-[#f8f8f8]"
+                className="px-6 py-3 rounded-full border border-white/20 text-sm uppercase tracking-[0.1em] hover:bg-white/10 transition text-[#F3F8FB]"
               >
                 Decline
               </button>
               <button
                 onClick={() => decide('granted')}
-                className="px-6 py-3 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.1em] hover:bg-[#cfd7e2] transition"
+                className="px-6 py-3 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.1em] hover:bg-[#D8E8F4] transition"
               >
                 Accept
               </button>

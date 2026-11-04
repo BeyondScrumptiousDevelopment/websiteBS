@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function OurStoryPage() {
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <BreadcrumbJsonLd items={[{ name: 'Our Story', path: '/our-story' }]} />
       <Navbar />
       <WhatsAppButton />
@@ -30,7 +30,7 @@ export default function OurStoryPage() {
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6 text-center">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6 text-center">
               Beyond Scrumptious
             </p>
 
@@ -39,7 +39,7 @@ export default function OurStoryPage() {
             </h1>
           </Reveal>
 
-          <Reveal className="space-y-8 text-lg leading-8 text-[#f8f8f8]/80" delay={0.1}>
+          <Reveal className="space-y-8 text-lg leading-8 text-[#F3F8FB]/80" delay={0.1}>
             <p>
               Beyond Scrumptious began in April 2021, out of a genuine
               enjoyment of making cakes, creating dessert tables and
@@ -68,7 +68,7 @@ export default function OurStoryPage() {
           <Reveal className="text-center mt-16">
             <TapLink
               href="/contact"
-              className="inline-block px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
+              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
             >
               Enquire Now
             </TapLink>

@@ -45,24 +45,24 @@ export default function CroffleBanner() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-sm bg-[#161f36] border border-[#cfd7e2]/20 rounded-[2rem] overflow-hidden shadow-2xl"
+        className="relative w-full max-w-sm bg-[#131C2F] border border-[#D8E8F4]/20 rounded-[2rem] overflow-hidden shadow-2xl"
       >
         <button
           onClick={dismiss}
           aria-label="Close"
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 text-[#f8f8f8] flex items-center justify-center hover:bg-black/60 transition"
+          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 text-[#F3F8FB] flex items-center justify-center hover:bg-black/60 transition"
         >
           ×
         </button>
 
         <div className="p-8 text-center">
-          <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-3">
+          <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-3">
             New At Beyond Scrumptious
           </p>
-          <h2 className="heading-font text-3xl text-[#f8f8f8] mb-3">
+          <h2 className="heading-font text-3xl text-[#F3F8FB] mb-3">
             Live Croffle Station
           </h2>
-          <p className="text-sm text-[#f8f8f8]/70 mb-6 leading-6">
+          <p className="text-sm text-[#F3F8FB]/70 mb-6 leading-6">
             Croissant meets waffle — freshly pressed at your event and
             finished with your choice of toppings and sauces. Eggless, and
             now bookable alongside our Live Mini Pancake Station.
@@ -70,13 +70,13 @@ export default function CroffleBanner() {
 
           <TapLink
             href="/croffle"
-            className="block w-full px-8 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#cfd7e2] transition mb-3"
+            className="block w-full px-8 py-4 rounded-full bg-[#F3F8FB] text-[#19253F] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#D8E8F4] transition mb-3"
           >
             Learn More
           </TapLink>
           <button
             onClick={dismiss}
-            className="text-xs text-[#f8f8f8]/50 hover:text-[#f8f8f8]/80 transition"
+            className="text-xs text-[#F3F8FB]/50 hover:text-[#F3F8FB]/80 transition"
           >
             Maybe later
           </button>

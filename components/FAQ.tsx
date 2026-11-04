@@ -35,7 +35,7 @@ export default function FAQ() {
           </h3>
 
           {open === i && (
-            <p className="text-[#202b45]/70 mt-4 leading-8">
+            <p className="text-[#19253F]/70 mt-4 leading-8">
               {faq.answer}
             </p>
           )}

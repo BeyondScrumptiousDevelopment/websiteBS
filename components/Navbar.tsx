@@ -20,7 +20,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-8 md:px-12 py-8 backdrop-blur-md bg-[#202b45]/20">
+    <nav className="fixed top-0 left-0 w-full z-50 px-8 md:px-12 py-8 backdrop-blur-md bg-[#19253F]/20">
       <div className="flex items-center justify-between">
 
         {/* LOGO */}
@@ -32,7 +32,7 @@ export default function Navbar() {
         </a>
 
         {/* DESKTOP MENU */}
-        <div className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] text-[#f8f8f8]/80">
+        <div className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] text-[#F3F8FB]/80">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -49,7 +49,7 @@ export default function Navbar() {
 
           <TapLink
             href="/contact"
-            className="px-6 py-3 rounded-full bg-[#f8f8f8] text-[#202b45] hover:bg-[#cfd7e2] transition"
+            className="px-6 py-3 rounded-full bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4] transition"
           >
             Enquire Now
           </TapLink>
@@ -88,7 +88,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="lg:hidden overflow-hidden"
           >
-            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#f8f8f8]/80 bg-[#202b45] p-6 rounded-3xl">
+            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#F3F8FB]/80 bg-[#19253F] p-6 rounded-3xl">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -101,7 +101,7 @@ export default function Navbar() {
 
               <TapLink
                 href="/contact"
-                className="px-6 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] text-center normal-case tracking-normal"
+                className="px-6 py-4 rounded-full bg-[#F3F8FB] text-[#19253F] text-center normal-case tracking-normal"
               >
                 Enquire Now
               </TapLink>

@@ -202,7 +202,7 @@ export const metadata = {
 
 export default function LiveDessertsPage() {
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -219,7 +219,7 @@ export default function LiveDessertsPage() {
       {/* SECTION 1 — HERO */}
       <section className="pt-40 pb-20 px-6 text-center">
         <Reveal className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Live Dessert Stations For Weddings, Mehndis &amp; Events
           </p>
 
@@ -229,30 +229,30 @@ export default function LiveDessertsPage() {
             Unforgettable Moments.
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70 mb-8">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70 mb-8">
             Bring the excitement of freshly prepared desserts to your celebration
             with our Live Mini Pancake and Live Croffle Stations. Cooked fresh at
             your event and finished with your guests&apos; favourite toppings and
             sauces, every serving adds something special to the occasion.
           </p>
 
-          <p className="text-sm uppercase tracking-[0.2em] text-[#cfd7e2]/60 mb-2">
+          <p className="text-sm uppercase tracking-[0.2em] text-[#D8E8F4]/60 mb-2">
             Perfect For Weddings, Mehndis, Birthdays &amp; Corporate Events
           </p>
-          <p className="text-sm text-[#f8f8f8]/50 mb-10">
+          <p className="text-sm text-[#F3F8FB]/50 mb-10">
             Both stations are eggless · Packages begin at £250, individually quoted
           </p>
 
           <div className="flex flex-wrap justify-center gap-5 mb-4">
             <TapLink
               href="/contact"
-              className="px-10 py-5 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
               Request A Quote
             </TapLink>
             <TapLink
               href="#stations"
-              className="px-10 py-5 rounded-full border border-[#f8f8f8]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+              className="px-10 py-5 rounded-full border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
             >
               Explore Our Stations
             </TapLink>
@@ -277,13 +277,13 @@ export default function LiveDessertsPage() {
         </RevealGroup>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* SECTION 2 — CHOOSE YOUR STATION */}
-      <section id="stations" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
+      <section id="stations" className="bg-[#D8E8F4] text-[#19253F] py-28 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Our Live Dessert Stations
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -307,26 +307,26 @@ export default function LiveDessertsPage() {
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-1">
-                  <p className="uppercase tracking-[0.3em] text-xs text-[#202b45]/50 mb-2">
+                  <p className="uppercase tracking-[0.3em] text-xs text-[#19253F]/50 mb-2">
                     {station.tagline}
                   </p>
                   <h3 className="heading-font text-2xl md:text-3xl mb-4">
                     {station.name}
                   </h3>
-                  <p className="text-[#202b45]/70 leading-7 mb-6">
+                  <p className="text-[#19253F]/70 leading-7 mb-6">
                     {station.description}
                   </p>
-                  <ul className="space-y-2 mb-8 text-sm text-[#202b45]/70">
+                  <ul className="space-y-2 mb-8 text-sm text-[#19253F]/70">
                     {station.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
-                        <span className="text-[#202b45]/40 mt-0.5">&bull;</span>
+                        <span className="text-[#19253F]/40 mt-0.5">&bull;</span>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <TapLink
                     href="#packages"
-                    className="mt-auto inline-block text-center px-8 py-4 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.15em] hover:bg-[#161f36] transition"
+                    className="mt-auto inline-block text-center px-8 py-4 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.15em] hover:bg-[#131C2F] transition"
                   >
                     {station.cta}
                   </TapLink>
@@ -338,10 +338,10 @@ export default function LiveDessertsPage() {
       </section>
 
       {/* SECTION 3 — PACKAGES & PRICING */}
-      <section id="packages" className="bg-[#cfd7e2] text-[#202b45] py-28 px-6 scroll-mt-24">
+      <section id="packages" className="bg-[#D8E8F4] text-[#19253F] py-28 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-6">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Packages
             </p>
             <h2 className="heading-font text-4xl md:text-6xl mb-6">
@@ -350,7 +350,7 @@ export default function LiveDessertsPage() {
             <p className="heading-font text-2xl md:text-3xl mb-4">
               Both Stations Begin From £250
             </p>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#202b45]/70">
+            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#19253F]/70">
               The same three fixed packages apply to both the Mini Pancake Station
               and the Croffle Station. Every quote is tailored to your event —
               guest numbers, package and selected options all affect the final
@@ -364,26 +364,26 @@ export default function LiveDessertsPage() {
                 key={pkg.name}
                 className={`relative rounded-[2rem] p-10 shadow-xl text-center flex flex-col ${
                   pkg.highlight
-                    ? 'bg-[#202b45] text-[#f8f8f8] md:-translate-y-4 shadow-2xl'
+                    ? 'bg-[#19253F] text-[#F3F8FB] md:-translate-y-4 shadow-2xl'
                     : 'bg-white'
                 }`}
               >
                 {pkg.highlight && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#c9973f] text-[#1b1712] text-xs uppercase tracking-[0.15em] font-semibold">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#F3F8FB] text-[#19253F] text-xs uppercase tracking-[0.15em] font-semibold">
                     Recommended
                   </span>
                 )}
                 <h3 className="heading-font text-3xl mb-2">{pkg.name}</h3>
                 <p
                   className={`uppercase tracking-[0.15em] text-sm mb-6 ${
-                    pkg.highlight ? 'text-[#cfd7e2]/80' : 'text-[#202b45]/60'
+                    pkg.highlight ? 'text-[#D8E8F4]/80' : 'text-[#19253F]/60'
                   }`}
                 >
                   {pkg.detail}
                 </p>
                 <p
                   className={`leading-7 mb-8 ${
-                    pkg.highlight ? 'text-[#f8f8f8]/80' : 'text-[#202b45]/70'
+                    pkg.highlight ? 'text-[#F3F8FB]/80' : 'text-[#19253F]/70'
                   }`}
                 >
                   {pkg.description}
@@ -393,8 +393,8 @@ export default function LiveDessertsPage() {
                     href="/contact"
                     className={`block px-8 py-4 rounded-full text-sm uppercase tracking-[0.15em] transition ${
                       pkg.highlight
-                        ? 'bg-[#f8f8f8] text-[#202b45] hover:bg-[#cfd7e2]'
-                        : 'bg-[#202b45] text-[#f8f8f8] hover:bg-[#161f36]'
+                        ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4]'
+                        : 'bg-[#19253F] text-[#F3F8FB] hover:bg-[#131C2F]'
                     }`}
                   >
                     Request A Quote
@@ -404,26 +404,26 @@ export default function LiveDessertsPage() {
             ))}
           </RevealGroup>
 
-          <p className="text-center mt-12 text-[#202b45]/70 max-w-2xl mx-auto">
+          <p className="text-center mt-12 text-[#19253F]/70 max-w-2xl mx-auto">
             Every event is individually quoted based on guest numbers, location,
             service requirements and selected options.
           </p>
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* SECTION 4 — TOPPINGS & SAUCES */}
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
               Toppings &amp; Sauces
             </p>
             <h2 className="heading-font text-4xl md:text-6xl mb-6">
               Choose Your Toppings &amp; Sauces
             </h2>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
               The same toppings and sauces are available across both stations.
               Your chosen package determines how many you can pick from the
               selections below.
@@ -431,48 +431,48 @@ export default function LiveDessertsPage() {
           </Reveal>
 
           <Reveal className="mb-4">
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 text-center mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 text-center mb-6">
               Toppings
             </p>
           </Reveal>
           <RevealGroup className="grid md:grid-cols-3 gap-8 mb-16" stagger={0.08}>
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
                 Standard Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
                 {standardToppings.map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl border border-[#D8E8F4]/20">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
                 Premium Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
                 {premiumToppings.map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#c9973f]/10 rounded-[2rem] p-10 shadow-xl border-2 border-[#c9973f]/50 flex flex-col">
-              <span className="inline-block self-start px-4 py-1.5 rounded-full bg-[#c9973f] text-[#1b1712] uppercase tracking-[0.15em] text-xs font-semibold mb-6">
+            <RevealItem className="bg-[#D8E8F4] rounded-[2rem] p-10 shadow-xl border-2 border-[#19253F]/20 flex flex-col">
+              <span className="inline-block self-start px-4 py-1.5 rounded-full bg-[#19253F] text-[#F3F8FB] uppercase tracking-[0.15em] text-xs font-semibold mb-6">
                 Add-On &middot; Extra Charge
               </span>
               <ul className="space-y-4 mb-auto">
                 {addOnToppings.map((t) => (
                   <li key={t} className="flex items-center justify-between gap-3">
-                    <span className="heading-font text-3xl text-[#f8f8f8]">{t}</span>
-                    <span className="shrink-0 px-3 py-1 rounded-full border border-[#c9973f]/60 text-[#c9973f] uppercase tracking-[0.1em] text-xs font-semibold">
+                    <span className="heading-font text-3xl text-[#19253F]">{t}</span>
+                    <span className="shrink-0 px-3 py-1 rounded-full border border-[#19253F]/60 text-[#19253F] uppercase tracking-[0.1em] text-xs font-semibold">
                       + Extra
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-[#f8f8f8]/70 mt-8">
+              <p className="text-sm text-[#19253F]/70 mt-8">
                 Not included in any package — available on top of your chosen
                 package for an additional charge.
               </p>
@@ -480,27 +480,27 @@ export default function LiveDessertsPage() {
           </RevealGroup>
 
           <Reveal className="mb-4">
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 text-center mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 text-center mb-6">
               Sauces
             </p>
           </Reveal>
           <RevealGroup className="grid md:grid-cols-2 gap-8" stagger={0.08}>
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
                 Standard Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
                 {standardSauces.map((s) => (
                   <li key={s}>{s}</li>
                 ))}
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl border border-[#cfd7e2]/20">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/70 mb-6">
+            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl border border-[#D8E8F4]/20">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
                 Premium Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#f8f8f8]/85">
+              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
                 {premiumSauces.map((s) => (
                   <li key={s}>{s}</li>
                 ))}
@@ -510,13 +510,13 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* SECTION 5 — REAL EVENTS & SOCIAL PROOF */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Real Events
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -532,7 +532,7 @@ export default function LiveDessertsPage() {
         title="The Live Pancake Station In Action"
       />
 
-      <section className="bg-[#202b45] pb-8">
+      <section className="bg-[#19253F] pb-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 px-6 mb-16">
           <Reveal className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] bg-black">
             <video controls playsInline preload="metadata" className="w-full h-full object-cover">
@@ -547,7 +547,7 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
-      <section className="bg-[#cfd7e2] text-[#202b45] py-16 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="mb-14">
             <div className="grid md:grid-cols-[1fr_auto] gap-4 items-stretch mb-4">
@@ -608,7 +608,7 @@ export default function LiveDessertsPage() {
           </Reveal>
 
           <Reveal className="text-center mb-10">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               What Our Clients Say
             </p>
           </Reveal>
@@ -616,13 +616,13 @@ export default function LiveDessertsPage() {
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* SECTION 6 — HOW IT WORKS (booking process) */}
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
               How It Works
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -634,14 +634,14 @@ export default function LiveDessertsPage() {
             {bookingSteps.map((item) => (
               <RevealItem
                 key={item.step}
-                className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl flex gap-6"
+                className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl flex gap-6"
               >
-                <span className="heading-font text-4xl text-[#f8f8f8]/20 shrink-0">
+                <span className="heading-font text-4xl text-[#F3F8FB]/20 shrink-0">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="heading-font text-2xl mb-3">{item.title}</h3>
-                  <p className="leading-7 text-[#f8f8f8]/70">{item.description}</p>
+                  <p className="leading-7 text-[#F3F8FB]/70">{item.description}</p>
                 </div>
               </RevealItem>
             ))}
@@ -650,10 +650,10 @@ export default function LiveDessertsPage() {
       </section>
 
       {/* SECTION 7 — EVENT REQUIREMENTS */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-28 px-6">
         <div className="max-w-4xl mx-auto">
           <Reveal className="text-center mb-14">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Good To Know
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -667,13 +667,13 @@ export default function LiveDessertsPage() {
                 key={req}
                 className="bg-white rounded-2xl p-6 flex items-start gap-3"
               >
-                <span className="text-[#202b45]/40 mt-0.5">&bull;</span>
-                <span className="text-[#202b45]/80 leading-6">{req}</span>
+                <span className="text-[#19253F]/40 mt-0.5">&bull;</span>
+                <span className="text-[#19253F]/80 leading-6">{req}</span>
               </RevealItem>
             ))}
           </RevealGroup>
 
-          <Reveal className="text-center text-[#202b45]/70 max-w-2xl mx-auto">
+          <Reveal className="text-center text-[#19253F]/70 max-w-2xl mx-auto">
             <p className="mb-2">
               Based in Harrow, we travel to events across London and beyond —
               travel requirements are considered as part of your individual quote.
@@ -691,7 +691,7 @@ export default function LiveDessertsPage() {
       <section className="py-28 px-6">
         <div className="max-w-4xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
               FAQ
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -703,23 +703,23 @@ export default function LiveDessertsPage() {
             {faqs.map((item) => (
               <RevealItem
                 key={item.question}
-                className="bg-[#161f36] rounded-[2rem] p-8 shadow-xl"
+                className="bg-[#131C2F] rounded-[2rem] p-8 shadow-xl"
                 y={14}
               >
                 <h3 className="heading-font text-xl mb-3">{item.question}</h3>
-                <p className="leading-7 text-[#f8f8f8]/70">{item.answer}</p>
+                <p className="leading-7 text-[#F3F8FB]/70">{item.answer}</p>
               </RevealItem>
             ))}
           </RevealGroup>
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* SECTION 9 — FINAL CTA */}
       <section className="py-28 px-6 text-center">
         <Reveal className="max-w-3xl mx-auto">
-          <p className="logo-font text-3xl md:text-4xl mb-6 text-[#cfd7e2]">
+          <p className="logo-font text-3xl md:text-4xl mb-6 text-[#D8E8F4]">
             Beyond Scrumptious
           </p>
 
@@ -729,7 +729,7 @@ export default function LiveDessertsPage() {
             Extra Special.
           </h2>
 
-          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg leading-8 text-[#F3F8FB]/70 mb-10 max-w-2xl mx-auto">
             Tell us about your event, your preferred dessert station and your
             guest numbers. We&apos;ll help you find the right package for your
             celebration.
@@ -738,20 +738,20 @@ export default function LiveDessertsPage() {
           <div className="flex flex-wrap justify-center gap-5 mb-10">
             <TapLink
               href="/contact"
-              className="px-12 py-6 rounded-full bg-[#f8f8f8] text-[#202b45] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#cfd7e2] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-12 py-6 rounded-full bg-[#F3F8FB] text-[#19253F] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#D8E8F4] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
               Request A Quote
             </TapLink>
             <TapLink
               href="https://wa.me/447933903000"
               target="_blank"
-              className="px-12 py-6 rounded-full border border-[#f8f8f8]/40 text-base uppercase tracking-[0.2em] hover:bg-[#f8f8f8]/10 transition"
+              className="px-12 py-6 rounded-full border border-[#F3F8FB]/40 text-base uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
             >
               WhatsApp Us
             </TapLink>
           </div>
 
-          <p className="text-sm text-[#f8f8f8]/50 max-w-xl mx-auto">
+          <p className="text-sm text-[#F3F8FB]/50 max-w-xl mx-auto">
             Also planning the cake? See our{' '}
             <a href="/cakes" className="underline hover:text-white">
               eggless custom cakes

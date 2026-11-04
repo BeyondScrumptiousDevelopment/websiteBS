@@ -78,7 +78,7 @@ export const metadata = {
 
 export default function DessertsPage() {
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <BreadcrumbJsonLd items={[{ name: 'Desserts & Dessert Tables', path: '/desserts' }]} />
       <ServiceJsonLd
         name="Desserts & Dessert Tables"
@@ -91,7 +91,7 @@ export default function DessertsPage() {
       {/* HERO */}
       <section className="pt-40 pb-24 px-6 text-center">
         <Reveal className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Dessert Tables in Harrow & London
           </p>
 
@@ -101,20 +101,20 @@ export default function DessertsPage() {
             Beautifully Styled Tables
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#f8f8f8]/70">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70">
             All of our desserts are eggless and gelatine-free, and every
             order is customisable to your event.
           </p>
         </Reveal>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* RANGE */}
-      <section className="bg-[#cfd7e2] text-[#202b45] py-28 px-6">
+      <section className="bg-[#D8E8F4] text-[#19253F] py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#202b45]/60 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#19253F]/60 mb-6">
               Our Dessert Range
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -129,25 +129,25 @@ export default function DessertsPage() {
                 className="bg-white rounded-[2rem] p-8 shadow-md"
               >
                 <h3 className="heading-font text-2xl mb-3">{item.name}</h3>
-                <p className="text-[#202b45]/70 leading-7 mb-3">
+                <p className="text-[#19253F]/70 leading-7 mb-3">
                   {item.flavours}
                 </p>
-                <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.15em] text-[#202b45]/60">
-                  <span className="bg-[#cfd7e2] rounded-full px-3 py-1">
+                <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.15em] text-[#19253F]/60">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     {item.format}
                   </span>
                   {item.minimum && (
-                    <span className="bg-[#cfd7e2] rounded-full px-3 py-1">
+                    <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                       {item.minimum}
                     </span>
                   )}
-                  <span className="bg-[#cfd7e2] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     Eggless / Gelatine-Free
                   </span>
-                  <span className="bg-[#cfd7e2] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     {item.vegan}
                   </span>
-                  <span className="bg-[#cfd7e2] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     Customisable
                   </span>
                 </div>
@@ -163,13 +163,13 @@ export default function DessertsPage() {
         title="Recent Desserts & Tables"
       />
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* DESSERT TABLE EXPERIENCE */}
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
               The Dessert Table Experience
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -178,11 +178,11 @@ export default function DessertsPage() {
           </Reveal>
 
           <RevealGroup className="grid md:grid-cols-2 gap-8 mb-14">
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 You Choose, We Advise
               </h3>
-              <p className="leading-8 text-[#f8f8f8]/70">
+              <p className="leading-8 text-[#F3F8FB]/70">
                 Pick your desserts and we'll advise on suitable quantities
                 for your guest count — or choose your own selection
                 entirely. Styling and decor is built around what you'd like
@@ -190,15 +190,15 @@ export default function DessertsPage() {
               </p>
             </RevealItem>
 
-            <RevealItem className="bg-[#161f36] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 Two Service Options
               </h3>
-              <p className="leading-8 text-[#f8f8f8]/70 mb-3">
+              <p className="leading-8 text-[#F3F8FB]/70 mb-3">
                 <strong className="text-white">Setup Only</strong> — we style
                 and set up the table before your event.
               </p>
-              <p className="leading-8 text-[#f8f8f8]/70">
+              <p className="leading-8 text-[#F3F8FB]/70">
                 <strong className="text-white">
                   Setup + Staying Throughout
                 </strong>{' '}
@@ -209,37 +209,37 @@ export default function DessertsPage() {
           </RevealGroup>
 
           <div className="text-center">
-            <p className="uppercase tracking-[0.3em] text-sm text-[#cfd7e2]/60">
+            <p className="uppercase tracking-[0.3em] text-sm text-[#D8E8F4]/60">
               Delivery is included in every dessert-table quote
             </p>
           </div>
         </div>
       </section>
 
-      <SectionSeam color="#8992a3" />
+      <SectionSeam color="#3F5478" />
 
       {/* CTA */}
-      <Reveal as="section" className="bg-[#cfd7e2] text-[#202b45] py-32 px-6 text-center" y={0}>
+      <Reveal as="section" className="bg-[#D8E8F4] text-[#19253F] py-32 px-6 text-center" y={0}>
         <h2 className="heading-font text-4xl md:text-6xl mb-8">
           Let's Build Your Table
         </h2>
-        <p className="max-w-2xl mx-auto mb-6 leading-8 text-[#202b45]/70">
+        <p className="max-w-2xl mx-auto mb-6 leading-8 text-[#19253F]/70">
           Enquire for a custom dessert or dessert-table quote.
         </p>
-        <p className="max-w-2xl mx-auto mb-10 leading-8 text-[#202b45]/60 text-sm">
+        <p className="max-w-2xl mx-auto mb-10 leading-8 text-[#19253F]/60 text-sm">
           Looking for a cake too? See our{' '}
-          <a href="/cakes" className="underline hover:text-[#202b45]">
+          <a href="/cakes" className="underline hover:text-[#19253F]">
             eggless custom cakes
           </a>
           , or add our{' '}
-          <a href="/live-desserts" className="underline hover:text-[#202b45]">
+          <a href="/live-desserts" className="underline hover:text-[#19253F]">
             Live Mini Pancake Station
           </a>{' '}
           for a live dessert experience.
         </p>
         <TapLink
           href="/contact"
-          className="inline-block px-10 py-5 rounded-full bg-[#202b45] text-[#f8f8f8] text-sm uppercase tracking-[0.2em] hover:bg-[#8992a3] transition"
+          className="inline-block px-10 py-5 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
         >
           Enquire About Your Dessert Table
         </TapLink>

@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function ContactThankYouPage() {
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <Navbar />
       <WhatsAppButton />
       <section className="pt-48 pb-40 px-6 text-center">
@@ -21,11 +21,11 @@ export default function ContactThankYouPage() {
           <h1 className="heading-font text-4xl md:text-6xl mb-8">
             Thank You!
           </h1>
-          <p className="text-lg leading-8 text-[#f8f8f8]/70 mb-4">
+          <p className="text-lg leading-8 text-[#F3F8FB]/70 mb-4">
             Your enquiry has been sent — we'll get back to you as soon as
             we can.
           </p>
-          <p className="text-sm text-[#f8f8f8]/50">
+          <p className="text-sm text-[#F3F8FB]/50">
             Please note: submitting an enquiry does not itself confirm a
             booking. Booking is only confirmed once availability has been
             confirmed and the required payment received — see our{' '}
@@ -36,7 +36,7 @@ export default function ContactThankYouPage() {
           </p>
           <a
             href="/"
-            className="inline-block mt-12 px-10 py-5 rounded-full border border-[#f8f8f8]/30 hover:bg-[#f8f8f8]/10 transition"
+            className="inline-block mt-12 px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
           >
             Back to Home
           </a>

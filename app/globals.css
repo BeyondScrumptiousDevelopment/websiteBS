@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: #111111;
+  background: #19253F;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -23,6 +23,16 @@ body {
 
 .heading-font {
   font-family: var(--font-heading);
+}
+
+/* New brand kit (navy/blue): scoped to each page's own wrapper so Sanity
+   Studio and the (separate, seasonal) Diwali pages keep their own fonts. */
+.bs-brand {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.bs-brand [class*="uppercase"] {
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 @keyframes marquee {

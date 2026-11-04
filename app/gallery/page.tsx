@@ -43,14 +43,14 @@ export default async function GalleryPage() {
   const products = await getProducts()
 
   return (
-    <main className="bg-[#202b45] min-h-screen text-[#f8f8f8]">
+    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
       <BreadcrumbJsonLd items={[{ name: 'Gallery', path: '/gallery' }]} />
       <Navbar />
       <WhatsAppButton />
 
       <section className="pt-40 pb-16 px-6 text-center">
         <Reveal className="max-w-3xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Our Work
           </p>
 
@@ -58,7 +58,7 @@ export default async function GalleryPage() {
             Gallery
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#f8f8f8]/70">
+          <p className="max-w-3xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
             Handcrafted cakes, desserts, dessert tables and live dessert
             experiences created for celebrations across Harrow, London and
             beyond.

@@ -21,27 +21,27 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#171f34] text-[#f8f8f8] pt-24 pb-10 px-6">
+    <footer className="bg-[#131C2F] text-[#F3F8FB] pt-24 pb-10 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
           <div>
             <p className="logo-font text-3xl mb-4">Beyond Scrumptious</p>
-            <p className="text-sm uppercase tracking-[0.2em] text-[#cfd7e2]/70 mb-8">
+            <p className="text-sm uppercase tracking-[0.2em] text-[#D8E8F4]/70 mb-8">
               Cakes • Desserts • Live Dessert Experiences
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 rounded-full bg-[#f8f8f8] text-[#202b45] text-sm uppercase tracking-[0.2em] hover:bg-[#cfd7e2] transition"
+              className="inline-block px-8 py-4 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
             >
               Enquire Now
             </a>
           </div>
 
           <div>
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 mb-6">
               Explore
             </p>
-            <ul className="space-y-3 text-sm text-[#f8f8f8]/80">
+            <ul className="space-y-3 text-sm text-[#F3F8FB]/80">
               {siteLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="hover:text-white transition">
@@ -53,10 +53,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 mb-6">
               Policies
             </p>
-            <ul className="space-y-3 text-sm text-[#f8f8f8]/80">
+            <ul className="space-y-3 text-sm text-[#F3F8FB]/80">
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="hover:text-white transition">
@@ -68,10 +68,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="uppercase tracking-[0.3em] text-xs text-[#cfd7e2]/60 mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 mb-6">
               Harrow, London
             </p>
-            <p className="text-sm text-[#f8f8f8]/80 mb-6">
+            <p className="text-sm text-[#F3F8FB]/80 mb-6">
               hello@beyondscrumptious.com
             </p>
             <div className="flex gap-4 text-xl">
@@ -79,7 +79,7 @@ export default function Footer() {
                 href="https://instagram.com/beyond.scrumptious"
                 target="_blank"
                 aria-label="Instagram"
-                className="hover:text-[#cfd7e2] transition"
+                className="hover:text-[#D8E8F4] transition"
               >
                 <FaInstagram />
               </a>
@@ -87,7 +87,7 @@ export default function Footer() {
                 href="https://wa.me/447933903000"
                 target="_blank"
                 aria-label="WhatsApp"
-                className="hover:text-[#cfd7e2] transition"
+                className="hover:text-[#D8E8F4] transition"
               >
                 <FaWhatsapp />
               </a>
@@ -95,7 +95,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@beyondscrumptious"
                 target="_blank"
                 aria-label="TikTok"
-                className="hover:text-[#cfd7e2] transition"
+                className="hover:text-[#D8E8F4] transition"
               >
                 <FaTiktok />
               </a>
@@ -103,7 +103,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61578473547436"
                 target="_blank"
                 aria-label="Facebook"
-                className="hover:text-[#cfd7e2] transition"
+                className="hover:text-[#D8E8F4] transition"
               >
                 <FaFacebook />
               </a>
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#f8f8f8]/50">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#F3F8FB]/50">
           <p>&copy; {new Date().getFullYear()} Beyond Scrumptious. All rights reserved.</p>
           <p>
             Developed by{' '}
@@ -119,7 +119,7 @@ export default function Footer() {
               href="https://naavcaptured.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#cfd7e2] hover:text-white transition"
+              className="text-[#D8E8F4] hover:text-white transition"
             >
               naavcaptured
             </a>

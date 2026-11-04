@@ -55,7 +55,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
         {(eyebrow || title) && (
           <Reveal className="text-center mb-10">
             {eyebrow && (
-              <p className="uppercase tracking-[0.4em] text-sm text-[#cfd7e2]/70 mb-4">
+              <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-4">
                 {eyebrow}
               </p>
             )}

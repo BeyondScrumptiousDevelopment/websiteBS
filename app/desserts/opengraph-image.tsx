@@ -16,8 +16,8 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#202b45',
-          color: '#f8f8f8',
+          background: '#19253F',
+          color: '#F3F8FB',
         }}
       >
         <div
@@ -37,7 +37,7 @@ export default async function Image() {
             fontSize: 30,
             lineHeight: 1,
             marginTop: 32,
-            color: '#cfd7e2',
+            color: '#D8E8F4',
             textTransform: 'uppercase',
             letterSpacing: 8,
           }}

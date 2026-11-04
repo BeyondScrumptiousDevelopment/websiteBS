@@ -47,13 +47,13 @@ export default async function Image() {
               fontSize: 26,
               letterSpacing: 6,
               textTransform: 'uppercase',
-              color: '#cfd7e2',
+              color: '#D8E8F4',
               marginBottom: 20,
             }}
           >
             Beyond Scrumptious
           </div>
-          <div style={{ display: 'flex', fontSize: 62, fontWeight: 700, color: '#f8f8f8', lineHeight: 1.15 }}>
+          <div style={{ display: 'flex', fontSize: 62, fontWeight: 700, color: '#F3F8FB', lineHeight: 1.15 }}>
             Live Mini Pancake &amp; Croffle Stations
           </div>
         </div>
