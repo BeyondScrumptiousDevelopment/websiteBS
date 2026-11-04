@@ -4,6 +4,7 @@ import WhatsAppButton from '../../components/WhatsAppButton'
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd'
 import { Reveal } from '../../components/motion/Reveal'
 import { TapLink } from '../../components/motion/TapLink'
+import BrandCurve from '../../components/BrandCurve'
 
 export const metadata = {
   title: 'Our Story | Beyond Scrumptious',
@@ -27,7 +28,8 @@ export default function OurStoryPage() {
       <Navbar />
       <WhatsAppButton />
 
-      <section className="pt-40 pb-32 px-6">
+      <section className="relative overflow-hidden pt-40 pb-32 px-6">
+        <BrandCurve side="left" />
         <div className="max-w-4xl mx-auto">
           <Reveal>
             <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6 text-center">

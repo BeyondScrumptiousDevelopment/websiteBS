@@ -1,4 +1,5 @@
 import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
+import BrandPiping from './BrandPiping'
 
 const siteLinks = [
   { href: '/', label: 'Home' },
@@ -21,11 +22,16 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#131C2F] text-[#F3F8FB] pt-24 pb-10 px-6">
+    <footer className="bg-[#131C2F] text-[#F3F8FB] pt-24 pb-10 px-6 relative">
+      <BrandPiping />
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
           <div>
-            <p className="logo-font text-3xl mb-4">Beyond Scrumptious</p>
+            <img
+              src="/images/logo-mist.png"
+              alt="Beyond Scrumptious"
+              className="h-8 w-auto mb-4"
+            />
             <p className="text-sm uppercase tracking-[0.2em] text-[#D8E8F4]/70 mb-8">
               Cakes • Desserts • Live Dessert Experiences
             </p>

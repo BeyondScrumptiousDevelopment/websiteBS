@@ -8,6 +8,8 @@ import ServiceJsonLd from '../../components/ServiceJsonLd'
 import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
 import { TapLink } from '../../components/motion/TapLink'
 import SectionSeam from '../../components/motion/SectionSeam'
+import BrandCurve from '../../components/BrandCurve'
+import BrandRipple from '../../components/BrandRipple'
 
 const stations = [
   {
@@ -217,7 +219,8 @@ export default function LiveDessertsPage() {
       <WhatsAppButton />
 
       {/* SECTION 1 — HERO */}
-      <section className="pt-40 pb-20 px-6 text-center">
+      <section className="relative overflow-hidden pt-40 pb-20 px-6 text-center">
+        <BrandCurve side="left" />
         <Reveal className="max-w-4xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Live Dessert Stations For Weddings, Mehndis &amp; Events
@@ -717,11 +720,14 @@ export default function LiveDessertsPage() {
       <SectionSeam color="#3F5478" />
 
       {/* SECTION 9 — FINAL CTA */}
-      <section className="py-28 px-6 text-center">
-        <Reveal className="max-w-3xl mx-auto">
-          <p className="logo-font text-3xl md:text-4xl mb-6 text-[#D8E8F4]">
-            Beyond Scrumptious
-          </p>
+      <section className="relative py-28 px-6 text-center">
+        <BrandRipple id="bs-ripple-live" />
+        <Reveal className="relative max-w-3xl mx-auto">
+          <img
+            src="/images/logo-mist.png"
+            alt="Beyond Scrumptious"
+            className="h-8 md:h-9 w-auto mb-6 mx-auto"
+          />
 
           <h2 className="heading-font text-4xl md:text-6xl leading-tight mb-8">
             Let&apos;s Make Your Event

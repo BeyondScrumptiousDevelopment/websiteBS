@@ -1,5 +1,6 @@
 import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
 import { client } from '../../sanity/lib/client'
+import BrandCurve from '../../components/BrandCurve'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -53,7 +54,8 @@ export default async function LinksPage() {
   const links = await getLinks()
 
   return (
-    <main className="bs-brand min-h-screen bg-[#19253F] text-[#F3F8FB] flex flex-col items-center px-6 py-16">
+    <main className="bs-brand relative overflow-hidden min-h-screen bg-[#19253F] text-[#F3F8FB] flex flex-col items-center px-6 py-16">
+      <BrandCurve side="left" />
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
         <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#F3F8FB]/20 mb-6">
           <img
@@ -63,9 +65,11 @@ export default async function LinksPage() {
           />
         </div>
 
-        <p className="logo-font text-4xl md:text-5xl mb-3 text-center leading-none">
-          Beyond Scrumptious
-        </p>
+        <img
+          src="/images/logo-mist.png"
+          alt="Beyond Scrumptious"
+          className="h-10 md:h-12 w-auto mb-3"
+        />
 
         <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-2 text-center">
           Cakes • Desserts • Live Dessert Experiences

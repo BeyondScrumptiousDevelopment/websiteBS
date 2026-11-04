@@ -7,6 +7,7 @@ import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
 import { Reveal, RevealGroup, RevealItem } from './motion/Reveal'
 import { TapLink } from './motion/TapLink'
+import BrandCurve from './BrandCurve'
 
 const faqGroups = [
   {
@@ -217,7 +218,8 @@ export default function FAQContent() {
       <Navbar />
       <WhatsAppButton />
 
-      <section className="pt-40 pb-32 px-6">
+      <section className="relative overflow-hidden pt-40 pb-32 px-6">
+        <BrandCurve side="left" />
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-20">
             <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">

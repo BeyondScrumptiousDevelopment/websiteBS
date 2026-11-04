@@ -11,6 +11,7 @@ import ScrollCue from '../components/motion/ScrollCue'
 import { Reveal, RevealGroup, RevealItem } from '../components/motion/Reveal'
 import { TapLink } from '../components/motion/TapLink'
 import SectionSeam from '../components/motion/SectionSeam'
+import BrandRipple from '../components/BrandRipple'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -391,8 +392,9 @@ export default async function HomePage() {
       <SectionSeam color="#3F5478" />
 
       {/* OUR STORY TEASER */}
-      <section className="py-32 px-6 bg-[#19253F] text-[#F3F8FB]">
-        <Reveal className="max-w-4xl mx-auto text-center">
+      <section className="relative py-32 px-6 bg-[#19253F] text-[#F3F8FB]">
+        <BrandRipple />
+        <Reveal className="relative max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Our Story
           </p>

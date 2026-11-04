@@ -24,11 +24,12 @@ export default function Navbar() {
       <div className="flex items-center justify-between">
 
         {/* LOGO */}
-        <a
-          href="/"
-          className="logo-font text-3xl md:text-4xl"
-        >
-          Beyond Scrumptious
+        <a href="/" className="block">
+          <img
+            src="/images/logo-mist.png"
+            alt="Beyond Scrumptious"
+            className="h-8 md:h-9 w-auto"
+          />
         </a>
 
         {/* DESKTOP MENU */}

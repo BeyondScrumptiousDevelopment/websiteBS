@@ -16,9 +16,11 @@ export default function NotFound() {
 
       <section className="flex-1 flex items-center justify-center px-6 py-32 text-center">
         <div className="max-w-xl mx-auto">
-          <p className="logo-font text-4xl md:text-5xl mb-6 text-[#D8E8F4]">
-            Beyond Scrumptious
-          </p>
+          <img
+            src="/images/logo-mist.png"
+            alt="Beyond Scrumptious"
+            className="h-10 md:h-12 w-auto mb-6 mx-auto"
+          />
 
           <h1 className="heading-font text-7xl md:text-8xl mb-6">404</h1>
 

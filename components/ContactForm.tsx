@@ -9,6 +9,7 @@ import WhatsAppButton from './WhatsAppButton'
 import { trackEvent } from '../lib/gtag'
 import { Reveal, RevealGroup, RevealItem } from './motion/Reveal'
 import { TapLink, TapButton } from './motion/TapLink'
+import BrandCurve from './BrandCurve'
 
 type Topic =
   | 'Cake'
@@ -99,7 +100,8 @@ export default function ContactForm() {
       <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
         <Navbar />
         <WhatsAppButton />
-        <section className="pt-48 pb-40 px-6 text-center">
+        <section className="relative overflow-hidden pt-48 pb-40 px-6 text-center">
+          <BrandCurve side="left" />
           <Reveal className="max-w-2xl mx-auto">
             <h1 className="heading-font text-4xl md:text-6xl mb-8">
               Thank You!
@@ -135,7 +137,8 @@ export default function ContactForm() {
       <Navbar />
       <WhatsAppButton />
 
-      <section className="pt-40 pb-16 px-6">
+      <section className="relative overflow-hidden pt-40 pb-16 px-6">
+        <BrandCurve side="left" />
         <Reveal className="max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Contact / Enquire

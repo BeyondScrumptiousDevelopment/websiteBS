@@ -7,6 +7,7 @@ import ServiceJsonLd from '../../components/ServiceJsonLd'
 import { Reveal, RevealGroup, RevealItem } from '../../components/motion/Reveal'
 import { TapLink } from '../../components/motion/TapLink'
 import SectionSeam from '../../components/motion/SectionSeam'
+import BrandCurve from '../../components/BrandCurve'
 
 const flavours = [
   'Vanilla',
@@ -50,7 +51,8 @@ export default function CakesPage() {
       <WhatsAppButton />
 
       {/* HERO */}
-      <section className="pt-40 pb-24 px-6 text-center">
+      <section className="relative overflow-hidden pt-40 pb-24 px-6 text-center">
+        <BrandCurve side="left" />
         <Reveal className="max-w-4xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Eggless Cakes for All Occasions — Harrow & London
