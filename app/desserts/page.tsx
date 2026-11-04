@@ -79,7 +79,7 @@ export const metadata = {
 
 export default function DessertsPage() {
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <BreadcrumbJsonLd items={[{ name: 'Desserts & Dessert Tables', path: '/desserts' }]} />
       <ServiceJsonLd
         name="Desserts & Dessert Tables"
@@ -93,7 +93,7 @@ export default function DessertsPage() {
       <section className="relative overflow-hidden pt-40 pb-24 px-6 text-center">
         <BrandCurve side="left" />
         <Reveal className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
             Dessert Tables in Harrow & London
           </p>
 
@@ -103,7 +103,7 @@ export default function DessertsPage() {
             Beautifully <span className="bs-accent">Styled</span> Tables
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#19253F]/70">
             All of our desserts are eggless and gelatine-free, and every
             order is customisable to your event.
           </p>
@@ -128,28 +128,28 @@ export default function DessertsPage() {
             {range.map((item) => (
               <RevealItem
                 key={item.name}
-                className="bg-white rounded-none p-8 shadow-md"
+                className="bg-white rounded-[2rem] p-8 shadow-md"
               >
                 <h3 className="heading-font text-2xl mb-3">{item.name}</h3>
                 <p className="text-[#19253F]/70 leading-7 mb-3">
                   {item.flavours}
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.15em] text-[#19253F]/60">
-                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     {item.format}
                   </span>
                   {item.minimum && (
-                    <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
+                    <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                       {item.minimum}
                     </span>
                   )}
-                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     Eggless / Gelatine-Free
                   </span>
-                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     {item.vegan}
                   </span>
-                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
                     Customisable
                   </span>
                 </div>
@@ -171,7 +171,7 @@ export default function DessertsPage() {
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
               The Dessert Table Experience
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -180,11 +180,11 @@ export default function DessertsPage() {
           </Reveal>
 
           <RevealGroup className="grid md:grid-cols-2 gap-8 mb-14">
-            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
+            <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 You Choose, We Advise
               </h3>
-              <p className="leading-8 text-[#F3F8FB]/70">
+              <p className="leading-8 text-[#19253F]/70">
                 Pick your desserts and we'll advise on suitable quantities
                 for your guest count — or choose your own selection
                 entirely. Styling and decor is built around what you'd like
@@ -192,16 +192,16 @@ export default function DessertsPage() {
               </p>
             </RevealItem>
 
-            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
+            <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 Two Service Options
               </h3>
-              <p className="leading-8 text-[#F3F8FB]/70 mb-3">
-                <strong className="text-white">Setup Only</strong> — we style
+              <p className="leading-8 text-[#19253F]/70 mb-3">
+                <strong className="text-[#19253F]">Setup Only</strong> — we style
                 and set up the table before your event.
               </p>
-              <p className="leading-8 text-[#F3F8FB]/70">
-                <strong className="text-white">
+              <p className="leading-8 text-[#19253F]/70">
+                <strong className="text-[#19253F]">
                   Setup + Staying Throughout
                 </strong>{' '}
                 — we stay to replenish and keep the table stocked
@@ -211,7 +211,7 @@ export default function DessertsPage() {
           </RevealGroup>
 
           <div className="text-center">
-            <p className="uppercase tracking-[0.3em] text-sm text-[#D8E8F4]/60">
+            <p className="uppercase tracking-[0.3em] text-sm text-[#3F5478]/70">
               Delivery is included in every dessert-table quote
             </p>
           </div>
@@ -241,7 +241,7 @@ export default function DessertsPage() {
         </p>
         <TapLink
           href="/contact"
-          className="inline-block px-10 py-5 rounded-sm bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
+          className="inline-block px-10 py-5 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
         >
           Enquire About Your Dessert Table
         </TapLink>

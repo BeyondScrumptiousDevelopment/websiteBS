@@ -204,7 +204,7 @@ export const metadata = {
 
 export default function LiveDessertsPage() {
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -222,7 +222,7 @@ export default function LiveDessertsPage() {
       <section className="relative overflow-hidden pt-40 pb-20 px-6 text-center">
         <BrandCurve side="left" />
         <Reveal className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
             Live Dessert Stations For Weddings, Mehndis &amp; Events
           </p>
 
@@ -232,30 +232,30 @@ export default function LiveDessertsPage() {
             <span className="bs-accent">Unforgettable</span> Moments.
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70 mb-8">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl leading-8 text-[#19253F]/70 mb-8">
             Bring the excitement of freshly prepared desserts to your celebration
             with our Live Mini Pancake and Live Croffle Stations. Cooked fresh at
             your event and finished with your guests&apos; favourite toppings and
             sauces, every serving adds something special to the occasion.
           </p>
 
-          <p className="text-sm uppercase tracking-[0.2em] text-[#D8E8F4]/60 mb-2">
+          <p className="text-sm uppercase tracking-[0.2em] text-[#3F5478]/70 mb-2">
             Perfect For Weddings, Mehndis, Birthdays &amp; Corporate Events
           </p>
-          <p className="text-sm text-[#F3F8FB]/50 mb-10">
+          <p className="text-sm text-[#19253F]/50 mb-10">
             Both stations are eggless · Packages begin at £250, individually quoted
           </p>
 
           <div className="flex flex-wrap justify-center gap-5 mb-4">
             <TapLink
               href="/contact"
-              className="px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
               Request A Quote
             </TapLink>
             <TapLink
               href="#stations"
-              className="px-10 py-5 rounded-sm border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
+              className="px-10 py-5 rounded-full border border-[#19253F]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#19253F]/5 transition"
             >
               Explore Our Stations
             </TapLink>
@@ -263,14 +263,14 @@ export default function LiveDessertsPage() {
         </Reveal>
 
         <RevealGroup className="max-w-4xl mx-auto grid grid-cols-2 gap-4 mt-14" stagger={0.1}>
-          <RevealItem className="rounded-none overflow-hidden shadow-2xl aspect-[4/5]">
+          <RevealItem className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5]">
             <img
               src="/images/pancake-2.jpg"
               alt="Sauce being drizzled over a mini pancake at the Live Mini Pancake Station"
               className="w-full h-full object-cover"
             />
           </RevealItem>
-          <RevealItem className="rounded-none overflow-hidden shadow-2xl aspect-[4/5]">
+          <RevealItem className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5]">
             <img
               src="/images/croffle/croffle-drizzle-1.jpg"
               alt="Chocolate sauce being drizzled over a freshly pressed croffle"
@@ -299,7 +299,7 @@ export default function LiveDessertsPage() {
               <RevealItem
                 key={station.id}
                 id={station.id === 'croffle' ? 'croffle' : undefined}
-                className="bg-white rounded-none overflow-hidden shadow-xl flex flex-col scroll-mt-24"
+                className="bg-white rounded-[2rem] overflow-hidden shadow-xl flex flex-col scroll-mt-24"
               >
                 <div className="aspect-[16/10]">
                   <img
@@ -329,7 +329,7 @@ export default function LiveDessertsPage() {
                   </ul>
                   <TapLink
                     href="#packages"
-                    className="mt-auto inline-block text-center px-8 py-4 rounded-sm bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.15em] hover:bg-[#131C2F] transition"
+                    className="mt-auto inline-block text-center px-8 py-4 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.15em] hover:bg-[#131C2F] transition"
                   >
                     {station.cta}
                   </TapLink>
@@ -365,14 +365,14 @@ export default function LiveDessertsPage() {
             {packages.map((pkg) => (
               <RevealItem
                 key={pkg.name}
-                className={`relative rounded-none p-10 shadow-xl text-center flex flex-col ${
+                className={`relative rounded-[2rem] p-10 shadow-xl text-center flex flex-col ${
                   pkg.highlight
                     ? 'bg-[#19253F] text-[#F3F8FB] md:-translate-y-4 shadow-2xl'
                     : 'bg-white'
                 }`}
               >
                 {pkg.highlight && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-xs uppercase tracking-[0.15em] font-semibold">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#F3F8FB] text-[#19253F] text-xs uppercase tracking-[0.15em] font-semibold">
                     Recommended
                   </span>
                 )}
@@ -394,7 +394,7 @@ export default function LiveDessertsPage() {
                 <div className="mt-auto">
                   <TapLink
                     href="/contact"
-                    className={`block px-8 py-4 rounded-sm text-sm uppercase tracking-[0.15em] transition ${
+                    className={`block px-8 py-4 rounded-full text-sm uppercase tracking-[0.15em] transition ${
                       pkg.highlight
                         ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4]'
                         : 'bg-[#19253F] text-[#F3F8FB] hover:bg-[#131C2F]'
@@ -420,13 +420,13 @@ export default function LiveDessertsPage() {
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
               Toppings &amp; Sauces
             </p>
             <h2 className="heading-font text-4xl md:text-6xl mb-6">
               Choose Your Toppings &amp; Sauces
             </h2>
-            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
+            <p className="max-w-2xl mx-auto text-lg leading-8 text-[#19253F]/70">
               The same toppings and sauces are available across both stations.
               Your chosen package determines how many you can pick from the
               selections below.
@@ -434,42 +434,42 @@ export default function LiveDessertsPage() {
           </Reveal>
 
           <Reveal className="mb-4">
-            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 text-center mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/70 text-center mb-6">
               Toppings
             </p>
           </Reveal>
           <RevealGroup className="grid md:grid-cols-3 gap-8 mb-16" stagger={0.08}>
-            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
+            <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-6">
                 Standard Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
+              <ul className="space-y-3 text-lg text-[#19253F]/85">
                 {standardToppings.map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl border border-[#D8E8F4]/20">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
+            <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl border border-[#19253F]/20">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-6">
                 Premium Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
+              <ul className="space-y-3 text-lg text-[#19253F]/85">
                 {premiumToppings.map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#D8E8F4] rounded-none p-10 shadow-xl border-2 border-[#19253F]/20 flex flex-col">
-              <span className="inline-block self-start px-4 py-1.5 rounded-sm bg-[#19253F] text-[#F3F8FB] uppercase tracking-[0.15em] text-xs font-semibold mb-6">
+            <RevealItem className="bg-[#D8E8F4] rounded-[2rem] p-10 shadow-xl border-2 border-[#19253F]/20 flex flex-col">
+              <span className="inline-block self-start px-4 py-1.5 rounded-full bg-[#19253F] text-[#F3F8FB] uppercase tracking-[0.15em] text-xs font-semibold mb-6">
                 Add-On &middot; Extra Charge
               </span>
               <ul className="space-y-4 mb-auto">
                 {addOnToppings.map((t) => (
                   <li key={t} className="flex items-center justify-between gap-3">
                     <span className="heading-font text-3xl text-[#19253F]">{t}</span>
-                    <span className="shrink-0 px-3 py-1 rounded-sm border border-[#19253F]/60 text-[#19253F] uppercase tracking-[0.1em] text-xs font-semibold">
+                    <span className="shrink-0 px-3 py-1 rounded-full border border-[#19253F]/60 text-[#19253F] uppercase tracking-[0.1em] text-xs font-semibold">
                       + Extra
                     </span>
                   </li>
@@ -483,27 +483,27 @@ export default function LiveDessertsPage() {
           </RevealGroup>
 
           <Reveal className="mb-4">
-            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60 text-center mb-6">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/70 text-center mb-6">
               Sauces
             </p>
           </Reveal>
           <RevealGroup className="grid md:grid-cols-2 gap-8" stagger={0.08}>
-            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
+            <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-6">
                 Standard Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
+              <ul className="space-y-3 text-lg text-[#19253F]/85">
                 {standardSauces.map((s) => (
                   <li key={s}>{s}</li>
                 ))}
               </ul>
             </RevealItem>
 
-            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl border border-[#D8E8F4]/20">
-              <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-6">
+            <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl border border-[#19253F]/20">
+              <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-6">
                 Premium Selection
               </p>
-              <ul className="space-y-3 text-lg text-[#F3F8FB]/85">
+              <ul className="space-y-3 text-lg text-[#19253F]/85">
                 {premiumSauces.map((s) => (
                   <li key={s}>{s}</li>
                 ))}
@@ -535,14 +535,14 @@ export default function LiveDessertsPage() {
         title="The Live Pancake Station In Action"
       />
 
-      <section className="bg-[#19253F] pb-8">
+      <section className="bg-[#D8E8F4] pb-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 px-6 mb-16">
-          <Reveal className="rounded-none overflow-hidden shadow-2xl aspect-[9/16] bg-black">
+          <Reveal className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] bg-black">
             <video controls playsInline preload="metadata" className="w-full h-full object-cover">
               <source src="/videos/live1.mp4" type="video/mp4" />
             </video>
           </Reveal>
-          <Reveal className="rounded-none overflow-hidden shadow-2xl aspect-[9/16] bg-black" delay={0.1}>
+          <Reveal className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] bg-black" delay={0.1}>
             <video controls playsInline preload="metadata" className="w-full h-full object-cover">
               <source src="/videos/live2.mp4" type="video/mp4" />
             </video>
@@ -554,7 +554,7 @@ export default function LiveDessertsPage() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="mb-14">
             <div className="grid md:grid-cols-[1fr_auto] gap-4 items-stretch mb-4">
-              <div className="rounded-none overflow-hidden shadow-2xl aspect-[16/9] md:aspect-auto">
+              <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[16/9] md:aspect-auto">
                 <img
                   src="/images/croffle/croffle-station-wide.jpg"
                   alt="The Beyond Scrumptious Live Croffle Station set up at an event"
@@ -562,7 +562,7 @@ export default function LiveDessertsPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-none overflow-hidden shadow-2xl aspect-[9/16] w-full md:w-64 bg-black mx-auto">
+              <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[9/16] w-full md:w-64 bg-black mx-auto">
                 <video
                   controls
                   playsInline
@@ -575,7 +575,7 @@ export default function LiveDessertsPage() {
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="rounded-none overflow-hidden shadow-xl aspect-[2/3]">
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
                 <img
                   src="/images/croffle/croffle-variety.jpg"
                   alt="A selection of freshly pressed croffles with different toppings"
@@ -583,7 +583,7 @@ export default function LiveDessertsPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-none overflow-hidden shadow-xl aspect-[2/3]">
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
                 <img
                   src="/images/croffle/croffle-selection.jpg"
                   alt="Croffles finished with toppings and sauces, served in trays"
@@ -591,7 +591,7 @@ export default function LiveDessertsPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-none overflow-hidden shadow-xl aspect-[2/3]">
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
                 <img
                   src="/images/croffle/croffle-drizzle-1.jpg"
                   alt="Chocolate sauce being drizzled over a freshly pressed croffle"
@@ -599,7 +599,7 @@ export default function LiveDessertsPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-none overflow-hidden shadow-xl aspect-[2/3]">
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[2/3]">
                 <img
                   src="/images/croffle/croffle-drizzle-2.jpg"
                   alt="White chocolate sauce being drizzled over a freshly pressed croffle"
@@ -625,7 +625,7 @@ export default function LiveDessertsPage() {
       <section className="py-28 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
               How It Works
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -637,14 +637,14 @@ export default function LiveDessertsPage() {
             {bookingSteps.map((item) => (
               <RevealItem
                 key={item.step}
-                className="bg-[#131C2F] rounded-none p-10 shadow-xl flex gap-6"
+                className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl flex gap-6"
               >
-                <span className="heading-font text-4xl text-[#F3F8FB]/20 shrink-0">
+                <span className="heading-font text-4xl text-[#19253F]/20 shrink-0">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="heading-font text-2xl mb-3">{item.title}</h3>
-                  <p className="leading-7 text-[#F3F8FB]/70">{item.description}</p>
+                  <p className="leading-7 text-[#19253F]/70">{item.description}</p>
                 </div>
               </RevealItem>
             ))}
@@ -668,7 +668,7 @@ export default function LiveDessertsPage() {
             {requirements.map((req) => (
               <RevealItem
                 key={req}
-                className="bg-white rounded-none p-6 flex items-start gap-3"
+                className="bg-white rounded-2xl p-6 flex items-start gap-3"
               >
                 <span className="text-[#19253F]/40 mt-0.5">&bull;</span>
                 <span className="text-[#19253F]/80 leading-6">{req}</span>
@@ -694,7 +694,7 @@ export default function LiveDessertsPage() {
       <section className="py-28 px-6">
         <div className="max-w-4xl mx-auto">
           <Reveal className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
               FAQ
             </p>
             <h2 className="heading-font text-4xl md:text-6xl">
@@ -706,11 +706,11 @@ export default function LiveDessertsPage() {
             {faqs.map((item) => (
               <RevealItem
                 key={item.question}
-                className="bg-[#131C2F] rounded-none p-8 shadow-xl"
+                className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-8 shadow-xl"
                 y={14}
               >
                 <h3 className="heading-font text-xl mb-3">{item.question}</h3>
-                <p className="leading-7 text-[#F3F8FB]/70">{item.answer}</p>
+                <p className="leading-7 text-[#19253F]/70">{item.answer}</p>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -720,7 +720,7 @@ export default function LiveDessertsPage() {
       <SectionSeam color="#3F5478" />
 
       {/* SECTION 9 — FINAL CTA */}
-      <section className="relative py-28 px-6 text-center">
+      <section className="relative py-28 px-6 text-center bg-[#19253F] text-[#F3F8FB]">
         <BrandRipple id="bs-ripple-live" />
         <Reveal className="relative max-w-3xl mx-auto">
           <img
@@ -744,14 +744,14 @@ export default function LiveDessertsPage() {
           <div className="flex flex-wrap justify-center gap-5 mb-10">
             <TapLink
               href="/contact"
-              className="px-12 py-6 rounded-sm bg-[#F3F8FB] text-[#19253F] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#D8E8F4] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-12 py-6 rounded-full bg-[#F3F8FB] text-[#19253F] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#D8E8F4] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
             >
               Request A Quote
             </TapLink>
             <TapLink
               href="https://wa.me/447933903000"
               target="_blank"
-              className="px-12 py-6 rounded-sm border border-[#F3F8FB]/40 text-base uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
+              className="px-12 py-6 rounded-full border border-[#F3F8FB]/40 text-base uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
             >
               WhatsApp Us
             </TapLink>

@@ -70,7 +70,7 @@ export default function TestimonialsSlideshow() {
               i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
           >
-            <div className="bg-[#F3F8FB] text-[#19253F] rounded-none p-10 shadow-lg h-full flex flex-col justify-center">
+            <div className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-lg h-full flex flex-col justify-center">
               <p className="leading-7 mb-6 text-lg">&ldquo;{t.quote}&rdquo;</p>
               <h3 className="heading-font text-xl">{t.name}</h3>
               <p className="text-xs uppercase tracking-[0.2em] text-[#19253F]/50">

@@ -13,13 +13,13 @@ export const metadata = {
 
 export default function AllergenInformationPage() {
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <Navbar />
       <WhatsAppButton />
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
             Beyond Scrumptious
           </p>
 
@@ -27,7 +27,7 @@ export default function AllergenInformationPage() {
             Allergen Information
           </h1>
 
-          <div className="space-y-8 text-lg leading-8 text-[#F3F8FB]/80">
+          <div className="space-y-8 text-lg leading-8 text-[#19253F]/80">
             <p>All of our products are egg-free and gelatine-free.</p>
 
             <p>
@@ -64,7 +64,7 @@ export default function AllergenInformationPage() {
           <div className="mt-16">
             <a
               href="/contact"
-              className="inline-block px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition"
             >
               Ask A Question
             </a>

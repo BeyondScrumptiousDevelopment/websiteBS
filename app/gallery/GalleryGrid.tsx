@@ -42,10 +42,10 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
             <TapButton
               key={tag.value}
               onClick={() => setActiveTag(tag.value)}
-              className={`px-6 py-3 rounded-sm text-sm uppercase tracking-[0.15em] transition border ${
+              className={`px-6 py-3 rounded-full text-sm uppercase tracking-[0.15em] transition border ${
                 activeTag === tag.value
                   ? 'bg-[#F3F8FB] text-[#19253F] border-[#F3F8FB]'
-                  : 'border-[#F3F8FB]/30 text-[#F3F8FB]/70 hover:bg-[#F3F8FB]/10'
+                  : 'border-[#19253F]/30 text-[#19253F]/70 hover:bg-[#19253F]/5'
               }`}
             >
               {tag.label}
@@ -65,7 +65,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
                 onClick={() => setLightbox(product)}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="w-full overflow-hidden rounded-none shadow-2xl bg-[#F3F8FB] text-left"
+                className="w-full overflow-hidden rounded-[2rem] shadow-2xl bg-[#F3F8FB] text-left"
               >
                 <img
                   src={urlFor(product.image).width(900).url()}
@@ -85,7 +85,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
         </RevealGroup>
 
         {filtered.length === 0 && (
-          <p className="text-center text-[#F3F8FB]/50 mt-16">
+          <p className="text-center text-[#19253F]/50 mt-16">
             No images in this category yet.
           </p>
         )}
@@ -116,7 +116,7 @@ export default function GalleryGrid({ products }: { products: Product[] }) {
               transition={{ duration: 0.2 }}
               src={urlFor(lightbox.image).width(1600).url()}
               alt={altTextFor(lightbox)}
-              className="max-h-[85vh] max-w-full rounded-none object-contain"
+              className="max-h-[85vh] max-w-full rounded-2xl object-contain"
             />
           </motion.div>
         )}

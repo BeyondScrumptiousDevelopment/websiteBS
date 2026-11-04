@@ -13,13 +13,13 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <Navbar />
       <WhatsAppButton />
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
             Beyond Scrumptious
           </p>
 
@@ -27,9 +27,9 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
 
-          <div className="space-y-12 text-lg leading-8 text-[#F3F8FB]/80">
+          <div className="space-y-12 text-lg leading-8 text-[#19253F]/80">
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Who We Are
               </h2>
               <p>
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Information We Collect
               </h2>
               <p>
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 How We Use Your Information
               </h2>
               <p>
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Third-Party Services We Use
               </h2>
               <p className="mb-4">
@@ -83,31 +83,31 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-3">
                 <li>
-                  <strong className="text-white">Formspree</strong> —
+                  <strong className="text-[#19253F]">Formspree</strong> —
                   processes and delivers enquiry form submissions
                   (including any uploaded reference images) to us by
                   email. See Formspree's own privacy policy for how they
                   handle submitted data.
                 </li>
                 <li>
-                  <strong className="text-white">Sanity</strong> — our
+                  <strong className="text-[#19253F]">Sanity</strong> — our
                   content management system, used to store and serve the
                   images shown in our Gallery. It does not process
                   personal data submitted by visitors.
                 </li>
                 <li>
-                  <strong className="text-white">Cloudflare</strong> —
+                  <strong className="text-[#19253F]">Cloudflare</strong> —
                   hosts this website and provides content delivery and
                   security infrastructure. Cloudflare may process
                   standard technical data (such as IP address) as part of
                   serving the site securely.
                 </li>
                 <li>
-                  <strong className="text-white">Google Analytics</strong> —
+                  <strong className="text-[#19253F]">Google Analytics</strong> —
                   used only if you accept cookies via the banner shown on
                   your first visit, to help us understand how visitors use
                   the site. See our{' '}
-                  <a href="/cookie-policy" className="underline hover:text-white">
+                  <a href="/cookie-policy" className="underline hover:text-[#19253F]">
                     Cookie Policy
                   </a>{' '}
                   for details and how to opt out.
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Data Retention
               </h2>
               <p>
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Your Rights
               </h2>
               <p>
@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
                 corrected, or ask us to delete it. To do so, email{' '}
                 <a
                   href="mailto:hello@beyondscrumptious.com"
-                  className="underline hover:text-white"
+                  className="underline hover:text-[#19253F]"
                 >
                   hello@beyondscrumptious.com
                 </a>
@@ -150,14 +150,14 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Contact
               </h2>
               <p>
                 For any questions about this privacy policy, contact us at{' '}
                 <a
                   href="mailto:hello@beyondscrumptious.com"
-                  className="underline hover:text-white"
+                  className="underline hover:text-[#19253F]"
                 >
                   hello@beyondscrumptious.com
                 </a>
@@ -165,8 +165,8 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <div className="pt-10 border-t border-white/10">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#D8E8F4]/60">
+            <div className="pt-10 border-t border-[#19253F]/10">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#3F5478]/70">
                 Last Updated: September 2026
               </p>
             </div>

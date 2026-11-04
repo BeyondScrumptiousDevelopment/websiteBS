@@ -210,7 +210,7 @@ export default function FAQContent() {
   const [open, setOpen] = useState<string | null>('0-0')
 
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -222,7 +222,7 @@ export default function FAQContent() {
         <BrandCurve side="right" />
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-20">
-            <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+            <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
               Beyond Scrumptious
             </p>
 
@@ -230,7 +230,7 @@ export default function FAQContent() {
               Frequently Asked Questions
             </h1>
 
-            <p className="max-w-3xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
+            <p className="max-w-3xl mx-auto text-lg leading-8 text-[#19253F]/70">
               Everything you need to know before placing your order.
             </p>
           </Reveal>
@@ -238,7 +238,7 @@ export default function FAQContent() {
           {faqGroups.map((group, gi) => (
             <div key={group.category} className="mb-16">
               <Reveal>
-                <h2 className="heading-font text-3xl md:text-4xl mb-8 text-[#D8E8F4]">
+                <h2 className="heading-font text-3xl md:text-4xl mb-8 text-[#19253F]">
                   {group.category}
                 </h2>
               </Reveal>
@@ -249,7 +249,7 @@ export default function FAQContent() {
                   return (
                     <RevealItem
                       key={id}
-                      className="bg-[#F3F8FB] text-[#19253F] rounded-none p-8 shadow-xl"
+                      className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-8 shadow-xl"
                       y={16}
                     >
                       <button
@@ -288,12 +288,12 @@ export default function FAQContent() {
           ))}
 
           <Reveal className="text-center mt-4">
-            <p className="text-[#F3F8FB]/70 mb-8">
+            <p className="text-[#19253F]/70 mb-8">
               Didn't find what you're looking for?
             </p>
             <TapLink
               href="/contact"
-              className="inline-block px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition"
             >
               Enquire Now
             </TapLink>

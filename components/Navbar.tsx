@@ -49,7 +49,7 @@ export default function Navbar() {
 
           <TapLink
             href="/contact"
-            className="px-6 py-3 rounded-sm bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4] transition"
+            className="px-6 py-3 rounded-full bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4] transition"
           >
             Enquire Now
           </TapLink>
@@ -88,7 +88,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="lg:hidden overflow-hidden"
           >
-            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#F3F8FB]/80 bg-[#19253F] p-6 rounded-none">
+            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#F3F8FB]/80 bg-[#19253F] p-6 rounded-3xl">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -101,7 +101,7 @@ export default function Navbar() {
 
               <TapLink
                 href="/contact"
-                className="px-6 py-4 rounded-sm bg-[#F3F8FB] text-[#19253F] text-center normal-case tracking-normal"
+                className="px-6 py-4 rounded-full bg-[#F3F8FB] text-[#19253F] text-center normal-case tracking-normal"
               >
                 Enquire Now
               </TapLink>

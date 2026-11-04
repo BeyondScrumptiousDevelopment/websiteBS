@@ -45,7 +45,7 @@ export default function CroffleBanner() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-sm bg-[#131C2F] border border-[#D8E8F4]/20 rounded-none overflow-hidden shadow-2xl"
+        className="relative w-full max-w-sm bg-[#131C2F] border border-[#D8E8F4]/20 rounded-[2rem] overflow-hidden shadow-2xl"
       >
         <button
           onClick={dismiss}
@@ -70,7 +70,7 @@ export default function CroffleBanner() {
 
           <TapLink
             href="/croffle"
-            className="block w-full px-8 py-4 rounded-sm bg-[#F3F8FB] text-[#19253F] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#D8E8F4] transition mb-3"
+            className="block w-full px-8 py-4 rounded-full bg-[#F3F8FB] text-[#19253F] font-semibold uppercase tracking-[0.15em] text-sm hover:bg-[#D8E8F4] transition mb-3"
           >
             Learn More
           </TapLink>

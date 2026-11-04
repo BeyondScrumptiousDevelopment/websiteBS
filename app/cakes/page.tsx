@@ -40,7 +40,7 @@ export const metadata = {
 
 export default function CakesPage() {
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <BreadcrumbJsonLd items={[{ name: 'Cakes', path: '/cakes' }]} />
       <ServiceJsonLd
         name="Eggless Custom Cakes"
@@ -54,7 +54,7 @@ export default function CakesPage() {
       <section className="relative overflow-hidden pt-40 pb-24 px-6 text-center">
         <BrandCurve side="left" />
         <Reveal className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
             Eggless Cakes for All Occasions — Harrow & London
           </p>
 
@@ -62,7 +62,7 @@ export default function CakesPage() {
             Cakes
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#19253F]/70">
             Every cake is made to order and eggless from top to bottom —
             whether it's a birthday, wedding, or any celebration in between.
           </p>
@@ -87,7 +87,7 @@ export default function CakesPage() {
             {flavours.map((flavour) => (
               <RevealItem
                 key={flavour}
-                className="bg-white rounded-none py-6 px-4 text-center shadow-md heading-font text-lg"
+                className="bg-white rounded-2xl py-6 px-4 text-center shadow-md heading-font text-lg"
                 y={14}
               >
                 {flavour}
@@ -107,18 +107,18 @@ export default function CakesPage() {
       {/* CUSTOMISATION */}
       <section className="py-28 px-6">
         <RevealGroup className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-          <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
+          <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl">
             <h3 className="heading-font text-3xl mb-4">Fully Customisable</h3>
-            <p className="leading-8 text-[#F3F8FB]/70">
+            <p className="leading-8 text-[#19253F]/70">
               Send us your inspiration or reference images and we'll build
               your cake around your requirements — every design is made to
               order, not picked from a fixed catalogue.
             </p>
           </RevealItem>
 
-          <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
+          <RevealItem className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-10 shadow-xl">
             <h3 className="heading-font text-3xl mb-4">Lead Time</h3>
-            <p className="leading-8 text-[#F3F8FB]/70">
+            <p className="leading-8 text-[#19253F]/70">
               Please allow approximately 1 week for cake orders. Last-minute
               orders may be possible depending on availability — get in
               touch and we'll let you know.
@@ -165,24 +165,24 @@ export default function CakesPage() {
         <h2 className="heading-font text-4xl md:text-6xl mb-8">
           Ready To Order?
         </h2>
-        <p className="text-[#F3F8FB]/70 max-w-2xl mx-auto mb-6 leading-8">
+        <p className="text-[#19253F]/70 max-w-2xl mx-auto mb-6 leading-8">
           Get in touch for a custom quote — tell us your flavour, design and
           event date.
         </p>
-        <p className="text-[#F3F8FB]/50 max-w-2xl mx-auto mb-10 leading-8 text-sm">
+        <p className="text-[#19253F]/50 max-w-2xl mx-auto mb-10 leading-8 text-sm">
           Planning a bigger spread? Explore our{' '}
-          <a href="/desserts" className="underline hover:text-white">
+          <a href="/desserts" className="underline hover:text-[#19253F]">
             dessert tables
           </a>{' '}
           or add our{' '}
-          <a href="/live-desserts" className="underline hover:text-white">
+          <a href="/live-desserts" className="underline hover:text-[#19253F]">
             Live Mini Pancake Station
           </a>{' '}
           to the celebration.
         </p>
         <TapLink
           href="/contact"
-          className="inline-block px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+          className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition"
         >
           Enquire About Your Cake
         </TapLink>

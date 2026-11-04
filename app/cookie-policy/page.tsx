@@ -13,13 +13,13 @@ export const metadata = {
 
 export default function CookiePolicyPage() {
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <Navbar />
       <WhatsAppButton />
 
       <section className="pt-40 pb-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
+          <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-6">
             Beyond Scrumptious
           </p>
 
@@ -27,9 +27,9 @@ export default function CookiePolicyPage() {
             Cookie Policy
           </h1>
 
-          <div className="space-y-12 text-lg leading-8 text-[#F3F8FB]/80">
+          <div className="space-y-12 text-lg leading-8 text-[#19253F]/80">
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Our Approach
               </h2>
               <p>
@@ -41,7 +41,7 @@ export default function CookiePolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Essential Cookies
               </h2>
               <p>
@@ -56,7 +56,7 @@ export default function CookiePolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Analytics Cookies (Google Analytics)
               </h2>
               <p>
@@ -81,7 +81,7 @@ export default function CookiePolicyPage() {
                   href="https://policies.google.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-white"
+                  className="underline hover:text-[#19253F]"
                 >
                   Google's Privacy Policy
                 </a>{' '}
@@ -90,22 +90,22 @@ export default function CookiePolicyPage() {
             </div>
 
             <div>
-              <h2 className="heading-font text-3xl mb-4 text-white">
+              <h2 className="heading-font text-3xl mb-4 text-[#19253F]">
                 Our Enquiry Form
               </h2>
               <p>
                 Our contact form is powered by Formspree. Submitting the
                 form does not set tracking cookies on your device — it
                 simply sends your enquiry details to us. See our{' '}
-                <a href="/privacy-policy" className="underline hover:text-white">
+                <a href="/privacy-policy" className="underline hover:text-[#19253F]">
                   Privacy Policy
                 </a>{' '}
                 for more on how enquiry data is handled.
               </p>
             </div>
 
-            <div className="pt-10 border-t border-white/10">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#D8E8F4]/60">
+            <div className="pt-10 border-t border-[#19253F]/10">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#3F5478]/70">
                 Last Updated: September 2026
               </p>
             </div>

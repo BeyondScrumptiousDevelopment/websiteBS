@@ -55,7 +55,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
         {(eyebrow || title) && (
           <Reveal className="text-center mb-10">
             {eyebrow && (
-              <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-4">
+              <p className="uppercase tracking-[0.4em] text-sm text-[#3F5478]/80 mb-4">
                 {eyebrow}
               </p>
             )}
@@ -65,7 +65,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
           </Reveal>
         )}
 
-        <Reveal className="relative rounded-none overflow-hidden shadow-2xl aspect-[4/3] md:aspect-[16/9] bg-black">
+        <Reveal className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] md:aspect-[16/9] bg-black">
           {images.map((img, i) => (
             <img
               key={img._id}

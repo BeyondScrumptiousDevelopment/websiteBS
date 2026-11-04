@@ -53,7 +53,7 @@ const flavourBranches: Topic[] = ['Cake', 'Cupcakes', 'Desserts']
 const inputClass =
   'w-full rounded-xl bg-white/95 text-[#19253F] px-5 py-4 placeholder:text-[#19253F]/40 focus:outline-none focus:ring-2 focus:ring-[#19253F]/30'
 
-const labelClass = 'block text-sm uppercase tracking-[0.15em] text-[#D8E8F4] mb-2'
+const labelClass = 'block text-sm uppercase tracking-[0.15em] text-[#3F5478] mb-2'
 
 function Field({
   label,
@@ -98,7 +98,7 @@ export default function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+      <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
         <Navbar />
         <WhatsAppButton />
         <section className="relative overflow-hidden pt-48 pb-40 px-6 text-center">
@@ -107,22 +107,22 @@ export default function ContactForm() {
             <h1 className="heading-font text-4xl md:text-6xl mb-8">
               Thank You!
             </h1>
-            <p className="text-lg leading-8 text-[#F3F8FB]/70 mb-4">
+            <p className="text-lg leading-8 text-[#19253F]/70 mb-4">
               Your enquiry has been sent — we'll get back to you as soon as
               we can.
             </p>
-            <p className="text-sm text-[#F3F8FB]/50">
+            <p className="text-sm text-[#19253F]/50">
               Please note: submitting an enquiry does not itself confirm a
               booking. Booking is only confirmed once availability has been
               confirmed and the required payment received — see our{' '}
-              <a href="/terms" className="underline hover:text-white">
+              <a href="/terms" className="underline hover:text-[#19253F]">
                 Terms &amp; Conditions
               </a>
               .
             </p>
             <TapLink
               href="/"
-              className="inline-block mt-12 px-10 py-5 rounded-sm border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
+              className="inline-block mt-12 px-10 py-5 rounded-full border border-[#19253F]/30 hover:bg-[#19253F]/5 transition"
             >
               Back to Home
             </TapLink>
@@ -134,11 +134,11 @@ export default function ContactForm() {
   }
 
   return (
-    <main className="bs-brand bg-[#19253F] min-h-screen text-[#F3F8FB]">
+    <main className="bs-brand bg-[#D8E8F4] min-h-screen text-[#19253F]">
       <Navbar />
       <WhatsAppButton />
 
-      <section className="relative pt-40 pb-16 px-6">
+      <section className="relative pt-40 pb-16 px-6 bg-[#19253F] text-[#F3F8FB]">
         <BrandRipple id="bs-ripple-enquire" />
         <Reveal className="relative max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
@@ -177,10 +177,10 @@ export default function ContactForm() {
                     type="button"
                     key={t}
                     onClick={() => setTopic(t)}
-                    className={`rounded-none px-4 py-4 text-sm text-center transition border ${
+                    className={`rounded-xl px-4 py-4 text-sm text-center transition border ${
                       topic === t
                         ? 'bg-[#F3F8FB] text-[#19253F] border-[#F3F8FB]'
-                        : 'bg-white/5 border-white/20 text-[#F3F8FB]/80 hover:bg-white/10'
+                        : 'bg-[#19253F]/5 border-[#19253F]/20 text-[#19253F]/80 hover:bg-[#19253F]/10'
                     }`}
                   >
                     {t}
@@ -236,7 +236,7 @@ export default function ContactForm() {
 
                 {/* FLAVOUR (Cake / Cupcakes / Desserts) */}
                 {flavourBranches.includes(topic) && (
-                  <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+                  <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-[#19253F]/10">
                     <Field label="Flavour">
                       <select name="flavour" className={inputClass}>
                         {flavours.map((f) => (
@@ -248,7 +248,7 @@ export default function ContactForm() {
                     </Field>
 
                     <div className="flex items-end pb-4">
-                      <label className="flex items-center gap-3 text-sm text-[#F3F8FB]/80">
+                      <label className="flex items-center gap-3 text-sm text-[#19253F]/80">
                         <input
                           type="checkbox"
                           name="vegan_requirement"
@@ -264,7 +264,7 @@ export default function ContactForm() {
 
                 {/* DESSERT TABLE */}
                 {topic === 'Dessert Table' && (
-                  <div className="pt-4 border-t border-white/10">
+                  <div className="pt-4 border-t border-[#19253F]/10">
                     <Field label="Service Option">
                       <select name="service_option" className={inputClass}>
                         <option value="Not sure">Not sure yet</option>
@@ -279,7 +279,7 @@ export default function ContactForm() {
 
                 {/* LIVE DESSERT STATIONS (Pancake / Croffle) */}
                 {topic && liveStationTopics.includes(topic) && (
-                  <div className="pt-4 border-t border-white/10">
+                  <div className="pt-4 border-t border-[#19253F]/10">
                     <Field label="Package Preference">
                       <select name="package" className={inputClass}>
                         <option value="Not sure">Not sure yet</option>
@@ -310,12 +310,12 @@ export default function ContactForm() {
                 <TapButton
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full md:w-auto px-12 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition disabled:opacity-50"
+                  className="w-full md:w-auto px-12 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition disabled:opacity-50"
                 >
                   {state.submitting ? 'Sending...' : 'Send Enquiry'}
                 </TapButton>
 
-                <p className="text-xs text-[#F3F8FB]/40 pt-2">
+                <p className="text-xs text-[#19253F]/40 pt-2">
                   Submitting this form does not confirm a booking. Booking
                   is confirmed once availability is confirmed and required
                   payment received — see our{' '}
@@ -333,8 +333,8 @@ export default function ContactForm() {
       {/* DIRECT CONTACT OPTIONS */}
       <section className="px-6 pb-32">
         <div className="text-center mb-12 max-w-3xl mx-auto">
-          <div className="h-px bg-white/10 mb-12" />
-          <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60">
+          <div className="h-px bg-[#19253F]/10 mb-12" />
+          <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80">
             Or reach us directly
           </p>
         </div>
@@ -343,7 +343,7 @@ export default function ContactForm() {
             <TapLink
               href="https://wa.me/447933903000"
               target="_blank"
-              className="flex items-center justify-center gap-3 rounded-none bg-[#25D366]/10 border border-[#25D366]/30 text-[#F3F8FB] px-6 py-5 hover:bg-[#25D366]/20 transition"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#19253F] px-6 py-5 hover:bg-[#25D366]/20 transition"
             >
               <FaWhatsapp className="text-2xl text-[#25D366]" />
               <span className="uppercase tracking-[0.15em] text-sm">
@@ -354,9 +354,9 @@ export default function ContactForm() {
           <RevealItem>
             <TapLink
               href="mailto:hello@beyondscrumptious.com"
-              className="flex items-center justify-center gap-3 rounded-none bg-white/5 border border-white/20 text-[#F3F8FB] px-6 py-5 hover:bg-white/10 transition"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-[#19253F]/5 border border-[#19253F]/20 text-[#19253F] px-6 py-5 hover:bg-[#19253F]/10 transition"
             >
-              <FaEnvelope className="text-2xl text-[#D8E8F4]" />
+              <FaEnvelope className="text-2xl text-[#3F5478]" />
               <span className="uppercase tracking-[0.15em] text-sm">
                 Email Us
               </span>

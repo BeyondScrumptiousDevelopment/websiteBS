@@ -37,7 +37,7 @@ const flavours = [
 
 export default function DiwaliNaturallySweetPage() {
   return (
-    <main className="bg-[#1b1712] text-[#f8f8f8]">
+    <main className="bg-[#1b1712] text-[#f8f8f8] min-h-screen">
       <WhatsAppButton />
 
       {/* MINIMAL TOP BAR */}

@@ -54,7 +54,7 @@ export default async function LinksPage() {
   const links = await getLinks()
 
   return (
-    <main className="bs-brand relative overflow-hidden min-h-screen bg-[#19253F] text-[#F3F8FB] flex flex-col items-center px-6 py-16">
+    <main className="bs-brand relative overflow-hidden min-h-screen bg-[#D8E8F4] text-[#19253F] flex flex-col items-center px-6 py-16">
       <BrandCurve side="left" />
       <div className="w-full max-w-md mx-auto flex flex-col items-center">
         <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#F3F8FB]/20 mb-6">
@@ -66,16 +66,16 @@ export default async function LinksPage() {
         </div>
 
         <img
-          src="/images/logo-mist.png"
+          src="/images/logo-navy.png"
           alt="Beyond Scrumptious"
           className="h-10 md:h-12 w-auto mb-3"
         />
 
-        <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/70 mb-2 text-center">
+        <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-2 text-center">
           Cakes • Desserts • Live Dessert Experiences
         </p>
 
-        <p className="text-sm text-[#F3F8FB]/60 mb-10 text-center">
+        <p className="text-sm text-[#19253F]/60 mb-10 text-center">
           Harrow, London
         </p>
 
@@ -84,10 +84,10 @@ export default async function LinksPage() {
             <a
               key={link.href}
               href={link.href}
-              className={`w-full text-center rounded-sm px-6 py-5 text-sm uppercase tracking-[0.15em] transition ${
+              className={`w-full text-center rounded-full px-6 py-5 text-sm uppercase tracking-[0.15em] transition ${
                 link.highlight
-                  ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4]'
-                  : 'border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10'
+                  ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#C5D7EC]'
+                  : 'border border-[#19253F]/30 hover:bg-[#19253F]/5'
               }`}
             >
               {link.label}
@@ -103,20 +103,20 @@ export default async function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="hover:text-[#D8E8F4] transition"
+              className="hover:text-[#3F5478] transition"
             >
               <social.icon />
             </a>
           ))}
         </div>
 
-        <p className="text-xs text-[#F3F8FB]/40 text-center">
+        <p className="text-xs text-[#19253F]/40 text-center">
           Developed by{' '}
           <a
             href="https://naavcaptured.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#D8E8F4] hover:text-white transition"
+            className="text-[#3F5478] hover:text-[#19253F] transition"
           >
             naavcaptured
           </a>
