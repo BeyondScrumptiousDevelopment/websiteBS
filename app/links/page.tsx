@@ -84,7 +84,7 @@ export default async function LinksPage() {
             <a
               key={link.href}
               href={link.href}
-              className={`w-full text-center rounded-full px-6 py-5 text-sm uppercase tracking-[0.15em] transition ${
+              className={`w-full text-center rounded-sm px-6 py-5 text-sm uppercase tracking-[0.15em] transition ${
                 link.highlight
                   ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4]'
                   : 'border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10'

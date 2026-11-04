@@ -10,6 +10,7 @@ import { trackEvent } from '../lib/gtag'
 import { Reveal, RevealGroup, RevealItem } from './motion/Reveal'
 import { TapLink, TapButton } from './motion/TapLink'
 import BrandCurve from './BrandCurve'
+import BrandRipple from './BrandRipple'
 
 type Topic =
   | 'Cake'
@@ -121,7 +122,7 @@ export default function ContactForm() {
             </p>
             <TapLink
               href="/"
-              className="inline-block mt-12 px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
+              className="inline-block mt-12 px-10 py-5 rounded-sm border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
             >
               Back to Home
             </TapLink>
@@ -137,9 +138,9 @@ export default function ContactForm() {
       <Navbar />
       <WhatsAppButton />
 
-      <section className="relative overflow-hidden pt-40 pb-16 px-6">
-        <BrandCurve side="left" />
-        <Reveal className="max-w-3xl mx-auto text-center">
+      <section className="relative pt-40 pb-16 px-6">
+        <BrandRipple id="bs-ripple-enquire" />
+        <Reveal className="relative max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Contact / Enquire
           </p>
@@ -147,50 +148,14 @@ export default function ContactForm() {
             Enquire Now
           </h1>
           <p className="max-w-2xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
-            Prefer to skip the form? Message us directly — we're happy to
-            chat there too.
+            Tell us about your event below, or message us directly — we're
+            happy to chat there too.
           </p>
         </Reveal>
       </section>
 
-      {/* DIRECT CONTACT OPTIONS */}
       <section className="px-6 pb-20">
-        <RevealGroup className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-5" stagger={0.08}>
-          <RevealItem>
-            <TapLink
-              href="https://wa.me/447933903000"
-              target="_blank"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#F3F8FB] px-6 py-5 hover:bg-[#25D366]/20 transition"
-            >
-              <FaWhatsapp className="text-2xl text-[#25D366]" />
-              <span className="uppercase tracking-[0.15em] text-sm">
-                WhatsApp Us
-              </span>
-            </TapLink>
-          </RevealItem>
-          <RevealItem>
-            <TapLink
-              href="mailto:hello@beyondscrumptious.com"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-white/5 border border-white/20 text-[#F3F8FB] px-6 py-5 hover:bg-white/10 transition"
-            >
-              <FaEnvelope className="text-2xl text-[#D8E8F4]" />
-              <span className="uppercase tracking-[0.15em] text-sm">
-                Email Us
-              </span>
-            </TapLink>
-          </RevealItem>
-        </RevealGroup>
-      </section>
-
-      <section className="px-6 pb-32">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="h-px bg-white/10 mb-12" />
-            <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60">
-              Or send us a quick enquiry
-            </p>
-          </div>
-
           <form onSubmit={handleSubmit} className="space-y-10">
             {/* Honeypot spam trap */}
             <input
@@ -212,7 +177,7 @@ export default function ContactForm() {
                     type="button"
                     key={t}
                     onClick={() => setTopic(t)}
-                    className={`rounded-xl px-4 py-4 text-sm text-center transition border ${
+                    className={`rounded-none px-4 py-4 text-sm text-center transition border ${
                       topic === t
                         ? 'bg-[#F3F8FB] text-[#19253F] border-[#F3F8FB]'
                         : 'bg-white/5 border-white/20 text-[#F3F8FB]/80 hover:bg-white/10'
@@ -345,7 +310,7 @@ export default function ContactForm() {
                 <TapButton
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full md:w-auto px-12 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition disabled:opacity-50"
+                  className="w-full md:w-auto px-12 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition disabled:opacity-50"
                 >
                   {state.submitting ? 'Sending...' : 'Send Enquiry'}
                 </TapButton>
@@ -363,6 +328,41 @@ export default function ContactForm() {
             )}
           </form>
         </div>
+      </section>
+
+      {/* DIRECT CONTACT OPTIONS */}
+      <section className="px-6 pb-32">
+        <div className="text-center mb-12 max-w-3xl mx-auto">
+          <div className="h-px bg-white/10 mb-12" />
+          <p className="uppercase tracking-[0.3em] text-xs text-[#D8E8F4]/60">
+            Or reach us directly
+          </p>
+        </div>
+        <RevealGroup className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-5" stagger={0.08}>
+          <RevealItem>
+            <TapLink
+              href="https://wa.me/447933903000"
+              target="_blank"
+              className="flex items-center justify-center gap-3 rounded-none bg-[#25D366]/10 border border-[#25D366]/30 text-[#F3F8FB] px-6 py-5 hover:bg-[#25D366]/20 transition"
+            >
+              <FaWhatsapp className="text-2xl text-[#25D366]" />
+              <span className="uppercase tracking-[0.15em] text-sm">
+                WhatsApp Us
+              </span>
+            </TapLink>
+          </RevealItem>
+          <RevealItem>
+            <TapLink
+              href="mailto:hello@beyondscrumptious.com"
+              className="flex items-center justify-center gap-3 rounded-none bg-white/5 border border-white/20 text-[#F3F8FB] px-6 py-5 hover:bg-white/10 transition"
+            >
+              <FaEnvelope className="text-2xl text-[#D8E8F4]" />
+              <span className="uppercase tracking-[0.15em] text-sm">
+                Email Us
+              </span>
+            </TapLink>
+          </RevealItem>
+        </RevealGroup>
       </section>
 
       <Footer />

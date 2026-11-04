@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Playfair_Display, DM_Sans, Cormorant_Garamond } from 'next/font/google'
 import Analytics from '../components/Analytics'
 import MotionProvider from '../components/motion/MotionProvider'
 
@@ -12,6 +12,13 @@ const playfair = Playfair_Display({
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['500'],
+  style: ['italic'],
+  variable: '--font-accent',
 })
 
 const description =
@@ -78,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${cormorant.variable}`}>
       <body>
         <script
           type="application/ld+json"

@@ -100,7 +100,7 @@ export default function DessertsPage() {
           <h1 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
             Individual Desserts,
             <br />
-            Beautifully Styled Tables
+            Beautifully <span className="bs-accent">Styled</span> Tables
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#F3F8FB]/70">
@@ -128,28 +128,28 @@ export default function DessertsPage() {
             {range.map((item) => (
               <RevealItem
                 key={item.name}
-                className="bg-white rounded-[2rem] p-8 shadow-md"
+                className="bg-white rounded-none p-8 shadow-md"
               >
                 <h3 className="heading-font text-2xl mb-3">{item.name}</h3>
                 <p className="text-[#19253F]/70 leading-7 mb-3">
                   {item.flavours}
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.15em] text-[#19253F]/60">
-                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
                     {item.format}
                   </span>
                   {item.minimum && (
-                    <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
+                    <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
                       {item.minimum}
                     </span>
                   )}
-                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
                     Eggless / Gelatine-Free
                   </span>
-                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
                     {item.vegan}
                   </span>
-                  <span className="bg-[#D8E8F4] rounded-full px-3 py-1">
+                  <span className="bg-[#D8E8F4] rounded-sm px-3 py-1">
                     Customisable
                   </span>
                 </div>
@@ -180,7 +180,7 @@ export default function DessertsPage() {
           </Reveal>
 
           <RevealGroup className="grid md:grid-cols-2 gap-8 mb-14">
-            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 You Choose, We Advise
               </h3>
@@ -192,7 +192,7 @@ export default function DessertsPage() {
               </p>
             </RevealItem>
 
-            <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
+            <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
               <h3 className="heading-font text-2xl mb-4">
                 Two Service Options
               </h3>
@@ -241,7 +241,7 @@ export default function DessertsPage() {
         </p>
         <TapLink
           href="/contact"
-          className="inline-block px-10 py-5 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
+          className="inline-block px-10 py-5 rounded-sm bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
         >
           Enquire About Your Dessert Table
         </TapLink>

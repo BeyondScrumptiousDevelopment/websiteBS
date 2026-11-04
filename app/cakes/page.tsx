@@ -87,7 +87,7 @@ export default function CakesPage() {
             {flavours.map((flavour) => (
               <RevealItem
                 key={flavour}
-                className="bg-white rounded-2xl py-6 px-4 text-center shadow-md heading-font text-lg"
+                className="bg-white rounded-none py-6 px-4 text-center shadow-md heading-font text-lg"
                 y={14}
               >
                 {flavour}
@@ -107,7 +107,7 @@ export default function CakesPage() {
       {/* CUSTOMISATION */}
       <section className="py-28 px-6">
         <RevealGroup className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-          <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
+          <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
             <h3 className="heading-font text-3xl mb-4">Fully Customisable</h3>
             <p className="leading-8 text-[#F3F8FB]/70">
               Send us your inspiration or reference images and we'll build
@@ -116,7 +116,7 @@ export default function CakesPage() {
             </p>
           </RevealItem>
 
-          <RevealItem className="bg-[#131C2F] rounded-[2rem] p-10 shadow-xl">
+          <RevealItem className="bg-[#131C2F] rounded-none p-10 shadow-xl">
             <h3 className="heading-font text-3xl mb-4">Lead Time</h3>
             <p className="leading-8 text-[#F3F8FB]/70">
               Please allow approximately 1 week for cake orders. Last-minute
@@ -182,7 +182,7 @@ export default function CakesPage() {
         </p>
         <TapLink
           href="/contact"
-          className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+          className="inline-block px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
         >
           Enquire About Your Cake
         </TapLink>

@@ -36,7 +36,7 @@ export default function ContactThankYouPage() {
           </p>
           <a
             href="/"
-            className="inline-block mt-12 px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
+            className="inline-block mt-12 px-10 py-5 rounded-sm border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
           >
             Back to Home
           </a>

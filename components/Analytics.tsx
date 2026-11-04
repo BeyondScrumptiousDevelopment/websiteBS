@@ -85,13 +85,13 @@ export default function Analytics() {
             <div className="flex gap-3 shrink-0">
               <button
                 onClick={() => decide('denied')}
-                className="px-6 py-3 rounded-full border border-white/20 text-sm uppercase tracking-[0.1em] hover:bg-white/10 transition text-[#F3F8FB]"
+                className="px-6 py-3 rounded-sm border border-white/20 text-sm uppercase tracking-[0.1em] hover:bg-white/10 transition text-[#F3F8FB]"
               >
                 Decline
               </button>
               <button
                 onClick={() => decide('granted')}
-                className="px-6 py-3 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.1em] hover:bg-[#D8E8F4] transition"
+                className="px-6 py-3 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.1em] hover:bg-[#D8E8F4] transition"
               >
                 Accept
               </button>

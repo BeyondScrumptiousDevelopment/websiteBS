@@ -50,7 +50,7 @@ export default async function GalleryPage() {
       <WhatsAppButton />
 
       <section className="relative overflow-hidden pt-40 pb-16 px-6 text-center">
-        <BrandCurve side="left" />
+        <BrandCurve side="right" />
         <Reveal className="max-w-3xl mx-auto">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Our Work

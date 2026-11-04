@@ -219,7 +219,7 @@ export default function FAQContent() {
       <WhatsAppButton />
 
       <section className="relative overflow-hidden pt-40 pb-32 px-6">
-        <BrandCurve side="left" />
+        <BrandCurve side="right" />
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-20">
             <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
@@ -249,7 +249,7 @@ export default function FAQContent() {
                   return (
                     <RevealItem
                       key={id}
-                      className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-8 shadow-xl"
+                      className="bg-[#F3F8FB] text-[#19253F] rounded-none p-8 shadow-xl"
                       y={16}
                     >
                       <button
@@ -293,7 +293,7 @@ export default function FAQContent() {
             </p>
             <TapLink
               href="/contact"
-              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+              className="inline-block px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
             >
               Enquire Now
             </TapLink>

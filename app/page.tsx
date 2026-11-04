@@ -88,13 +88,13 @@ export default async function HomePage() {
             <div className="flex flex-wrap justify-center gap-5">
               <TapLink
                 href="/contact"
-                className="px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+                className="px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
               >
                 Enquire Now
               </TapLink>
               <TapLink
                 href="#offer"
-                className="px-10 py-5 rounded-full border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
+                className="px-10 py-5 rounded-sm border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
               >
                 Explore
               </TapLink>
@@ -126,7 +126,7 @@ export default async function HomePage() {
 
           <TapLink
             href="/diwali"
-            className="inline-block px-10 py-5 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold text-sm uppercase tracking-[0.2em] hover:bg-[#f3e3c3] transition"
+            className="inline-block px-10 py-5 rounded-sm bg-[#c9973f] text-[#1b1712] font-semibold text-sm uppercase tracking-[0.2em] hover:bg-[#f3e3c3] transition"
           >
             Order Your Diwali Cupcakes
           </TapLink>
@@ -154,7 +154,7 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/cakes"
-                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-none bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
                 <p className="text-[#19253F]/70 leading-7">
@@ -167,7 +167,7 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/desserts"
-                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-none bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <h3 className="heading-font text-3xl mb-4">
                   Desserts & Dessert Tables
@@ -182,7 +182,7 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/live-desserts"
-                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-none bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <h3 className="heading-font text-3xl mb-4">Live Desserts</h3>
                 <p className="text-[#19253F]/70 leading-7">
@@ -215,7 +215,7 @@ export default async function HomePage() {
               {featured.map((item: any) => (
                 <RevealItem
                   key={item._id}
-                  className="rounded-[2rem] overflow-hidden shadow-xl"
+                  className="rounded-none overflow-hidden shadow-xl"
                 >
                   <img
                     src={urlFor(item.image).width(800).url()}
@@ -235,7 +235,7 @@ export default async function HomePage() {
           <div className="text-center mt-14">
             <TapLink
               href="/gallery"
-              className="inline-block px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
+              className="inline-block px-10 py-5 rounded-sm border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
             >
               View Full Gallery
             </TapLink>
@@ -255,7 +255,7 @@ export default async function HomePage() {
           <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-8">
             For Every Kind
             <br />
-            Of Celebration
+            Of <span className="bs-accent">Celebration</span>
           </h2>
 
           <p className="text-lg leading-8 text-[#19253F]/70">
@@ -272,7 +272,7 @@ export default async function HomePage() {
       <section className="py-32 px-6 bg-[#19253F] text-[#F3F8FB]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal className="grid grid-cols-2 gap-4 order-2 md:order-1" y={32}>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
+            <div className="rounded-none overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
               <img
                 src="/images/pancake-2.jpg"
                 alt="Fresh mini pancakes cooked live on the griddle"
@@ -280,7 +280,7 @@ export default async function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/2]">
+            <div className="rounded-none overflow-hidden shadow-2xl aspect-[3/2]">
               <img
                 src="/images/pancake-1.jpg"
                 alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
@@ -309,7 +309,7 @@ export default async function HomePage() {
             <div className="flex gap-4 flex-wrap">
               <TapLink
                 href="/live-desserts"
-                className="px-8 py-4 bg-[#F3F8FB] text-[#19253F] rounded-full hover:bg-[#D8E8F4] transition"
+                className="px-8 py-4 bg-[#F3F8FB] text-[#19253F] rounded-sm hover:bg-[#D8E8F4] transition"
               >
                 Explore Live Desserts
               </TapLink>
@@ -324,7 +324,7 @@ export default async function HomePage() {
       <section className="py-32 px-6 bg-[#D8E8F4] text-[#19253F]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal className="grid grid-cols-2 gap-4" y={32}>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
+            <div className="rounded-none overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
               <img
                 src="/images/croffle/croffle-drizzle-1.jpg"
                 alt="Chocolate sauce being drizzled over a freshly pressed croffle"
@@ -332,7 +332,7 @@ export default async function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/2]">
+            <div className="rounded-none overflow-hidden shadow-2xl aspect-[3/2]">
               <img
                 src="/images/croffle/croffle-station-wide.jpg"
                 alt="The Beyond Scrumptious Live Croffle Station set up at an event"
@@ -363,7 +363,7 @@ export default async function HomePage() {
             <div className="flex gap-4 flex-wrap">
               <TapLink
                 href="/croffle"
-                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-full hover:bg-[#131C2F] transition"
+                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-sm hover:bg-[#131C2F] transition"
               >
                 Explore The Croffle Station
               </TapLink>
@@ -414,7 +414,7 @@ export default async function HomePage() {
 
           <TapLink
             href="/our-story"
-            className="inline-block px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
+            className="inline-block px-10 py-5 rounded-sm border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
           >
             Read Our Story
           </TapLink>
@@ -443,7 +443,7 @@ export default async function HomePage() {
 
           <TapLink
             href="/contact"
-            className="inline-block px-10 py-5 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
+            className="inline-block px-10 py-5 rounded-sm bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
           >
             Enquire Now
           </TapLink>

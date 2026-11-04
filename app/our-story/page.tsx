@@ -37,7 +37,7 @@ export default function OurStoryPage() {
             </p>
 
             <h1 className="heading-font text-5xl md:text-7xl mb-16 text-center">
-              Our Story
+              Our <span className="bs-accent">Story</span>
             </h1>
           </Reveal>
 
@@ -70,7 +70,7 @@ export default function OurStoryPage() {
           <Reveal className="text-center mt-16">
             <TapLink
               href="/contact"
-              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+              className="inline-block px-10 py-5 rounded-sm bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
             >
               Enquire Now
             </TapLink>
