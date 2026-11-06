@@ -19,14 +19,14 @@ export const revalidate = 0
 export const metadata = {
   title: 'Beyond Scrumptious | Eggless Cakes & Desserts, Harrow',
   description:
-    'Eggless custom cakes, cupcakes, desserts, dessert tables and the Live Mini Pancake Station — handmade in Harrow, serving celebrations and events across London.',
+    'Eggless custom cakes, dessert tables and live dessert stations — based in Harrow, serving all of London. Cakes from £55, dessert tables from £300, live stations from £250.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Beyond Scrumptious | Eggless Cakes & Desserts, Harrow',
     description:
-      'Eggless custom cakes, cupcakes, desserts, dessert tables and the Live Mini Pancake Station — handmade in Harrow, serving celebrations and events across London.',
+      'Eggless custom cakes, dessert tables and live dessert stations — based in Harrow, serving all of London. Cakes from £55, dessert tables from £300, live stations from £250.',
     url: 'https://www.beyondscrumptious.com/',
   },
 }
@@ -64,7 +64,7 @@ export default async function HomePage() {
         <div className="relative z-10 max-w-5xl">
           <Reveal delay={0}>
             <p className="uppercase tracking-[0.5em] text-sm mb-6 text-[#F3F8FB]/70">
-              Eggless Cakes, Desserts & Live Dessert Experiences
+              Eggless Desserts · Across London
             </p>
           </Reveal>
 
@@ -76,11 +76,22 @@ export default async function HomePage() {
             </h1>
           </Reveal>
 
+          <Reveal delay={0.15}>
+            <p className="uppercase tracking-[0.2em] text-base md:text-lg text-[#F3F8FB] mb-4">
+              Eggless Desserts, <span className="bs-accent normal-case tracking-normal">Beautifully</span> Made For Your Celebration
+            </p>
+          </Reveal>
+
           <Reveal delay={0.2}>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#F3F8FB]/80 leading-8 mb-12">
-              Handcrafted eggless cakes and desserts, styled dessert tables,
-              and live dessert experiences for celebrations, parties, weddings
-              and events across Harrow, London and beyond.
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#F3F8FB]/80 leading-8 mb-4">
+              Bespoke cakes, styled dessert tables and live dessert stations,
+              handcrafted to order across London.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.25}>
+            <p className="text-sm uppercase tracking-[0.15em] text-[#F3F8FB]/60 mb-12">
+              Eggless and gelatine-free, with vegan options
             </p>
           </Reveal>
 
@@ -88,15 +99,15 @@ export default async function HomePage() {
             <div className="flex flex-wrap justify-center gap-5">
               <TapLink
                 href="/contact"
-                className="px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
+                className="px-10 py-5 rounded-[2px] bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
               >
-                Enquire Now
+                Request Your Quote
               </TapLink>
               <TapLink
-                href="#offer"
-                className="px-10 py-5 rounded-full border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
+                href="/gallery"
+                className="px-10 py-5 rounded-[2px] border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
               >
-                Explore
+                View Our Work
               </TapLink>
             </div>
           </Reveal>
@@ -154,12 +165,13 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/cakes"
-                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-none bg-[#F3F8FB] p-10 border border-[#3F5478]/20 hover:-translate-y-2 transition duration-300"
               >
-                <h3 className="heading-font text-3xl mb-4">Cakes & Cupcakes</h3>
+                <p className="uppercase tracking-[0.2em] text-xs text-[#3F5478]/80 mb-3">From £55</p>
+                <h3 className="heading-font text-3xl mb-4">Bespoke Cakes &amp; Cupcakes</h3>
                 <p className="text-[#19253F]/70 leading-7">
-                  Custom eggless cakes for all occasions, plus cupcakes in a
-                  range of flavours and box sizes.
+                  Designed around your theme and finished by hand in
+                  buttercream.
                 </p>
               </TapLink>
             </RevealItem>
@@ -167,14 +179,15 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/desserts"
-                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-none bg-[#F3F8FB] p-10 border border-[#3F5478]/20 hover:-translate-y-2 transition duration-300"
               >
+                <p className="uppercase tracking-[0.2em] text-xs text-[#3F5478]/80 mb-3">From £300</p>
                 <h3 className="heading-font text-3xl mb-4">
-                  Desserts & Dessert Tables
+                  Styled Dessert Tables
                 </h3>
                 <p className="text-[#19253F]/70 leading-7">
-                  Individual desserts and beautifully styled dessert-table
-                  experiences for any celebration.
+                  A curated table of desserts, delivered, styled and set up
+                  for you.
                 </p>
               </TapLink>
             </RevealItem>
@@ -182,14 +195,41 @@ export default async function HomePage() {
             <RevealItem>
               <TapLink
                 href="/live-desserts"
-                className="block rounded-[2rem] bg-[#F3F8FB] p-10 shadow-xl hover:-translate-y-2 transition duration-300"
+                className="block rounded-none bg-[#F3F8FB] p-10 border border-[#3F5478]/20 hover:-translate-y-2 transition duration-300"
               >
-                <h3 className="heading-font text-3xl mb-4">Live Desserts</h3>
+                <p className="uppercase tracking-[0.2em] text-xs text-[#3F5478]/80 mb-3">From £250</p>
+                <h3 className="heading-font text-3xl mb-4">Live Dessert Stations</h3>
                 <p className="text-[#19253F]/70 leading-7">
-                  Our Live Mini Pancake Station, prepared fresh in front of
-                  your guests.
+                  Mini pancakes and croffles, made fresh in front of your
+                  guests.
                 </p>
               </TapLink>
+            </RevealItem>
+          </RevealGroup>
+        </div>
+      </section>
+
+      <SectionSeam color="#3F5478" />
+
+      {/* WHY US */}
+      <section className="py-24 px-6 bg-[#D8E8F4] text-[#19253F]">
+        <div className="max-w-5xl mx-auto">
+          <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-4 gap-6" stagger={0.06}>
+            <RevealItem>
+              <h3 className="heading-font text-lg mb-2">Eggless By Design</h3>
+              <p className="text-sm text-[#19253F]/70 leading-6">Every bake, every order.</p>
+            </RevealItem>
+            <RevealItem>
+              <h3 className="heading-font text-lg mb-2">Made To Order</h3>
+              <p className="text-sm text-[#19253F]/70 leading-6">Nothing pre-made, nothing frozen.</p>
+            </RevealItem>
+            <RevealItem>
+              <h3 className="heading-font text-lg mb-2">Styled To You</h3>
+              <p className="text-sm text-[#19253F]/70 leading-6">Your colours, your theme, your occasion.</p>
+            </RevealItem>
+            <RevealItem>
+              <h3 className="heading-font text-lg mb-2">Trusted</h3>
+              <p className="text-sm text-[#19253F]/70 leading-6">5-star food hygiene rating, Level 2 Food Safety.</p>
             </RevealItem>
           </RevealGroup>
         </div>
@@ -215,7 +255,7 @@ export default async function HomePage() {
               {featured.map((item: any) => (
                 <RevealItem
                   key={item._id}
-                  className="rounded-[2rem] overflow-hidden shadow-xl"
+                  className="rounded-none overflow-hidden border border-[#3F5478]/20"
                 >
                   <img
                     src={urlFor(item.image).width(800).url()}
@@ -235,7 +275,7 @@ export default async function HomePage() {
           <div className="text-center mt-14">
             <TapLink
               href="/gallery"
-              className="inline-block px-10 py-5 rounded-full border border-[#19253F]/30 hover:bg-[#19253F]/5 transition"
+              className="inline-block px-10 py-5 rounded-[2px] border border-[#19253F]/30 hover:bg-[#19253F]/5 transition"
             >
               View Full Gallery
             </TapLink>
@@ -272,7 +312,7 @@ export default async function HomePage() {
       <section className="py-32 px-6 bg-[#D8E8F4] text-[#19253F]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal className="grid grid-cols-2 gap-4 order-2 md:order-1" y={32}>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
+            <div className="rounded-none overflow-hidden border border-[#3F5478]/20 aspect-[3/4] col-span-1 row-span-2">
               <img
                 src="/images/pancake-2.jpg"
                 alt="Fresh mini pancakes cooked live on the griddle"
@@ -280,7 +320,7 @@ export default async function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/2]">
+            <div className="rounded-none overflow-hidden border border-[#3F5478]/20 aspect-[3/2]">
               <img
                 src="/images/pancake-1.jpg"
                 alt="Mini pancake finished with sauce at the Live Mini Pancake Station"
@@ -309,7 +349,7 @@ export default async function HomePage() {
             <div className="flex gap-4 flex-wrap">
               <TapLink
                 href="/live-desserts"
-                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-full hover:bg-[#3F5478] transition"
+                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-[2px] hover:bg-[#3F5478] transition"
               >
                 Explore Live Desserts
               </TapLink>
@@ -324,7 +364,7 @@ export default async function HomePage() {
       <section className="py-32 px-6 bg-[#D8E8F4] text-[#19253F]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal className="grid grid-cols-2 gap-4" y={32}>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] col-span-1 row-span-2">
+            <div className="rounded-none overflow-hidden border border-[#3F5478]/20 aspect-[3/4] col-span-1 row-span-2">
               <img
                 src="/images/croffle/croffle-drizzle-1.jpg"
                 alt="Chocolate sauce being drizzled over a freshly pressed croffle"
@@ -332,7 +372,7 @@ export default async function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/2]">
+            <div className="rounded-none overflow-hidden border border-[#3F5478]/20 aspect-[3/2]">
               <img
                 src="/images/croffle/croffle-station-wide.jpg"
                 alt="The Beyond Scrumptious Live Croffle Station set up at an event"
@@ -363,7 +403,7 @@ export default async function HomePage() {
             <div className="flex gap-4 flex-wrap">
               <TapLink
                 href="/croffle"
-                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-full hover:bg-[#131C2F] transition"
+                className="px-8 py-4 bg-[#19253F] text-[#F3F8FB] rounded-[2px] hover:bg-[#131C2F] transition"
               >
                 Explore The Croffle Station
               </TapLink>
@@ -393,7 +433,7 @@ export default async function HomePage() {
 
       {/* OUR STORY TEASER */}
       <section className="relative py-32 px-6 bg-[#19253F] text-[#F3F8FB]">
-        <BrandRipple />
+        <BrandRipple tone="onNavy" />
         <Reveal className="relative max-w-4xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Our Story
@@ -406,15 +446,14 @@ export default async function HomePage() {
           </h2>
 
           <p className="text-lg leading-8 text-[#F3F8FB]/70 mb-10">
-            Beyond Scrumptious began in April 2021 from a genuine enjoyment
-            of making cakes and exploring the creative side of desserts. It
-            became an official business in October 2021 — and in 2025, live
-            desserts joined the menu.
+            Beyond Scrumptious began in a Harrow kitchen in 2021. Today we
+            create cakes, dessert tables and live dessert stations for
+            weddings, mehndis, birthdays and corporate events across London.
           </p>
 
           <TapLink
             href="/our-story"
-            className="inline-block px-10 py-5 rounded-full border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
+            className="inline-block px-10 py-5 rounded-[2px] border border-[#F3F8FB]/30 hover:bg-[#F3F8FB]/10 transition"
           >
             Read Our Story
           </TapLink>
@@ -431,21 +470,21 @@ export default async function HomePage() {
           </p>
 
           <h2 className="heading-font text-5xl md:text-7xl leading-tight mb-10">
-            Enquire For A
+            Let's Make Your Event
             <br />
-            Custom Quote
+            Beyond Scrumptious
           </h2>
 
           <p className="text-[#19253F]/70 text-lg leading-8 max-w-2xl mx-auto mb-14">
-            Tell us about your event and we'll get back to you with a quote
-            tailored to what you need.
+            Tell us your date, guest numbers and vision, and we'll send a
+            tailored quote.
           </p>
 
           <TapLink
             href="/contact"
-            className="inline-block px-10 py-5 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
+            className="inline-block px-10 py-5 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
           >
-            Enquire Now
+            Request Your Quote
           </TapLink>
         </Reveal>
       </section>

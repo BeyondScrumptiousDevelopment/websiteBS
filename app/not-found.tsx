@@ -31,7 +31,7 @@ export default function NotFound() {
 
           <a
             href="/"
-            className="inline-block px-12 py-6 rounded-full bg-[#F3F8FB] text-[#19253F] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#C5D7EC] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+            className="inline-block px-12 py-6 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#3F5478] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
           >
             Back To Homepage
           </a>

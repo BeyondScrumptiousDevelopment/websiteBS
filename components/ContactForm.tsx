@@ -51,7 +51,7 @@ const flavours = [
 const flavourBranches: Topic[] = ['Cake', 'Cupcakes', 'Desserts']
 
 const inputClass =
-  'w-full rounded-xl bg-white/95 text-[#19253F] px-5 py-4 placeholder:text-[#19253F]/40 focus:outline-none focus:ring-2 focus:ring-[#19253F]/30'
+  'w-full rounded-[2px] bg-white/95 text-[#19253F] px-5 py-4 placeholder:text-[#19253F]/40 focus:outline-none focus:ring-2 focus:ring-[#19253F]/30'
 
 const labelClass = 'block text-sm uppercase tracking-[0.15em] text-[#3F5478] mb-2'
 
@@ -122,7 +122,7 @@ export default function ContactForm() {
             </p>
             <TapLink
               href="/"
-              className="inline-block mt-12 px-10 py-5 rounded-full border border-[#19253F]/30 hover:bg-[#19253F]/5 transition"
+              className="inline-block mt-12 px-10 py-5 rounded-[2px] border border-[#19253F]/30 hover:bg-[#19253F]/5 transition"
             >
               Back to Home
             </TapLink>
@@ -139,13 +139,13 @@ export default function ContactForm() {
       <WhatsAppButton />
 
       <section className="relative pt-40 pb-16 px-6 bg-[#19253F] text-[#F3F8FB]">
-        <BrandRipple id="bs-ripple-enquire" />
+        <BrandRipple id="bs-ripple-enquire" tone="onNavy" />
         <Reveal className="relative max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.4em] text-sm text-[#D8E8F4]/70 mb-6">
             Contact / Enquire
           </p>
           <h1 className="heading-font text-5xl md:text-7xl mb-8">
-            Enquire Now
+            Request Your Quote
           </h1>
           <p className="max-w-2xl mx-auto text-lg leading-8 text-[#F3F8FB]/70">
             Tell us about your event below, or message us directly — we're
@@ -177,9 +177,9 @@ export default function ContactForm() {
                     type="button"
                     key={t}
                     onClick={() => setTopic(t)}
-                    className={`rounded-xl px-4 py-4 text-sm text-center transition border ${
+                    className={`rounded-[2px] px-4 py-4 text-sm text-center transition border ${
                       topic === t
-                        ? 'bg-[#F3F8FB] text-[#19253F] border-[#F3F8FB]'
+                        ? 'bg-[#19253F] text-[#F3F8FB] border-[#19253F]'
                         : 'bg-[#19253F]/5 border-[#19253F]/20 text-[#19253F]/80 hover:bg-[#19253F]/10'
                     }`}
                   >
@@ -310,7 +310,7 @@ export default function ContactForm() {
                 <TapButton
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full md:w-auto px-12 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition disabled:opacity-50"
+                  className="w-full md:w-auto px-12 py-5 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition disabled:opacity-50"
                 >
                   {state.submitting ? 'Sending...' : 'Send Enquiry'}
                 </TapButton>
@@ -343,7 +343,7 @@ export default function ContactForm() {
             <TapLink
               href="https://wa.me/447933903000"
               target="_blank"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#19253F] px-6 py-5 hover:bg-[#25D366]/20 transition"
+              className="flex items-center justify-center gap-3 rounded-none bg-[#25D366]/10 border border-[#25D366]/30 text-[#19253F] px-6 py-5 hover:bg-[#25D366]/20 transition"
             >
               <FaWhatsapp className="text-2xl text-[#25D366]" />
               <span className="uppercase tracking-[0.15em] text-sm">
@@ -354,7 +354,7 @@ export default function ContactForm() {
           <RevealItem>
             <TapLink
               href="mailto:hello@beyondscrumptious.com"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-[#19253F]/5 border border-[#19253F]/20 text-[#19253F] px-6 py-5 hover:bg-[#19253F]/10 transition"
+              className="flex items-center justify-center gap-3 rounded-none bg-[#19253F]/5 border border-[#19253F]/20 text-[#19253F] px-6 py-5 hover:bg-[#19253F]/10 transition"
             >
               <FaEnvelope className="text-2xl text-[#3F5478]" />
               <span className="uppercase tracking-[0.15em] text-sm">

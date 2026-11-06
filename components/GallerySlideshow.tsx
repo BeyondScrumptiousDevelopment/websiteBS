@@ -65,7 +65,7 @@ export default function GallerySlideshow({ category, title, eyebrow }: Props) {
           </Reveal>
         )}
 
-        <Reveal className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] md:aspect-[16/9] bg-black">
+        <Reveal className="relative rounded-none overflow-hidden border border-[#3F5478]/20 aspect-[4/3] md:aspect-[16/9] bg-black">
           {images.map((img, i) => (
             <img
               key={img._id}

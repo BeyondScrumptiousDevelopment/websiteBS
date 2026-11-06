@@ -1,6 +1,8 @@
-import { FaInstagram, FaWhatsapp, FaTiktok, FaFacebook } from 'react-icons/fa'
+import { FaInstagram, FaTiktok, FaFacebook, FaEnvelope } from 'react-icons/fa'
 import { client } from '../../sanity/lib/client'
 import BrandCurve from '../../components/BrandCurve'
+import BrandRipple from '../../components/BrandRipple'
+import BrandPiping from '../../components/BrandPiping'
 
 export const runtime = 'edge'
 export const revalidate = 0
@@ -14,19 +16,29 @@ export const metadata = {
   },
 }
 
-type LinkItem = { label: string; href: string; highlight?: boolean }
+type LinkItem = {
+  label: string
+  href: string
+  meta?: string
+  variant?: 'primary' | 'default'
+}
 
 // Used until a "Links Page" document is published in Sanity Studio, and as
 // a safety net if the fetch ever fails — the page always has something to show.
 const defaultLinks: LinkItem[] = [
-  { href: '/diwali', label: 'Diwali 2026 — Order Now ✨', highlight: true },
-  { href: '/croffle', label: 'Live Croffle Station — New ✨', highlight: true },
-  { href: '/contact', label: 'Enquire Now', highlight: true },
-  { href: '/cakes', label: 'View Cakes' },
-  { href: '/desserts', label: 'View Desserts & Dessert Tables' },
-  { href: '/live-desserts', label: 'Mini Pancake Station' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/our-story', label: 'Our Story' },
+  { href: '/contact', label: 'Request Your Quote', variant: 'primary' },
+  { href: '/cakes', label: 'Bespoke Cakes', meta: 'from £55' },
+  { href: '/desserts', label: 'Dessert Tables', meta: 'from £300' },
+  { href: '/live-desserts', label: 'Live Dessert Stations', meta: 'from £250' },
+  { href: '/croffle', label: 'Live Croffle Station', meta: 'New' },
+  { href: '/gallery', label: 'Our Work', meta: 'Gallery' },
+  { href: 'https://wa.me/447933903000', label: 'Message Us on WhatsApp', meta: '→' },
+  {
+    href: 'https://www.google.com/search?q=Beyond+Scrumptious+Harrow+reviews',
+    label: 'Read Our Reviews',
+    meta: 'Google',
+  },
+  { href: '/faq', label: 'FAQs & Allergen Information', meta: '→' },
 ]
 
 async function getLinks(): Promise<LinkItem[]> {
@@ -41,13 +53,13 @@ async function getLinks(): Promise<LinkItem[]> {
 
 const socials = [
   { href: 'https://instagram.com/beyond.scrumptious', label: 'Instagram', icon: FaInstagram },
-  { href: 'https://wa.me/447933903000', label: 'WhatsApp', icon: FaWhatsapp },
   { href: 'https://www.tiktok.com/@beyondscrumptious', label: 'TikTok', icon: FaTiktok },
   {
     href: 'https://www.facebook.com/profile.php?id=61578473547436',
     label: 'Facebook',
     icon: FaFacebook,
   },
+  { href: 'mailto:hello@beyondscrumptious.com', label: 'Email', icon: FaEnvelope },
 ]
 
 export default async function LinksPage() {
@@ -55,9 +67,10 @@ export default async function LinksPage() {
 
   return (
     <main className="bs-brand relative overflow-hidden min-h-screen bg-[#D8E8F4] text-[#19253F] flex flex-col items-center px-6 py-16">
+      <BrandRipple id="bs-ripple-links" tone="onLight" />
       <BrandCurve side="left" />
-      <div className="w-full max-w-md mx-auto flex flex-col items-center">
-        <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#F3F8FB]/20 mb-6">
+      <div className="relative w-full max-w-md mx-auto flex flex-col items-center">
+        <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border border-[#3F5478]/20 mb-6">
           <img
             src="/images/logo.jpg"
             alt="Beyond Scrumptious"
@@ -66,31 +79,49 @@ export default async function LinksPage() {
         </div>
 
         <img
-          src="/images/logo-navy.png"
+          src="/images/wordmark-navy.png"
           alt="Beyond Scrumptious"
           className="h-10 md:h-12 w-auto mb-3"
         />
 
         <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-2 text-center">
-          Cakes • Desserts • Live Dessert Experiences
+          Eggless Desserts · Across London
         </p>
 
-        <p className="text-sm text-[#19253F]/60 mb-10 text-center">
-          Harrow, London
+        <p className="text-sm text-[#19253F]/70 mb-1 text-center">
+          Eggless cakes, dessert tables &amp; live dessert stations
         </p>
+        <p className="text-xs uppercase tracking-[0.15em] text-[#3F5478]/70 mb-10 text-center">
+          Eggless &amp; Gelatine-Free · Vegan Options · 5★ Hygiene Rating
+        </p>
+
+        {/* TEMPORARY — DIWALI 2026 SEASONAL SLOT — remove after 8 Nov 2026 */}
+        <a
+          href="/diwali"
+          className="relative w-full text-center overflow-hidden border border-[#c9973f]/50 bg-[#1b1712] mb-4"
+        >
+          <span className="relative z-10 block px-6 py-4 text-sm uppercase tracking-[0.15em] text-[#f3e3c3]">
+            Diwali 2026 — Order Now ✨
+          </span>
+        </a>
 
         <div className="w-full flex flex-col gap-4 mb-10">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`w-full text-center rounded-full px-6 py-5 text-sm uppercase tracking-[0.15em] transition ${
-                link.highlight
-                  ? 'bg-[#F3F8FB] text-[#19253F] hover:bg-[#C5D7EC]'
-                  : 'border border-[#19253F]/30 hover:bg-[#19253F]/5'
-              }`}
+              className={
+                link.variant === 'primary'
+                  ? 'w-full text-center rounded-[2px] px-6 py-5 text-sm uppercase tracking-[0.15em] transition bg-[#19253F] text-[#F3F8FB] hover:bg-[#3F5478]'
+                  : 'w-full flex items-center justify-between gap-3 rounded-[2px] px-6 py-5 text-sm transition bg-[#F3F8FB] border border-[#3F5478]/20 hover:bg-[#C5D7EC]'
+              }
             >
-              {link.label}
+              <span className={link.variant === 'primary' ? '' : 'uppercase tracking-[0.1em]'}>
+                {link.label}
+              </span>
+              {link.meta && (
+                <span className="text-xs text-[#3F5478]/80 shrink-0">{link.meta}</span>
+              )}
             </a>
           ))}
         </div>
@@ -100,8 +131,8 @@ export default async function LinksPage() {
             <a
               key={social.label}
               href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={social.href.startsWith('http') ? '_blank' : undefined}
+              rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               aria-label={social.label}
               className="hover:text-[#3F5478] transition"
             >
@@ -121,6 +152,9 @@ export default async function LinksPage() {
             naavcaptured
           </a>
         </p>
+      </div>
+      <div className="relative w-full max-w-md mx-auto mt-2">
+        <BrandPiping tone="onLight" />
       </div>
     </main>
   )

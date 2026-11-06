@@ -249,7 +249,7 @@ export default function FAQContent() {
                   return (
                     <RevealItem
                       key={id}
-                      className="bg-[#F3F8FB] text-[#19253F] rounded-[2rem] p-8 shadow-xl"
+                      className="bg-[#F3F8FB] text-[#19253F] rounded-none p-8 border border-[#3F5478]/20"
                       y={16}
                     >
                       <button
@@ -293,9 +293,9 @@ export default function FAQContent() {
             </p>
             <TapLink
               href="/contact"
-              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition"
+              className="inline-block px-10 py-5 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
             >
-              Enquire Now
+              Request Your Quote
             </TapLink>
           </Reveal>
         </div>

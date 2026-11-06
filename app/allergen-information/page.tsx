@@ -64,7 +64,7 @@ export default function AllergenInformationPage() {
           <div className="mt-16">
             <a
               href="/contact"
-              className="inline-block px-10 py-5 rounded-full bg-[#F3F8FB] text-[#19253F] text-sm uppercase tracking-[0.2em] hover:bg-[#C5D7EC] transition"
+              className="inline-block px-10 py-5 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
             >
               Ask A Question
             </a>

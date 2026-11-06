@@ -24,11 +24,12 @@ export default function Navbar() {
       <div className="flex items-center justify-between">
 
         {/* LOGO */}
-        <a
-          href="/"
-          className="logo-font text-3xl md:text-4xl"
-        >
-          Beyond Scrumptious
+        <a href="/" className="block">
+          <img
+            src="/images/wordmark-mist.png"
+            alt="Beyond Scrumptious"
+            className="h-7 md:h-8 w-auto"
+          />
         </a>
 
         {/* DESKTOP MENU */}
@@ -49,9 +50,9 @@ export default function Navbar() {
 
           <TapLink
             href="/contact"
-            className="px-6 py-3 rounded-full bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4] transition"
+            className="px-6 py-3 rounded-[2px] bg-[#F3F8FB] text-[#19253F] hover:bg-[#D8E8F4] transition"
           >
-            Enquire Now
+            Request Your Quote
           </TapLink>
         </div>
 
@@ -88,7 +89,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="lg:hidden overflow-hidden"
           >
-            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#F3F8FB]/80 bg-[#19253F] p-6 rounded-3xl">
+            <div className="flex flex-col gap-6 mt-8 text-sm uppercase tracking-[0.3em] text-[#F3F8FB]/80 bg-[#19253F] p-6 rounded-none">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -101,9 +102,9 @@ export default function Navbar() {
 
               <TapLink
                 href="/contact"
-                className="px-6 py-4 rounded-full bg-[#F3F8FB] text-[#19253F] text-center normal-case tracking-normal"
+                className="px-6 py-4 rounded-[2px] bg-[#F3F8FB] text-[#19253F] text-center normal-case tracking-normal"
               >
-                Enquire Now
+                Request Your Quote
               </TapLink>
             </div>
           </motion.div>

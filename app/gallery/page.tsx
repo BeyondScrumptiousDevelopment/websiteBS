@@ -62,8 +62,8 @@ export default async function GalleryPage() {
 
           <p className="max-w-3xl mx-auto text-lg leading-8 text-[#19253F]/70">
             Handcrafted cakes, desserts, dessert tables and live dessert
-            experiences created for celebrations across Harrow, London and
-            beyond.
+            experiences created for celebrations across London. Based in
+            Harrow, serving all of London.
           </p>
         </Reveal>
       </section>
