@@ -9,7 +9,7 @@ export default function BrandPiping({
   const strokeOpacity = tone === 'onNavy' ? '.3' : '.5'
 
   return (
-    <svg aria-hidden="true" className="w-full h-6" viewBox="0 0 48 24" preserveAspectRatio="none">
+    <svg aria-hidden="true" className="w-full h-6">
       <defs>
         <pattern id="bs-piping" width="48" height="24" patternUnits="userSpaceOnUse">
           <path

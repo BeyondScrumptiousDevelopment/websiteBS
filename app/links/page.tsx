@@ -95,16 +95,6 @@ export default async function LinksPage() {
           Eggless &amp; Gelatine-Free · Vegan Options · 5★ Hygiene Rating
         </p>
 
-        {/* TEMPORARY — DIWALI 2026 SEASONAL SLOT — remove after 8 Nov 2026 */}
-        <a
-          href="/diwali"
-          className="relative w-full text-center overflow-hidden border border-[#c9973f]/50 bg-[#1b1712] mb-4"
-        >
-          <span className="relative z-10 block px-6 py-4 text-sm uppercase tracking-[0.15em] text-[#f3e3c3]">
-            Diwali 2026 — Order Now ✨
-          </span>
-        </a>
-
         <div className="w-full flex flex-col gap-4 mb-10">
           {links.map((link) => (
             <a

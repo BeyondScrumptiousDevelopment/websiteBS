@@ -9,8 +9,8 @@ export const metadata = {
   description:
     'The Diwali Cupcake Collection — beautifully decorated, gift-boxed cupcakes in Vanilla, Chocolate, Kulfi & Oreo. Pickup 7th–8th Nov, Harrow.',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   alternates: {
     canonical: '/diwali/cupcakes',

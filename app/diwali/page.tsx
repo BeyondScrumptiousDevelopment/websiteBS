@@ -8,8 +8,8 @@ export const metadata = {
   description:
     'Diwali 2026 at Beyond Scrumptious — choose from Naturally Sweet Cupcakes or The Diwali Cupcake Collection. Pickup 7th–8th Nov, Harrow.',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   alternates: {
     canonical: '/diwali',

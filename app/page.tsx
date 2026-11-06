@@ -119,33 +119,6 @@ export default async function HomePage() {
       <TrustBadges />
       <SectionSeam color="#3F5478" />
 
-      {/* TEMPORARY — DIWALI 2026 PROMO — remove after 8 Nov 2026 */}
-      <section className="py-24 px-6 bg-[#1b1712] text-[#F3F8FB]">
-        <Reveal className="max-w-4xl mx-auto text-center">
-          <p className="uppercase tracking-[0.4em] text-sm text-[#c9973f] mb-6">
-            Diwali 2026 ✨
-          </p>
-
-          <h2 className="heading-font text-4xl md:text-6xl leading-tight mb-6 text-[#f3e3c3]">
-            A Little Sweetness For Diwali
-          </h2>
-
-          <p className="text-[#F3F8FB]/70 text-lg leading-8 mb-10 max-w-2xl mx-auto">
-            Naturally Sweet Cupcakes and The Diwali Cupcake Collection — two
-            ways to celebrate this year. Pickup 7th or 8th November, Harrow.
-          </p>
-
-          <TapLink
-            href="/diwali"
-            className="inline-block px-10 py-5 rounded-full bg-[#c9973f] text-[#1b1712] font-semibold text-sm uppercase tracking-[0.2em] hover:bg-[#f3e3c3] transition"
-          >
-            Order Your Diwali Cupcakes
-          </TapLink>
-        </Reveal>
-      </section>
-
-      <SectionSeam color="#3F5478" />
-
       {/* WHAT WE OFFER */}
       <section id="offer" className="bg-[#D8E8F4] text-[#19253F] py-28 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
@@ -255,13 +228,13 @@ export default async function HomePage() {
               {featured.map((item: any) => (
                 <RevealItem
                   key={item._id}
-                  className="rounded-none overflow-hidden border border-[#3F5478]/20"
+                  className="rounded-none overflow-hidden border border-[#3F5478]/20 aspect-[4/5]"
                 >
                   <img
                     src={urlFor(item.image).width(800).url()}
                     alt={altTextFor(item)}
                     loading="lazy"
-                    className="w-full h-auto hover:scale-105 transition duration-500"
+                    className="w-full h-full object-cover hover:scale-105 transition duration-500"
                   />
                 </RevealItem>
               ))}

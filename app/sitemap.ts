@@ -2,9 +2,6 @@ import type { MetadataRoute } from 'next'
 
 const routes = [
   '',
-  '/diwali',
-  '/diwali/naturally-sweet',
-  '/diwali/cupcakes',
   '/cakes',
   '/desserts',
   '/live-desserts',

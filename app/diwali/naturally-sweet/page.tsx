@@ -9,8 +9,8 @@ export const metadata = {
   description:
     'Naturally Sweet Cupcakes for Diwali 2026 — no added refined sugar, sweetened with dates. Kulfi, Vanilla & Chocolate. Pickup 7th–8th Nov, Harrow.',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   alternates: {
     canonical: '/diwali/naturally-sweet',
