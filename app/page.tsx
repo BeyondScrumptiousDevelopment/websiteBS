@@ -59,7 +59,7 @@ export default async function HomePage() {
       <section className="relative h-screen flex items-center justify-center text-center px-6">
         <HeroVideo />
 
-        <div className="absolute inset-0 bg-[#19253F]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#19253F]/55 via-[#19253F]/45 to-[#19253F]/65" />
 
         <div className="relative z-10 max-w-5xl">
           <Reveal delay={0}>
@@ -69,7 +69,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1 className="logo-font text-7xl md:text-[10rem] leading-[0.9] mb-8">
+            <h1 className="logo-font text-7xl md:text-[10rem] leading-[0.9] mb-8 text-[#F3F8FB]">
               Beyond
               <br />
               Scrumptious
