@@ -1,5 +1,6 @@
-import { FaInstagram, FaTiktok, FaFacebook, FaEnvelope } from 'react-icons/fa'
+import { FaInstagram, FaTiktok, FaFacebook, FaEnvelope, FaArrowRight } from 'react-icons/fa'
 import { client } from '../../sanity/lib/client'
+import { urlFor, altTextFor } from '../../sanity/lib/image'
 import BrandCurve from '../../components/BrandCurve'
 import BrandRipple from '../../components/BrandRipple'
 import BrandPiping from '../../components/BrandPiping'
@@ -32,13 +33,13 @@ const defaultLinks: LinkItem[] = [
   { href: '/live-desserts', label: 'Live Dessert Stations', meta: 'from £250' },
   { href: '/croffle', label: 'Live Croffle Station', meta: 'New' },
   { href: '/gallery', label: 'Our Work', meta: 'Gallery' },
-  { href: 'https://wa.me/447933903000', label: 'Message Us on WhatsApp', meta: '→' },
+  { href: 'https://wa.me/447933903000', label: 'Message Us on WhatsApp' },
   {
     href: 'https://www.google.com/search?q=Beyond+Scrumptious+Harrow+reviews',
     label: 'Read Our Reviews',
     meta: 'Google',
   },
-  { href: '/faq', label: 'FAQs & Allergen Information', meta: '→' },
+  { href: '/faq', label: 'FAQs & Allergen Information' },
 ]
 
 async function getLinks(): Promise<LinkItem[]> {
@@ -49,6 +50,21 @@ async function getLinks(): Promise<LinkItem[]> {
     // Sanity unreachable — fall through to defaults below
   }
   return defaultLinks
+}
+
+async function getRecentWork() {
+  try {
+    return await client.fetch(`
+      *[_type == "product" && featured == true] | order(order asc, _createdAt desc)[0...6]{
+        _id,
+        caption,
+        category,
+        image
+      }
+    `)
+  } catch {
+    return []
+  }
 }
 
 const socials = [
@@ -63,7 +79,7 @@ const socials = [
 ]
 
 export default async function LinksPage() {
-  const links = await getLinks()
+  const [links, recentWork] = await Promise.all([getLinks(), getRecentWork()])
 
   return (
     <main className="bs-brand relative overflow-hidden min-h-screen bg-[#D8E8F4] text-[#19253F] flex flex-col items-center px-6 py-16">
@@ -102,19 +118,72 @@ export default async function LinksPage() {
               href={link.href}
               className={
                 link.variant === 'primary'
-                  ? 'w-full text-center rounded-[2px] px-6 py-5 text-sm uppercase tracking-[0.15em] transition bg-[#19253F] text-[#F3F8FB] hover:bg-[#3F5478]'
+                  ? 'w-full flex items-center justify-between gap-3 rounded-[2px] px-6 py-5 text-sm uppercase tracking-[0.15em] transition bg-[#19253F] text-[#F3F8FB] hover:bg-[#3F5478]'
                   : 'w-full flex items-center justify-between gap-3 rounded-[2px] px-6 py-5 text-sm transition bg-[#F3F8FB] border border-[#3F5478]/20 hover:bg-[#C5D7EC]'
               }
             >
-              <span className={link.variant === 'primary' ? '' : 'uppercase tracking-[0.1em]'}>
+              <span
+                className={
+                  link.variant === 'primary'
+                    ? 'flex-1 text-center'
+                    : 'flex-1 uppercase tracking-[0.1em]'
+                }
+              >
                 {link.label}
               </span>
-              {link.meta && (
-                <span className="text-xs text-[#3F5478]/80 shrink-0">{link.meta}</span>
-              )}
+              <span className="flex items-center gap-2 shrink-0">
+                {link.meta && (
+                  <span
+                    className={
+                      link.variant === 'primary'
+                        ? 'text-xs text-[#F3F8FB]/70'
+                        : 'text-xs text-[#3F5478]/80'
+                    }
+                  >
+                    {link.meta}
+                  </span>
+                )}
+                <FaArrowRight
+                  className={
+                    link.variant === 'primary'
+                      ? 'text-xs text-[#F3F8FB]/70'
+                      : 'text-xs text-[#3F5478]/60'
+                  }
+                />
+              </span>
             </a>
           ))}
         </div>
+
+        {recentWork.length > 0 && (
+          <div className="w-full mb-16">
+            <p className="uppercase tracking-[0.3em] text-xs text-[#3F5478]/80 mb-4 text-center">
+              Recent Work
+            </p>
+            <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {recentWork.map((item: { _id: string; caption?: string; category?: string; image: any }) => (
+                <a
+                  key={item._id}
+                  href="/gallery"
+                  className="relative shrink-0 w-32 h-40 md:w-36 md:h-44 overflow-hidden border border-[#3F5478]/20 snap-start"
+                >
+                  <img
+                    src={urlFor(item.image).width(300).height(380).url()}
+                    alt={altTextFor(item)}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-[#19253F]/80 via-[#19253F]/0 to-transparent" />
+                  {(item.caption || item.category) && (
+                    <span className="absolute bottom-0 left-0 right-0 p-2 text-[#F3F8FB] text-xs font-semibold leading-tight">
+                      {item.caption || item.category}
+                    </span>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="flex gap-6 text-2xl mb-16">
           {socials.map((social) => (
