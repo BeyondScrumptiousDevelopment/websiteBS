@@ -23,7 +23,7 @@ const legalLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#D8E8F4] text-[#19253F] pt-24 pb-10 px-6 relative">
-      <BrandPiping />
+      <BrandPiping shape="wave" />
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 pb-16 border-b border-[#19253F]/10">
           <div>
