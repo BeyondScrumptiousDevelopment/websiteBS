@@ -249,7 +249,7 @@ export default function LiveDessertsPage() {
           <div className="flex flex-wrap justify-center gap-5 mb-4">
             <TapLink
               href="/contact"
-              className="px-10 py-5 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-10 py-5 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
             >
               Request A Quote
             </TapLink>
@@ -299,7 +299,7 @@ export default function LiveDessertsPage() {
               <RevealItem
                 key={station.id}
                 id={station.id === 'croffle' ? 'croffle' : undefined}
-                className="bg-white rounded-none overflow-hidden border border-[#3F5478]/20 flex flex-col scroll-mt-24"
+                className="bg-[#F3F8FB] rounded-none overflow-hidden border border-[#3F5478]/20 flex flex-col scroll-mt-24"
               >
                 <div className="aspect-[16/10]">
                   <img
@@ -371,7 +371,7 @@ export default function LiveDessertsPage() {
                 className={`relative rounded-none p-10 border border-[#3F5478]/20 text-center flex flex-col ${
                   pkg.highlight
                     ? 'bg-[#19253F] text-[#F3F8FB] md:-translate-y-4 border border-[#F3F8FB]/20'
-                    : 'bg-white'
+                    : 'bg-[#F3F8FB]'
                 }`}
               >
                 {pkg.highlight && (
@@ -671,7 +671,7 @@ export default function LiveDessertsPage() {
             {requirements.map((req) => (
               <RevealItem
                 key={req}
-                className="bg-white rounded-none p-6 flex items-start gap-3"
+                className="bg-[#F3F8FB] rounded-none p-6 flex items-start gap-3"
               >
                 <span className="text-[#19253F]/40 mt-0.5">&bull;</span>
                 <span className="text-[#19253F]/80 leading-6">{req}</span>
@@ -747,7 +747,7 @@ export default function LiveDessertsPage() {
           <div className="flex flex-wrap justify-center gap-5 mb-10">
             <TapLink
               href="/contact"
-              className="px-12 py-6 rounded-[2px] bg-[#F3F8FB] text-[#19253F] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#D8E8F4] hover:-translate-y-0.5 transition shadow-xl shadow-black/20"
+              className="px-12 py-6 rounded-[2px] bg-[#F3F8FB] text-[#19253F] text-base font-medium uppercase tracking-[0.2em] hover:bg-[#D8E8F4] transition"
             >
               Request A Quote
             </TapLink>

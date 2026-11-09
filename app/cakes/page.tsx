@@ -87,7 +87,7 @@ export default function CakesPage() {
             {flavours.map((flavour) => (
               <RevealItem
                 key={flavour}
-                className="bg-white rounded-none py-6 px-4 text-center border border-[#3F5478]/20 heading-font text-lg"
+                className="bg-[#F3F8FB] rounded-none py-6 px-4 text-center border border-[#3F5478]/20 heading-font text-lg"
                 y={14}
               >
                 {flavour}

@@ -45,7 +45,7 @@ export default function CroffleBanner() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-sm bg-[#131C2F] border border-[#D8E8F4]/20 rounded-none overflow-hidden shadow-2xl"
+        className="relative w-full max-w-sm bg-[#131C2F] border border-[#D8E8F4]/20 rounded-none overflow-hidden"
       >
         <button
           onClick={dismiss}

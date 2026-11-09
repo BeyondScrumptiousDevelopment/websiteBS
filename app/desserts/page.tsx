@@ -128,7 +128,7 @@ export default function DessertsPage() {
             {range.map((item) => (
               <RevealItem
                 key={item.name}
-                className="bg-white rounded-none p-8 border border-[#3F5478]/20"
+                className="bg-[#F3F8FB] rounded-none p-8 border border-[#3F5478]/20"
               >
                 <h3 className="heading-font text-2xl mb-3">{item.name}</h3>
                 <p className="text-[#19253F]/70 leading-7 mb-3">

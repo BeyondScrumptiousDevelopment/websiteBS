@@ -51,7 +51,7 @@ const flavours = [
 const flavourBranches: Topic[] = ['Cake', 'Cupcakes', 'Desserts']
 
 const inputClass =
-  'w-full rounded-[2px] bg-white/95 text-[#19253F] px-5 py-4 placeholder:text-[#19253F]/40 focus:outline-none focus:ring-2 focus:ring-[#19253F]/30'
+  'w-full rounded-[2px] bg-[#F3F8FB]/95 text-[#19253F] px-5 py-4 placeholder:text-[#19253F]/40 focus:outline-none focus:ring-2 focus:ring-[#19253F]/30'
 
 const labelClass = 'block text-sm uppercase tracking-[0.15em] text-[#3F5478] mb-2'
 

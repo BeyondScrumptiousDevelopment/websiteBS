@@ -37,7 +37,7 @@ export default function Footer() {
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 rounded-full bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
+              className="inline-block px-8 py-4 rounded-[2px] bg-[#19253F] text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#3F5478] transition"
             >
               Request Your Quote
             </a>
