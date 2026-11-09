@@ -105,7 +105,7 @@ export default async function HomePage() {
               </TapLink>
               <TapLink
                 href="/gallery"
-                className="px-10 py-5 rounded-[2px] border border-[#F3F8FB]/40 text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
+                className="px-10 py-5 rounded-[2px] border border-[#F3F8FB]/40 text-[#F3F8FB] text-sm uppercase tracking-[0.2em] hover:bg-[#F3F8FB]/10 transition"
               >
                 View Our Work
               </TapLink>
