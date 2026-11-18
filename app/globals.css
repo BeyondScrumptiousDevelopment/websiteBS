@@ -61,3 +61,46 @@ body {
     animation: none;
   }
 }
+
+/* Accessibility widget — toggled via data attributes on <html> by
+   components/AccessibilityWidget.tsx. */
+
+html[data-a11y-font-scale="large"] {
+  font-size: 112.5%;
+}
+
+html[data-a11y-font-scale="larger"] {
+  font-size: 125%;
+}
+
+html[data-a11y-contrast="high"] {
+  filter: contrast(1.2) saturate(1.15);
+}
+
+html[data-a11y-contrast="high"] img,
+html[data-a11y-contrast="high"] video {
+  filter: contrast(1.05);
+}
+
+html[data-a11y-readable-font="on"] .bs-brand {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+html[data-a11y-readable-font="on"] .bs-brand p,
+html[data-a11y-readable-font="on"] .bs-brand li {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+html[data-a11y-underline-links="on"] a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+html[data-a11y-reduce-motion="on"] {
+  scroll-behavior: auto !important;
+}
+
+html[data-a11y-reduce-motion="on"] .animate-marquee {
+  animation: none !important;
+}

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Playfair_Display, DM_Sans, Cormorant_Garamond } from 'next/font/google'
 import Analytics from '../components/Analytics'
 import MotionProvider from '../components/motion/MotionProvider'
+import AccessibilityWidget from '../components/AccessibilityWidget'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -95,7 +96,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          {children}
+          <AccessibilityWidget />
+        </MotionProvider>
         <Analytics />
       </body>
     </html>
